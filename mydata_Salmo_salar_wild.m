@@ -593,14 +593,20 @@ bibkey.Tah_Mirachimi = 'Peterson1977'; comment.Tah = 'parents from Mirachimi riv
 %%%%%%%%%%%%%%
 %% T-ab data %
 %%%%%%%%%%%%%%
-data.Tab = [ ... % temperature (°C), age at yolk exhaustion (d)
+data.TabC = [ ... % temperature (°C), age at yolk exhaustion (d)
 2 238
 6 177
 12  64];
-data.Tab(:,1)=C2K(data.Tab(:,1));
-units.Tab   = {'K', 'd'};  label.Tab = {'temperature', 'age at birth'}; 
-bibkey.Tah = 'Peterson1977'; comment.Tah = 'parents from Dennis Stream (New Brunswick - Canada)';
+data.TabC(:,1)=C2K(data.Tab(:,1));
+units.TabC   = {'K', 'd'};  label.TabC = {'temperature', 'age at birth'}; 
+bibkey.TabC = 'Peterson1977'; comment.TabC = 'parents from Dennis Stream (New Brunswick - Canada)';
 
+data.Tab=[...
+    data.TabC;
+    data.ab_4_nor , temp.ab_4_nor;
+    data.ab_scocanmix , temp.ab_scocanmix;
+    data.ab_5_sco , temp.ab_5_sco;
+    data.ab_8_sco , temp.ab_8_sco];
 
 %%%%%%%%%%%%%
 %% T-Lh data %

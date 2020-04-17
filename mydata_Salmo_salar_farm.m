@@ -37,22 +37,22 @@ metaData.date_acc    = [2019 04 17];
 %% Age at hatching %
 %%%%%%%%%%%%%%%%%%%%
 
-data.ah = 267;    units.ah = 'd';    label.ah = 'age at hatching';             bibkey.ah = 'Wallace1988';     comment.ah = 'Sunndals√∏ra strain';
-  temp.ah = C2K(0.2);  units.temp.ah = 'K'; label.temp.ah = 'temperature';
-data.ah = 207;    units.ah = 'd';    label.ah = 'age at hatching';             bibkey.ah = 'Wallace1988';     comment.ah = 'Sunndals√∏ra strain';
-  temp.ah = C2K(1.00);  units.temp.ah = 'K'; label.temp.ah = 'temperature';
-data.ah_nor2011 = 117;    units.ah_nor2011 = 'd';    label.ah_nor2011 = 'age at hatching';             bibkey.ah_nor2011 = 'Solberg2014';     comment.ah_nor2011 = 'Mowi strain (Norway), mean of offsprings time at 50% hatching in 2011';
-  temp.ah_nor2011 = C2K(4.8);  units.temp.ah_nor2011 = 'K'; label.temp.ah_nor2011 = 'temperature';
-data.ah_nor2012 = 92;    units.ah_nor2012 = 'd';    label.ah_nor2012 = 'age at hatching';             bibkey.ah_nor2012 = 'Solberg2014';     comment.ah_nor2012 = 'Mowi strain (Norway), mean of offsprings time at 50% hatching in 2012';
-  temp.ah_nor2012 = C2K(6.0);  units.temp.ah_nor2012 = 'K'; label.temp.ah_nor2012 = 'temperature';
-data.ah_nor2013 = 88;    units.ah_nor2013 = 'd';    label.ah_nor2013 = 'age at hatching';             bibkey.ah_nor2013 = 'Solberg2014';     comment.ah_nor2013 = 'Mowi strain (Norway), mean of offsprings time at 50% hatching in 2013';
-  temp.ah_nor2013 = C2K(6.3);  units.temp.ah_nor2013 = 'K'; label.temp.ah_nor2013 = 'temperature';
-data.ah_nor2012V = 91;    units.ah_nor2012V = 'd';    label.ah_nor2012V = 'age at hatching';             bibkey.ah_nor2012V = 'Solberg2014';     comment.ah_nor2012V = 'Salmobreed strain (Norway), mean of offsprings time at 50% hatching in 2012';
-  temp.ah_nor2012V = C2K(6.0);  units.temp.ah_nor2012V = 'K'; label.temp.ah_nor2012V = 'temperature';
-data.ah_norNSB9 = 53;    units.ah_norNSB9 = 'd';    label.ah_norNSB9 = 'age at hatching';             bibkey.ah_norNSB9 = 'Berg1999';     comment.ah_norNSB9 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
-  temp.ah_norNSB9 = C2K(9.4);  units.temp.ah_norNSB9 = 'K'; label.temp.ah_norNSB9 = 'temperature';
-data.ah_norNSB7 = 76;    units.ah_norNSB7 = 'd';    label.ah_norNSB7 = 'age at hatching';             bibkey.ah_norNSB7 = 'Berg1999';     comment.ah_norNSB7 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
-  temp.ah_norNSB7 = C2K(7.4);  units.temp.ah_norNSB7 = 'K'; label.temp.ah_norNSB7 = 'temperature';
+% data.ah = 267;    units.ah = 'd';    label.ah = 'age at hatching';             bibkey.ah = 'Wallace1988';     comment.ah = 'Sunndals√∏ra strain';
+%   temp.ah = C2K(0.2);  units.temp.ah = 'K'; label.temp.ah = 'temperature';
+% data.ah = 207;    units.ah = 'd';    label.ah = 'age at hatching';             bibkey.ah = 'Wallace1988';     comment.ah = 'Sunndals√∏ra strain';
+%   temp.ah = C2K(1.00);  units.temp.ah = 'K'; label.temp.ah = 'temperature';
+% data.ah_nor2011 = 117;    units.ah_nor2011 = 'd';    label.ah_nor2011 = 'age at hatching';             bibkey.ah_nor2011 = 'Solberg2014';     comment.ah_nor2011 = 'Mowi strain (Norway), mean of offsprings time at 50% hatching in 2011';
+%   temp.ah_nor2011 = C2K(4.8);  units.temp.ah_nor2011 = 'K'; label.temp.ah_nor2011 = 'temperature';
+% data.ah_nor2012 = 92;    units.ah_nor2012 = 'd';    label.ah_nor2012 = 'age at hatching';             bibkey.ah_nor2012 = 'Solberg2014';     comment.ah_nor2012 = 'Mowi strain (Norway), mean of offsprings time at 50% hatching in 2012';
+%   temp.ah_nor2012 = C2K(6.0);  units.temp.ah_nor2012 = 'K'; label.temp.ah_nor2012 = 'temperature';
+% data.ah_nor2013 = 88;    units.ah_nor2013 = 'd';    label.ah_nor2013 = 'age at hatching';             bibkey.ah_nor2013 = 'Solberg2014';     comment.ah_nor2013 = 'Mowi strain (Norway), mean of offsprings time at 50% hatching in 2013';
+%   temp.ah_nor2013 = C2K(6.3);  units.temp.ah_nor2013 = 'K'; label.temp.ah_nor2013 = 'temperature';
+% data.ah_nor2012V = 91;    units.ah_nor2012V = 'd';    label.ah_nor2012V = 'age at hatching';             bibkey.ah_nor2012V = 'Solberg2014';     comment.ah_nor2012V = 'Salmobreed strain (Norway), mean of offsprings time at 50% hatching in 2012';
+%   temp.ah_nor2012V = C2K(6.0);  units.temp.ah_nor2012V = 'K'; label.temp.ah_nor2012V = 'temperature';
+% data.ah_norNSB9 = 53;    units.ah_norNSB9 = 'd';    label.ah_norNSB9 = 'age at hatching';             bibkey.ah_norNSB9 = 'Berg1999';     comment.ah_norNSB9 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
+%   temp.ah_norNSB9 = C2K(9.4);  units.temp.ah_norNSB9 = 'K'; label.temp.ah_norNSB9 = 'temperature';
+% data.ah_norNSB7 = 76;    units.ah_norNSB7 = 'd';    label.ah_norNSB7 = 'age at hatching';             bibkey.ah_norNSB7 = 'Berg1999';     comment.ah_norNSB7 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
+%   temp.ah_norNSB7 = C2K(7.4);  units.temp.ah_norNSB7 = 'K'; label.temp.ah_norNSB7 = 'temperature';
 
   %%%%%%%%%%%%%%%%%%%%%%%
 %% Age at first feeding %
@@ -60,8 +60,8 @@ data.ah_norNSB7 = 76;    units.ah_norNSB7 = 'd';    label.ah_norNSB7 = 'age at h
 data.ab_12_AqG = 96;    units.ab_12_AqG = 'd';    label.ab_12_AqG = 'age at birth';             bibkey.ab = 'Handeland2008';     
   temp.ab_12_AqG = C2K(12);  units.temp.ab_12_AqG = 'K'; label.temp.ab_12_AqG = 'temperature';
   comment.ab_12_AqG = 'AquaGen strain (Norway), calculated from time at birth since hatching (given in the publication = 58) + time to hatch at 12∞C from Gunnes (1979)';
-data.ah_norM = 183;    units.ah_norM = 'd';    label.ah_norM = 'age at first feeding';             bibkey.ah_norM = 'Glover2009';     comment.ah_norM = 'Mowi strain';
-  temp.ah_norM = C2K(6);  units.temp.ah_norM = 'K'; label.temp.ah_norM = 'temperature'; label.temp.comment.ah_norM = 'temp=5 as egg, 12 as fry, approx at t=165';
+data.ab_norM = 183;    units.ab_norM = 'd';    label.ab_norM = 'age at first feeding';             bibkey.ab_norM = 'Glover2009';     comment.ab_norM = 'Mowi strain';
+  temp.ab_norM = C2K(6);  units.temp.ab_norM = 'K'; label.temp.ab_norM = 'temperature'; label.temp.comment.ab_norM = 'temp=5 as egg, 12 as fry, approx at t=165';
 
 % data.ah_norB = 52;    units.ah_norB = 'd';    label.ah_norB = 'age at birth';             bibkey.ah_norB = 'Hosfeld2009';     
 %   comment.ah_norB = 'Bolak strain, calculated from time at birth since hatching (given in the publication = 22) and time to hatch calculated at 12∞C from data above (!!! extrapolation)';
@@ -82,6 +82,7 @@ data.aj_ire = 731;    units.aj_ire = 'd';    label.aj_ire = 'age at smoltificati
 data.aj_norM2 = 1164;    units.aj_norM2 = 'd';    label.aj_norM2 = 'age at smoltification';             bibkey.aj_norM2 = 'Skaala2012';     comment.aj_norM2 = 'Mowi strain (time since birth)';
   temp.aj_norM2 = C2K(10);  units.temp.aj_norM2 = 'K'; label.temp.aj_norM2 = 'temperature'; label.temp.comment.aj_norM2 = 'rough guess';
 
+% data.aj=
 %arbitrary data exclusion !!! 1st is themore reliable, and second one is
 %for another T∞
 %%%%%%%%%%%%%%%%%%%%
@@ -93,6 +94,9 @@ data.ap_norNBP = 391;    units.ap_norNBP = 'd';    label.ap_norNBP = 'age at mat
  data.ap_norire = 1070;    units.ap_norire = 'd';    label.ap_norire = 'age at maturity';             bibkey.ap_norire = 'Hindar2006';     comment.ap_norire = 'National breeding program (time since birth)';
   temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T∞ : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';
 
+  %median? list
+data.ap=(data.ap_norNBP+data.ap_norire)/2;
+%   data.ap=[data.ap_norNBP;data.ap_norire];
   %arbitrary choice
  %% age at spawning
 % data.ap_norNBPb = 756;    units.ap_norNBPb = 'd';    label.ap_norNBPb = 'age at maturity';             bibkey.ap_norNBPb = 'Hindar2006';     comment.ap_norNBPb = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
@@ -104,8 +108,8 @@ data.ap_norNBP = 391;    units.ap_norNBP = 'd';    label.ap_norNBP = 'age at mat
 %%%%%%%%%%%%%
 %% Lifespan %(mean or maximum?)
 %%%%%%%%%%%%%
-data.am_ireb = 1461;    units.am_ireb = 'd';    label.am_ireb = 'age at maturity';             bibkey.am_ireb = 'Hindar2006';     comment.am_ireb = 'National breeding program (time since birth)';
-  temp.am_ireb = C2K(10);  units.temp.am_ireb = 'K'; label.temp.am_ireb = 'temperature'; label.temp.comment.am_ireb = 'T∞ : rough guess - highly variable temperature throughout life(2+2)*365.25';
+data.am = 1461;    units.am = 'd';    label.am = 'age at maturity';             bibkey.am = 'Hindar2006';     comment.am = 'National breeding program (time since birth)';
+  temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T∞ : rough guess - highly variable temperature throughout life(2+2)*365.25';
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at hatching %
@@ -120,6 +124,8 @@ data.Lb_NorM2012  = 2.81;   units.Lb_NorM2012  = 'cm';  label.Lb_NorM2012  = 'to
 data.Lb_NorM2013  = 2.84;   units.Lb_NorM2013  = 'cm';  label.Lb_NorM2013  = 'total length at birth';   bibkey.Lb_NorM2013  = 'Solberg2014';  comment.Lb_NorM2013 = 'parents from Mowi strain (Norway)';
 data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'total length at birth';   bibkey.Lb_NorS2013  = 'Solberg2014';  comment.Lb_NorS2013 = 'parents from Salmobreed strain (Norway)';
 
+%test mean
+data.Lb=(data.Lb_NorM2011+data.Lb_NorM2012+data.Lb_NorM2013+data.Lb_NorS2013)/4;
 
 %% Length at precocious maturation % (males only)
 % data.Lpp  = ;   units.Lpp  = 'cm';  label.Lpp  = 'total length at precocious puberty'; bibkey.Lpp  = ''; comment.Lpp = 'males only';
@@ -130,6 +136,7 @@ data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'to
 data.Lj_finS  = 17.2;   units.Lj_finS  = 'cm';  label.Lj_finS  = 'total length at metamorphosis'; bibkey.Lj_finS  = 'Jokikkoko2006'; comment.Lj_finS = 'Simojoki broodstock (Baltic Sea, Finland) - mean from 1986 to 1992';
 data.Lj_norN  = 16.4;   units.Lj_norN  = 'cm';  label.Lj_norN  = 'total length at metamorphosis'; bibkey.Lj_norN  = 'Jonsson1991'; comment.Lj_norN = 'Nina research station (Norway)';
 
+data.Lj=(data.Lj_finS+data.Lj_norN)/2;
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at maturity % (or 1 year before first spawning)
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -146,10 +153,11 @@ data.Lp_norSf  = 55.4 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbita
 data.Lp_norSm  = 57.5 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, Sunndals¯ra strain (Canada)';
 data.Lp_norN  = 61.6 ;   units.Lp_norN  = 'cm';  label.Lp_norN  = 'length at puberty'; bibkey.Lp_norN = 'Jonsson1991';   comment.Lp_norN = 'Nina research station (Norway)';
 
+data.Lp=(data.Lp_norSf+data.Lp_norSm+data.Lp_norN)/3;
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Max length %
 %%%%%%%%%%%%%%%%%%%%%%%
-data.Li_norM  = 111 ;   units.Li_norM  = 'cm';  label.Li_norM  = 'length at puberty'; bibkey.Li_norM = 'Jonsson1991';   comment.Li_norM = 'Multiple farmed strains, max of escaped individuals recaptured';
+data.Li  = 111 ;   units.Li  = 'cm';  label.Li  = 'length at puberty'; bibkey.Li = 'Jonsson1991';   comment.Li = 'Multiple farmed strains, max of escaped individuals recaptured';
 
   %%%%%%%%%%%%%
 %% Egg volume %
@@ -230,6 +238,10 @@ units.Tah   = {'K', 'd'};  label.Tah = {'temperature', 'age at hatching'};
 bibkey.Tah = 'Gunnes1979'; comment.Tah = 'Norwegian strain (wild or domestic?)';
 
 %% T-ab data
+
+data.Tab = [...
+    temp.ab_12_AqG , data.ab_12_AqG ;
+    temp.ab_norM , data.ab_norM ];
 
 %% t-L data
 
