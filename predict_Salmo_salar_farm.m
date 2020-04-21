@@ -105,7 +105,7 @@ TC_am = tempcorr(temp.am, T_ref, T_A);
   % uni-variate data
   
   % time-length %%% _iceT11
-  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B] = get_tj(pars_tj, f_tL);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
   %ajouter quoi faire si info=0
   kT_M = k_M * TC_tL; %%%km corrected
   rT_j = rho_j * kT_M; %%%rhoj corrected

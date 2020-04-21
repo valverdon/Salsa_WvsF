@@ -624,21 +624,21 @@ data.LWw=[data.LWw_AqG;data.LWw_norM];
 %%Ww-R data %
 %%%%%%%%%%%%%
 data.WwR = [ ... % fork length (cm), wet weight (g) (smolts)
-2590	343
-3177	482
-3087	282
-3078	157
-3465	222
-3813	337
-4091	135
-4757	332
-3535	497
-3803	947
-4111	1063
-4201	954];
-units.WwR   = {'g', 'le'};  label.WwR = {'wet weight', 'number of live embryos'};  
-temp.WwR    = C2K(6);  units.temp.WwR = 'K'; label.temp.WwR = 'temperature';
-bibkey.WwR= 'Fleming1996b'; comment.LWw_norM = 'Sunndalsora strain ; T= rough guess';
+2590.46	343.14
+3176.94	482.34
+3087.48	282.12
+3077.53	156.75
+3465.21	221.7
+3813.12	337.01
+4091.45	134.94
+4757.46	332.27
+3534.79	497.27
+3803.18	947.43
+4111.33	1062.94
+4200.8	953.79];
+units.WwR   = {'d', 'g'};  label.LWw_norM = {'time since fertilization', 'wet weight'};  
+temp.LWw_norM    = C2K(12);  units.temp.LWw_norM = 'K'; label.temp.LWw_norM = 'temperature';
+bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (Norway), 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater';
 
 
 %% set weights for all real data

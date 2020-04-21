@@ -23,7 +23,7 @@ function [prdData, info] = predict_Salmo_salar(par, data, auxData)
   TC_Tab = tempcorr(Tab(:,1), T_ref, T_A);
   TC_ap = tempcorr(temp.ap_norire, T_ref, T_A);
   TC_am = tempcorr(temp.am, T_ref, T_A);
-%   TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
+  TC_Ri = tempcorr(temp.WwR, T_ref, T_A);
   TC_tL = tempcorr(temp.tL_iceT11, T_ref, T_A);
   
   % zero-variate data

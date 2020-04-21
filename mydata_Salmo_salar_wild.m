@@ -1787,6 +1787,23 @@ data.WwR = [ ... % wet weight (cm), number of eggs (#)
 units.WwR = {'g', '#'};     label.WwR = {'wet weight', 'number of eggs'};  
 bibkey.WwR = 'Heinimaa2004';    comment.WwR = 'River Teno (Finland/ Norway)';
 
+data.WwR_nor = [ ... % fork length (cm), wet weight (g) (smolts)
+1835	305
+1785	431
+1398	466
+1219	542
+3694	881
+1815	1024
+2252	1273
+2243	1474
+3505	2588
+4618	2448
+4579	3117
+5692	4642];
+units.WwR_nor   = {'g', 'le'};  label.WwR_nor = {'wet weight', 'number of live embryos'};  
+temp.WwR_nor    = C2K(6);  units.temp.WwR_nor = 'K'; label.temp.WwR_nor = 'temperature';
+bibkey.WwR_nor= 'Fleming1996b'; comment.WwR_nor = 'Sunndalsora strain ; T= rough guess';
+
 %% set weights for all real data
 weights = setweights(data, []);
 weights.tL = 3 * weights.tL;
