@@ -26,7 +26,7 @@ estim_options('method', 'nm');
 
 n=100; % number of repetition
 for i=1:n-1
-fprintf('N= ',n,'\n')
+fprintf('Number of 
     estim_pars; 
 
 end

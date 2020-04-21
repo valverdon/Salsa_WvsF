@@ -164,6 +164,7 @@ data.Li  = 111 ;   units.Li  = 'cm';  label.Li  = 'length at puberty'; bibkey.Li
 %%%%%%%%%%%%%%%
 data.V0_norM2011 = 0.111;  units.V0_norM2011 = 'cm^3'; label.V0_norM2011 = 'egg volume'; bibkey.V0_norM2011 = 'Solberg2014';  comment.V0_norM2011 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3)';
 data.V0_norM2012 = 0.121;  units.V0_norM2012 = 'cm^3'; label.V0_norM2012 = 'egg volume'; bibkey.V0_norM2012 = 'Solberg2014';  comment.V0_norM2012 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3)';
+data.V0=(data.V0_norM2011+data.V0_norM2012)/2;
 
 %%%%%%%%%%%%%%%
 %% Egg weight %
@@ -640,6 +641,7 @@ units.WwR   = {'g', 'le'};  label.WwR = {'wet weight', 'number of live embryos'}
 temp.WwR    = C2K(6);  units.temp.WwR = 'K'; label.temp.WwR = 'temperature';
 bibkey.WwR= 'Fleming1996b'; comment.LWw_norM = 'Sunndalsora strain ; T= rough guess';
 
+data.Ri=sum(data.WwR(:,2))/length(data.WwR(:,2));
 
 %% set weights for all real data
 weights = setweights(data, []);

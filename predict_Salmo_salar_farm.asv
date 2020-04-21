@@ -27,7 +27,7 @@ function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
 TC_am = tempcorr(temp.am, T_ref, T_A);
 %   TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
-TC_Ri = tempcorr(temp.WwR, T_ref, T_A); 
+%TC_Ri = tempcorr(C2K(10), T_ref, T_A);  NEED REPROD DATA
 %   TC_tL = tempcorr(temp.tL, T_ref, T_A);
   TC_tL = tempcorr(temp.tL_norM, T_ref, T_A);
   % zero-variate data
