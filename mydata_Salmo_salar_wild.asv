@@ -465,8 +465,9 @@ data.Wwb_Rus = 0.195;   units.Wwb_Rus = 'g';   label.Wwb_Rus = 'wet weight at ha
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at smoltification %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.WwsI = 24;   units.WwsI = 'g';   label.WwsI = 'wet weight at puberty';   bibkey.WwsI = 'Jonsson1998';  comment.WwsI = 'Imsa River (Norway) - mean of 165 individuals from 1983 to 1993 - s.d. = 6.6';
-data.WwsS = 26;   units.WwsS = 'g';   label.WwsS = 'wet weight at puberty';   bibkey.WwsS = 'Jutila2006';  comment.Wws = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 2004';
+data.Wwj = 24;   units.Wwj = 'g';   label.Wwj = 'wet weight at puberty';   bibkey.Wwj = 'Jonsson1998';  comment.Wwj = 'Imsa River (Norway) - mean of 165 individuals from 1983 to 1993 - s.d. = 6.6';
+data.Wwj = 26;   units.Wwj = 'g';   label.Wwj = 'wet weight at puberty';   bibkey.Wwj = 'Jutila2006';  
+  comment.Wwj = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 2004';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%

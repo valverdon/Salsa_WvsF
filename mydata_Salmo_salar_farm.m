@@ -51,7 +51,7 @@ metaData.date_acc    = [2019 04 17];
 %   temp.ah_nor2012V = C2K(6.0);  units.temp.ah_nor2012V = 'K'; label.temp.ah_nor2012V = 'temperature';
 % data.ah_norNSB9 = 53;    units.ah_norNSB9 = 'd';    label.ah_norNSB9 = 'age at hatching';             bibkey.ah_norNSB9 = 'Berg1999';     comment.ah_norNSB9 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
 %   temp.ah_norNSB9 = C2K(9.4);  units.temp.ah_norNSB9 = 'K'; label.temp.ah_norNSB9 = 'temperature';
-% data.ah_norNSB7 = 76;    units.ah_norNSB7 = 'd';    label.ah_norNSB7 = 'age at hatching';             bibkey.ah_norNSB7 = 'Berg1999';     comment.ah_norNSB7 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
+% data.ah_norNSB7 = 76;    units.ah_norNSB7 = 'd';    label.ah_norNSB7 = 'age at hatching';             bibkey.ah_norNSB7 = 'Berg1999';     comment.ah_nor  NSB7 = 'Norwegian Salmon breeders strain(Norway), mean of offsprings time at 50% hatching';
 %   temp.ah_norNSB7 = C2K(7.4);  units.temp.ah_norNSB7 = 'K'; label.temp.ah_norNSB7 = 'temperature';
 
   %%%%%%%%%%%%%%%%%%%%%%%
@@ -59,9 +59,9 @@ metaData.date_acc    = [2019 04 17];
 %%%%%%%%%%%%%%%%%%%%%%%%%
 data.ab_12_AqG = 96;    units.ab_12_AqG = 'd';    label.ab_12_AqG = 'age at birth';             bibkey.ab = 'Handeland2008';     
   temp.ab_12_AqG = C2K(12);  units.temp.ab_12_AqG = 'K'; label.temp.ab_12_AqG = 'temperature';
-  comment.ab_12_AqG = 'AquaGen strain (Norway), calculated from time at birth since hatching (given in the publication = 58) + time to hatch at 12°C from Gunnes (1979)';
+  comment.ab_12_AqG = 'AquaGen strain (Norway), calculated from time at birth since hatching (given in the publication = 58) + time to hatch at 12°C from Gunnes (1979)';%f =1?
 data.ab_norM = 183;    units.ab_norM = 'd';    label.ab_norM = 'age at first feeding';             bibkey.ab_norM = 'Glover2009';     comment.ab_norM = 'Mowi strain';
-  temp.ab_norM = C2K(6);  units.temp.ab_norM = 'K'; label.temp.ab_norM = 'temperature'; label.temp.comment.ab_norM = 'temp=5 as egg, 12 as fry, approx at t=165';
+  temp.ab_norM = C2K(6);  units.temp.ab_norM = 'K'; label.temp.ab_norM = 'temperature'; label.temp.comment.ab_norM = 'temp=5 as egg, 12 as fry, approx at t=165'; %f=1
 
 % data.ah_norB = 52;    units.ah_norB = 'd';    label.ah_norB = 'age at birth';             bibkey.ah_norB = 'Hosfeld2009';     
 %   comment.ah_norB = 'Bolak strain, calculated from time at birth since hatching (given in the publication = 22) and time to hatch calculated at 12°C from data above (!!! extrapolation)';
@@ -70,29 +70,27 @@ data.ab_norM = 183;    units.ab_norM = 'd';    label.ab_norM = 'age at first fee
   %%%%%%%%%%%%%%%%%%%%%%%%%
 %% Age at smoltification % in time since birth
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-data.aj_norM = 551;    units.aj_norM = 'd';    label.aj_norM = 'age at smoltification';             bibkey.aj_norM = 'Glover2009';     comment.aj_norM = 'Mowi strain (time since birth)';
-  temp.aj_norM = C2K(12);  units.temp.aj_norM = 'K'; label.temp.aj_norM = 'temperature'; label.temp.comment.aj_norM = '12°C as fry, age at moving to seawater';
-data.aj_norNBP = 391;    units.aj_norNBP = 'd';    label.aj_norNBP = 'age at smoltification';             bibkey.aj_norNBP = 'Hindar2006';     comment.aj_norNBP = 'National breeding program (time since birth)';
-  temp.aj_norNBP = C2K(10);  units.temp.aj_norNBP = 'K'; label.temp.aj_norNBP = 'temperature'; label.temp.comment.aj_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07*365.25)';
-data.aj_norB = 470;    units.aj_norB = 'd';    label.aj_norB = 'time since hatching at smoltification';             bibkey.aj_norB = 'Hosfeld2009';     comment.aj_norNBP = 'Bolak strain (time since hatching; approximation, smoltification has been accelerated )';
-  temp.aj_norB = C2K(13);  units.temp.aj_norNBP = 'K'; label.temp.aj_norNBP = 'temperature'; label.temp.comment.aj_norNBP = 'T° : 12-14';
+data.as_norM = 551;    units.as_norM = 'd';    label.as_norM = 'age at smoltification';             bibkey.as_norM = 'Glover2009';     comment.as_norM = 'Mowi strain (time since birth), age at moving to seawater';
+  temp.as_norM = C2K(12);  units.temp.as_norM = 'K'; label.temp.as_norM = 'temperature'; label.temp.comment.as_norM = '5°C as egg 12°C as fry, '; %f=1
+data.as_norNBP = 391;    units.as_norNBP = 'd';    label.as_norNBP = 'age at smoltification';             bibkey.as_norNBP = 'Hindar2006';     comment.as_norNBP = 'National breeding program (time since birth)';
+  temp.as_norNBP = C2K(10);  units.temp.as_norNBP = 'K'; label.temp.as_norNBP = 'temperature'; label.temp.comment.as_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07*365.25)'; %natural T°, natural f.
+data.as_norB = 470;    units.as_norB = 'd';    label.as_norB = 'time since hatching at smoltification';             bibkey.as_norB = 'Hosfeld2009';     comment.as_norNBP = 'Bolak strain (time since hatching; approximation, smoltification has been accelerated )';
+  temp.as_norB = C2K(13);  units.temp.as_norNBP = 'K'; label.temp.as_norNBP = 'temperature'; label.temp.comment.as_norNBP = 'T° : 12-14';%f=1
 
-data.aj_ire = 731;    units.aj_ire = 'd';    label.aj_ire = 'age at smoltification';             bibkey.aj_ire = 'Hindar2006';     comment.aj_ire = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
-  temp.aj_ire = C2K(10);  units.temp.aj_ire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.aj_ire = 'T° : rough guess - highly variable temperature throughout life(2+1.93)*365.25';
-data.aj_norM2 = 1164;    units.aj_norM2 = 'd';    label.aj_norM2 = 'age at smoltification';             bibkey.aj_norM2 = 'Skaala2012';     comment.aj_norM2 = 'Mowi strain (time since birth)';
-  temp.aj_norM2 = C2K(10);  units.temp.aj_norM2 = 'K'; label.temp.aj_norM2 = 'temperature'; label.temp.comment.aj_norM2 = 'rough guess';
+data.as_ire = 731;    units.as_ire = 'd';    label.as_ire = 'age at smoltification';             bibkey.as_ire = 'Hindar2006';     comment.as_ire = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
+  temp.as_ire = C2K(10);  units.temp.as_ire = 'K'; label.temp.as_ire = 'temperature'; label.temp.comment.as_ire = 'T° : rough guess - highly variable temperature throughout life(2+1.93)*365.25';%natural T°, natural f.
+data.as_norM2 = 1164;    units.as_norM2 = 'd';    label.as_norM2 = 'age at smoltification';             bibkey.as_norM2 = 'Skaala2012';     comment.as_norM2 = 'Mowi strain (time since birth)';
+  temp.as_norM2 = C2K(10);  units.temp.as_norM2 = 'K'; label.temp.as_norM2 = 'temperature'; label.temp.comment.as_norM2 = 'rough guess';%natural T°, natural f.
 
-% data.aj=
-%arbitrary data exclusion !!! 1st is themore reliable, and second one is
-%for another T°
+
 %%%%%%%%%%%%%%%%%%%%
 %% Age at maturity % (or age at first spawning minus 1 year) in time since birth
 %%%%%%%%%%%%%%%%%%%%data.aj_norNBP = 391;    units.aj_norNBP = 'd';    label.aj_norNBP = 'age at smoltification';             bibkey.aj_norNBP = 'Hindar2006';     comment.aj_norNBP = 'National breeding program (time since birth)';
 data.ap_norNBP = 391;    units.ap_norNBP = 'd';    label.ap_norNBP = 'age at maturity';             bibkey.ap_norNBP = 'Hindar2006';     comment.ap_norNBP = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
-  temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';
+  temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 
  data.ap_norire = 1070;    units.ap_norire = 'd';    label.ap_norire = 'age at maturity';             bibkey.ap_norire = 'Hindar2006';     comment.ap_norire = 'National breeding program (time since birth)';
-  temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';
+  temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';%natural T°, natural f.
 
   %median? list
 data.ap=(data.ap_norNBP+data.ap_norire)/2;
@@ -109,7 +107,7 @@ data.ap=(data.ap_norNBP+data.ap_norire)/2;
 %% Lifespan %(mean or maximum?)
 %%%%%%%%%%%%%
 data.am = 1461;    units.am = 'd';    label.am = 'age at maturity';             bibkey.am = 'Hindar2006';     comment.am = 'National breeding program (time since birth)';
-  temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T° : rough guess - highly variable temperature throughout life(2+2)*365.25';
+  temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T° : rough guess - highly variable temperature throughout life(2+2)*365.25';%natural T°, natural f.
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at hatching %
@@ -119,10 +117,10 @@ data.am = 1461;    units.am = 'd';    label.am = 'age at maturity';             
 %% Length at first feeding %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-data.Lb_NorM2011  = 2.89;   units.Lb_NorM2011  = 'cm';  label.Lb_NorM2011  = 'total length at birth';   bibkey.Lb_NorM2011  = 'Solberg2014';  comment.Lb_NorM2011 = 'parents from Mowi strain (Norway)';
-data.Lb_NorM2012  = 2.81;   units.Lb_NorM2012  = 'cm';  label.Lb_NorM2012  = 'total length at birth';   bibkey.Lb_NorM2012  = 'Solberg2014';  comment.Lb_NorM2012 = 'parents from Mowi strain (Norway)';
-data.Lb_NorM2013  = 2.84;   units.Lb_NorM2013  = 'cm';  label.Lb_NorM2013  = 'total length at birth';   bibkey.Lb_NorM2013  = 'Solberg2014';  comment.Lb_NorM2013 = 'parents from Mowi strain (Norway)';
-data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'total length at birth';   bibkey.Lb_NorS2013  = 'Solberg2014';  comment.Lb_NorS2013 = 'parents from Salmobreed strain (Norway)';
+data.Lb_NorM2011  = 2.89;   units.Lb_NorM2011  = 'cm';  label.Lb_NorM2011  = 'total length at birth';   bibkey.Lb_NorM2011  = 'Solberg2014';  comment.Lb_NorM2011 = 'parents from Mowi strain (Norway)';%T° 3.0-6.9 mean 4.8 ; f?
+data.Lb_NorM2012  = 2.81;   units.Lb_NorM2012  = 'cm';  label.Lb_NorM2012  = 'total length at birth';   bibkey.Lb_NorM2012  = 'Solberg2014';  comment.Lb_NorM2012 = 'parents from Mowi strain (Norway)';%T° 3.0-6.9 mean 4.8 ; f?
+data.Lb_NorM2013  = 2.84;   units.Lb_NorM2013  = 'cm';  label.Lb_NorM2013  = 'total length at birth';   bibkey.Lb_NorM2013  = 'Solberg2014';  comment.Lb_NorM2013 = 'parents from Mowi strain (Norway)';%T° 3.0-6.9 mean 4.8 ; f?
+data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'total length at birth';   bibkey.Lb_NorS2013  = 'Solberg2014';  comment.Lb_NorS2013 = 'parents from Salmobreed strain (Norway)';%T° 3.0-6.9 mean 4.8 ; f?
 
 %test mean
 data.Lb=(data.Lb_NorM2011+data.Lb_NorM2012+data.Lb_NorM2013+data.Lb_NorS2013)/4;
@@ -133,10 +131,9 @@ data.Lb=(data.Lb_NorM2011+data.Lb_NorM2012+data.Lb_NorM2013+data.Lb_NorS2013)/4;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at smoltification %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Lj_finS  = 17.2;   units.Lj_finS  = 'cm';  label.Lj_finS  = 'total length at metamorphosis'; bibkey.Lj_finS  = 'Jokikkoko2006'; comment.Lj_finS = 'Simojoki broodstock (Baltic Sea, Finland) - mean from 1986 to 1992';
-data.Lj_norN  = 16.4;   units.Lj_norN  = 'cm';  label.Lj_norN  = 'total length at metamorphosis'; bibkey.Lj_norN  = 'Jonsson1991'; comment.Lj_norN = 'Nina research station (Norway)';
+data.Ls_finS  = 17.2;   units.Ls_finS  = 'cm';  label.Ls_finS  = 'total length at metamorphosis'; bibkey.Ls_finS  = 'Jokikkoko2006'; comment.Ls_finS = 'Simojoki broodstock (Baltic Sea, Finland) - mean from 1986 to 1992';%T°? hatcheries ; f=1
+data.Ls_norN  = 16.4;   units.Ls_norN  = 'cm';  label.Ls_norN  = 'total length at metamorphosis'; bibkey.Ls_norN  = 'Jonsson1991'; comment.Ls_norN = 'Nina research station (Norway)';%T°? hatcheries ; f=1
 
-data.Lj=(data.Lj_finS+data.Lj_norN)/2;
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at maturity % (or 1 year before first spawning)
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -149,33 +146,33 @@ data.Lj=(data.Lj_finS+data.Lj_norN)/2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at 1st spawning %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Lp_norSf  = 55.4 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSf  = 'Fleming1996b';   comment.Lp_norSf = 'mean females at spawning, Sunndalsøra strain (Canada)';
-data.Lp_norSm  = 57.5 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, Sunndalsøra strain (Canada)';
-data.Lp_norN  = 61.6 ;   units.Lp_norN  = 'cm';  label.Lp_norN  = 'length at puberty'; bibkey.Lp_norN = 'Jonsson1991';   comment.Lp_norN = 'Nina research station (Norway)';
+data.Lp_norSf  = 55.4 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSf  = 'Fleming1996b';   comment.Lp_norSf = 'mean females at spawning, Sunndalsøra strain (Canada)'; %T? f?
+data.Lp_norSm  = 57.5 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, Sunndalsøra strain (Canada)';%T? f?
+data.Lp_norN  = 61.6 ;   units.Lp_norN  = 'cm';  label.Lp_norN  = 'length at puberty'; bibkey.Lp_norN = 'Jonsson1991';   comment.Lp_norN = 'Nina research station (Norway)'; %T = hatcheries for fries, natural from smolt  f=1
 
 data.Lp=(data.Lp_norSf+data.Lp_norSm+data.Lp_norN)/3;
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Max length %
 %%%%%%%%%%%%%%%%%%%%%%%
-data.Li  = 111 ;   units.Li  = 'cm';  label.Li  = 'length at puberty'; bibkey.Li = 'Jonsson1991';   comment.Li = 'Multiple farmed strains, max of escaped individuals recaptured';
+data.Li  = 111 ;   units.Li  = 'cm';  label.Li  = 'length at puberty'; bibkey.Li = 'Jonsson1991';   comment.Li = 'Multiple farmed strains, max of escaped individuals recaptured'; %natural T° and f
 
   %%%%%%%%%%%%%
 %% Egg volume %
 %%%%%%%%%%%%%%%
-data.V0_norM2011 = 0.111;  units.V0_norM2011 = 'cm^3'; label.V0_norM2011 = 'egg volume'; bibkey.V0_norM2011 = 'Solberg2014';  comment.V0_norM2011 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3)';
-data.V0_norM2012 = 0.121;  units.V0_norM2012 = 'cm^3'; label.V0_norM2012 = 'egg volume'; bibkey.V0_norM2012 = 'Solberg2014';  comment.V0_norM2012 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3)';
+data.V0_norM2011 = 0.111;  units.V0_norM2011 = 'cm^3'; label.V0_norM2011 = 'egg volume'; bibkey.V0_norM2011 = 'Solberg2014';  comment.V0_norM2011 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3)';%T=natural f=1
+data.V0_norM2012 = 0.121;  units.V0_norM2012 = 'cm^3'; label.V0_norM2012 = 'egg volume'; bibkey.V0_norM2012 = 'Solberg2014';  comment.V0_norM2012 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3)';%T=natural f=1
 data.V0=(data.V0_norM2011+data.V0_norM2012)/2;
 
 %%%%%%%%%%%%%%%
 %% Egg weight %
 %%%%%%%%%%%%%%%
-data.Ww0_norM = 0.144; units.Ww0_norM = 'cm^3'; label.Ww0_norM = 'egg weight'; bibkey.Ww0_norM = 'Glover2009'; comment.Ww0_norM= 'Mowi strain';
-data.Ww0_norM = 0.144; units.Ww0_norM = 'cm^3'; label.Ww0_norM = 'egg weight'; bibkey.Ww0_norM = 'Skaala2012'; comment.Ww0_norM= 'Mowi strain';
+data.Ww0_norM = 0.144; units.Ww0_norM = 'g'; label.Ww0_norM = 'egg weight'; bibkey.Ww0_norM = 'Glover2009'; comment.Ww0_norM= 'Mowi strain'; % T=farming conditions f=1
+data.Ww0_norM2 = 0.144; units.Ww0_norM = 'g'; label.Ww0_norM = 'egg weight'; bibkey.Ww0_norM = 'Skaala2012'; comment.Ww0_norM= 'Mowi strain';% T=farming conditions f=1
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at hatching %
 %%%%%%%%%%%%%%%%%%%%%%%
-data.Wwh_norM = 0.144; units.Wwh_norM = 'cm^3'; label.Wwh_norM = 'egg weight'; bibkey.Wwh_norM = 'Glover2009'; comment.Wwh_norM= 'Mowi strain';
+% data.Wwh_norM = 0.144; units.Wwh_norM = 'g'; label.Wwh_norM = 'egg weight'; bibkey.Wwh_norM = 'Glover2009'; comment.Wwh_norM= 'Mowi strain';
 %considering weight doesnt change between 0 and h
 
 
@@ -186,7 +183,7 @@ data.Wwh_norM = 0.144; units.Wwh_norM = 'cm^3'; label.Wwh_norM = 'egg weight'; b
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at smoltification %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Wwj_nor = 22;   units.Wwj_nor = 'g';   label.Wwj_nor = 'wet weight at smoltification';   bibkey.Wwj_nor = 'Skaala2012';   comment.Wwj_nor = 'Mowi strain (Norway)';
+data.Wws_nor = 22;   units.Wws_nor = 'g';   label.Wws_nor = 'wet weight at smoltification';   bibkey.Wws_nor = 'Skaala2012';   comment.Wws_nor = 'Mowi strain (Norway)';%T=natural f=natural
 
 
 
@@ -196,20 +193,20 @@ data.Wwj_nor = 22;   units.Wwj_nor = 'g';   label.Wwj_nor = 'wet weight at smolt
 
 % need calculation
 % data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at puberty';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_nor_norf = 'Sunndalsøra strain (Norway), mean of females at spawning';
-% data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_nor_norm = 'Sunndalsøra strain (Norway), mean of females at spawning';
+% data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_nor_norm = 'Sunndalsøra strain (Norway), mean of males at spawning';
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at spawning %
 %%%%%%%%%%%%%%%%%%%%%%%
-data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at puberty';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_norf = 'Sunndalsøra strain (Norway), mean of females at spawning';
-data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_norm = 'Sunndalsøra strain (Norway), mean of females at spawning';
+data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at puberty';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_norf = 'Sunndalsøra strain (Norway), mean of females at spawning';%T? f?
+data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_norm = 'Sunndalsøra strain (Norway), mean of females at spawning';%T? f?
 
 
 %%%%%%%%%%%%%%
 %%max weight %
 %%%%%%%%%%%%%%
 
-data.Wwi_norM = 14000;   units.Wwi_norM = 'g';   label.Wwi_norM = 'maximum wet weight';   bibkey.Wwi_norM = 'Skaala2012';   comment.Wwi_norM = 'Mowi strain (Norway), max of female spawners';
+data.Wwi_norM = 14000;   units.Wwi_norM = 'g';   label.Wwi_norM = 'maximum wet weight';   bibkey.Wwi_norM = 'Skaala2012';   comment.Wwi_norM = 'Mowi strain (Norway), max of female spawners';%T=natural f=natural
 
 
 
@@ -225,6 +222,9 @@ data.Wwi_norM = 14000;   units.Wwi_norM = 'g';   label.Wwi_norM = 'maximum wet w
 %% Maximum reproductive rate %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+data.Ri=1063; units.Ri = '-';   label.Ri = 'number of live embryos';   bibkey.Ri = 'Fleming1996b';   comment.Ri = 'Sunndalsøra strain (Norway); T= rough guess';% f?
+temp.Ri= C2K(6); units.temp.Ri = 'K'; label.temp.Ri = 'temperature';
+
 %% uni-variate data
 
 %% T-ah data
@@ -236,13 +236,13 @@ data.Tah = [ ... % temperature (Â°C), age at hatching (d)
 12 453/12];
 data.Tah(:,1)=C2K(data.Tah(:,1));
 units.Tah   = {'K', 'd'};  label.Tah = {'temperature', 'age at hatching'}; 
-bibkey.Tah = 'Gunnes1979'; comment.Tah = 'Norwegian strain (wild or domestic?)';
+bibkey.Tah = 'Gunnes1979'; comment.Tah = 'Norwegian strain (wild or domestic?)';%f=1
 
 %% T-ab data
 
-data.Tab = [...
-    temp.ab_12_AqG , data.ab_12_AqG ;
-    temp.ab_norM , data.ab_norM ];
+% data.Tab = [...
+%     temp.ab_12_AqG , data.ab_12_AqG ;
+%     temp.ab_norM , data.ab_norM ];
 
 %% t-L data
 
@@ -267,7 +267,7 @@ data.tL_iceT11 = [ ... %time since fertilization (d) approximation, fork length 
 596	23.3];
 units.tL_iceT11  = {'d', 'g'};  label.tL_iceT11 = {'time since fertilization', 'wet weight'};  
 temp.tL_iceT11    = C2K(11);  units.temp.tL_iceT11 = 'K'; label.temp.tL_iceT11 = 'temperature';
-bibkey.tL_iceT11 = 'Bjornsson1989'; comment.tL_iceT11 = 'Vididalsa strain, 1st half has 5 lux nightlight, start of experiment 1st december with 0+ parr';
+bibkey.tL_iceT11 = 'Bjornsson1989'; comment.tL_iceT11 = 'Vididalsa strain, 1st half has 5 lux nightlight, start of experiment 1st december with 0+ parr';%T constant, f=1
 
 
 data.tL_iceT611 = [ ... %time since fertilization (d) approximation, fork length (cm)
@@ -292,6 +292,7 @@ data.tL_iceT611 = [ ... %time since fertilization (d) approximation, fork length
 units.tL_iceT611  = {'d', 'g'};  label.tL_iceT611 = {'time since fertilization', 'wet weight'};  
 temp.tL_iceT611    = C2K(8.5);  units.temp.tL_iceT611 = 'K'; label.temp.tL_iceT611 = 'temperature';
 bibkey.tL_iceT611 = 'Bjornsson1989'; comment.tL_iceT611 = 'Vididalsa strain, 1st half has 5 lux nightlight; T°=6°C from t=360 to t=510, then T°=11°C, start of experiment 1st december with 0+ parr';
+%T°=6°C from t=360 to t=510 then T°=11°C ; f=1
 
 data.tL_ice1mw = [ ... %time since fertilization (d) approximation, fork length (cm)
 362	13.2
@@ -302,6 +303,7 @@ data.tL_ice1mw = [ ... %time since fertilization (d) approximation, fork length 
 units.tL_ice1mw  = {'d', 'g'};  label.tL_ice1mw = {'time since fertilization', 'wet weight'};  
 temp.tL_ice1mw    = C2K(5);  units.temp.tL_ice1mw = 'K'; label.temp.tL_ice1mw = 'temperature';
 bibkey.tL_ice1mw = 'Bjornsson1989'; comment.tL_ice1mw = 'Vididalsa, 1 month winter light; T°=guess, start of experiment 1st december with 0+ parr';
+%f=1
 
 data.tL_ice3mw = [ ... %time since fertilization (d) approximation, fork length (cm)
 362	13.2
@@ -312,6 +314,8 @@ data.tL_ice3mw = [ ... %time since fertilization (d) approximation, fork length 
 units.tL_ice3mw  = {'d', 'g'};  label.tL_ice3mw = {'time since fertilization', 'wet weight'};  
 temp.tL_ice3mw    = C2K(6);  units.temp.tL_ice3mw = 'K'; label.temp.tL_ice3mw = 'temperature';
 bibkey.tL_ice3mw = 'Bjornsson1989'; comment.tL_ice3mw = 'Vididalsa, 3 month winter light; T°=guess, start of experiment 1st december with 0+ parr';
+%f=1
+
 
 data.tL_ice5mw = [ ... %time since fertilization (d) approximation, fork length (cm)
 362	13.1
@@ -326,6 +330,7 @@ data.tL_ice5mw = [ ... %time since fertilization (d) approximation, fork length 
 units.tL_ice5mw  = {'d', 'g'};  label.tL_ice5mw = {'time since fertilization', 'wet weight'};  
 temp.tL_ice5mw    = C2K(7);  units.temp.tL_ice5mw = 'K'; label.temp.tL_ice5mw = 'temperature';
 bibkey.tL_ice5mw = 'Bjornsson1989'; comment.tL_ice5mw = 'Vididalsa, 5 month winter light; T°=guess (range=3-10.5°C), start of experiment 1st december with 0+ parr';
+%f=1
 
 
 data.tL_norM = [ ... %time since fertilization (d) approximation, fork length (cm)
@@ -339,7 +344,8 @@ data.tL_norM = [ ... %time since fertilization (d) approximation, fork length (c
 1042	76.96];
 units.tL_norM  = {'d', 'g'};  label.tL_norM = {'time since fertilization', 'wet weight'};  
 temp.tL_norM    = C2K(12);  units.temp.tL_norM = 'K'; label.temp.tL__ice5mw = 'temperature';
-bibkey.tL_norM = 'Glover2009'; comment.tL_norM = 'Mowi strain, 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater';
+bibkey.tL_norM = 'Glover2009'; comment.tL_norM = 'Mowi strain, 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater, classical rearing (fresh then seawater)';
+%f=1
 
 data.tL=[data.tL_iceT11 ; data.tL_iceT611 ; data.tL_ice1mw ; data.tL_ice3mw ; data.tL_ice5mw ; data.tL_norM];
 
@@ -355,7 +361,7 @@ data.tWwe_norT12 = [ ... % time since fertilization (d), wet weight (g) at 12Â°C
 63 0.1276];
 units.tWwe_norT12   = {'d', 'g'};  label.tWwe_norT12 = {'time since fertilization', 'wet weight'};  
 temp.tWwe_norT12    = C2K(12);  units.temp.tWwe_norT12 = 'K'; label.temp.tWwe_norT12 = 'temperature';
-bibkey.tWwe_norT12 = 'Gunnes1979'; comment.tWwe_norT12 = 'Norwegian strain ';
+bibkey.tWwe_norT12 = 'Gunnes1979'; comment.tWwe_norT12 = 'Norwegian strain '; %f=1
 
 data.tWwe_T10 = [ ... % time since fertilization (d), wet weight (g) at 10Â°C
 38 0.1036
@@ -367,7 +373,7 @@ data.tWwe_T10 = [ ... % time since fertilization (d), wet weight (g) at 10Â°C
 63 0.1592];
 units.tWwe_T10   = {'d', 'g'};  label.tWwe_T10 = {'time since fertilization', 'wet weight'};  
 temp.tWwe_T10    = C2K(10);  units.temp.tWwe_T10 = 'K'; label.temp.tWwe_T10 = 'temperature';
-bibkey.tWwe_T10 = 'Gunnes1979'; comment.tWwe_T10 = 'Norwegian domestic strain';
+bibkey.tWwe_T10 = 'Gunnes1979'; comment.tWwe_T10 = 'Norwegian domestic strain';%f=1
 
 data.tWwe_T8 = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 38 0.0988
@@ -379,12 +385,13 @@ data.tWwe_T8 = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 63 0.1255];
 units.tWwe_T8   = {'d', 'g'};  label.tWwe_T8 = {'time since fertilization', 'wet weight'};  
 temp.tWwe_T8    = C2K(8);  units.temp.tWwe_T8 = 'K'; label.temp.tWwe_T8 = 'temperature';
-bibkey.tWwe_T8 = 'Gunnes1979'; comment.tWwe_T8 = 'Norwegian domestic strain';
+bibkey.tWwe_T8 = 'Gunnes1979'; comment.tWwe_T8 = 'Norwegian domestic strain';%f=1
 
+data.tWwe=[data.tWwe_norT12;data.tWwe_T10;data.tWwe_T8];
 
 
 %% t-W data in juveniles
-data.tWw_norM = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
+data.tWw_norM = [ ... % time since fertilization (d)
 518	75.27
 722	978.49
 959	2358.42
@@ -394,10 +401,10 @@ data.tWw_norM = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 947	4252.69
 1042	6259.86];
 units.tWw_norM   = {'d', 'g'};  label.tWw_norM = {'time since fertilization', 'wet weight'};  
-bibkey.tWw_norM = 'Glover2009'; comment.tWw_norM = 'Mowi strain, 2 different experience data';
+bibkey.tWw_norM = 'Glover2009'; comment.tWw_norM = 'Mowi strain, 2 different experience data';%f=1 T=5°C for incubation, then 12°C
 
 
-data.tWw_norB = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
+data.tWw_norB = [ ... % time since fertilization (d)
 365	71.94
 410	86.72
 425	89.51
@@ -407,9 +414,9 @@ data.tWw_norB = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 534	172.56
 580	243.63];
 units.tWw_norB   = {'d', 'g'};  label.tWw_norB = {'time since birth', 'wet weight'};  
-bibkey.tWw_norB = 'Hosfeld2009'; comment.tWw_norB = 'Bolak strain, 2 different experience data';
+bibkey.tWw_norB = 'Hosfeld2009'; comment.tWw_norB = 'Bolak strain, 2 different experience data';%f=1 T= 12-14
 
-data.tWw_OF = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
+data.tWw_OF = [ ... % time since fertilization (d)
 571	451.9
 605	470.4
 634	563.0
@@ -417,7 +424,7 @@ data.tWw_OF = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 690	695.4
 716	803.7];
 units.tWw_OF   = {'d', 'g'};  label.tWw_OF = {'time since birth', 'wet weight'};  
-bibkey.tWw_OF = 'Thorpe1990'; comment.tWw_OF = 'Otter ferry strain, 2 different experience data';
+bibkey.tWw_OF = 'Thorpe1990'; comment.tWw_OF = 'Otter ferry strain, 2 different experience data';%f different for each point, T=ambient (measured)
 
 %% t-W data in seawater
 
@@ -428,7 +435,7 @@ data.tWw_T4_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) a
 90 83.3];
 units.tWw_T4_Mow   = {'d', 'g'};  label.tWw_T4_Mow = {'time since metamorphosis', 'wet weight'};  
 temp.tWw_T4_Mow    = C2K(4);  units.temp.tWw_T4_Mow = 'K'; label.temp.tWw_T4 = 'temperature';
-bibkey.tWw_T4_Mow = 'Handeland1998'; comment.tWw_T4_Mow = 'Mowi strain, mean of S=28 and S= 34';
+bibkey.tWw_T4_Mow = 'Handeland1998'; comment.tWw_T4_Mow = 'Mowi strain, mean of S=28 and S= 34';%f=1
 
 data.tWw_T8_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) at 8Â°C
 -26 54.6
@@ -437,7 +444,7 @@ data.tWw_T8_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) a
 90 135.2];
 units.tWw_T8_Mow   = {'d', 'g'};  label.tWw_T8_Mow = {'time since metamorphosis', 'wet weight'};  
 temp.tWw_T8_Mow   = C2K(8);  units.temp.tWw_T8_Mow = 'K'; label.temp.tWw_T8_Mow = 'temperature';
-bibkey.tWw_T8_Mow = 'Handeland1998'; comment.tWw_T8_Mow = 'Mowi strain,mean of S=28 and S=34';
+bibkey.tWw_T8_Mow = 'Handeland1998'; comment.tWw_T8_Mow = 'Mowi strain,mean of S=28 and S=34';%f=1
 
 data.tWw_T6_AqG = [ ... % time since transfer to seawater (d), wet weight (g) at 6Â°C
 0	75.2
@@ -449,7 +456,7 @@ data.tWw_T6_AqG = [ ... % time since transfer to seawater (d), wet weight (g) at
 84	153.8];
 units.tWw_T6_AqG   = {'d', 'g'};  label.tWw_T6_AqG = {'time since metamorphosis', 'wet weight'};  
 temp.tWw_T6_AqG   = C2K(6);  units.temp.tWw_T6_AqG = 'K'; label.temp.tWw_T6 = 'temperature';
-bibkey.tWw_T6_AqG = 'Handeland2008'; comment.tWw_T6_AqG = 'AquaGen domestic strain';
+bibkey.tWw_T6_AqG = 'Handeland2008'; comment.tWw_T6_AqG = 'AquaGen domestic strain';%f=1
 
 data.tWw_T10_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 10Â°C
 0	74.5
@@ -461,7 +468,7 @@ data.tWw_T10_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at
 84	264.9];
 units.tWw_T10_AqG   = {'d', 'g'};  label.tWw_T10_AqG = {'time since metamorphosis', 'wet weight'};  
 temp.tWw_T10_AqG   = C2K(10);  units.temp.tWw_T10_AqG = 'K'; label.temp.tWw_T10_AqG = 'temperature';
-bibkey.tWw_T10_AqG = 'Handeland2008'; comment.tWw_T10_AqG = 'AquaGen domestic strain';
+bibkey.tWw_T10_AqG = 'Handeland2008'; comment.tWw_T10_AqG = 'AquaGen domestic strain';%f=1
   
 data.tWw_T14_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 14Â°C
 0	74.5
@@ -473,7 +480,7 @@ data.tWw_T14_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at
 84	298.2];
 units.tWw_T14_AqG   = {'d', 'g'};  label.tWw_T14_AqG = {'time since metamorphosis', 'wet weight'};  
 temp.tWw_T14_AqG   = C2K(14);  units.temp.tWw_T14_AqG = 'K'; label.temp.tWw_T14_AqG = 'temperature';
-bibkey.tWw_T14_AqG = 'Handeland2008'; comment.tWw_T14v = 'AquaGen domestic strain';
+bibkey.tWw_T14_AqG = 'Handeland2008'; comment.tWw_T14v = 'AquaGen domestic strain';%f=1
 
 data.tWw_T18_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 18Â°C
 0	76.6
@@ -485,7 +492,7 @@ data.tWw_T18_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at
 84	252.9];
 units.tWw_T18_AqG   = {'d', 'g'};  label.tWw_T18_AqG = {'time since metamorphosis', 'wet weight'};  
 temp.tWw_T18_AqG   = C2K(18);  units.temp.tWw_T18_AqG = 'K'; label.temp.tWw_T18_AqG = 'temperature';
-bibkey.tWw_T18_AqG = 'Handeland2008'; comment.tWw_T18_AqG = 'AquaGen domestic strain';
+bibkey.tWw_T18_AqG = 'Handeland2008'; comment.tWw_T18_AqG = 'AquaGen domestic strain';%f=1
 
 data.tWw_starv = [ ... % time (d), wet weight (g) during starvation
 480  81.9
@@ -494,9 +501,9 @@ data.tWw_starv = [ ... % time (d), wet weight (g) during starvation
 522  72.9];
 units.tWw_starv   = {'d', 'g'};  label.tWw_starv = {'time since first feeding', 'wet weight'};  
 temp.tWw_starv    = C2K(10);  units.temp.tWw_starv = 'K'; label.temp.tWw_starv = 'temperature';
-bibkey.tWw_starv = 'ElMowafi1997'; comment.tWw_starv = 'probably a domestic strain';
+bibkey.tWw_starv = 'ElMowafi1997'; comment.tWw_starv = 'probably a domestic strain';%f=1 before, f=0 during experiment.
 
-data.tWw_norS = [ ... % time (d), wet weight (g) during starvation
+data.tWw_norS = [ ... % time (d), wet weight (g)
 7	0.16
 35	0.27
 62	0.48
@@ -506,7 +513,7 @@ data.tWw_norS = [ ... % time (d), wet weight (g) during starvation
 175	15.57
 203	28.34];
 units.tWw_norS   = {'d', 'g'};  label.tWw_norS = {'time since first feeding', 'wet weight'};  
-bibkey.tWw_norS = 'Storebakken1987'; comment.tWw_norS = 'Sunndalsora strain, ad lib';
+bibkey.tWw_norS = 'Storebakken1987'; comment.tWw_norS = 'Sunndalsora strain, ad lib';%t=ambient (measured) f=1
 
 data.tWw_norS75 = [ ... % time (d), wet weight (g) during starvation
 7	0.16
@@ -518,7 +525,7 @@ data.tWw_norS75 = [ ... % time (d), wet weight (g) during starvation
 175	9.86
 203	19.12];
 units.tWw_norS75   = {'d', 'g'};  label.tWw_norS75 = {'time since first feeding', 'wet weight'};  
-bibkey.tWw_norS75 = 'Storebakken1987'; comment.tWw_norS75 = 'Sunndalsora strain, starving 75%';
+bibkey.tWw_norS75 = 'Storebakken1987'; comment.tWw_norS75 = 'Sunndalsora strain, starving 75%';%t=ambient (measured) f=0.75
 
 data.tWw_norS50 = [ ... % time (d), wet weight (g) during starvation
 7	0.16
@@ -530,7 +537,7 @@ data.tWw_norS50 = [ ... % time (d), wet weight (g) during starvation
 175	5.06
 203	9.91];
 units.tWw_norS50   = {'d', 'g'};  label.tWw_norS50 = {'time since first feeding', 'wet weight'};  
-bibkey.tWw_norS50 = 'Storebakken1987'; comment.tWw_norS50 = 'Sunndalsora strain, starving 50%';
+bibkey.tWw_norS50 = 'Storebakken1987'; comment.tWw_norS50 = 'Sunndalsora strain, starving 50%';%t=ambient (measured) f=0.5
 
 
 %% t-JX
@@ -546,7 +553,7 @@ data.tJX_6_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g/
 84	1.09];
 units.tJX_6_AqG = {'d', 'g/gfish'};  label.tJX_6_AqG = {'time since tranfer to seawater', 'ingestion rate'};  
 temp.tJX_6_AqG    = C2K(6);  units.temp.tJX_6_AqG = 'K'; label.temp.tJX_6_AqG = 'temperature';
-bibkey.tJX_6_AqG = 'Handeland2008'; comment.tJX_6_AqG = 'AquaGen strain, Energy content of commercial feed unknown';
+bibkey.tJX_6_AqG = 'Handeland2008'; comment.tJX_6_AqG = 'AquaGen strain, Energy content of commercial feed unknown';%f=1
 
 data.tJX_10_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g/gfish), at 6°C
 0	0.02
@@ -560,7 +567,7 @@ data.tJX_10_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g
 84	1.8];
 units.tJX_10_AqG = {'d', 'g/gfish'};  label.tJX_10_AqG = {'time since tranfer to seawater', 'ingestion rate'};  
 temp.tJX_10_AqG    = C2K(10);  units.temp.tJX_10_AqG = 'K'; label.temp.tJX_10_AqG = 'temperature';
-bibkey.tJX_10_AqG = 'Handeland2008'; comment.tJX_10_AqG = 'AquaGen strain, Energy content of commercial feed unknown';
+bibkey.tJX_10_AqG = 'Handeland2008'; comment.tJX_10_AqG = 'AquaGen strain, Energy content of commercial feed unknown';%f=1
 
 data.tJX_14_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g/gfish), at 6°C
 0	0.24
@@ -574,7 +581,7 @@ data.tJX_14_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g
 84	2.23];
 units.tJX_14_AqG = {'d', 'g/gfish'};  label.tJX_14_AqG = {'time since tranfer to seawater', 'ingestion rate'};  
 temp.tJX_14_AqG    = C2K(14);  units.temp.tJX_14_AqG = 'K'; label.temp.tJX_14_AqG = 'temperature';
-bibkey.tJX_14_AqG = 'Handeland2008'; comment.tJX_14_AqG = 'AquaGen strain, Energy content of commercial feed unknown';
+bibkey.tJX_14_AqG = 'Handeland2008'; comment.tJX_14_AqG = 'AquaGen strain, Energy content of commercial feed unknown';%f=1
 
 data.tJX_18_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g/gfish), at 6°C
 0	0.26
@@ -588,7 +595,7 @@ data.tJX_18_AqG = [ ... % time since tranfer to seawater (d) , food ingestion (g
 84	1.22];
 units.tJX_18_AqG = {'d', 'g/gfish'};  label.tJX_18_AqG = {'time since tranfer to seawater', 'ingestion rate'};  
 temp.tJX_18_AqG    = C2K(18);  units.temp.tJX_18_AqG = 'K'; label.temp.tJX_18_AqG = 'temperature';
-bibkey.tJX_18_AqG = 'Handeland2008'; comment.tJX_18_AqG = 'AquaGen strain, Energy content of commercial feed unknown';
+bibkey.tJX_18_AqG = 'Handeland2008'; comment.tJX_18_AqG = 'AquaGen strain, Energy content of commercial feed unknown';%f=1
 
 
 
@@ -599,7 +606,7 @@ data.LWw_AqG = [ ... % fork length (cm), wet weight (g) (smolts)
 19.25 87.8
 20.37 93.8];
 units.LWw_AqG = {'cm', 'g'};     label.LWw_AqG = {'total length', 'wet weight'}; 
-bibkey.LWw_AqG = 'Handeland2008'; comment.LWw_AqG = 'AquaGen strain, during smoltification';
+bibkey.LWw_AqG = 'Handeland2008'; comment.LWw_AqG = 'AquaGen strain, during smoltification';%f=1
 
 data.LWw_norM = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 17.87	75.27
@@ -612,7 +619,7 @@ data.LWw_norM = [ ... % time since fertilization (d), wet weight (g) at 8Â°C
 76.96	6259.86];
 units.LWw_norM   = {'d', 'g'};  label.LWw_norM = {'time since fertilization', 'wet weight'};  
 temp.LWw_norM    = C2K(12);  units.temp.LWw_norM = 'K'; label.temp.LWw_norM = 'temperature';
-bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (Norway), 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater';
+bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (Norway), 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater';%f=1
 
 data.LWw=[data.LWw_AqG;data.LWw_norM];
 
@@ -646,6 +653,49 @@ data.Ri=sum(data.WwR(:,2))/length(data.WwR(:,2));
 %% set weights for all real data
 weights = setweights(data, []);
 % weights.tL = 3 * weights.tL;
+weights.ab_12_AqG = weights.ab_12_AqG/2;
+weights.ab_norM = weights.ab_norM/2;
+weights.ap_norNBP=weights.ap_norNBP/2;
+weights.ap_norire=weights.ap_norire/2;
+weights.Lb_NorM2011 = weights.Lb_NorM2011/4;
+weights.Lb_NorM2012 = weights.Lb_NorM2012/4;
+weights.Lb_NorM2013 = weights.Lb_NorM2013/4;
+weights.Lb_NorS2013 = weights.Lb_NorS2013/4;
+weights.Ls_finS = weights.Ls_finS/2;
+weights.Ls_norN = weights.Ls_norN/2;
+weights.Lp_norSf = weights.Lp_norSf/3;
+weights.Lp_norSm = weights.Lp_norSm/3;
+weights.Lp_norN = weights.Lp_norN/3;
+weights.V0_norM2011 = weights.V0_norM2011/2;
+weights.V0_norM2012 = weights.V0_norM2012/2;
+weights.Ww0_norM = weights.Ww0_norM/2;
+weights.Ww0_norM2 = weights.Ww0_norM2/2;
+weights.Wwp_norf = weights.Wwp_norf/2;
+weights.Wwp_norm = weights.Wwp_norm/2;
+weights.tL_iceT11 = weights.tL_iceT11/6;
+weights.tL_iceT611 = weights.tL_iceT611/6;
+weights.tL_ice1mw = weights.tL_ice1mw/6;
+weights.tL_ice3mw = weights.tL_ice3mw/6;
+weights.tL_ice5mw = weights.tL_ice5mw/6;
+weights.tL_norM = weights.tL_norM/6;
+weights.tWwe_norT12 = weights.tWwe_norT12/16;
+weights.tWwe_T10 = weights.tWwe_T10/16;
+weights.tWwe_T8 = weights.tWwe_T8/16;
+weights.tWw_norM = weights.tWw_norM/16;
+weights.tWw_norB = weights.tWw_norB/16;
+weights.tWw_OF = weights.tWw_OF/16;
+weights.tWw_T4_Mow = weights.tWw_T4_Mow/16;
+weights.tWw_T8_Mow = weights.tWw_T8_Mow/16;
+weights.tWw_T6_AqG = weights.tWw_T6_AqG/16;
+weights.tWw_T10_AqG = weights.tWw_T10_AqG/16;
+weights.tWw_T14_AqG = weights.tWw_T14_AqG/16;
+weights.tWw_T18_AqG = weights.tWw_T18_AqG/16;
+weights.tWw_starv = weights.tWw_starv/16;
+weights.tWw_norS = weights.tWw_norS/16;
+weights.tWw_norS75 = weights.tWw_norS75/16;
+weights.tWw_norS50 = weights.tWw_norS50/16;
+weights.LWw_AqG = weights.LWw_AqG/16;
+weights.LWw_norM = weights.LWw_norM/16;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
