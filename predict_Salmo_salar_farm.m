@@ -288,7 +288,7 @@ TC_Ri = tempcorr(temp.WwR, T_ref, T_A);
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
   L_bj = L_b * exp(tL_ice3mw(tL_ice3mw(:,1) < tT_j,1) * rT_j/3); % cm, struc length
   L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_ice3mw(tL_ice3mw(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_tL_ice3mw = [L_bj; L_ji]/ del_M; % cm, total length
+  ELw_ice3mw = [L_bj; L_ji]/ del_M; % cm, total length
 
    TC_tL_ice5mw = tempcorr(temp.tL_ice3mw, T_ref, T_A);
   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
@@ -302,7 +302,7 @@ TC_Ri = tempcorr(temp.WwR, T_ref, T_A);
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
   L_bj = L_b * exp(tL_ice5mw(tL_ice5mw(:,1) < tT_j,1) * rT_j/3); % cm, struc length
   L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_ice5mw(tL_ice5mw(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_tL_ice5mw = [L_bj; L_ji]/ del_M; % cm, total length
+  ELw_ice5mw = [L_bj; L_ji]/ del_M; % cm, total length
 
   TC_tL_norM = tempcorr(temp.tL_norM, T_ref, T_A);
   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
@@ -316,7 +316,7 @@ TC_Ri = tempcorr(temp.WwR, T_ref, T_A);
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
   L_bj = L_b * exp(tL_norM(tL_norM(:,1) < tT_j,1) * rT_j/3); % cm, struc length
   L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norM(tL_norM(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_tL_norM = [L_bj; L_ji]/ del_M; % cm, total length
+  ELw_norM = [L_bj; L_ji]/ del_M; % cm, total length
 
   
   % length-weight   %%%%
