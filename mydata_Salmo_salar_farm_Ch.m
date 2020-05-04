@@ -242,106 +242,122 @@ bibkey.Tah_Berg1999 = 'Berg1999'; comment.Tah_Berg1999 = 'Norwegian Salmon breed
 
 %% t-L data
 
-data.tL_iceT11 = [ ... %time since fertilization (d) approximation, fork length (cm)
-362	13.2
-398	13.7
-433	14.4
-466	15.2
-500	17.0
-532	18.9
-558	20.0
-572	20.8
-596	22.9
-362	13.2
-398	13.7
-434	14.3
-465	15.2
-500	16.9
-532	18.9
-557	20.3
-572	22.3
-596	23.3];
-units.tL_iceT11  = {'d', 'g'};  label.tL_iceT11 = {'time since fertilization', 'wet weight'};  
+data.tL_iceT11 = [ ... % time (d), fork length (cm)
+    0   13.2
+   36   13.7
+   71   14.4
+  104   15.2
+  138   17.0
+  170   18.9
+  196   20.0
+  210   20.8
+  234   22.9
+    0   13.2
+   36   13.7
+   72   14.3
+  103   15.2
+  138   16.9
+  170   18.9
+  195   20.3
+  210   22.3
+  234   23.3];
+units.tL_iceT11  = {'d', 'g'};  label.tL_iceT11 = {'time', 'wet weight'};  
 temp.tL_iceT11    = C2K(11);  units.temp.tL_iceT11 = 'K'; label.temp.tL_iceT11 = 'temperature';
 bibkey.tL_iceT11 = 'Bjornsson1989'; comment.tL_iceT11 = 'Vididalsa strain, 1st half has 5 lux nightlight, start of experiment 1st december with 0+ parr';%T constant, f=1
 
+data.tL_iceT611 = [ ... %time (d), fork length (cm)
+  0	12.8
+ 36	13.7
+ 73	13.8
+104	13.9
+139	14.3
+171	16.0
+197	17.1
+211	17.6
+235	19.6
+  1	12.9
+ 36	13.5
+ 72	13.6
+104	13.9
+139	14.2
+171	16.2
+197	17.8
+210	18.6
+235	20.2];
+data.tL_iceT611 = data.tL_iceT611(data.tL_iceT611(:,1) < 150 , :); % keeping only observations at 6 Celsius degrees
+units.tL_iceT611  = {'d', 'g'};  label.tL_iceT611 = {'time', 'wet weight'};  
+temp.tL_iceT611    = C2K(6);  units.temp.tL_iceT611 = 'K'; label.temp.tL_iceT611 = 'temperature';
+bibkey.tL_iceT611 = 'Bjornsson1989'; comment.tL_iceT611 = 'Vididalsa strain, 1st half has 5 lux nightlight; T°=6°C from t=0 to t=150, then T°=11°C; f=1; start of experiment 1st december with 0+ parr';
 
-data.tL_iceT611 = [ ... %time since fertilization (d) approximation, fork length (cm)
-362	12.8
-398	13.7
-435	13.8
-466	13.9
-501	14.3
-533	16.0
-559	17.1
-573	17.6
-597	19.6
-363	12.9
-398	13.5
-434	13.6
-466	13.9
-501	14.2
-533	16.2
-559	17.8
-572	18.6
-597	20.2];
-units.tL_iceT611  = {'d', 'g'};  label.tL_iceT611 = {'time since fertilization', 'wet weight'};  
-temp.tL_iceT611    = C2K(8.5);  units.temp.tL_iceT611 = 'K'; label.temp.tL_iceT611 = 'temperature';
-bibkey.tL_iceT611 = 'Bjornsson1989'; comment.tL_iceT611 = 'Vididalsa strain, 1st half has 5 lux nightlight; T°=6°C from t=360 to t=510, then T°=11°C, start of experiment 1st december with 0+ parr';
-%T°=6°C from t=360 to t=510 then T°=11°C ; f=1
-
-data.tL_ice1mw = [ ... %time since fertilization (d) approximation, fork length (cm)
-362	13.2
-384	14.3
-393	14.6
-406	15.9
-423	17.4];
-units.tL_ice1mw  = {'d', 'g'};  label.tL_ice1mw = {'time since fertilization', 'wet weight'};  
-temp.tL_ice1mw    = C2K(5);  units.temp.tL_ice1mw = 'K'; label.temp.tL_ice1mw = 'temperature';
-bibkey.tL_ice1mw = 'Bjornsson1989'; comment.tL_ice1mw = 'Vididalsa, 1 month winter light; T°=guess, start of experiment 1st december with 0+ parr';
+% data.tL_ice1mw = [ ... %time (d), fork length (cm)
+%   0	13.2
+%  22	14.3
+%  31	14.6
+%  44	15.9
+%  61	17.4];
+% units.tL_ice1mw  = {'d', 'g'};  label.tL_ice1mw = {'time', 'wet weight'};  
+% temp.tL_ice1mw    = C2K(5);  units.temp.tL_ice1mw = 'K'; label.temp.tL_ice1mw = 'temperature';
+% bibkey.tL_ice1mw = 'Bjornsson1989'; comment.tL_ice1mw = 'Vididalsa, 1 month winter light; T°=guess, start of experiment 1st december with 0+ parr';
+% %f=1
+% 
+% data.tL_ice3mw = [ ... % time (d), fork length (cm)
+%   0	13.2
+%  21	14.1
+%  39	14.8
+%  60	16.9
+%  78	18.8];
+% units.tL_ice3mw  = {'d', 'g'};  label.tL_ice3mw = {'time', 'wet weight'};  
+% temp.tL_ice3mw    = C2K(6);  units.temp.tL_ice3mw = 'K'; label.temp.tL_ice3mw = 'temperature';
+% bibkey.tL_ice3mw = 'Bjornsson1989'; comment.tL_ice3mw = 'Vididalsa, 3 month winter light; T°=guess, start of experiment 1st december with 0+ parr';
+% %f=1
+% 
+% 
+% data.tL_ice5mw = [ ... %time (d), fork length (cm)
+%   0	13.1
+%  22	13.9
+%  39	14.4
+%  60	15.5
+%  78	16.4
+%  91	17.1
+% 100	17.5
+% 115	19.0
+% 123	19.7];
+% units.tL_ice5mw  = {'d', 'g'};  label.tL_ice5mw = {'time', 'wet weight'};  
+% temp.tL_ice5mw    = C2K(7);  units.temp.tL_ice5mw = 'K'; label.temp.tL_ice5mw = 'temperature';
+% bibkey.tL_ice5mw = 'Bjornsson1989'; comment.tL_ice5mw = 'Vididalsa, 5 month winter light; T°=guess (range=3-10.5°C), start of experiment 1st december with 0+ parr';
 %f=1
 
-data.tL_ice3mw = [ ... %time since fertilization (d) approximation, fork length (cm)
-362	13.2
-383	14.1
-401	14.8
-422	16.9
-440	18.8];
-units.tL_ice3mw  = {'d', 'g'};  label.tL_ice3mw = {'time since fertilization', 'wet weight'};  
-temp.tL_ice3mw    = C2K(6);  units.temp.tL_ice3mw = 'K'; label.temp.tL_ice3mw = 'temperature';
-bibkey.tL_ice3mw = 'Bjornsson1989'; comment.tL_ice3mw = 'Vididalsa, 3 month winter light; T°=guess, start of experiment 1st december with 0+ parr';
-%f=1
 
+% data.tL_norM = [ ... %time (d), fork length (cm)
+%  518	 17.87
+%  722	 37.73
+%  959	 59.01
+% 1070     68.65
+%  345	 13.96
+%  688	 41.17
+%  947	 68.39
+% 1042     76.96];
+% units.tL_norM  = {'d', 'cm'};  label.tL_norM = {'time since fertilization', 'fork length'};  
+% temp.tL_norM    = C2K(12);  units.temp.tL_norM = 'K'; label.temp.tL__norM = 'temperature';
+% bibkey.tL_norM = 'Glover2009'; comment.tL_norM = 'Mowi strain, 2 experiments started in 2003 and 2004, T° 5°C during egg incubation, 12°C in freshwater, natural (mean=11.5) for seawater; f=1';
 
-data.tL_ice5mw = [ ... %time since fertilization (d) approximation, fork length (cm)
-362	13.1
-384	13.9
-401	14.4
-422	15.5
-440	16.4
-453	17.1
-462	17.5
-477	19.0
-485	19.7];
-units.tL_ice5mw  = {'d', 'g'};  label.tL_ice5mw = {'time since fertilization', 'wet weight'};  
-temp.tL_ice5mw    = C2K(7);  units.temp.tL_ice5mw = 'K'; label.temp.tL_ice5mw = 'temperature';
-bibkey.tL_ice5mw = 'Bjornsson1989'; comment.tL_ice5mw = 'Vididalsa, 5 month winter light; T°=guess (range=3-10.5°C), start of experiment 1st december with 0+ parr';
-%f=1
-
-
-data.tL_norM = [ ... %time since fertilization (d) approximation, fork length (cm)
+data.tL_norM2003 = [ ... %time (d), fork length (cm)
  518	 17.87
  722	 37.73
  959	 59.01
-1070     68.65
+1070     68.65];
+units.tL_norM2003  = {'d', 'cm'};  label.tL_norM2003 = {'time', 'fork length'};  
+temp.tL_norM2003    = C2K(12);  units.temp.tL_norM2003 = 'K'; label.temp.tL_norM2003 = 'temperature';
+bibkey.tL_norM2003 = 'Glover2009'; comment.tL_norM2003 = 'Mowi strain, 2 experiments started in 2003 and 2004, T° 5°C during egg incubation, 12°C in freshwater, natural (mean=11.5) for seawater; f=1';
+
+data.tL_norM2004 = [ ... %time (d), fork length (cm)
  345	 13.96
  688	 41.17
  947	 68.39
 1042     76.96];
-units.tL_norM  = {'d', 'g'};  label.tL_norM = {'time since fertilization', 'wet weight'};  
-temp.tL_norM    = C2K(12);  units.temp.tL_norM = 'K'; label.temp.tL__norM = 'temperature';
-bibkey.tL_norM = 'Glover2009'; comment.tL_norM = 'Mowi strain, 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater, classical rearing (fresh then seawater)';
-%f=1
+units.tL_norM2004  = {'d', 'cm'};  label.tL_norM2004 = {'time', 'fork length'};  
+temp.tL_norM2004    = C2K(12);  units.temp.tL_norM2004 = 'K'; label.temp.tL_norM2004 = 'temperature';
+bibkey.tL_norM2004 = 'Glover2009'; comment.tL_norM2004 = 'Mowi strain, 2 experiments started in 2003 and 2004, T° 5°C during egg incubation, 12°C in freshwater, natural (mean=11.5) for seawater; f=1';
 
 %% t-W data in eggs
 
@@ -418,6 +434,8 @@ temp.tWwYe_T8    = C2K(8);  units.temp.tWwYe_T8 = 'K'; label.temp.tWwYe_T8 = 'te
 bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian strain (wild or domestic?)';
 
 %% t-W data in juveniles
+
+% already included as tL and LWw data
 % data.tWw_norM = [ ... % time since fertilization (d)
 % 518	75.27
 % 722	978.49
@@ -430,19 +448,20 @@ bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian strain (wild or do
 % units.tWw_norM   = {'d', 'g'};  label.tWw_norM = {'time since fertilization', 'wet weight'};  
 % bibkey.tWw_norM = 'Glover2009'; comment.tWw_norM = 'Mowi strain, 2 different experience data';%f=1 T=5°C for incubation, then 12°C
 
+data.tWw_norB = [ ... % time (d)
+  0	71.94
+ 45	86.72
+ 60	89.51
+ 74	92.3
+101	105.88
+131	122.65
+169	172.56
+215	243.63];
+units.tWw_norB = {'d', 'g'};  label.tWw_norB = {'time', 'wet weight'};  
+temp.tWw_norB = C2K(13);  units.temp.tWw_norB = 'K'; label.temp.tWw_norB = 'temperature';
+bibkey.tWw_norB = 'Hosfeld2009'; comment.tWw_norB = 'Bolak strain, 2 different experience data; f=1; T= 12-14';
 
-% data.tWw_norB = [ ... % time since fertilization (d)
-% 365	71.94
-% 410	86.72
-% 425	89.51
-% 439	92.3
-% 466	105.88
-% 496	122.65
-% 534	172.56
-% 580	243.63];
-% units.tWw_norB   = {'d', 'g'};  label.tWw_norB = {'time since birth', 'wet weight'};  
-% bibkey.tWw_norB = 'Hosfeld2009'; comment.tWw_norB = 'Bolak strain, 2 different experience data';%f=1 T= 12-14
-
+% Variable temperature
 % data.tWw_OF = [ ... % time since fertilization (d)
 % 571	451.9
 % 605	470.4
@@ -455,74 +474,73 @@ bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian strain (wild or do
 
 %% t-W data in seawater
 
-% data.tWw_T4_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) at 4 Celsius degrees
-% -26 51.9
-% 22 62.1
-% 63 76.7
-% 90 83.3];
-% data.tWw_T4_Mow(:,1) = data.tWw_T4_Mow(:,1) + 296 % hatching in December
-% 2002 and transfer on 7 October 2003
-% units.tWw_T4_Mow   = {'d', 'g'};  label.tWw_T4_Mow = {'time since hatching', 'wet weight'};  
-% temp.tWw_T4_Mow    = C2K(4);  units.temp.tWw_T4_Mow = 'K'; label.temp.tWw_T4 = 'temperature';
-% bibkey.tWw_T4_Mow = 'Handeland1998'; comment.tWw_T4_Mow = 'Mowi strain, mean of S=28 and S= 34, f=1';
+data.tWw_T4_Mow = [ ...  % time since transfer to seawater (d), wet weight (g) at 4 Celsius degrees
+-26 51.9
+22 62.1
+63 76.7
+90 83.3];
+data.tWw_T4_Mow(:,1) = data.tWw_T4_Mow(:,1);
+units.tWw_T4_Mow   = {'d', 'g'};  label.tWw_T4_Mow = {'time since transfer to seawater', 'wet weight'};  
+temp.tWw_T4_Mow    = C2K(4);  units.temp.tWw_T4_Mow = 'K'; label.temp.tWw_T4 = 'temperature';
+bibkey.tWw_T4_Mow = 'Handeland1998'; comment.tWw_T4_Mow = 'Mowi strain, mean of S=28 and S= 34, f=1';
 
-% data.tWw_T8_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) at 8Â°C
-% -26 54.6
-% 22 68.3
-% 63 110.5
-% 90 135.2];
-% units.tWw_T8_Mow   = {'d', 'g'};  label.tWw_T8_Mow = {'time since fertilization', 'wet weight'};  
-% temp.tWw_T8_Mow   = C2K(8);  units.temp.tWw_T8_Mow = 'K'; label.temp.tWw_T8_Mow = 'temperature';
-% bibkey.tWw_T8_Mow = 'Handeland1998'; comment.tWw_T8_Mow = 'Mowi strain, mean of S=28 and S=34, f=1';
-% 
-% data.tWw_T6_AqG = [ ... % time since transfer to seawater (d), wet weight (g) at 6Â°C
-% 0	75.2
-% 14	76.8
-% 28	89.1
-% 42	104.9
-% 56	126.4
-% 70	142.9
-% 84	153.8];
-% units.tWw_T6_AqG   = {'d', 'g'};  label.tWw_T6_AqG = {'time since metamorphosis', 'wet weight'};  
-% temp.tWw_T6_AqG   = C2K(6);  units.temp.tWw_T6_AqG = 'K'; label.temp.tWw_T6 = 'temperature';
-% bibkey.tWw_T6_AqG = 'Handeland2008'; comment.tWw_T6_AqG = 'AquaGen domestic strain';%f=1
-% 
-% data.tWw_T10_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 10Â°C
-% 0	74.5
-% 14	84.6
-% 28	108.9
-% 42	144.2
-% 56	189.4
-% 70	236.3
-% 84	264.9];
-% units.tWw_T10_AqG   = {'d', 'g'};  label.tWw_T10_AqG = {'time since metamorphosis', 'wet weight'};  
-% temp.tWw_T10_AqG   = C2K(10);  units.temp.tWw_T10_AqG = 'K'; label.temp.tWw_T10_AqG = 'temperature';
-% bibkey.tWw_T10_AqG = 'Handeland2008'; comment.tWw_T10_AqG = 'AquaGen domestic strain';%f=1
-%   
-% data.tWw_T14_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 14Â°C
-% 0	74.5
-% 14	85.3
-% 28	115.3
-% 42	158.0
-% 56	214.9
-% 70	266.1
-% 84	298.2];
-% units.tWw_T14_AqG   = {'d', 'g'};  label.tWw_T14_AqG = {'time since metamorphosis', 'wet weight'};  
-% temp.tWw_T14_AqG   = C2K(14);  units.temp.tWw_T14_AqG = 'K'; label.temp.tWw_T14_AqG = 'temperature';
-% bibkey.tWw_T14_AqG = 'Handeland2008'; comment.tWw_T14v = 'AquaGen domestic strain';%f=1
-% 
-% data.tWw_T18_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 18Â°C
-% 0	76.6
-% 14	87.4
-% 28	116.0
-% 42	151.6
-% 56	196.5
-% 70	227.8
-% 84	252.9];
-% units.tWw_T18_AqG   = {'d', 'g'};  label.tWw_T18_AqG = {'time since metamorphosis', 'wet weight'};  
-% temp.tWw_T18_AqG   = C2K(18);  units.temp.tWw_T18_AqG = 'K'; label.temp.tWw_T18_AqG = 'temperature';
-% bibkey.tWw_T18_AqG = 'Handeland2008'; comment.tWw_T18_AqG = 'AquaGen domestic strain';%f=1
-% 
+data.tWw_T8_Mow = [ ...  % time since transfer to seawater (d), wet weight (g) at 8 Celsius degrees
+-26 54.6
+22 68.3
+63 110.5
+90 135.2];
+units.tWw_T8_Mow   = {'d', 'g'};  label.tWw_T8_Mow = {'time since transfer to seawater', 'wet weight'};  
+temp.tWw_T8_Mow   = C2K(8);  units.temp.tWw_T8_Mow = 'K'; label.temp.tWw_T8_Mow = 'temperature';
+bibkey.tWw_T8_Mow = 'Handeland1998'; comment.tWw_T8_Mow = 'Mowi strain, mean of S=28 and S=34, f=1';
+
+data.tWw_T6_AqG = [ ... % time since transfer to seawater (d), wet weight (g) at 6°C
+0	75.2
+14	76.8
+28	89.1
+42	104.9
+56	126.4
+70	142.9
+84	153.8];
+units.tWw_T6_AqG   = {'d', 'g'};  label.tWw_T6_AqG = {'time since transfer to seawater', 'wet weight'};  
+temp.tWw_T6_AqG   = C2K(6);  units.temp.tWw_T6_AqG = 'K'; label.temp.tWw_T6 = 'temperature';
+bibkey.tWw_T6_AqG = 'Handeland2008'; comment.tWw_T6_AqG = 'AquaGen domestic strain';%f=1
+
+data.tWw_T10_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 10°C
+0	74.5
+14	84.6
+28	108.9
+42	144.2
+56	189.4
+70	236.3
+84	264.9];
+units.tWw_T10_AqG   = {'d', 'g'};  label.tWw_T10_AqG = {'time since transfer to seawater', 'wet weight'};  
+temp.tWw_T10_AqG   = C2K(10);  units.temp.tWw_T10_AqG = 'K'; label.temp.tWw_T10_AqG = 'temperature';
+bibkey.tWw_T10_AqG = 'Handeland2008'; comment.tWw_T10_AqG = 'AquaGen domestic strain';%f=1
+  
+data.tWw_T14_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 14°C
+0	74.5
+14	85.3
+28	115.3
+42	158.0
+56	214.9
+70	266.1
+84	298.2];
+units.tWw_T14_AqG   = {'d', 'g'};  label.tWw_T14_AqG = {'time since transfer to seawater', 'wet weight'};  
+temp.tWw_T14_AqG   = C2K(14);  units.temp.tWw_T14_AqG = 'K'; label.temp.tWw_T14_AqG = 'temperature';
+bibkey.tWw_T14_AqG = 'Handeland2008'; comment.tWw_T14v = 'AquaGen domestic strain';%f=1
+
+data.tWw_T18_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 18°C
+0	76.6
+14	87.4
+28	116.0
+42	151.6
+56	196.5
+70	227.8
+84	252.9];
+units.tWw_T18_AqG   = {'d', 'g'};  label.tWw_T18_AqG = {'time since transfer to seawater', 'wet weight'};  
+temp.tWw_T18_AqG   = C2K(18);  units.temp.tWw_T18_AqG = 'K'; label.temp.tWw_T18_AqG = 'temperature';
+bibkey.tWw_T18_AqG = 'Handeland2008'; comment.tWw_T18_AqG = 'AquaGen domestic strain';%f=1
+
 % data.tWw_starv = [ ... % time (d), wet weight (g) during starvation
 % 480  81.9
 % 494  77.5
@@ -682,10 +700,10 @@ data.Ri=max(WwR(:,2))/365.25; units.Ri = '-/d';    label.Ri = 'maximum number of
 
 %% set weights for all real data
 weights = setweights(data, []);
-weights.ab_norM = weights.ab_norM/6;
-weights.ab_norM2 = weights.ab_norM2/6;
-weights.tb_12_AqG = weights.tb_12_AqG/3;
-weights.tb_norB = weights.tb_norB/3;
+weights.ab_norM = 0*weights.ab_norM;
+weights.ab_norM2 = weights.ab_norM2/2;
+weights.tb_12_AqG = 0*weights.tb_12_AqG/3;
+weights.tb_norB = weights.tb_norB/2;
 weights.ap_norNBP=weights.ap_norNBP/2;
 weights.ap_norire=weights.ap_norire/2;
 weights.Lb_NorM2011 = weights.Lb_NorM2011/4;
@@ -707,33 +725,34 @@ weights.Tah_Gunnes1979 = weights.Tah_Gunnes1979/3;
 weights.Tah_Wallace1988 = weights.Tah_Wallace1988/2;
 weights.Tah_Solberg2014 = weights.Tah_Solberg2014/4;
 weights.Tah_Berg1999 = weights.Tah_Berg1999/2;
-weights.tL_iceT11 = weights.tL_iceT11/6;
-weights.tL_iceT611 = weights.tL_iceT611/6;
-weights.tL_ice1mw = weights.tL_ice1mw/6;
-weights.tL_ice3mw = weights.tL_ice3mw/6;
-weights.tL_ice5mw = weights.tL_ice5mw/6;
-weights.tL_norM = weights.tL_norM/6;
-weights.tWwVe_T12 = weights.tWwVe_T12/3;
-weights.tWwVe_T10 = weights.tWwVe_T10/3;
-weights.tWwVe_T8 = weights.tWwVe_T8/3;
-weights.tWwYe_T12 = weights.tWwYe_T12/3;
-weights.tWwYe_T10 = weights.tWwYe_T10/3;
-weights.tWwYe_T8 = weights.tWwYe_T8/3;
+weights.tL_iceT11 = weights.tL_iceT11/4;
+weights.tL_iceT611 = weights.tL_iceT611/4;
+% weights.tL_ice1mw = weights.tL_ice1mw/6;
+% weights.tL_ice3mw = weights.tL_ice3mw/6;
+% weights.tL_ice5mw = weights.tL_ice5mw/6;
+weights.tL_norM2003 = weights.tL_norM2003/4;
+weights.tL_norM2004 = weights.tL_norM2004/4;
+weights.tWwVe_T12 = 0.1*weights.tWwVe_T12/3;
+weights.tWwVe_T10 = 0.1*weights.tWwVe_T10/3;
+weights.tWwVe_T8 = 0.1*weights.tWwVe_T8/3;
+weights.tWwYe_T12 = 0.1*weights.tWwYe_T12/3;
+weights.tWwYe_T10 = 0.1*weights.tWwYe_T10/3;
+weights.tWwYe_T8 = 0.1*weights.tWwYe_T8/3;
 % weights.tWw_norM = weights.tWw_norM/16;
-% weights.tWw_norB = weights.tWw_norB/16;
+weights.tWw_norB = weights.tWw_norB/6;
 % weights.tWw_OF = weights.tWw_OF/16;
-% weights.tWw_T4_Mow = weights.tWw_T4_Mow/16;
-% weights.tWw_T8_Mow = weights.tWw_T8_Mow/16;
-% weights.tWw_T6_AqG = weights.tWw_T6_AqG/16;
-% weights.tWw_T10_AqG = weights.tWw_T10_AqG/16;
-% weights.tWw_T14_AqG = weights.tWw_T14_AqG/16;
-% weights.tWw_T18_AqG = weights.tWw_T18_AqG/16;
+weights.tWw_T4_Mow = weights.tWw_T4_Mow/6;
+weights.tWw_T8_Mow = weights.tWw_T8_Mow/6;
+weights.tWw_T6_AqG = weights.tWw_T6_AqG/6;
+weights.tWw_T10_AqG = weights.tWw_T10_AqG/6;
+weights.tWw_T14_AqG = weights.tWw_T14_AqG/6;
+weights.tWw_T18_AqG = 0*weights.tWw_T18_AqG;
 % weights.tWw_starv = weights.tWw_starv/16;
 % weights.tWw_norS = weights.tWw_norS/16;
 % weights.tWw_norS75 = weights.tWw_norS75/16;
 % weights.tWw_norS50 = weights.tWw_norS50/16;
-weights.LWw_AqG = weights.LWw_AqG/2;
-weights.LWw_norM = weights.LWw_norM/2;
+weights.LWw_AqG = 0*weights.LWw_AqG;
+weights.LWw_norM = weights.LWw_norM;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
@@ -749,10 +768,13 @@ txtData.comment = comment;
 set1 = {'Tah_Gunnes1979','Tah_Wallace1988','Tah_Solberg2014','Tah_Berg1999'}; comment1 = {'Age at hatching for different studies'};
 set2 = {'tWwVe_T12','tWwVe_T10','tWwVe_T8'}; comment2 = {'Gunnes1979'};
 set3 = {'tWwYe_T12','tWwYe_T10','tWwYe_T8'}; comment3 = {'Gunnes1979'};
-set4 = {'tL_iceT11','tL_iceT611','tL_ice1mw','tL_ice3mw','tL_ice5mw'}; comment4 = {'Parr growth at different temperatures and photoperiods - Bjornsson 1989'};
+set4 = {'tL_iceT11','tL_iceT611'}; comment4 = {'Parr growth at different temperatures - Bjornsson 1989'};
+set5 = {'tL_norM2003','tL_norM2004'}; comment5 = {'Glover2009'};
+set6 = {'tWw_T4_Mow','tWw_T8_Mow'}; comment6 = {'Handeland1998'};
+set7 = {'tWw_T6_AqG','tWw_T10_AqG','tWw_T14_AqG','tWw_T18_AqG'}; comment7 = {'Handeland2008'};
 
-metaData.grp.sets = {set1, set2, set3, set4};
-metaData.grp.comment = {comment1, comment2, comment3, comment4};
+metaData.grp.sets = {set1, set2, set3, set4, set5, set6, set7};
+metaData.grp.comment = {comment1, comment2, comment3, comment4, comment5, comment6, comment7};
 
 %% Facts
 % F1 = '';

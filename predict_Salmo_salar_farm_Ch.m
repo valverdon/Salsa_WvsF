@@ -11,7 +11,7 @@ function [prdData, info] = predict_Salmo_salar_farm_Ch(par, data, auxData)
   vars_pull(cPar);  %%%unpacking of structures
   vars_pull(data);  %%%unpacking of structures
   vars_pull(auxData);%%%unpacking of structures
-  
+    
   if E_Hh > E_Hb
       info = 0; prdData = []; return
   end
@@ -28,11 +28,23 @@ function [prdData, info] = predict_Salmo_salar_farm_Ch(par, data, auxData)
 % TC_ts = tempcorr(temp.ts, T_ref, T_A);
 % TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
 % TC_tp = tempcorr(temp.tp, T_ref, T_A);
-TC_tp_norire = tempcorr(temp.ap_norire, T_ref, T_A);
-TC_tp_norNBP = tempcorr(temp.ap_norNBP, T_ref, T_A);
+  TC_tp_norire = tempcorr(temp.ap_norire, T_ref, T_A);
+  TC_tp_norNBP = tempcorr(temp.ap_norNBP, T_ref, T_A);
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
-TC_am = tempcorr(temp.am, T_ref, T_A);
+  TC_am = tempcorr(temp.am, T_ref, T_A);
   TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
+  TC_tL_iceT11 = tempcorr(temp.tL_iceT11, T_ref, T_A);
+  TC_tL_iceT611 = tempcorr(temp.tL_iceT611, T_ref, T_A);
+%   TC_tL_norM = tempcorr(temp.tL_norM, T_ref, T_A);
+  TC_tL_norM2003 = tempcorr(temp.tL_norM2003, T_ref, T_A);   
+  TC_tL_norM2004 = tempcorr(temp.tL_norM2004, T_ref, T_A);
+  TC_tWw_norB = tempcorr(temp.tWw_norB, T_ref, T_A);
+  TC_tWw_T4 = tempcorr(temp.tWw_T4_Mow, T_ref, T_A);
+  TC_tWw_T8 = tempcorr(temp.tWw_T8_Mow, T_ref, T_A);
+  TC_tWw_T6 = tempcorr(temp.tWw_T6_AqG, T_ref, T_A);
+  TC_tWw_T10 = tempcorr(temp.tWw_T10_AqG, T_ref, T_A);
+  TC_tWw_T14 = tempcorr(temp.tWw_T14_AqG, T_ref, T_A);
+  TC_tWw_T18 = tempcorr(temp.tWw_T18_AqG, T_ref, T_A);
 %   TC_tL = tempcorr(temp.tL, T_ref, T_A);
   
   % life cycle
@@ -69,7 +81,7 @@ TC_am = tempcorr(temp.am, T_ref, T_A);
   aT_h_Berg1999 = a_h ./ TC_Tah_Berg1999;
   L_h = aUL(2,3); % cm, structural length at hatching at f
   Lw_h = L_h/ del_M; % cm, physical length at hatching at f
-%   Ww_f = L_h^3 * (1 + f * ome); % g, wet weight at hatching at f
+%  Ww_f = L_h^3 * (1 + f * ome); % g, wet weight at hatching at f
   
   % birth data
   a_b = tau_b/ k_M; % age at birth at f and T_ref 
@@ -218,7 +230,7 @@ TC_am = tempcorr(temp.am, T_ref, T_A);
   UT10_E0 = TC10 * U_E0;
   % tW-data embryo
   t = [0; tWwVe_T10(:,1)]; 
-  [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT12_E0 0], [], kap, vT10, kT10_J, g, L_m); 
+  [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT10_E0 0], [], kap, vT10, kT10_J, g, L_m); 
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
   L3 = L .^3; 
@@ -246,76 +258,197 @@ TC_am = tempcorr(temp.am, T_ref, T_A);
   EV_e8 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * w); % g, wet weight vitellus
   EWw_eT8 =EWw_e8+EV_e8;
     
-  % time-length %%% _iceT11
-  TC_tL_iceT11 = tempcorr(temp.tL_iceT11, T_ref, T_A);
-  kT_M = k_M * TC_tL_iceT11; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_iceT11(tL_iceT11(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_iceT11(tL_iceT11(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_iceT11 = [L_bj; L_ji]/ del_M; % cm, total length
-  
-  TC_tL_iceT611 = tempcorr(temp.tL_iceT611, T_ref, T_A);
-  kT_M = k_M * TC_tL_iceT611; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_iceT611(tL_iceT611(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_iceT611(tL_iceT611(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_iceT611 = [L_bj; L_ji]/ del_M; % cm, total length
+  % time-length from Bjornsson 1989 %%%
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = L0_Bjornsson1989*del_M; % cm, structural length at t initial
+  % T11 
+  rT_B = TC_tL_iceT11 * rho_B * k_M; rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_iceT11(:,1) - tL_iceT11(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_iceT11 = L / del_M;
 
-  TC_tL_ice1mw = tempcorr(temp.tL_ice1mw, T_ref, T_A);
-  kT_M = k_M * TC_tL_ice1mw; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_ice1mw(tL_ice1mw(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_ice1mw(tL_ice1mw(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_ice1mw = [L_bj; L_ji]/ del_M; % cm, total length
+  % T6 
+  rT_B = TC_tL_iceT611 * rho_B * k_M; rT_j = TC_tL_iceT611 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_iceT611(:,1) - tL_iceT611(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_iceT611 = L / del_M;
 
-  TC_tL_ice3mw = tempcorr(temp.tL_ice3mw, T_ref, T_A);
-  kT_M = k_M * TC_tL_ice3mw; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_ice3mw(tL_ice3mw(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_ice3mw(tL_ice3mw(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_ice3mw = [L_bj; L_ji]/ del_M; % cm, total length
+  % time-length data from Glover 2009
+%   kT_M = k_M * TC_tL_norM; %%%km corrected
+%   rT_j = rho_j * kT_M; %%%rhoj corrected
+%   rT_B = rho_B * kT_M; %%%%rhoB corrected
+%   tT_j = (tau_j - tau_b)/ kT_M;   
+%   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+%   L_bj = L_b * exp(tL_norM(tL_norM(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+%   L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norM(tL_norM(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+%   EL_norM = [L_bj; L_ji]/ del_M; % cm, total length
+  % 2003 experiment 
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = L0_norM2003*del_M; % cm, structural length at t initial
+  rT_B = TC_tL_norM2003 * rho_B * k_M; rT_j = TC_tL_norM2003 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_norM2003(:,1) - tL_norM2003(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_norM2003 = L / del_M;
+  % 2004 experiment 
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = L0_norM2004*del_M; % cm, structural length at t initial
+  rT_B = TC_tL_norM2004 * rho_B * k_M; rT_j = TC_tL_norM2004 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_norM2004(:,1) - tL_norM2004(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_norM2004 = L / del_M;
 
-  TC_tL_ice5mw = tempcorr(temp.tL_ice3mw, T_ref, T_A);
-  kT_M = k_M * TC_tL_ice5mw; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_ice5mw(tL_ice5mw(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_ice5mw(tL_ice5mw(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_ice5mw = [L_bj; L_ji]/ del_M; % cm, total length
+  % time-weight data from Hosfeld 2009
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = (W0_Hosfeld2009./ (1 + f * ome))^(1/3); % cm, structural length at t initial
+  % T4 
+  rT_B = TC_tWw_norB * rho_B * k_M; rT_j = TC_tWw_norB * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_norB(:,1) - tWw_norB(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_norB = L.^3 * (1 + f * w);
 
-  TC_tL_norM = tempcorr(temp.tL_norM, T_ref, T_A);
-  kT_M = k_M * TC_tL_norM; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_norM(tL_norM(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norM(tL_norM(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_norM = [L_bj; L_ji]/ del_M; % cm, total length
+  % time-weight data from Handeland 1998
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = (W0_Handeland1998./ (1 + f * ome))^(1/3); % cm, structural length at t initial
+  % T4 
+  rT_B = TC_tWw_T4 * rho_B * k_M; rT_j = TC_tWw_T4 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_T4_Mow(:,1) - tWw_T4_Mow(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_T4 = L.^3 * (1 + f * w);
+  % T8 
+  rT_B = TC_tWw_T8 * rho_B * k_M; rT_j = TC_tWw_T8 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_T8_Mow(:,1) - tWw_T8_Mow(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_T8 = L.^3 * (1 + f * w);
 
+  % time-weight data from Handeland 2008
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = (W0_Handeland2008./ (1 + f * ome))^(1/3); % cm, structural length at t initial
+  % T6 
+  rT_B = TC_tWw_T6 * rho_B * k_M; rT_j = TC_tWw_T6 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_T6_AqG(:,1) - tWw_T6_AqG(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_T6 = L.^3 * (1 + f * w);
+  % T10
+  rT_B = TC_tWw_T10 * rho_B * k_M; rT_j = TC_tWw_T10 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_T10_AqG(:,1) - tWw_T10_AqG(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_T10 = L.^3 * (1 + f * w);
+  % T14 
+  rT_B = TC_tWw_T14 * rho_B * k_M; rT_j = TC_tWw_T14 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_T14_AqG(:,1) - tWw_T14_AqG(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_T14 = L.^3 * (1 + f * w);
+  % T18
+  rT_B = TC_tWw_T18 * rho_B * k_M; rT_j = TC_tWw_T18 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tWw_T18_AqG(:,1) - tWw_T18_AqG(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EWw_T18 = L.^3 * (1 + f * w);
   
   % length-weight   %%%%
   EWw_AqG = (LWw_AqG(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
   EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
 
-  % temperature-age at birth
-%   TC_Tab = tempcorr(Tab(:,1), T_ref, T_A); 
-%   Eab = tau_b/ k_M ./ TC_Tab;        % d, age at birth at f and T
-  
+
+ 
   % pack to output
   prdData.tWwVe_T8 = EWw_e8;
   prdData.tWwYe_T8 = EV_e8;
@@ -323,13 +456,17 @@ TC_am = tempcorr(temp.am, T_ref, T_A);
   prdData.tWwYe_T10 = EV_e10;
   prdData.tWwVe_T12 = EWw_e12;
   prdData.tWwYe_T12 = EV_e12;
-  prdData.tL_iceT11 = ELw_iceT11;
-  prdData.tL_iceT611 = ELw_iceT611;
-  prdData.tL_ice1mw = ELw_ice1mw;
-  prdData.tL_ice3mw = ELw_ice3mw;
-  prdData.tL_ice5mw = ELw_ice5mw;
-  prdData.tL_norM = ELw_norM;
-  %lack of Tww juvenile and seawater
+  prdData.tL_iceT11 = EL_iceT11;
+  prdData.tL_iceT611 = EL_iceT611;
+  prdData.tL_norM2003 = EL_norM2003;
+  prdData.tL_norM2004 = EL_norM2004;
+  prdData.tWw_norB = EWw_norB;
+  prdData.tWw_T4_Mow = EWw_T4;
+  prdData.tWw_T8_Mow = EWw_T8;
+  prdData.tWw_T6_AqG = EWw_T6;
+  prdData.tWw_T10_AqG = EWw_T10;
+  prdData.tWw_T14_AqG = EWw_T14;
+  prdData.tWw_T18_AqG = EWw_T18;
   prdData.LWw_AqG = EWw_AqG;
   prdData.LWw_norM = EWw_norM;
   %lack of T-JX
