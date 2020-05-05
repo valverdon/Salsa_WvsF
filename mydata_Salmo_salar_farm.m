@@ -89,7 +89,7 @@ data.as_norM2 = 1164;    units.as_norM2 = 'd';    label.as_norM2 = 'age at smolt
 data.ap_norNBP = 391;    units.ap_norNBP = 'd';    label.ap_norNBP = 'age at maturity';             bibkey.ap_norNBP = 'Hindar2006';     comment.ap_norNBP = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
   temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 
- data.ap_norire = 1070;    units.ap_norire = 'd';    label.ap_norire = 'age at maturity';             bibkey.ap_norire = 'Hindar2006';     comment.ap_norire = 'National breeding program (time since birth)';
+ data.ap_norire = 1070;    units.ap_norire = 'd';    label.ap_norire = 'age at maturity';             bibkey.ap_norire = 'Hindar2006';     comment.ap_norire = 'farmed strain (time since birth)';
   temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';%natural T°, natural f.
 
   %median? list
@@ -104,7 +104,7 @@ data.ap=(data.ap_norNBP+data.ap_norire)/2;
 
   
 %%%%%%%%%%%%%
-%% Lifespan %(mean or maximum?)
+%% Lifespan %(maximum)
 %%%%%%%%%%%%%
 data.am = 1461;    units.am = 'd';    label.am = 'age at maturity';             bibkey.am = 'Hindar2006';     comment.am = 'National breeding program (time since birth)';
   temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T° : rough guess - highly variable temperature throughout life(2+2)*365.25';%natural T°, natural f.
@@ -123,7 +123,7 @@ data.Lb_NorM2013  = 2.84;   units.Lb_NorM2013  = 'cm';  label.Lb_NorM2013  = 'to
 data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'total length at birth';   bibkey.Lb_NorS2013  = 'Solberg2014';  comment.Lb_NorS2013 = 'parents from Salmobreed strain (Norway)';%T° 3.0-6.9 mean 4.8 ; f?
 
 %test mean
-data.Lb=(data.Lb_NorM2011+data.Lb_NorM2012+data.Lb_NorM2013+data.Lb_NorS2013)/4;
+% data.Lb=(data.Lb_NorM2011+data.Lb_NorM2012+data.Lb_NorM2013+data.Lb_NorS2013)/4;
 
 %% Length at precocious maturation % (males only)
 % data.Lpp  = ;   units.Lpp  = 'cm';  label.Lpp  = 'total length at precocious puberty'; bibkey.Lpp  = ''; comment.Lpp = 'males only';
@@ -150,7 +150,7 @@ data.Lp_norSf  = 55.4 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbita
 data.Lp_norSm  = 57.5 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, Sunndalsøra strain (Canada)';%T? f?
 data.Lp_norN  = 61.6 ;   units.Lp_norN  = 'cm';  label.Lp_norN  = 'length at puberty'; bibkey.Lp_norN = 'Jonsson1991';   comment.Lp_norN = 'Nina research station (Norway)'; %T = hatcheries for fries, natural from smolt  f=1
 
-data.Lp=(data.Lp_norSf+data.Lp_norSm+data.Lp_norN)/3;
+% data.Lp=(data.Lp_norSf+data.Lp_norSm+data.Lp_norN)/3;
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Max length %
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -222,7 +222,7 @@ data.Wwi_norM = 14000;   units.Wwi_norM = 'g';   label.Wwi_norM = 'maximum wet w
 %% Maximum reproductive rate %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-data.Ri=1063; units.Ri = '-';   label.Ri = 'number of live embryos';   bibkey.Ri = 'Fleming1996b';   comment.Ri = 'Sunndalsøra strain (Norway); T= rough guess';% f?
+data.Ri = 1063; units.Ri = '-';   label.Ri = 'number of live embryos';   bibkey.Ri = 'Fleming1996b';   comment.Ri = 'Sunndalsøra strain (Norway); T= rough guess';% f?
 temp.Ri= C2K(6); units.temp.Ri = 'K'; label.temp.Ri = 'temperature';
 
 %% uni-variate data
@@ -236,7 +236,7 @@ data.Tah = [ ... % temperature (Â°C), age at hatching (d)
 12 453/12];
 data.Tah(:,1)=C2K(data.Tah(:,1));
 units.Tah   = {'K', 'd'};  label.Tah = {'temperature', 'age at hatching'}; 
-bibkey.Tah = 'Gunnes1979'; comment.Tah = 'Norwegian strain (wild or domestic?)';%f=1
+bibkey.Tah = 'Gunnes1979'; comment.Tah = 'Norwegian strain (domestic? sunndalsora?)';%f=1
 
 %% T-ab data
 
@@ -349,7 +349,7 @@ bibkey.tL_norM = 'Glover2009'; comment.tL_norM = 'Mowi strain, 2 experiments sta
 
 data.tL=[data.tL_iceT11 ; data.tL_iceT611 ; data.tL_ice1mw ; data.tL_ice3mw ; data.tL_ice5mw ; data.tL_norM];
 
-%% t-W data in embryos
+%% t-W data in eggs
 
 data.tWwe_norT12 = [ ... % time since fertilization (d), wet weight (g) at 12Â°C
 38 0.1045

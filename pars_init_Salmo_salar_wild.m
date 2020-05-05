@@ -1,4 +1,4 @@
-function [par, metaPar, txtPar] = pars_init_Salmo_salar_farm(metaData)
+function [par, metaPar, txtPar] = pars_init_Salmo_salar_wild(metaData)
 
 metaPar.model = 'abj'; 
 
@@ -10,12 +10,12 @@ par.T_A = 6000;       free.T_A   = 1;   units.T_A = 'K';          label.T_A = 'A
 par.z = 4.841;        free.z     = 1;   units.z = '-';            label.z = 'zoom factor'; 
 par.F_m = 6.5;        free.F_m   = 0;   units.F_m = 'l/d.cm^2';   label.F_m = '{F_m}, max spec searching rate'; %need data bouffz
 par.kap_X = 0.8;      free.kap_X = 0;   units.kap_X = '-';        label.kap_X = 'digestion efficiency of food to reserve'; 
-par.kap_P = 0.1;      free.kap_P = 0;   units.kap_P = '-';        label.kap_P = 'faecation efficiency of food to faeces'; %compliqué a estimer
+par.kap_P = 0.1;      free.kap_P = 0;   units.kap_P = '-';        label.kap_P = 'faecation efficiency of food to faeces'; %compliquÃ© a estimer
 par.v = 0.029802;     free.v     = 1;   units.v = 'cm/d';         label.v = 'energy conductance'; 
 par.kap = 0.41987;    free.kap   = 1;   units.kap = '-';          label.kap = 'allocation fraction to soma'; 
-par.kap_R = 0.95;     free.kap_R = 0;   units.kap_R = '-';        label.kap_R = 'reproduction efficiency'; % compliqué  à estimer
+par.kap_R = 0.95;     free.kap_R = 0;   units.kap_R = '-';        label.kap_R = 'reproduction efficiency'; % compliquÃ©  Ã  estimer
 par.p_M = 13.9313;    free.p_M   = 1;   units.p_M = 'J/d.cm^3';   label.p_M = '[p_M], vol-spec somatic maint'; 
-par.p_T = 0;          free.p_T   = 0;   units.p_T = 'J/d.cm^2';   label.p_T = '{p_T}, surf-spec somatic maint'; %suppose peu de thermoregulation et osmose. ! hypothèse forte
+par.p_T = 0;          free.p_T   = 0;   units.p_T = 'J/d.cm^2';   label.p_T = '{p_T}, surf-spec somatic maint'; %suppose peu de thermoregulation et osmose. ! hypothÃ¨se forte
 par.k_J = 0.002;      free.k_J   = 0;   units.k_J = '1/d';        label.k_J = 'maturity maint rate coefficient';  %pe estimable
 par.E_G = 5025;       free.E_G   = 0;   units.E_G = 'J/cm^3';     label.E_G = '[E_G], spec cost for structure';  %pe estimable
 par.E_Hb = 6.169e+02; free.E_Hb  = 1;   units.E_Hb = 'J';         label.E_Hb = 'maturity at birth'; 
@@ -30,6 +30,7 @@ par.f = 1;          free.f     = 0;   units.f = '-';            label.f = 'scale
 par.f_nat = 0.7;          free.f_nat     = 0;   units.f_nat = '-';            label.f_nat = 'scaled functional response for 0-var data, when reared in natural condition (not ad lib)'; 
 par.f_LWw = 1;  free.f_LWw = 1;   units.f_LWw = '-';        label.f_LWw = 'scaled functional response for 1-var data'; 
 par.f_tL = 1;  free.f_tL  = 1;   units.f_tL = '-';         label.f_tL = 'scaled functional response for 1-var data'; 
+par.f_tL_nat = 0.7;  free.f_tL_nat  = 0;   units.f_tL_nat = '-';         label.f_tL_nat = 'scaled functional response for 1-var data, natural f'; 
 par.f_tWeVe_tWeYe = 1;  free.f_tWeVe_tWeYe = 0; units.f_tWeVe_tWeYe = '-';  label.f_tWeVe_tWeYe = 'scaled functional response for embryo growth';
 
 %% set chemical parameters from Kooy2010 

@@ -60,7 +60,9 @@ TC_Ri = tempcorr(temp.WwR, T_ref, T_A);
   % hatch   
 %  [U_H aUL] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0 1e-10], [], kap, v, k_J, g, L_m);
 %  a_h = aUL(2,1); aT_h = a_h/ TC_ah; % d, age at hatch at f and T
-
+    %same for natural f
+   % [U_H-nat aUL_nat] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0_nat 1e-10], [], kap, v, k_J, g, L_m);
+   
   % birth
   L_b = L_m * l_b;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
   Lw_b = L_b/ del_M;                % cm, physical length at birth at f    %%%%%%% del_M : shape coefficient
@@ -194,7 +196,7 @@ TC_Ri = tempcorr(temp.WwR, T_ref, T_A);
   UT10_E0 = TC10 * U_E0;
   % tW-data embryo
   t = [0; tWwe_T10(:,1)]; 
-  [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT12_E0 0], [], kap, vT10, kT10_J, g, L_m); 
+  [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT10_E0 0], [], kap, vT10, kT10_J, g, L_m); 
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
   EWw_e10 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus

@@ -39,44 +39,23 @@ metaData.date_acc    = [2019 04 17];
 %%%%%%%%%%%%%%%%%%%%
 data.ah_4_eng = 115;    units.ah_4_eng = 'd';    label.ah_4_eng = 'age at hatching';             bibkey.ah_4_eng = 'Carrick1979';     comment.ah_4_eng = 'parents from River Kent (Cumbria, northern England)';
   temp.ah_4_eng = C2K(4);  units.temp.ah_4_eng = 'K'; label.temp.ah_4_eng = 'temperature';
-data.ah_02_nor = 255;    units.ah_02_nor = 'd';    label.ah_02_nor = 'age at hatching';             bibkey.ah_02_nor = 'Wallace1988';     comment.ah_02_nor = 'mean of four wild Norwegian stocks';
-  temp.ah_02_nor = C2K(0.2);  units.temp.ah_02_nor = 'K'; label.temp.ah_02_nor = 'temperature';
-data.ah_1_nor = 210.75;    units.ah_1_nor = 'd';    label.ah_1_nor = 'age at hatching';             bibkey.ah_1_nor = 'Wallace1988';     comment.ah_1_nor = 'median of four wild Norwegian stocks';
-  temp.ah_1_nor = C2K(1.0);  units.temp.ah_1_nor = 'K'; label.temp.ah_1_nor = 'temperature';
+%f=natural (parents)
 data.ah_4_nor = 135;    units.ah_4_nor = 'd';    label.ah_4_nor = 'age at hatching';             bibkey.ah_4_nor = 'Berg2001';     comment.ah_4_nor = 'parents from river Stjørdalselva (Norway), mean of just before hatching and newly hatched';
   temp.ah_4_nor = C2K(4);  units.temp.ah_4_nor = 'K'; label.temp.ah_4_nor = 'temperature';
-data.ah_nor2011F = 115;    units.ah_nor2011F = 'd';    label.ah_nor2011F = 'age at hatching';             bibkey.ah_nor2011F = 'Solberg2014';     comment.ah_nor2011F = 'parents from river Figgjo (Norway), mean of offsprings time at 50% hatching in 2011';
-  temp.ah_nor2011F = C2K(4.8);  units.temp.ah_nor2011F = 'K'; label.temp.ah_nor2011F = 'temperature';
-data.ah_nor2012F = 91;    units.ah_nor2012F = 'd';    label.ah_nor2012F = 'age at hatching';             bibkey.ah_nor2012F = 'Solberg2014';     comment.ah_nor2012F = 'parents from river Figgjo (Norway), mean of offsprings time at 50% hatching in 2012';
-  temp.ah_nor2012F = C2K(6.0);  units.temp.ah_nor2012F = 'K'; label.temp.ah_nor2012F = 'temperature';
-data.ah_nor2013F = 87;    units.ah_nor2013F = 'd';    label.ah_nor2013F = 'age at hatching';             bibkey.ah_nor2013F = 'Solberg2014';     comment.ah_nor2013F = 'parents from river Figgjo (Norway), mean of offsprings time at 50% hatching in 2013';
-  temp.ah_nor2013F = C2K(6.3);  units.temp.ah_nor2013F = 'K'; label.temp.ah_nor2013F = 'temperature';
-data.ah_nor2012V = 93;    units.ah_nor2012V = 'd';    label.ah_nor2012V = 'age at hatching';             bibkey.ah_nor2012V = 'Solberg2014';     comment.ah_nor2012V = 'parents from river Vosso (Norway), mean of offsprings time at 50% hatching in 2012';
-  temp.ah_nor2012V = C2K(6.0);  units.temp.ah_nor2012V = 'K'; label.temp.ah_nor2012V = 'temperature';
-data.ah_nor2013V = 88;    units.ah_nor2013V = 'd';    label.ah_nor2013V = 'age at hatching';             bibkey.ah_nor2013V = 'Solberg2014';     comment.ah_nor2013V = 'parents from river Figgjo (Norway), mean of offsprings time at 50% hatching in 2013';
-  temp.ah_nor2013V = C2K(6.3);  units.temp.ah_nor2013V = 'K'; label.temp.ah_nor2013V = 'temperature';
-data.ah_nor2012A = 92;    units.ah_nor2012A = 'd';    label.ah_nor2012A = 'age at hatching';             bibkey.ah_nor2012A = 'Solberg2014';     comment.ah_nor2012A = 'parents from river Arna (Norway), mean of offsprings time at 50% hatching in 2012';
-  temp.ah_nor2012A = C2K(6.0);  units.temp.ah_nor2012A = 'K'; label.temp.ah_nor2012A = 'temperature';
-data.ah_nor2013A = 88;    units.ah_nor2013A = 'd';    label.ah_nor2013A = 'age at hatching';             bibkey.ah_nor2013A = 'Solberg2014';     comment.ah_nor2013A = 'parents from river Arna (Norway), mean of offsprings time at 50% hatching in 2012';
-  temp.ah_nor2013A = C2K(6.3);  units.temp.ah_nor2013A = 'K'; label.temp.ah_nor2013A = 'temperature';
-data.ah_normix7 = 76;    units.ah_normix7 = 'd';    label.ah_normix7 = 'age at hatching';             bibkey.ah_normix7 = 'Berg1999';     comment.ah_normix7 = 'mean of norwegian rivers, mean of offsprings time at 50% hatching';
-  temp.ah_normix7 = C2K(7.3);  units.temp.ah_normix7 = 'K'; label.temp.ah_normix7 = 'temperature';
-data.ah_normix9 = 54;    units.ah_normix9 = 'd';    label.ah_normix9 = 'age at hatching';             bibkey.ah_normix9 = 'Berg1999';     comment.ah_normix9 = 'mean of norwegian rivers, mean of offsprings time at 50% hatching';
-  temp.ah_normix9 = C2K(9.4);  units.temp.ah_normix9 = 'K'; label.temp.ah_normix9 = 'temperature';
+%f=natural (parents)
 data.ah_scocanmix = 110;    units.ah_scocanmix = 'd';    label.ah_scocanmix = 'age at hatching';             bibkey.ah_scocanmix = 'Gilbey2009';     comment.ah_scocanmix = 'mean of Bristol cove river (Scotland) + Don river (Canada) + hybrids, mean of offsprings time at 50% hatching';
   temp.ah_scocanmix = C2K(5.8);  units.temp.ah_scocanmix = 'K'; label.temp.ah_scocanmix = 'temperature';
+%f=natural (parents)
 data.ah_05_fnor = 220;    units.ah_05_fnor = 'd';    label.ah_05_fnor = 'age at hatching';             bibkey.ah_05_fnor = 'Berg2001';     comment.ah_05_fnor = 'parents from river Teno (Finland/Norway), mean of all eggs';
   temp.ah_05_fnor = C2K(0.5);  units.temp.ah_05_fnor = 'K'; label.temp.ah_05_nor = 'temperature';
-data.ah_8_sco = 62;    units.ah_8_sco = 'd';    label.ah_8_sco = 'age at hatching';             bibkey.ah_8_sco = 'Jonhson1997';     comment.ah_8_sco = 'parents from river Shin (Scotland), mean of all eggs';
-  temp.ah_8_sco = C2K(8.1);  units.temp.ah_8_sco = 'K'; label.temp.ah_8_sco = 'temperature';
-data.ah_5_sco = 109;    units.ah_5_sco = 'd';    label.ah_5_sco = 'age at hatching';             bibkey.ah_5_sco = 'Jonhson1997';     comment.ah_5_sco = 'parents from river Shin (Scotland), mean of all eggs';
-  temp.ah_5_sco = C2K(4.8);  units.temp.ah_5_sco = 'K'; label.temp.ah_5_sco = 'temperature';
-        
+%f=natural (parents)
+    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.ah_sco4to13 = 122;    units.ah_sco4to13 = 'd';    label.ah_sco5to13 = 'age at hatching';             bibkey.ah_sco5to13 = 'Berg2001';     comment.ah_sco4to13 = 'parents from river Blackwater (Scotland), spawning 28-30 Nov 2012, hatching uniformly 25 March to 3 April';
+data.ah_sco4to13 = 122;    units.ah_sco4to13 = 'd';    label.ah_sco4to13 = 'age at hatching';             bibkey.ah_sco5to13 = 'Berg2001';     comment.ah_sco4to13 = 'parents from river Blackwater (Scotland), spawning 28-30 Nov 2012, hatching uniformly 25 March to 3 April';
   temp.ah_sco4to13 = C2K(10);  units.temp.ah_sco4to13 = 'K'; label.temp.ah_sco4to13 = 'temperature';
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%f=natural (parents)
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% Age at first feeding %
@@ -84,69 +63,66 @@ data.ah_sco4to13 = 122;    units.ah_sco4to13 = 'd';    label.ah_sco5to13 = 'age 
 data.ab_4_nor = 196;    units.ab_4_nor = 'd';    label.ab_4_nor = 'age at birth';             bibkey.ab_4_nor = 'Berg2001';     
   temp.ab_4_nor = C2K(4);  units.temp.ab_4_nor = 'K'; label.temp.ab_4_nor = 'temperature';
   comment.ab_4_nor = 'parents from river Stjørdalselva (Norway), immediatly before first feeding';
+  %f=natural (parents)
 % data.ab_sco4to13 = 146;    units.ab_sco4to13 = 'd';    label.ab_sco4to13 = 'age at birth';             bibkey.ab = 'Berg2001';     
 %   temp.ab_sco4to13 = C2K(10);  units.temp.ab_sco4to13 = 'K'; label.temp.ab_sco4to13 = 'temperature';
 %   comment.ab_sco4to13 = 'parents from river Blackwater (Scotland), reached 1st feeding, T� raised from 5 to 13 slowly';
 data.ab_scocanmix = 146;    units.ab_scocanmix = 'd';    label.ab_scocanmix = 'age at birth';             bibkey.ab_scocanmix = 'Gilbey2009';     comment.ab_scocanmix = 'mean of Bristol cove river (Scotland) + Don river (Canada), mean of offsprings time at 50% hatching';
   temp.ab_scocanmix = C2K(5.8);  units.temp.ab_scocanmix = 'K'; label.temp.ab_scocanmix = 'temperature';
-data.ab_8_sco = 105;    units.ab_8_sco = 'd';    label.ab_8_sco = 'age at birth';             bibkey.ab_8_sco = 'Jonhson1997';     
-  temp.ab_8_sco = C2K(8.1);  units.temp.ab_8_sco = 'K'; label.temp.ab_8_sco = 'temperature';
-  comment.ab_8_sco = 'parents from river Shin (Scotland), age at first feeding';
-data.ab_5_sco = 173;    units.ab_5_sco = 'd';    label.ab_5_sco = 'age at birth';             bibkey.ab_5_sco = 'Jonhson1997';     
-  temp.ab_5_sco = C2K(4.8);  units.temp.ab_5_sco = 'K'; label.temp.ab_5_sco = 'temperature';
-  comment.ab_5_sco = 'parents from river Shin (Scotland), age at first feeding';
+%f=natural (parents)
+
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Age at smoltification % time since birth
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-
-data.ts_rus = 1424;    units.ts_rus = 'd';    label.ts_rus = 'time since birth at smoltification'; bibkey.ts_rus = 'Hutchings1998'; 
-  temp.ts_rus = C2K(7);  units.temp.ts_rus = 'K'; label.temp.ts_rus = 'temperature'; 
-  comment.ts_rus = 'River Pizhma (Russia); temperature: rough guess - highly variable temperature throughout life';
-data.ts_ice = 1107;    units.ts_ice = 'd';    label.ts_ice = 'time since birth at smoltification'; bibkey.ts_ice = 'Hutchings1998'; 
-  temp.ts_ice = C2K(7);  units.temp.ts_ice = 'K'; label.temp.ts_ice = 'temperature'; 
-  comment.ts_ice = 'mean of Iceland populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_nor = 1099;    units.ts_nor = 'd';    label.ts_nor = 'time since birth at smoltification'; bibkey.ts_nor = 'Hutchings1998'; 
-  temp.ts_nor = C2K(7);  units.temp.ts_nor = 'K'; label.temp.ts_nor = 'temperature'; 
-  comment.ts_nor = 'mean (high variability) of Norway populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_fin = 964;    units.ts_fin = 'd';    label.ts_fin = 'time since birth at smoltification'; bibkey.ts_fin = 'Hutchings1998'; 
-  temp.ts_fin = C2K(7);  units.temp.ts_fin = 'K'; label.temp.ts_fin = 'temperature'; 
-  comment.ts_fin = 'Simojoki river (Finland); temperature: rough guess of mean value - highly variable temperature throughout life ( 9.8-18°C)';
-data.ts_swe = 891;    units.ts_swe = 'd';    label.ts_swe = 'time since birth at smoltification'; bibkey.ts_swe = 'Hutchings1998'; 
-  temp.ts_swe = C2K(10);  units.temp.ts_swe = 'K'; label.temp.ts_swe = 'temperature'; 
-  comment.ts_swe = 'mean (high variability) of Sweden populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_gbr = 796;    units.ts_gbr = 'd';    label.ts_gbr = 'time since birth at smoltification'; bibkey.ts_gbr = 'Jutila2006'; 
-  temp.ts_gbr = C2K(12);  units.temp.ts_gbr = 'K'; label.temp.ts_gbr = 'temperature'; 
-  comment.ts_gbr = 'mean of Brittish populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_ire = 738;    units.ts_ire = 'd';    label.ts_ire = 'time since birth at smoltification'; bibkey.ts_ire = 'Hutchings1998'; 
-  temp.ts_ire = C2K(12);  units.temp.ts_ire = 'K'; label.temp.ts_ire = 'temperature'; 
-  comment.ts_ire = 'mean (high variability) of Irish populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_fra = 482;    units.ts_fra = 'd';    label.ts_fra = 'time since birth at smoltification'; bibkey.ts_fra = 'Hutchings1998'; 
-  temp.ts_fra = C2K(14);  units.temp.ts_fra = 'K'; label.temp.ts_fra = 'temperature'; 
-  comment.ts_fra = 'mean of French populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_spa = 446;    units.ts_spa = 'd';    label.ts_spa = 'time since birth at smoltification'; bibkey.ts_spa = 'Hutchings1998'; 
-  temp.ts_spa = C2K(14);  units.temp.ts_spa = 'K'; label.temp.ts_spa = 'temperature'; 
-  comment.ts_spa = 'mean of Spannish populations; temperature: rough guess - highly variable temperature throughout life';
-data.ts_norI = 626;    units.ts_norI = 'd';    label.ts_norI = 'time since birth at smoltification'; bibkey.ts_norI = 'Jonsson1998'; 
-  temp.ts_norI = C2K(12);  units.temp.ts_norI = 'K'; label.temp.ts_norI = 'temperature'; 
-  comment.ts_norI = 'mean of Imsa river (Norway) smolt age from 1983 to 1993; temperature: rough guess - highly variable temperature throughout life';
-data.ts_norI2 = 614;    units.ts_norI2 = 'd';    label.ts_norI2 = 'time since birth at smoltification'; bibkey.ts_norI = 'Hindar2006'; 
-  temp.ts_norI2 = C2K(12);  units.temp.ts_norI = 'K'; label.temp.ts_norI2 = 'temperature'; 
-  comment.ts_norI2 = 'mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life 1.68*365.25';
-data.ts_canm = 937;    units.ts_canm = 'd';    label.ts_canm = 'time since birth at male smoltification'; bibkey.ts_canm = 'Bailey1980'; 
-  temp.ts_canm = C2K(10);  units.temp.ts_canm = 'K'; label.temp.ts_canm = 'temperature'; 
-  comment.ts_canm = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life; scalimetry*365.25';
-data.ts_canf = 815;    units.ts_canf = 'd';    label.ts_canf = 'time since birth at female smoltification'; bibkey.ts_canf = 'Bailey1980'; 
-  temp.ts_canf = C2K(10);  units.temp.ts_canf = 'K'; label.temp.ts_canf = 'temperature'; 
-  comment.ts_canf = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry*365.25';
-data.ts_canmean = 829;    units.ts_canmean = 'd';    label.ts_canmean = 'time since birth at smoltification'; bibkey.ts_canmean = 'Metcalfe1990'; 
-  temp.ts_canmean = C2K(10);  units.temp.ts_canmean = 'K'; label.temp.ts_canmean = 'temperature'; 
-  comment.ts_canmean = 'mean of canadian rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry*365.25';
-data.ts_eurmean = 1179;    units.ts_eurmean = 'd';    label.ts_eurmean = 'time since birth at smoltification'; bibkey.ts_eurmean = 'Metcalfe1990'; 
-  temp.ts_eurmean = C2K(10);  units.temp.ts_eurmean = 'K'; label.temp.ts_eurmean = 'temperature'; 
-  comment.ts_eurmean = 'mean of canadian rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry*365.25';
+% 
+% data.ts_rus = 1424;    units.ts_rus = 'd';    label.ts_rus = 'time since birth at smoltification'; bibkey.ts_rus = 'Hutchings1998'; 
+%   temp.ts_rus = C2K(7);  units.temp.ts_rus = 'K'; label.temp.ts_rus = 'temperature'; 
+%   comment.ts_rus = 'River Pizhma (Russia); temperature: rough guess - highly variable temperature throughout life';
+% data.ts_ice = 1107;    units.ts_ice = 'd';    label.ts_ice = 'time since birth at smoltification'; bibkey.ts_ice = 'Hutchings1998'; 
+%   temp.ts_ice = C2K(7);  units.temp.ts_ice = 'K'; label.temp.ts_ice = 'temperature'; 
+%   comment.ts_ice = 'mean of Iceland populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_nor = 1099;    units.ts_nor = 'd';    label.ts_nor = 'time since birth at smoltification'; bibkey.ts_nor = 'Hutchings1998'; 
+%   temp.ts_nor = C2K(7);  units.temp.ts_nor = 'K'; label.temp.ts_nor = 'temperature'; 
+%   comment.ts_nor = 'mean (high variability) of Norway populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_fin = 964;    units.ts_fin = 'd';    label.ts_fin = 'time since birth at smoltification'; bibkey.ts_fin = 'Hutchings1998'; 
+%   temp.ts_fin = C2K(7);  units.temp.ts_fin = 'K'; label.temp.ts_fin = 'temperature'; 
+%   comment.ts_fin = 'Simojoki river (Finland); temperature: rough guess of mean value - highly variable temperature throughout life ( 9.8-18°C)';
+% data.ts_swe = 891;    units.ts_swe = 'd';    label.ts_swe = 'time since birth at smoltification'; bibkey.ts_swe = 'Hutchings1998'; 
+%   temp.ts_swe = C2K(10);  units.temp.ts_swe = 'K'; label.temp.ts_swe = 'temperature'; 
+%   comment.ts_swe = 'mean (high variability) of Sweden populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_gbr = 796;    units.ts_gbr = 'd';    label.ts_gbr = 'time since birth at smoltification'; bibkey.ts_gbr = 'Jutila2006'; 
+%   temp.ts_gbr = C2K(12);  units.temp.ts_gbr = 'K'; label.temp.ts_gbr = 'temperature'; 
+%   comment.ts_gbr = 'mean of Brittish populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_ire = 738;    units.ts_ire = 'd';    label.ts_ire = 'time since birth at smoltification'; bibkey.ts_ire = 'Hutchings1998'; 
+%   temp.ts_ire = C2K(12);  units.temp.ts_ire = 'K'; label.temp.ts_ire = 'temperature'; 
+%   comment.ts_ire = 'mean (high variability) of Irish populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_fra = 482;    units.ts_fra = 'd';    label.ts_fra = 'time since birth at smoltification'; bibkey.ts_fra = 'Hutchings1998'; 
+%   temp.ts_fra = C2K(14);  units.temp.ts_fra = 'K'; label.temp.ts_fra = 'temperature'; 
+%   comment.ts_fra = 'mean of French populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_spa = 446;    units.ts_spa = 'd';    label.ts_spa = 'time since birth at smoltification'; bibkey.ts_spa = 'Hutchings1998'; 
+%   temp.ts_spa = C2K(14);  units.temp.ts_spa = 'K'; label.temp.ts_spa = 'temperature'; 
+%   comment.ts_spa = 'mean of Spannish populations; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_norI = 626;    units.ts_norI = 'd';    label.ts_norI = 'time since birth at smoltification'; bibkey.ts_norI = 'Jonsson1998'; 
+%   temp.ts_norI = C2K(12);  units.temp.ts_norI = 'K'; label.temp.ts_norI = 'temperature'; 
+%   comment.ts_norI = 'mean of Imsa river (Norway) smolt age from 1983 to 1993; temperature: rough guess - highly variable temperature throughout life';
+% data.ts_norI2 = 614;    units.ts_norI2 = 'd';    label.ts_norI2 = 'time since birth at smoltification'; bibkey.ts_norI = 'Hindar2006'; 
+%   temp.ts_norI2 = C2K(12);  units.temp.ts_norI = 'K'; label.temp.ts_norI2 = 'temperature'; 
+%   comment.ts_norI2 = 'mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life 1.68*365.25';
+% data.ts_canm = 937;    units.ts_canm = 'd';    label.ts_canm = 'time since birth at male smoltification'; bibkey.ts_canm = 'Bailey1980'; 
+%   temp.ts_canm = C2K(10);  units.temp.ts_canm = 'K'; label.temp.ts_canm = 'temperature'; 
+%   comment.ts_canm = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life; scalimetry*365.25';
+% data.ts_canf = 815;    units.ts_canf = 'd';    label.ts_canf = 'time since birth at female smoltification'; bibkey.ts_canf = 'Bailey1980'; 
+%   temp.ts_canf = C2K(10);  units.temp.ts_canf = 'K'; label.temp.ts_canf = 'temperature'; 
+%   comment.ts_canf = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry*365.25';
+% data.ts_canmean = 829;    units.ts_canmean = 'd';    label.ts_canmean = 'time since birth at smoltification'; bibkey.ts_canmean = 'Metcalfe1990'; 
+%   temp.ts_canmean = C2K(10);  units.temp.ts_canmean = 'K'; label.temp.ts_canmean = 'temperature'; 
+%   comment.ts_canmean = 'mean of canadian rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry*365.25';
+% data.ts_eurmean = 1179;    units.ts_eurmean = 'd';    label.ts_eurmean = 'time since birth at smoltification'; bibkey.ts_eurmean = 'Metcalfe1990'; 
+%   temp.ts_eurmean = C2K(10);  units.temp.ts_eurmean = 'K'; label.temp.ts_eurmean = 'temperature'; 
+%   comment.ts_eurmean = 'mean of canadian rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry*365.25';
 
   
 % data.aj = 1.04*365.25;    units.aj = 'd';    label.aj = 'age at metamorphosis'; bibkey.tj = 'Hutchings1998'; comment.tj = 'Nivelle';
@@ -157,53 +133,55 @@ data.ts_eurmean = 1179;    units.ts_eurmean = 'd';    label.ts_eurmean = 'time s
 %% Age at maturity %  (or age at first spawning minus 1 year)
 %%%%%%%%%%%%%%%%%%%%
 
-%direct maturity measurement
-data.tp_gbr = 1673;    units.tp_gbr = 'd';    label.tp_gbr = 'time since birth at puberty';  bibkey.tp_gbr = 'Hutchings1998'; 
-  temp.tp_gbr = C2K(10);  units.temp.tp_gbr = 'K'; label.temp.tp_gbr = 'temperature'; 
-  comment.tp_gbr = 'Mean of brittish populations; temperature: rough guess - highly variable temperature throughout life';
- data.tp_ice = 2023;    units.tp_ice = 'd';    label.tp_ice = 'time since birth at puberty';  bibkey.tp_ice = 'Hutchings1998'; 
+%maturity measurement %temperature adjustments needed.
+data.tp_gbr = 1308;    units.tp_gbr = 'd';    label.tp_gbr = 'time since birth at puberty';  bibkey.tp_gbr = 'Hutchings1998'; 
+  temp.tp_gbr = C2K(10);  units.temp.tp_gbr = 'K'; label.temp.tp_gbr = 'temperature';
+  comment.tp_gbr = 'Mean of brittish populations; temperature: rough guess - highly variable temperature throughout life ';% fo  hutchings : (1(fertilization->birth)+river age+sea age -1)
+ data.tp_ice = 1658;    units.tp_ice = 'd';    label.tp_ice = 'time since birth at puberty';  bibkey.tp_ice = 'Hutchings1998'; 
   temp.tp_ice = C2K(10);  units.temp.tp_ice = 'K'; label.temp.tp_ice = 'temperature'; 
   comment.tp_ice = 'Mean of Icelandic populations; temperature: rough guess - highly variable temperature throughout life';
- data.tp_nor = 2086;    units.tp_nor = 'd';    label.tp_nor = 'time since birth at puberty';  bibkey.tp_nor = 'Hutchings1998'; 
+ data.tp_nor = 1721;    units.tp_nor = 'd';    label.tp_nor = 'time since birth at puberty';  bibkey.tp_nor = 'Hutchings1998'; 
   temp.tp_nor = C2K(10);  units.temp.tp_nor = 'K'; label.temp.tp_nor = 'temperature'; 
   comment.tp_nor = 'Mean of norwegian populations; temperature: rough guess - highly variable temperature throughout life';
- data.tp_fraspa = 1410;    units.tp_fraspa = 'd';    label.tp_fraspa = 'time since birth at puberty';  bibkey.tp_fraspa = 'Hutchings1998'; 
+ data.tp_fraspa = 1045;    units.tp_fraspa = 'd';    label.tp_fraspa = 'time since birth at puberty';  bibkey.tp_fraspa = 'Hutchings1998'; 
   temp.tp_fraspa = C2K(10);  units.temp.tp_fraspa = 'K'; label.temp.tp_fraspa = 'temperature'; 
   comment.tp_fraspa = 'Mean of French+Spannish populations; temperature: rough guess - highly variable temperature throughout life';
- data.tp_ire = 1490;    units.tp_ire = 'd';    label.tp_ire = 'time since birth at puberty';  bibkey.tp_ire = 'Hutchings1998'; 
+ data.tp_ire = 1125;    units.tp_ire = 'd';    label.tp_ire = 'time since birth at puberty';  bibkey.tp_ire = 'Hutchings1998'; 
   temp.tp_ire = C2K(10);  units.temp.tp_ire = 'K'; label.temp.tp_ire = 'temperature'; 
   comment.tp_ire = 'Mean of Irish populations; temperature: rough guess - highly variable temperature throughout life';
-  data.tp_canm = 1494;    units.tp_canm = 'd';    label.tp_canm = 'time since birth at first maturity';  bibkey.tp_canm = 'Bailey1980'; 
-  temp.tp_canm = C2K(10);  units.temp.tp_canm = 'K'; label.temp.tp_canm = 'temperature'; 
-  comment.tp_canm = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry (smolt age + sea age) *365.25';
- data.tp_canf = 1499;    units.tp_canf = 'd';    label.tp_canf = 'time since birth at first maturity';  bibkey.tp_canf = 'Bailey1980'; 
-  temp.tp_canf = C2K(10);  units.temp.tp_canf = 'K'; label.temp.tp_canf = 'temperature'; 
-  comment.tp_canf = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry (smolt age + sea age) *365.25';
+  %f= natural
   
-%calculations (= estimations maturity = spawning-1 year
- data.tp_rus = 1366;    units.tp_rus = 'd';    label.tp_rus = 'time since birth at maturity';  bibkey.tp_rus = 'Kazakov1981'; 
+   data.tp_canm = 1129;    units.tp_canm = 'd';    label.tp_canm = 'time since birth at first maturity';  bibkey.tp_canm = 'Bailey1980'; 
+  temp.tp_canm = C2K(10);  units.temp.tp_canm = 'K'; label.temp.tp_canm = 'temperature'; 
+  comment.tp_canm = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry (smolt age + sea age-1) *365.25';
+ data.tp_canf = 1134;    units.tp_canf = 'd';    label.tp_canf = 'time since birth at first maturity';  bibkey.tp_canf = 'Bailey1980'; 
+  temp.tp_canf = C2K(10);  units.temp.tp_canf = 'K'; label.temp.tp_canf = 'temperature'; 
+  comment.tp_canf = 'mean of 4 New brunswick rivers(Canada); temperature: rough guess - highly variable temperature throughout life;  scalimetry (smolt age + sea age-1) *365.25';
+    %f= natural
+  
+data.tp_rus = 1366;    units.tp_rus = 'd';    label.tp_rus = 'time since birth at maturity';  bibkey.tp_rus = 'Kazakov1981'; 
   temp.tp_rus = C2K(10);  units.temp.tp_rus = 'K'; label.temp.tp_rus = 'temperature'; 
   comment.tp_rus = 'Mean of Neva river (Russia); temperature: rough guess - highly variable temperature throughout life; (4.74-1)*365.25';
  data.tp_norI = 694;    units.tp_norI = 'd';    label.tp_norI = 'time since birth at spawning';  bibkey.tp_norI = 'Hindar2006'; 
   temp.tp_norI = C2K(10);  units.temp.tp_norI = 'K'; label.temp.tp_norI = 'temperature'; 
   comment.tp_norI = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life(1,68+1.22-1)*365.25';
- data.tp_ire = 745;    units.tp_ire = 'd';    label.tp_ire = 'time since birth at spawning';  bibkey.tp_ire = 'Hindar2006'; 
-  temp.tp_ire = C2K(10);  units.temp.tp_ire = 'K'; label.temp.tp_ire = 'temperature'; 
-  comment.tp_ire = 'Mean of Burrishoole river (Norway); temperature: rough guess - highly variable temperature throughout life(2+1.04-1)*365.25';
-
+ data.tp_ire2 = 745;    units.tp_ire2 = 'd';    label.tp_ire2 = 'time since birth at spawning';  bibkey.tp_ire2 = 'Hindar2006'; 
+  temp.tp_ire2 = C2K(10);  units.temp.tp_ire2 = 'K'; label.temp.tp_ire2 = 'temperature'; 
+  comment.tp_ire2 = 'Mean of Burrishoole river (Norway); temperature: rough guess - highly variable temperature throughout life(2+1.04-1)*365.25';
+  %f= natural
   
   %%%%%%%%%%%%%%%%%%%%
   %% Age at spawning %
   %%%%%%%%%%%%%%%%%%%%
-   data.tp_rusb = 1731;    units.tp_rusb = 'd';    label.tp_rusb = 'time since birth at spawning';  bibkey.tp_rusb = 'Kazakov1981'; 
-  temp.tp_rusb = C2K(10);  units.temp.tp_rusb = 'K'; label.temp.tp_rusb = 'temperature'; 
-  comment.tp_rusb = 'Mean of Neva river (Russia); temperature: rough guess - highly variable temperature throughout life; (4.74)*365.25';
- data.tp_norIb = 1059;    units.tp_norIb = 'd';    label.tp_norIb = 'time since birth at spawning';  bibkey.tp_norIb = 'Hindar2006'; 
-  temp.tp_norIb = C2K(10);  units.temp.tp_norIb = 'K'; label.temp.tp_norIb = 'temperature'; 
-  comment.tp_norIb = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life(1,68+1.22)*365.25';
- data.tp_ireb = 1110;    units.tp_ireb = 'd';    label.tp_ireb = 'time since birth at spawning';  bibkey.tp_ireb = 'Hindar2006'; 
-  temp.tp_ireb = C2K(10);  units.temp.tp_ireb = 'K'; label.temp.tp_ireb = 'temperature'; 
-  comment.tp_ireb = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life(2+1.04)*365.25';
+%    data.tp_rusb = 1731;    units.tp_rusb = 'd';    label.tp_rusb = 'time since birth at spawning';  bibkey.tp_rusb = 'Kazakov1981'; 
+%   temp.tp_rusb = C2K(10);  units.temp.tp_rusb = 'K'; label.temp.tp_rusb = 'temperature'; 
+%   comment.tp_rusb = 'Mean of Neva river (Russia); temperature: rough guess - highly variable temperature throughout life; (4.74)*365.25';
+%  data.tp_norIb = 1059;    units.tp_norIb = 'd';    label.tp_norIb = 'time since birth at spawning';  bibkey.tp_norIb = 'Hindar2006'; 
+%   temp.tp_norIb = C2K(10);  units.temp.tp_norIb = 'K'; label.temp.tp_norIb = 'temperature'; 
+%   comment.tp_norIb = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life(1,68+1.22)*365.25';
+%  data.tp_ireb = 1110;    units.tp_ireb = 'd';    label.tp_ireb = 'time since birth at spawning';  bibkey.tp_ireb = 'Hindar2006'; 
+%   temp.tp_ireb = C2K(10);  units.temp.tp_ireb = 'K'; label.temp.tp_ireb = 'temperature'; 
+%   comment.tp_ireb = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life(2+1.04)*365.25';
 
   
 % data.ap = (1.04+1.17)*365.25;    units.ap = 'd';    label.ap = 'age at puberty';           bibkey.ap = 'Hutchings1998'; comment.tj = 'Nivelle';
@@ -220,7 +198,7 @@ data.am_sco = (2.265+2.39)*365.25;    units.am_sco = 'd';    label.am_sco = 'lif
    temp.am_sco = C2K(10);  units.temp.am_sco = 'K'; label.temp.am_sco = 'temperature'; comment.temp.am_sco = 'rough guess - highly variable temperature throughout life';
 data.am_rus = 8*365.25;    units.am_rus = 'd';    label.am_rus = 'life span';  bibkey.am_rus = 'Hutchings1998'; comment.am_rus = 'Max age in river Neva (Russia)';
    temp.am_rus = C2K(10);  units.temp.am_rus = 'K'; label.temp.am_rus = 'temperature'; comment.temp.am_rus = 'rough guess - highly variable temperature throughout life';
-
+  %f= natural
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at hatching %
@@ -299,23 +277,23 @@ data.Lb_ScoA  = 2.74;   units.Lb_ScoA  = 'cm';  label.Lb_ScoA  = 'total length a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at smoltification %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Ls_gbr  = 12.4;   units.Ls_gbr  = 'cm';  label.Ls_gbr  = 'total length at metamorphosis'; bibkey.Ls_gbr  = 'Hutchings1998'; 
- comment.Ls_gbr = 'mean of Brittish populations';
-data.Ls_rus  = 14;   units.Ls_rus  = 'cm';  label.Ls_rus  = 'total length at metamorphosis'; bibkey.Ls_rus  = 'Hutchings1998'; 
-  comment.Ls_rus = 'River Pizhma (Russia)';
-data.Ls_ice  = 12.5;   units.Ls_ice  = 'cm';  label.Ls_ice  = 'total length at metamorphosis'; bibkey.Ls_ice  = 'Hutchings1998'; 
-  comment.Ls_ice = 'mean of Icelandic populations';
-data.Ls_nor  = 13.1;   units.Ls_nor  = 'cm';  label.Ls_nor  = 'total length at metamorphosis'; bibkey.Ls_nor  = 'Hutchings1998'; 
-  comment.Ls_nor = 'mean of Norwegian populations';
-data.Ls_ire  = 13.6;   units.Ls_ire  = 'cm';  label.Ls_ire  = 'total length at metamorphosis'; bibkey.Ls_ire  = 'Hutchings1998'; 
-  comment.Ls_ire = 'mean of Irish populations';
-data.Ls_fra  = 18.1;   units.Ls_fra  = 'cm';  label.Ls_fra  = 'total length at metamorphosis'; bibkey.Ls_fra  = 'Hutchings1998'; 
-  comment.Ls_fra = 'mean of French populations';
-data.Ls_spa  = 17.2;   units.Ls_spa  = 'cm';  label.Ls_spa  = 'total length at metamorphosis'; bibkey.Ls_spa  = 'Hutchings1998'; 
-  comment.Ls_spa = 'mean of Spannish populations';
-data.Ls_finS1980  = 15.2;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jutila2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 1991';
-data.Ls_finS1990  = 15.5;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jokikkoko2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1986 to 1992';
-data.Ls_norI  = 16.3;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jonsson1991'; comment.Lj = 'Imsa (Norway)';
+% data.Ls_gbr  = 12.4;   units.Ls_gbr  = 'cm';  label.Ls_gbr  = 'total length at metamorphosis'; bibkey.Ls_gbr  = 'Hutchings1998'; 
+%  comment.Ls_gbr = 'mean of Brittish populations';
+% data.Ls_rus  = 14;   units.Ls_rus  = 'cm';  label.Ls_rus  = 'total length at metamorphosis'; bibkey.Ls_rus  = 'Hutchings1998'; 
+%   comment.Ls_rus = 'River Pizhma (Russia)';
+% data.Ls_ice  = 12.5;   units.Ls_ice  = 'cm';  label.Ls_ice  = 'total length at metamorphosis'; bibkey.Ls_ice  = 'Hutchings1998'; 
+%   comment.Ls_ice = 'mean of Icelandic populations';
+% data.Ls_nor  = 13.1;   units.Ls_nor  = 'cm';  label.Ls_nor  = 'total length at metamorphosis'; bibkey.Ls_nor  = 'Hutchings1998'; 
+%   comment.Ls_nor = 'mean of Norwegian populations';
+% data.Ls_ire  = 13.6;   units.Ls_ire  = 'cm';  label.Ls_ire  = 'total length at metamorphosis'; bibkey.Ls_ire  = 'Hutchings1998'; 
+%   comment.Ls_ire = 'mean of Irish populations';
+% data.Ls_fra  = 18.1;   units.Ls_fra  = 'cm';  label.Ls_fra  = 'total length at metamorphosis'; bibkey.Ls_fra  = 'Hutchings1998'; 
+%   comment.Ls_fra = 'mean of French populations';
+% data.Ls_spa  = 17.2;   units.Ls_spa  = 'cm';  label.Ls_spa  = 'total length at metamorphosis'; bibkey.Ls_spa  = 'Hutchings1998'; 
+%   comment.Ls_spa = 'mean of Spannish populations';
+% data.Ls_finS1980  = 15.2;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jutila2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 1991';
+% data.Ls_finS1990  = 15.5;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jokikkoko2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1986 to 1992';
+% data.Ls_norI  = 16.3;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jonsson1991'; comment.Lj = 'Imsa (Norway)';
 
 % data.Lj  = 18.7;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Hutchings1998'; comment.Lj = 'Nivelle';
 
@@ -356,7 +334,7 @@ data.Ls_norI  = 16.3;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorp
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at 1st spawning %
 %%%%%%%%%%%%%%%%%%%%%%%
-
+%f=natural
 %data.Lp_spa  = 70 ;   units.Lp_spa  = 'cm';  label.Lp_spa  = 'total length at puberty (grilse)'; bibkey.Lp_spa  = 'Hutchings1998';   
 %   comment.Lp_spa = 'river Narcea (Spain)';
 % data.Lp_fra  = 63.5 ;   units.Lp_spa  = 'cm';  label.Lp_spa  = 'total length at puberty (grilse)'; bibkey.Lp_spa  = 'Hutchings1998';   
@@ -377,7 +355,8 @@ data.Lp_norSf  = 52.7 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbita
 data.Lp_norSm  = 47.7 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, river Imsa (Canada)';
 data.Lp_rus  = 81.9 ;   units.Lp_rus  = 'cm';  label.Lp_rus  = 'total length at puberty'; bibkey.Lp_rus  = 'Kazakov1981';   comment.Lp_rus = 'mean females at 1st spawning, river Neva (Russia)';
 data.Lp_usa  = 79.0 ;   units.Lp_usa  = 'cm';  label.Lp_usa  = 'total length at puberty'; bibkey.Lp_usa  = 'Baum1971';   comment.Lp_usa = 'mean females at spawning, rivers Machias & Narraguagus (Usa), converted from inches';
-data.Lp_norI2  = 62.7 ;   units.Lp_norI2  = 'cm';  label.Lp_norI2  = 'total length at puberty'; bibkey.Lp_norI2  = 'Jonsson1991';   comment.Lp_norI2 = 'River Imsa';
+%reared to smolt
+data.Lp_norI2  = 62.7 ;   units.Lp_norI2  = 'cm';  label.Lp_norI2  = 'total length at puberty'; bibkey.Lp_norI2  = 'Jonsson1991';   comment.Lp_norI2 = 'River Imsa'; 
 
 
 
@@ -424,7 +403,7 @@ data.V0_fnor = 0.078;  units.V0_fnor = 'cm^3'; label.V0_fnor = 'egg volume'; bib
 %% Egg weight %
 %%%%%%%%%%%%%%%
 data.Ww0_ScoB = 0.10;  units.Ww0_ScoB = 'g'; label.Ww0_ScoB = 'wet egg weight'; bibkey.Ww0_ScoB = 'VanLeeuwen2016';  comment.Ww0_ScoB = 'parents from River Blackwater (Scotland) - 1SW mother';
-data.Ww0_ScoB = 0.12;  units.Ww0_ScoB = 'g'; label.Ww0_ScoB = 'wet egg weight'; bibkey.Ww0_ScoB = 'VanLeeuwen2016';  comment.Ww0_ScoB = 'parents from River Blackwater (Scotland) - 2SW mother';
+data.Ww0_ScoB2 = 0.12;  units.Ww0_ScoB2 = 'g'; label.Ww0_ScoB2 = 'wet egg weight'; bibkey.Ww0_ScoB2 = 'VanLeeuwen2016';  comment.Ww0_ScoB2 = 'parents from River Blackwater (Scotland) - 2SW mother';
 data.Ww0_ScoA = 0.094;  units.Ww0_ScoA = 'g'; label.Ww0_ScoA = 'wet egg weight'; bibkey.Ww0_ScoA = 'Fleming1996';  comment.Ww0_ScoA = 'mean of River Almon (Scotland)';
 data.Ww0_Fra = 0.109;  units.Ww0_Fra = 'g'; label.Ww0_Fra = 'wet egg weight'; bibkey.Ww0_Fra = 'Fleming1996';  comment.Ww0_Fra = 'mean of River Elorn (France)';
 data.Ww0_Nor = 0.1025;  units.Ww0_Nor = 'g'; label.Ww0_Nor = 'wet egg weight'; bibkey.Ww0_Nor = 'Fleming1996';  comment.Ww0_Nor = 'mean of River Imsa (Norway)';
@@ -435,7 +414,7 @@ data.Ww0_SweV = 0.097;  units.Ww0_SweV = 'g'; label.Ww0_SweV = 'wet egg weight';
 data.Ww0_RusN = 0.1272;  units.Ww0_RusN = 'g'; label.Ww0_RusN = 'wet egg weight'; bibkey.Ww0_RusN = 'Fleming1996';  comment.Ww0_RusN = 'mean of River Narva (Russia)';
 data.Ww0_RusU = 0.0978;  units.Ww0_RusU = 'g'; label.Ww0_RusU = 'wet egg weight'; bibkey.Ww0_RusU = 'Fleming1996';  comment.Ww0_RusU = 'mean of River Umba (Russia)';
 data.Ww0_RusNe = 0.1616;  units.Ww0_RusNe = 'g'; label.Ww0_RusNe = 'wet egg weight'; bibkey.Ww0_RusNe = 'Kazakov1981';  comment.Ww0_RusNe = 'mean of River Neva (Russia)';
-data.Ww0_Canbf = 0.113;  units.Ww0_Canbf = 'g'; label.Ww0_Canbf = 'wet egg weight'; bibkey.Ww0_Canbf = 'Srivastava1991';  comment.Ww0_Canbf = 'before fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
+% data.Ww0_Canbf = 0.113;  units.Ww0_Canbf = 'g'; label.Ww0_Canbf = 'wet egg weight'; bibkey.Ww0_Canbf = 'Srivastava1991';  comment.Ww0_Canbf = 'before fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
 data.Ww0_Canaf = 0.131;  units.Ww0_Canaf = 'g'; label.Ww0_Canaf = 'wet egg weight'; bibkey.Ww_Canaf0 = 'Srivastava1991';  comment.Ww0_Canaf = 'after fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
 data.Ww0_norbf = 0.104;  units.Ww0_norbf = 'g'; label.Ww0_norbf = 'wet egg weight'; bibkey.Ww0_norbf = 'Berg2001';  comment.Ww0_norbf = 'mean of 6 females eggs before fertilization - parents from river Stjørdalselva (Norway)';
 
@@ -465,9 +444,8 @@ data.Wwb_Rus = 0.195;   units.Wwb_Rus = 'g';   label.Wwb_Rus = 'wet weight at ha
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at smoltification %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Wwj = 24;   units.Wwj = 'g';   label.Wwj = 'wet weight at puberty';   bibkey.Wwj = 'Jonsson1998';  comment.Wwj = 'Imsa River (Norway) - mean of 165 individuals from 1983 to 1993 - s.d. = 6.6';
-data.Wwj = 26;   units.Wwj = 'g';   label.Wwj = 'wet weight at puberty';   bibkey.Wwj = 'Jutila2006';  
-  comment.Wwj = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 2004';
+data.WwsI = 24;   units.WwsI = 'g';   label.WwsI = 'wet weight at puberty';   bibkey.WwsI = 'Jonsson1998';  comment.WwsI = 'Imsa River (Norway) - mean of 165 individuals from 1983 to 1993 - s.d. = 6.6';
+data.WwsS = 26;   units.WwsS = 'g';   label.WwsS = 'wet weight at puberty';   bibkey.WwsS = 'Jutila2006';  comment.Wws = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 2004';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -589,6 +567,57 @@ C2K(12)	34];
 units.Tah_Mirachimi   = {'K', 'd'};  label.Tah_Mirachimi = {'temperature', 'age at hatching'}; 
 bibkey.Tah_Mirachimi = 'Peterson1977'; comment.Tah = 'parents from Mirachimi river (Canada)';
 
+data.Tah_nor=[...% age at hatching (d)
+0.2 255
+1   210.75];
+data.Tah_nor(:,1)=C2K(data.Tah_nor(:,1));
+units.Tah_nor   = {'K', 'd'};  label.Tah_nor = {'temperature', 'age at hatching'}; 
+bibkey.Tah_nor = 'Wallace1988'; comment.Tah_nor = 'median of four wild Norwegian stocks';
+%f=natural (parents)
+data.Tah_norF=[...% age at hatching (d)
+4.8 115
+6   91
+6.3 87];
+data.Tah_norF(:,1)=C2K(data.Tah_norF(:,1));
+units.Tah_norF   = {'K', 'd'};  label.Tah_norF = {'temperature', 'age at hatching'}; 
+bibkey.Tah_norF = 'Solberg2014'; comment.Tah_norF = 'parents from river Figgjo (Norway), mean of offsprings time at 50% hatching from 2011 to 2013';
+%Note : the 3 temperatures are from the same place at different time (2011
+%to 2013 : mean natural temperature during the experiment)
+%f=natural (parents)
+
+data.Tah_norV=[...% age at hatching (d)
+6   93
+6.3 88];
+data.Tah_norV(:,1)=C2K(data.Tah_norV(:,1));
+units.Tah_norV   = {'K', 'd'};  label.Tah_norV = {'temperature', 'age at hatching'}; 
+bibkey.Tah_norV = 'Solberg2014'; comment.Tah_norV = 'parents from river Vosso (Norway), mean of offsprings time at 50% hatching from 2011 to 2013';
+%Note : the temperatures are from the same place at different time (2011-2012 : mean natural temperature during the experiment)
+%f=natural (parents)
+
+data.Tah_norA=[...% age at hatching (d)
+6   93
+6.3 88];
+data.Tah_norA(:,1)=C2K(data.Tah_norA(:,1));
+units.Tah_norA   = {'K', 'd'};  label.Tah_norA = {'temperature', 'age at hatching'}; 
+bibkey.Tah_norA = 'Solberg2014'; comment.Tah_norA = 'parents from river Arna (Norway), mean of offsprings time at 50% hatching from 2011 to 2013';
+%Note : the temperatures are from the same place at different time (2011-2012 : mean natural temperature during the experiment)
+%f=natural (parents)
+
+data.Tah_normix=[...% age at hatching (d)
+7.3 76
+9.4 54];
+data.Tah_normix(:,1)=C2K(data.Tah_norA(:,1));
+units.Tah_normix  = {'K', 'd'};  label.Tah_normix = {'temperature', 'age at hatching'}; 
+bibkey.Tah_normix = 'Berg1999'; comment.Tah_normix = 'mean of norwegian rivers, mean of offsprings time at 50% hatching';
+%f=natural (parents)
+
+data.Tah_sco =[...% age at hatching (d)
+8.1 62
+4.8 109];
+data.Tah_sco(:,1)=C2K(data.Tah_sco(:,1));
+units.Tah_sco  = {'K', 'd'};  label.Tah_sco = {'temperature', 'age at hatching'}; 
+bibkey.Tah_sco = 'Jonhson1997'; comment.Tah_sco = 'parents from river Shin (Scotland), mean of all eggs';
+%f=natural (parents)
 
 %%%%%%%%%%%%%%
 %% T-ab data %
@@ -597,16 +626,16 @@ data.TabC = [ ... % temperature (°C), age at yolk exhaustion (d)
 2 238
 6 177
 12  64];
-data.TabC(:,1)=C2K(data.Tab(:,1));
+data.TabC(:,1)=C2K(data.TabC(:,1));
 units.TabC   = {'K', 'd'};  label.TabC = {'temperature', 'age at birth'}; 
 bibkey.TabC = 'Peterson1977'; comment.TabC = 'parents from Dennis Stream (New Brunswick - Canada)';
 
-data.Tab=[...
-    data.TabC;
-    data.ab_4_nor , temp.ab_4_nor;
-    data.ab_scocanmix , temp.ab_scocanmix;
-    data.ab_5_sco , temp.ab_5_sco;
-    data.ab_8_sco , temp.ab_8_sco];
+data.Tab_sco = [ ... % temperature (°C), age at yolk exhaustion (d)
+8.1 105
+4.8 173];
+data.Tab_sco(:,1)=C2K(data.Tab_sco(:,1));
+units.Tab_sco   = {'K', 'd'};  label.Tab_sco = {'temperature', 'age at birth'}; 
+bibkey.Tab_sco = 'Jonhson1997'; comment.Tab_sco = 'parents from river Shin (Scotland), age at first feeding';
 
 %%%%%%%%%%%%%
 %% T-Lh data %
@@ -737,61 +766,61 @@ temp.tL_norSu    = C2K(5.7);  units.temp.tL_norSu = 'K'; label.temp.tL_norSu = '
 bibkey.tL_norSu = 'Imsland2016'; comment.tL_norSu = 'Suldsalagen River (Norway)';
 
 
-data.tL_norA = [ ... % time since emergence (d), fork length (cm)
+data.tL_norA4 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
 232	5.4
 360	6.4];
-units.tL_norA   = {'d', 'cm'};  label.tL_norA = {'time since birth', 'total length'};  
-temp.tL_norA    = C2K(4);  units.temp.tL_norA = 'K'; label.temp.tL_norA = 'temperature'; comment.temp.tL_norA = 'T=7.9 for t=0-56';
-bibkey.tL_norA = 'Imsland2016'; comment.tL_norA = 'Ardal River (Norway)';
+units.tL_norA4   = {'d', 'cm'};  label.tL_norA4 = {'time since birth', 'total length'};  
+temp.tL_norA4    = C2K(4);  units.temp.tL_norA4 = 'K'; label.temp.tL_norA4 = 'temperature'; comment.temp.tL_norA4 = 'T=7.9 for t=0-56';
+bibkey.tL_norA4 = 'Imsland2016'; comment.tL_norA4 = 'Ardal River (Norway)';
 
-data.tL_norA = [ ... % time since emergence (d), fork length (cm)
+data.tL_norA5 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
 232	5.8
 360	7.1];
-units.tL_norA   = {'d', 'cm'};  label.tL_norA = {'time since birth', 'total length'};  
-temp.tL_norA    = C2K(5.5);  units.temp.tL_norA = 'K'; label.temp.tL_norA = 'temperature'; comment.temp.tL_norA = 'T=7.9 for t=0-56';
-bibkey.tL_norA = 'Imsland2016'; comment.tL_norA = 'Ardal River (Norway)';
+units.tL_norA5   = {'d', 'cm'};  label.tL_norA5 = {'time since birth', 'total length'};  
+temp.tL_norA5    = C2K(5.5);  units.temp.tL_norA5 = 'K'; label.temp.tL_norA5 = 'temperature'; comment.temp.tL_norA5 = 'T=7.9 for t=0-56';
+bibkey.tL_norA5 = 'Imsland2016'; comment.tL_norA5 = 'Ardal River (Norway)';
 
-data.tL_norA = [ ... % time since emergence (d), fork length (cm)
+data.tL_norA7 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
 232	6.4
 360	9];
-units.tL_norA   = {'d', 'cm'};  label.tL_norA = {'time since birth', 'total length'};  
-temp.tL_norA    = C2K(7);  units.temp.tL_norA = 'K'; label.temp.tL_norA = 'temperature'; comment.temp.tL_norA = 'T=7.9 for t=0-56';
-bibkey.tL_norA = 'Imsland2016'; comment.tL_norA = 'Ardal River (Norway)';
+units.tL_norA7   = {'d', 'cm'};  label.tL_norA7 = {'time since birth', 'total length'};  
+temp.tL_norA7    = C2K(7);  units.temp.tL_norA7 = 'K'; label.temp.tL_norA = 'temperature'; comment.temp.tL_norA7 = 'T=7.9 for t=0-56';
+bibkey.tL_norA7 = 'Imsland2016'; comment.tL_norA7 = 'Ardal River (Norway)';
 
-data.tL_norA = [ ... % time since emergence (d), fork length (cm)
+data.tL_norA57 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
 232	7.6
 360	8.1];
-units.tL_norA   = {'d', 'cm'};  label.tL_norA = {'time since birth', 'total length'};  
-temp.tL_norA    = C2K(5.7);  units.temp.tL_norA = 'K'; label.temp.tL_norA = 'temperature'; comment.temp.tL_norA = 'Simulated natural temperature, mean = 5.7, min = 2.4, max=11.5; start at 11.5, then 2.5�C at t=232, then rises';
-bibkey.tL_norA = 'Imsland2016'; comment.tL_norA = 'Ardal River (Norway)';
+units.tL_norA57   = {'d', 'cm'};  label.tL_norA57 = {'time since birth', 'total length'};  
+temp.tL_norA57    = C2K(5.7);  units.temp.tL_norA57 = 'K'; label.temp.tL_norA57 = 'temperature'; comment.temp.tL_norA57 = 'Simulated natural temperature, mean = 5.7, min = 2.4, max=11.5; start at 11.5, then 2.5�C at t=232, then rises';
+bibkey.tL_norA57 = 'Imsland2016'; comment.tL_norA57 = 'Ardal River (Norway)';
 
-data.tL_norSt = [ ... % time since emergence (d), fork length (cm)
+data.tL_norSt4 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
 221	5.6
 349	6.4];
-units.tL_norSt   = {'d', 'cm'};  label.tL_norSt = {'time since birth', 'total length'};  
-temp.tL_norSt    = C2K(4);  units.temp.tL_norSt = 'K'; label.temp.tL_norSt = 'temperature'; comment.temp.tL_norSt = 'T=7.9 for t=0-56';
-bibkey.tL_norSt = 'Imsland2016'; comment.tL_norSt = 'Stryn River (Norway)';
+units.tL_norSt4   = {'d', 'cm'};  label.tL_norSt4 = {'time since birth', 'total length'};  
+temp.tL_norSt4    = C2K(4);  units.temp.tL_norSt4 = 'K'; label.temp.tL_norSt4 = 'temperature'; comment.temp.tL_norSt4 = 'T=7.9 for t=0-56';
+bibkey.tL_norSt4 = 'Imsland2016'; comment.tL_norSt4 = 'Stryn River (Norway)';
 
-data.tL_norSt = [ ... % time since emergence (d), fork length (cm)
+data.tL_norSt5 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
 221	6.7
 349	8.4];
-units.tL_norSt   = {'d', 'cm'};  label.tL_norSt = {'time since birth', 'total length'};  
-temp.tL_norSt    = C2K(5.5);  units.temp.tL_norSt = 'K'; label.temp.tL_norSt = 'temperature'; comment.temp.tL_norSt = 'T=7.9 for t=0-56';
-bibkey.tL_norSt = 'Imsland2016'; comment.tL_norSt = 'Stryn River (Norway)';
+units.tL_norSt5   = {'d', 'cm'};  label.tL_norSt5 = {'time since birth', 'total length'};  
+temp.tL_norSt5    = C2K(5.5);  units.temp.tL_norSt5 = 'K'; label.temp.tL_norSt5 = 'temperature'; comment.temp.tL_norSt5 = 'T=7.9 for t=0-56';
+bibkey.tL_norSt5 = 'Imsland2016'; comment.tL_norSt5 = 'Stryn River (Norway)';
 
-data.tL_norSt = [ ... % time since emergence (d), fork length (cm)
+data.tL_norSt7 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
 221	6.9
 349	10.3];
-units.tL_norSt   = {'d', 'cm'};  label.tL_norSt = {'time since birth', 'total length'};  
-temp.tL_norSt    = C2K(7);  units.temp.tL_norSt = 'K'; label.temp.tL_norSt = 'temperature'; comment.temp.tL_norSt = 'T=7.9 for t=0-56';
-bibkey.tL_norSt = 'Imsland2016'; comment.tL_norSt = 'Stryn River (Norway)';
+units.tL_norSt7   = {'d', 'cm'};  label.tL_norSt7 = {'time since birth', 'total length'};  
+temp.tL_norSt7    = C2K(7);  units.temp.tL_norSt7 = 'K'; label.temp.tL_norSt = 'temperature'; comment.temp.tL_norSt = 'T=7.9 for t=0-56';
+bibkey.tL_norSt7 = 'Imsland2016'; comment.tL_norSt7 = 'Stryn River (Norway)';
 
 data.tL_norSt = [ ... % time since emergence (d), fork length (cm)
 45	4.8
@@ -1806,7 +1835,7 @@ bibkey.WwR_nor= 'Fleming1996b'; comment.WwR_nor = 'Sunndalsora strain ; T= rough
 
 %% set weights for all real data
 weights = setweights(data, []);
-weights.tL = 3 * weights.tL;
+% weights.tL = 3 * weights.tL;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);
