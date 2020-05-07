@@ -19,6 +19,7 @@ par.p_T = 0;          free.p_T   = 0;   units.p_T = 'J/d.cm^2';   label.p_T = '{
 par.k_J = 0.002;      free.k_J   = 0;   units.k_J = '1/d';        label.k_J = 'maturity maint rate coefficient';  %pe estimable
 par.E_G = 5025;       free.E_G   = 0;   units.E_G = 'J/cm^3';     label.E_G = '[E_G], spec cost for structure';  %pe estimable
 par.E_Hb = 6.169e+02; free.E_Hb  = 1;   units.E_Hb = 'J';         label.E_Hb = 'maturity at birth'; 
+par.E_Hh = par.E_Hb*3/4; free.E_Hh  = 1;   units.E_Hh = 'J';         label.E_Hh = 'maturity at hatching'; 
 par.E_Hj = 1.014e+05; free.E_Hj  = 1;   units.E_Hj = 'J';         label.E_Hj = 'maturity at metam'; 
 par.E_Hp = 1.112e+06; free.E_Hp  = 1;   units.E_Hp = 'J';         label.E_Hp = 'maturity at puberty'; 
 par.h_a = 6.398e-25;  free.h_a   = 1;   units.h_a = '1/d^2';      label.h_a = 'Weibull aging acceleration'; 
@@ -31,6 +32,12 @@ par.f_nat = 0.7;          free.f_nat     = 0;   units.f_nat = '-';            la
 par.f_LWw = 1;  free.f_LWw = 1;   units.f_LWw = '-';        label.f_LWw = 'scaled functional response for 1-var data'; 
 par.f_tL = 1;  free.f_tL  = 1;   units.f_tL = '-';         label.f_tL = 'scaled functional response for 1-var data'; 
 par.f_tWeVe_tWeYe = 1;  free.f_tWeVe_tWeYe = 0; units.f_tWeVe_tWeYe = '-';  label.f_tWeVe_tWeYe = 'scaled functional response for embryo growth';
+par.L0_Bjornsson1989 = (13.2+12.8)/2; free.L0_Bjornsson1989 = 0; units.L0_Bjornsson1989 = 'cm'; label.L0_Bjornsson1989 = 'initial length in Bjornsson 1989';
+par.L0_norM2003 = 17.87; free.L0_norM2003 = 0; units.L0_norM2003 = 'cm'; label.L0_norM2003 = 'initial length in Glover 2009 - 2003 experiment';
+par.L0_norM2004 = 13.96; free.L0_norM2004 = 0; units.L0_norM2004 = 'cm'; label.L0_norM2004 = 'initial length in Glover 2009 - 2004 experiment';
+par.W0_Hosfeld2009 = 71.94; free.W0_Hosfeld2009 = 0; units.W0_Hosfeld2009 = 'g'; label.W0_Hosfeld2009 = 'initial wet weight in Hosfeld 2009';
+par.W0_Handeland1998 = (51.9+54.6)/2; free.W0_Handeland1998 = 0; units.W0_Handeland1998 = 'g'; label.W0_Handeland1998 = 'initial wet weight in Handeland 1998';
+par.W0_Handeland2008 = (75.2+74.5+74.5+76.6)/4; free.W0_Handeland2008 = 0; units.W0_Handeland2008 = 'g'; label.W0_Handeland2008 = 'initial wet weight in Handeland 2008';
 
 %% set chemical parameters from Kooy2010 
 [par, units, label, free] = addchem(par, units, label, free, metaData.phylum, metaData.class); 

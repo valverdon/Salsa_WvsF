@@ -79,7 +79,7 @@ data.Lj_ice  = 17.4;   units.Lj_ice  = 'cm';  label.Lj_ice = 'total length at sm
 %% Length at spawning
 data.Li_NorSM = 85;   units.Li_NorSM = 'g';   label.Li_NorSM = 'ultimate wet weight';     bibkey.Li_NorSM = 'Solberg2014'; comment.Li_NorSM = 'maximum of parents from Skibotn river -males (n=2)';
 data.Li_NorSF = 95;   units.Li_NorSF = 'g';   label.Li_NorSF = 'ultimate wet weight';     bibkey.Li_NorSF = 'Solberg2014';comment.Li_NorSF = 'maximum of parents from Skibotn river - females (n =2)';
-
+ data.Lp_norN  = 61.6 ;   units.Lp_norN  = 'cm';  label.Lp_norN  = 'length at puberty'; bibkey.Lp_norN = 'Jonsson1991';   comment.Lp_norN = 'Nina research station (Norway)'; %T = hatcheries for fries, natural from smolt  f=1
 
 %% Egg volume
 data.V0_can = 0.113;  units.V0_can = 'cm^3'; label.V0_can = 'egg volume'; bibkey.V0_can = 'Srivastava1991';  comment.V0_can = 'parents rom Broodstock from Exploits River (Canada),mean(4/3*pi*(diameter/2)^3) (4 females eggs)';

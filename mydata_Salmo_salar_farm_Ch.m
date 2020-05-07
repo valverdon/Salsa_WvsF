@@ -43,11 +43,11 @@ metaData.date_acc    = [2019 04 17];
 %% Age at first feeding %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 data.ab_norM = 182;    units.ab_norM = 'd';    label.ab_norM = 'age at first feeding';             bibkey.ab_norM = 'Glover2009';
-  comment.ab_norM = 'Mowi strain, f=1';
+  comment.ab_norM = 'Mowi strain, f=1 ; fertilization 26 Nov, first fed 26 May';
   temp.ab_norM = C2K(5);  units.temp.ab_norM = 'K'; label.temp.ab_norM = 'temperature'; label.temp.comment.ab_norM = 'Two temp scenarios: 5°C from fertilization to hatching then 12°C, or 5°C from fertilization to first feeding then 12°C';
 
   data.ab_norM2 = data.ab_norM;     units.ab_norM2 = 'd';    label.ab_norM2 = 'age at first feeding';             bibkey.ab_norM2 = 'Glover2009';
-  comment.ab_norM2 = 'Mowi strain, f=1';
+  comment.ab_norM2 = 'Mowi strain, f=1 ; fertilization 26 Nov, first fed 26 May';
   temp.ab_norM2 = C2K(12);  units.temp.ab_norM2 = 'K'; label.temp.ab_norM2 = 'temperature'; label.temp.comment.ab_norM2 = 'Two temp scenarios: 5°C from fertilization to hatching then 12°C, or 5°C from fertilization to first feeding then 12°C';
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,7 +287,8 @@ data.tL_iceT611 = [ ... %time (d), fork length (cm)
 data.tL_iceT611 = data.tL_iceT611(data.tL_iceT611(:,1) < 150 , :); % keeping only observations at 6 Celsius degrees
 units.tL_iceT611  = {'d', 'g'};  label.tL_iceT611 = {'time', 'wet weight'};  
 temp.tL_iceT611    = C2K(6);  units.temp.tL_iceT611 = 'K'; label.temp.tL_iceT611 = 'temperature';
-bibkey.tL_iceT611 = 'Bjornsson1989'; comment.tL_iceT611 = 'Vididalsa strain, 1st half has 5 lux nightlight; T°=6°C from t=0 to t=150, then T°=11°C; f=1; start of experiment 1st december with 0+ parr';
+bibkey.tL_iceT611 = 'Bjornsson1989';
+comment.tL_iceT611 = 'Vididalsa strain, 1st half has 5 lux nightlight; T°=6°C from t=0 to t=150, then T°=11°C, start of experiment 1st december with 0+ parr : t0 = 362 days post-fertilization';
 
 % data.tL_ice1mw = [ ... %time (d), fork length (cm)
 %   0	13.2
@@ -371,7 +372,7 @@ data.tWwVe_T12 = [ ... % time since fertilization (d), wet weight excluding yolk
 63 0.0674];
 units.tWwVe_T12   = {'d', 'g'};  label.tWwVe_T12 = {'time since fertilization', 'wet weight excluding yolk'};  
 temp.tWwVe_T12    = C2K(12);  units.temp.tWwVe_T12 = 'K'; label.temp.tWwVe_T12 = 'temperature';
-bibkey.tWwVe_T12 = 'Gunnes1979'; comment.tWwVe_T12 = 'Norwegian strain (wild or domestic?)';
+bibkey.tWwVe_T12 = 'Gunnes1979'; comment.tWwVe_T12 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38)';
 
 data.tWwVe_T10 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 10°C
 38 0.0138
@@ -383,7 +384,7 @@ data.tWwVe_T10 = [ ... % time since fertilization (d), wet weight excluding yolk
 63 0.0687];
 units.tWwVe_T10   = {'d', 'g'};  label.tWwVe_T10 = {'time since fertilization', 'wet weight excluding yolk'};  
 temp.tWwVe_T10    = C2K(10);  units.temp.tWwVe_T10 = 'K'; label.temp.tWwVe_T10 = 'temperature';
-bibkey.tWwVe_T10 = 'Gunnes1979'; comment.tWwVe_T10 = 'Norwegian strain (wild or domestic?)';
+bibkey.tWwVe_T10 = 'Gunnes1979'; comment.tWwVe_T10 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38)';
 
 data.tWwVe_T8 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 8°C
 38 0.0128
@@ -395,7 +396,7 @@ data.tWwVe_T8 = [ ... % time since fertilization (d), wet weight excluding yolk 
 63 0.0623];
 units.tWwVe_T8   = {'d', 'g'};  label.tWwVe_T8 = {'time since fertilization', 'wet weight excluding yolk'};  
 temp.tWwVe_T8    = C2K(8);  units.temp.tWwVe_T8 = 'K'; label.temp.tWwVe_T8 = 'temperature';
-bibkey.tWwVe_T8 = 'Gunnes1979'; comment.tWwVe_T8 = 'Norwegian strain (wild or domestic?)';
+bibkey.tWwVe_T8 = 'Gunnes1979'; comment.tWwVe_T8 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38)';
 
 data.tWwYe_T12 = [ ... % time since fertilization (d), yolk wet weight (g) at 12°C
 38 0.0809
@@ -407,7 +408,7 @@ data.tWwYe_T12 = [ ... % time since fertilization (d), yolk wet weight (g) at 12
 63 0.0495];
 units.tWwYe_T12   = {'d', 'g'};  label.tWwYe_T12 = {'time since fertilization', 'yolk wet weight'};  
 temp.tWwYe_T12    = C2K(12);  units.temp.tWwYe_T12 = 'K'; label.temp.tWwYe_T12 = 'temperature';
-bibkey.tWwYe_T12 = 'Gunnes1979'; comment.tWwYe_T12 = 'Norwegian strain (wild or domestic?)';
+bibkey.tWwYe_T12 = 'Gunnes1979'; comment.tWwYe_T12 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38)';
 
 data.tWwYe_T10 = [ ... % time since fertilization (d), yolk wet weight (g) at 10°C
 38 0.0786
@@ -419,7 +420,7 @@ data.tWwYe_T10 = [ ... % time since fertilization (d), yolk wet weight (g) at 10
 63 0.0521];
 units.tWwYe_T10   = {'d', 'g'};  label.tWwYe_T10 = {'time since fertilization', 'yolk wet weight'};  
 temp.tWwYe_T10    = C2K(10);  units.temp.tWwYe_T10 = 'K'; label.temp.tWwYe_T10 = 'temperature';
-bibkey.tWwYe_T10 = 'Gunnes1979'; comment.tWwYe_T10 = 'Norwegian strain (wild or domestic?)';
+bibkey.tWwYe_T10 = 'Gunnes1979'; comment.tWwYe_T10 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38)';
 
 data.tWwYe_T8 = [ ... % time since fertilization (d), yolk wet weight (g) at 8°C
 38 0.0786
@@ -431,7 +432,7 @@ data.tWwYe_T8 = [ ... % time since fertilization (d), yolk wet weight (g) at 8°C
 63 0.0451];
 units.tWwYe_T8   = {'d', 'g'};  label.tWwYe_T8 = {'time since fertilization', 'yolk wet weight'};  
 temp.tWwYe_T8    = C2K(8);  units.temp.tWwYe_T8 = 'K'; label.temp.tWwYe_T8 = 'temperature';
-bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian strain (wild or domestic?)';
+bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38)';
 
 %% t-W data in juveniles
 
@@ -666,7 +667,7 @@ data.LWw_norM = [ ... % fork length (cm), wet weight (g)
 76.96	6259.86];
 units.LWw_norM   = {'cm', 'g'};  label.LWw_norM = {'fork length', 'wet weight'};  
 temp.LWw_norM    = C2K(12);  units.temp.LWw_norM = 'K'; label.temp.LWw_norM = 'temperature';
-bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain + Laerdal river (Norway), 2 experiments started in 2003 and 2004, T 12°C for freshwater, natural (mean=11.5) for seawater, f=1';
+bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain + Laerdal river (Norway), 2 experiments started in 2003 and 2004, T 12°C for freshwater, natural (mean=11.5) for seawater, f=1, table 1';
 
 %%%%%%%%%%%%
 %%L-R data %
@@ -871,7 +872,7 @@ bibkey = 'Bjornsson1989'; type = 'Article'; bib = [ ...
 'number = "1",' ...
 'pages = "77 - 91",' ...
 'year = "1989",' ...
-'doi = "https://doi.org/10.1016/0044-8486(89)90397-9",'];
+'doi = {10.1016/0044-8486(89)90397-9}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Berg1999'; type = 'Article'; bib = [ ...
@@ -883,7 +884,7 @@ bibkey = 'Berg1999'; type = 'Article'; bib = [ ...
 'pages = "203 - 210",' ...
 'year = "2009",' ...
 'issn = "0044-8486",' ...
-'doi = "https://doi.org/10.1016/j.aquaculture.2008.09.023",'];
+'doi = {10.1016/j.aquaculture.2008.09.023}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Glover2009'; type = 'Article'; bib = [ ...
@@ -893,7 +894,7 @@ bibkey = 'Glover2009'; type = 'Article'; bib = [ ...
 'number = "3",' ...
 'pages = "203 - 210",' ...
 'year = "2009",' ...
-'doi = "https://doi.org/10.1016/j.aquaculture.2008.09.023",' ...
+'doi = {10.1016/j.aquaculture.2008.09.023}' ...
 'author = "Kevin A. Glover and Håkon Otterå and Rolf E. Olsen and Erik Slinde and Geir L. Taranger and Øystein Skaala",'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
@@ -914,7 +915,7 @@ bibkey = 'Hosfeld2009'; type = 'Article'; bib = [ ...
 'number = "3",' ...
 'pages = "236 - 241",' ...
 'year = "2009",' ...
-'doi = "https://doi.org/10.1016/j.aquaculture.2009.06.003",' ...
+'doi = {10.1016/j.aquaculture.2009.06.003}' ...
 'author = "Camilla Diesen Hosfeld and Jannicke Hammer and Sigurd O. Handeland and Sveinung Fivelstad and Sigurd O. Stefansson",'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
@@ -935,7 +936,7 @@ bibkey='Jonsson1991'; type='Article'; bib=[...
 'number = "1",' ...
 'pages = "69 - 78",' ...
 'year = "1991",' ...
-'doi = "https://doi.org/10.1016/0044-8486(91)90372-E",' ...
+'doi = {10.1016/0044-8486(91)90372-E}' ...
 'author = "Bror Jonsson and Nina Jonsson and Lars P. Hansen",'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
@@ -955,7 +956,7 @@ bibkey= 'Storebakken1987'; type='Article'; bib=[...
 'volume = "60",'...
 'pages = "189 - 206",'...
 'year = "1987",'...
-'doi = "https://doi.org/10.1016/0044-8486(87)90287-0",'...
+'doi = {10.1016/0044-8486(87)90287-0}'...
 'author = "Trond Storebakken and Erland Austreng",'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
@@ -966,7 +967,7 @@ bibkey= 'Thorpe1990'; type='Article'; bib=[...
 'number = "2",' ...
 'pages = "315 - 326",' ...
 'year = "1990",' ...
-'doi = "https://doi.org/10.1016/0044-8486(90)90122-4",' ...
+'doi = {10.1016/0044-8486(90)90122-4}' ...
 'author = "J.E. Thorpe and C. Talbot and M.S. Miles and D.S. Keay"'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %

@@ -207,17 +207,16 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
     % t-Wwe and t-WwVe
   % temperature 12°C
   % compute temperature correction factors
-  TC12 = tempcorr(temp.tWwVe_T12, T_ref, T_A);
+  TC12 = tempcorr(temp.tWwe_T12, T_ref, T_A);
   vT12 = v * TC12; 
   kT12_J = TC12 * k_J;% kT_M = TC * k_M; pT_M = p_M * TC;
   JT12_E_Am = TC12 * J_E_Am;
   UT12_E0 = TC12 * U_E0;
   % tW-data embryo
-  t = [0; tWwVe_T12(:,1)]; 
+  t = [0; tWwe_norT12(:,1)]; 
   [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT12_E0 0], [], kap, vT12, kT12_J, g, L_m); 
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
-  L3 = L .^3; 
   EWw_e12 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus
    % tWV-data yolk
   M_E = LUH(:,2) * JT12_E_Am;
@@ -226,17 +225,16 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   
   
   %idem 10°C
-  TC10 = tempcorr(temp.tWwVe_T10, T_ref, T_A);
+  TC10 = tempcorr(temp.tWwe_T10, T_ref, T_A);
   vT10 = v * TC10; 
   kT10_J = TC10 * k_J;% kT_M = TC * k_M; pT_M = p_M * TC;
   JT10_E_Am = TC10 * J_E_Am;
   UT10_E0 = TC10 * U_E0;
   % tW-data embryo
-  t = [0; tWwVe_T10(:,1)]; 
+  t = [0; tWwe_T10(:,1)]; 
   [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT10_E0 0], [], kap, vT10, kT10_J, g, L_m); 
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
-  L3 = L .^3; 
   EWw_e10 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus
    % tWV-data yolk
   M_E = LUH(:,2) * JT12_E_Am;
@@ -244,17 +242,16 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   EWw_eT10 =EWw_e10+EV_e10;
   
  %idem 8°C
- TC8 = tempcorr(temp.tWwVe_T8, T_ref, T_A);
+ TC8 = tempcorr(temp.tWwe_T8, T_ref, T_A);
   vT8 = v * TC8; 
   kT8_J = TC8 * k_J;% kT_M = TC * k_M; pT_M = p_M * TC;
   JT8_E_Am = TC8 * J_E_Am;
   UT8_E0 = TC8 * U_E0;
   % tW-data embryo
-  t = [0; tWwVe_T8(:,1)]; 
+  t = [0; tWwe_T8(:,1)]; 
   [t, LUH] = ode45(@dget_LUH, t, [1e-10 UT8_E0 0], [], kap, vT8, kT8_J, g, L_m); 
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
-  L3 = L .^3; 
   EWw_e8 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus
   % tWV-data yolk
   M_E = LUH(:,2) * JT12_E_Am;
