@@ -12,20 +12,23 @@ function [prdData, info] = predict_Salmo_salar_wild(par, data, auxData)
   vars_pull(data);  %%%unpacking of structures
   vars_pull(auxData);%%%unpacking of structures
   
-%   if E_Hh > E_Hb
-%       info = 0; prdData = []; return
-%   end
+  if E_Hh > E_Hb
+      info = 0; prdData = []; return
+  end
   
 % compute temperature correction factors for each stage
-% TC_ah = tempcorr(temp.ah_nor2013, T_ref, T_A); 
-% TC_ah_4_eng = tempcorr(temp.ah_4_eng, T_ref, T_A); 
-% TC_ah_4_nor = tempcorr(temp.ah_4_nor, T_ref, T_A); 
-% TC_ah_scocanmix = tempcorr(temp.ah_scocanmix, T_ref, T_A); 
-% TC_ah_05_fnor = tempcorr(temp.ah_05_fnor, T_ref, T_A); 
-% TC_ah_sco4to13 = tempcorr(temp.ah_sco4to13, T_ref, T_A); % a modifier
+TC_Tah_Dennis_Peterson1977 = tempcorr(data.Tah_Dennis_Peterson1977(:,1), T_ref, T_A); 
+TC_Tah_Mirachimi_Peterson1977 = tempcorr(data.Tah_Mirachimi_Peterson1977(:,1), T_ref, T_A); 
+TC_Tah_Wallace1988 = tempcorr(data.Tah_Wallace1988(:,1), T_ref, T_A); 
+TC_Tah_norF = tempcorr(data.Tah_norF(:,1), T_ref, T_A); 
+TC_Tah_norV = tempcorr(data.Tah_norV(:,1), T_ref, T_A); 
+TC_Tah_norA = tempcorr(data.Tah_norA(:,1), T_ref, T_A); 
+TC_Tah_Berg1999 = tempcorr(data.Tah_Berg1999(:,1), T_ref, T_A); 
+TC_Tah_Jonhston1997 = tempcorr(data.Tah_Jonhston1997(:,1), T_ref, T_A); 
 
-TC_ab_4_nor = tempcorr(temp.ab_4_nor, T_ref, T_A);
-TC_ab_scocanmix =  tempcorr(temp.ab_scocanmix, T_ref, T_A);
+TC_TabC = tempcorr(data.TabC(:,1), T_ref, T_A);
+TC_Tab_sco =  tempcorr(data.Tab_sco(:,1), T_ref, T_A);
+
 %   TC_ts = tempcorr(temp.ts, T_ref, T_A);
 %   TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
 %   TC_tp = tempcorr(temp.tp, T_ref, T_A);
@@ -78,32 +81,49 @@ TC_Ri_nor = tempcorr(temp.Ri_nor, T_ref, T_A);
   V_0_nat = Wd_0_nat/ d_E;             % cm^3, egg volume 
   
   
-  % hatch   
-  %  [U_H aUL] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0 1e-10], [], kap, v, k_J, g, L_m);
-    %same for natural f
-   % [U_H-nat aUL_nat] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0_nat 1e-10], [], kap, v, k_J, g, L_m);
-   %  a_h_4_eng = aUL-nat(2,1); aT_h = a_h/ TC_ah_4_eng; % d, age at hatch at f and T
-   %  a_h_4_nor = aUL-nat(2,1); aT_h = a_h/ TC_ah_4_nor; % d, age at hatch at f and T
-   %  a_h_scocanmix = aUL-nat(2,1); aT_h = a_h/ TC_ah_scocanmix; % d, age at hatch at f and T
-   %  a_h_05_fnor = aUL-nat(2,1); aT_h = a_h/ TC_ah_05_fnor; % d, age at hatch at f and T
-   %  a_h_sco4to13 = aUL-nat(2,1); aT_h = a_h/ TC_ah_sco4to13 ; % d, age at hatch at f and T
+  % hatch 
+  %for parents in natural conditions
+  [U_H aUL] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0_nat 1e-10], [], kap, v, k_J, g, L_m);
+  a_h = aUL(2,1); % time between fertilization and hatching at f and T_ref
+  t_hb = aUL(3,1) - aUL(2,1); % time between hatching and birth at f and T_ref
+  aT_h_Dennis_Peterson1977 = a_h ./ TC_Tah_Dennis_Peterson1977;
+  aT_h_Mirachimi_Peterson1977 = a_h ./ TC_Tah_Mirachimi_Peterson1977;
+  aT_h_Wallace1988 = a_h ./ TC_Tah_Wallace1988;
+  aT_h_norF = a_h ./ TC_Tah_norF;
+  aT_h_norV = a_h ./ TC_Tah_norV;
+  aT_h_norA = a_h ./ TC_Tah_norA;
+  aT_h_Berg1999 = a_h ./ TC_Tah_Berg1999;
+  aT_h_Jonhston1997 = a_h ./ TC_Tah_Jonhston1997;  
+  L_h = aUL(2,3); % cm, structural length at hatching at f
+  Lw_h = L_h/ del_M; % cm, physical length at hatching at f
+  Ww_h = L_h^3 * (1 + f_nat * ome); % g, wet weight at hatching at f natural
 
-%ajouter Lh
-%ajouter Wwh
 
   % birth
-  L_b = L_m * l_b;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
+  a_b = tau_b_nat/ k_M; % age at birth at f_nat and T_ref 
+   % Check that ages at birth are consistent between get_tj and dget_aul
+  if (((a_b-aUL(3,1))/a_b)^2 > 0.0001)
+      a_b
+      aaUL(3,1)
+      disp('Inconsistent values of age at birth');
+  end
+%   aT_b_norM = aT_h_norM + (t_hb / TC_abM_feed); % if change of temperature at hatching
+
+  aT_bC  = a_b./ TC_TabC ; % if change of temperature at first feeding
+  aT_b_sco  = a_b./ TC_Tab_sco ; % if change of temperature at first feeding
+
+  L_b = L_m * l_b_nat;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
+    % Check that lengths at birth are consistent between get_tj and dget_aul
+  if (((L_b-aUL(3,3))/L_b)^2 > 0.0001)
+      L_b
+      aUL(3,3)
+      disp('Inconsistent values of L_b');
+  end
   Lw_b = L_b/ del_M;                % cm, physical length at birth at f    %%%%%%% del_M : shape coefficient
-  Ww_b = L_b^3 * (1 + f * ome);       % g, wet weight at birth at f  %%%%%%%%%% structural volume volume at birth* (scaled length + scaled reserve density*contrib of dry mass reserve to toal dry biomass).
+  Ww_b = L_b^3 * (1 + f_nat * ome);       % g, wet weight at birth at f  %%%%%%%%%% structural volume volume at birth* (scaled length + scaled reserve density*contrib of dry mass reserve to toal dry biomass).
 %   aT_b_AqG = tau_b/ k_M/ TC_abAqG;           % d, age at birth at f and T  %%%%%% scaled age at birth / somatic maitnenance rate coef / temp correction.
 %   aT_b_M = tau_b/ k_M/ TC_abM;
-  %same for natural f
-  L_b_nat = L_m * l_b_nat;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
-  Lw_b_nat = L_b_nat/ del_M;                % cm, physical length at birth at f    %%%%%%% del_M : shape coefficient
-  Ww_b_nat = L_b_nat^3 * (1 + f_nat * ome);       % g, wet weight at birth at f  %%%%%%%%%% structural volume volume at birth* (scaled length + scaled reserve density*contrib of dry mass reserve to toal dry biomass).
-  aT_b_4_nor = tau_b_nat/ k_M/ TC_ab_4_nor;   
-  aT_b_scocanmix = tau_b_nat/ k_M/ TC_ab_scocanmix;   
-  
+
   
   
 %   % smoltification 
@@ -152,10 +172,10 @@ TC_Ri_nor = tempcorr(temp.Ri_nor, T_ref, T_A);
   % reproduction
   pars_R = [kap, kap_R, g, k_J, k_M, L_T, v, U_Hb, U_Hj, U_Hp];
   [R_i, UE0, Lb, Lj, Lp, info]  =  reprod_rate_j(L_i, f, pars_R, L_b);
-%    RT_i = TC_Ri * R_i;% #/d, max reprod rate  
+%     RT_i = TC_Ri * R_i_nat;% #/d, max reprod rate  
 %same for natural f
    pars_R = [kap, kap_R, g, k_J, k_M, L_T, v, U_Hb, U_Hj, U_Hp];
-  [R_i_nat, UE0_nat, Lb_nat, Lj_nat, Lp_nat, info_nat]  =  reprod_rate_j(L_i_nat, f_nat, pars_R, L_b_nat);
+  [R_i_nat, UE0_nat, Lb_nat, Lj_nat, Lp_nat, info_nat]  =  reprod_rate_j(L_i_nat, f_nat, pars_R, L_b);
    RT_i_sco = TC_Ri_sco * R_i_nat;% #/d, max reprod rate  
    RT_i_spa = TC_Ri_spa * R_i_nat;% #/d, max reprod rate  
    RT_i_can = TC_Ri_can * R_i_nat;% #/d, max reprod rate  
@@ -173,16 +193,19 @@ TC_Ri_nor = tempcorr(temp.Ri_nor, T_ref, T_A);
   aT_am_sco = t_m_nat/ k_M/ TC_am_sco;               % d, mean life span at T
   aT_am_rus = t_m_nat/ k_M/ TC_am_rus;               % d, mean life span at T
   
-  
+
   % pack to output
- % prdData.ah_nor2013 = aT_h;
-  % prdData.ah_4_eng = aT_h_4_eng;
-  % prdData.ah_4_nor = aT_h_4_nor;
-  % prdData.ah_scocanmix = aT_h_scocanmix;
-  % prdData.ah_05_fnor = aT_h_05_fnor;
-  % prdData.ah_sco4to13 = aT_h_sco4to13; % a modifier
- prdData.ab_4_nor = aT_b_4_nor;
- prdData.ab_scocanmix= aT_b_scocanmix;
+prdData.Tah_Dennis_Peterson1977 = aT_h_Dennis_Peterson1977;
+prdData.Tah_Mirachimi_Peterson1977 = aT_h_Mirachimi_Peterson1977;
+prdData.Tah_Wallace1988 = aT_h_Wallace1988;
+prdData.Tah_norF = aT_h_norF;
+prdData.Tah_norV = aT_h_norV;
+prdData.Tah_norA = aT_h_norA;
+prdData.Tah_Berg1999 = aT_h_Berg1999;
+prdData.Tah_Jonhston1997 = aT_h_Jonhston1997;
+
+ prdData.TabC = aT_bC;
+ prdData.Tab_sco= aT_b_sco;
 % prdData.ts = tT_s;
 %   prdData.aj_norM = tT_j;
 % prdData.tp = tT_p;
@@ -200,40 +223,39 @@ TC_Ri_nor = tempcorr(temp.Ri_nor, T_ref, T_A);
   prdData.am_sco = aT_am_sco;
   prdData.am_rus = aT_am_rus;
 % prdData.Lh = Lw_h; %manque calcul Lh
-% prdData.Lh_Can2 = Lw_Lh_Can2;
-% prdData.Lh_Can4 = Lw_Lh_Can4;
-% prdData.Lh_Can6 = Lw_Lh_Can6;
-% prdData.Lh_Can8 = Lw_h_Can8;
-% prdData.Lh_Can10 = Lw_h_Can10;
-% prdData.Lh_Can12 = Lw_h_Can12;
-% prdData.Lh_CanM4 = Lw_h_CanM4;
-% prdData.Lh_CanM6 = Lw_h_CanM6;
-% prdData.Lh_CanM8 = Lw_h_CanM8;
-% prdData.Lh_CanM10 = Lw_h_CanM10;
-% prdData.Lh_CanM12 = Lw_h_CanM12;
-% prdData.Lh_CanP = Lw_h_CanP;
-% prdData.Lh_Rus = Lw_h_Rus;
-% prdData.Lh_scocanmix = Lw_h_scocanmix;
+prdData.Lh_Can2 = Lw_h;
+prdData.Lh_Can4 = Lw_h;
+prdData.Lh_Can6 = Lw_h;
+prdData.Lh_Can8 = Lw_h;
+prdData.Lh_Can10 = Lw_h;
+prdData.Lh_Can12 = Lw_h;
+prdData.Lh_CanM4 = Lw_h;
+prdData.Lh_CanM6 = Lw_h;
+prdData.Lh_CanM8 = Lw_h;
+prdData.Lh_CanM10 = Lw_h;
+prdData.Lh_CanM12 = Lw_h;
+prdData.Lh_CanP = Lw_h;
+prdData.Lh_Rus = Lw_h;
+prdData.Lh_scocanmix = Lw_h;
 
-
-  prdData.Lb_Sco1SWM = Lw_b_nat;
-  prdData.Lb_Sco2SWM = Lw_b_nat;
-  prdData.Lb_NorF2011 = Lw_b_nat;
-  prdData.Lb_NorF2012 = Lw_b_nat;
-  prdData.Lb_NorF2013 = Lw_b_nat;
-  prdData.Lb_NorV2013 = Lw_b_nat;
-  prdData.Lb_Can2D = Lw_b_nat;
-  prdData.Lb_Can6D = Lw_b_nat;
-  prdData.Lb_Can12D = Lw_b_nat;
-  prdData.Lb_Can4M = Lw_b_nat;
-  prdData.Lb_Can6M = Lw_b_nat;
-  prdData.Lb_Can8M = Lw_b_nat;
-   prdData.Lb_Can10M = Lw_b_nat;
-  prdData.Lb_Can12M = Lw_b_nat;
-  prdData.Lb_CanP = Lw_b_nat;
-  prdData.Lb_Rus = Lw_b_nat;
-  prdData.Lb_Usa = Lw_b_nat;
-  prdData.Lb_ScoA = Lw_b_nat;
+  prdData.Lb_Sco1SWM = Lw_b;
+  prdData.Lb_Sco2SWM = Lw_b;
+  prdData.Lb_NorF2011 = Lw_b;
+  prdData.Lb_NorF2012 = Lw_b;
+  prdData.Lb_NorF2013 = Lw_b;
+  prdData.Lb_NorV2013 = Lw_b;
+  prdData.Lb_Can2D = Lw_b;
+  prdData.Lb_Can6D = Lw_b;
+  prdData.Lb_Can12D = Lw_b;
+  prdData.Lb_Can4M = Lw_b;
+  prdData.Lb_Can6M = Lw_b;
+  prdData.Lb_Can8M = Lw_b;
+   prdData.Lb_Can10M = Lw_b;
+  prdData.Lb_Can12M = Lw_b;
+  prdData.Lb_CanP = Lw_b;
+  prdData.Lb_Rus = Lw_b;
+  prdData.Lb_Usa = Lw_b;
+  prdData.Lb_ScoA = Lw_b;
 
 %   prdData.Ls = Lw_s;
   prdData.Lp_norS = Lw_p_nat;
@@ -289,16 +311,16 @@ TC_Ri_nor = tempcorr(temp.Ri_nor, T_ref, T_A);
 % prdData.Ww0_Canaf  = Ww0_nat;
 % prdData.Ww0_norbf  = Ww0_nat;
 
-%  prdData.Wwh_Eng = Ww_h;
-%  prdData.Wwh_Can = Ww_h;
-%  prdData.Wwh_Rus = Ww_h;
-%  prdData.Wwh_Sco = Ww_h;
-%  prdData.Wwh_FNor = Ww_h;
+prdData.Wwh_Eng = Ww_h;
+prdData.Wwh_Can = Ww_h;
+prdData.Wwh_Rus = Ww_h;
+prdData.Wwh_Sco = Ww_h;
+prdData.Wwh_FNor = Ww_h;
 
- prdData.Wwb_Sco1SWM = Ww_b_nat;
- prdData.Wwb_Sco2SWM = Ww_b_nat;
- prdData.Wwb_Can = Ww_b_nat;
- prdData.Wwb_Rus = Ww_b_nat; 
+ prdData.Wwb_Sco1SWM = Ww_b;
+ prdData.Wwb_Sco2SWM = Ww_b;
+ prdData.Wwb_Can = Ww_b;
+ prdData.Wwb_Rus = Ww_b; 
 %   prdData.WwsI = Ww_s;
 %   prdData.WwsS = Ww_s;
  prdData.Wwp_norf = Ww_p_nat;
@@ -348,11 +370,11 @@ prdData.Ri_nor = RT_i_nor ;
 %compléter
 
   % temperature-age at birth
-TC_TabC = tempcorr(TabC(:,1), T_ref, T_A); 
-EabC = tau_b_nat/ k_M ./ TC_TabC;        % d, age at birth at f and T
-
-TC_Tab_sco = tempcorr(Tab_sco(:,1), T_ref, T_A); 
-Eab_sco = tau_b_nat/ k_M ./ TC_Tab_sco;        % d, age at birth at f and T
+% TC_TabC = tempcorr(TabC(:,1), T_ref, T_A); 
+% EabC = tau_b_nat/ k_M ./ TC_TabC;        % d, age at birth at f and T
+% 
+% TC_Tab_sco = tempcorr(Tab_sco(:,1), T_ref, T_A); 
+% Eab_sco = tau_b_nat/ k_M ./ TC_Tab_sco;        % d, age at birth at f and T
 
 
 
@@ -580,7 +602,7 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
     return;
     
   end
-  kT_M = k_M * TC_tL_norSu7; %%%km corrected
+  kT_M = k_M * TC_tL_norSu; %%%km corrected
   rT_j = rho_j * kT_M; %%%rhoj corrected
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M;   
@@ -591,7 +613,7 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
 % 
 
 %   % time-length %%% _norA4 f= ad lib
-  TC_tL_norSu = tempcorr(temp.tL_norSu, T_ref, T_A);
+  TC_tL_norA4 = tempcorr(temp.tL_norA4, T_ref, T_A);
   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
 if info ~= 1 || info_nat ~= 1 % numerical procedure failed
     info = 0; prdData = [];
@@ -599,16 +621,71 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
     return;
     
   end
-  kT_M = k_M * TC_tL_norSu7; %%%km corrected
+  kT_M = k_M * TC_tL_norA4; %%%km corrected
   rT_j = rho_j * kT_M; %%%rhoj corrected
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M;   
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_bj = L_b * exp(tL_norSu(tL_norSu(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norSu(tL_norSu(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-  ELw_norSu = [L_bj; L_ji]/ del_M; % cm, total length
+  L_bj = L_b * exp(tL_norA4(tL_norA4(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norA4(tL_norA4(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norA4 = [L_bj; L_ji]/ del_M; % cm, total length
 % 
 
+%   % time-length %%% _norA5 f= ad lib
+  TC_tL_norA5 = tempcorr(temp.tL_norA5, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norA5; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norA5(tL_norA5(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norA5(tL_norA5(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norA5 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+%   % time-length %%% _norA7 f= ad lib
+  TC_tL_norA7 = tempcorr(temp.tL_norA7, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norA7; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norA7(tL_norA7(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norA7(tL_norA7(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norA7 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   % time-length %%% _norA57 f= ad lib
+  TC_tL_norA57 = tempcorr(temp.tL_norA57, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norA57; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norA57(tL_norA57(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norA57(tL_norA57(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norA57 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
 
 %   
 %   % length-weight   %%%%
@@ -616,28 +693,195 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
 %   EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
 
 
+%   % time-length %%% _norASt4 f= ad lib
+  TC_tL_norSt4 = tempcorr(temp.tL_norSt4, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norSt4; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norSt4(tL_norSt4(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norSt4(tL_norSt4(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norSt4 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   % time-length %%% _norASt5 f= ad lib
+  TC_tL_norSt5 = tempcorr(temp.tL_norSt5, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norSt5; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norSt5(tL_norSt5(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norSt5(tL_norSt5(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norSt5 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   % time-length %%% _norASt7 f= ad lib
+  TC_tL_norSt7 = tempcorr(temp.tL_norSt7, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norSt7; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norSt7(tL_norSt7(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norSt7(tL_norSt7(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norSt7 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   % time-length %%% _norASt57 f= ad lib
+  TC_tL_norSt57 = tempcorr(temp.tL_norSt57, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_norSt57; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_norSt57(tL_norSt57(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norSt57(tL_norSt57(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_norSt57 = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   % time-length %%% _scoA f= ad lib
+  TC_tL_scoA = tempcorr(temp.tL_scoA, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_scoA; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_scoA(tL_scoA(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_scoA(tL_scoA(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_scoA = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+
+%   % time-length %%% _scoS f= ad lib
+  TC_tL_scoS = tempcorr(temp.tL_scoS, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_scoS; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_scoS(tL_scoS(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_scoS(tL_scoS(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_scoS = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+
+%   % time-length %%% _spa f= ad lib
+  TC_tL_spa = tempcorr(temp.tL_spa, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_spa; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_spa(tL_spa(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_spa(tL_spa(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_spa = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   % time-length %%% _scoAa f= ad lib
+  TC_tL_scoAa = tempcorr(temp.tL_scoAa, T_ref, T_A);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+if info ~= 1 || info_nat ~= 1 % numerical procedure failed
+    info = 0; prdData = [];
+    info_nat = 0; prdData= [];
+    return;
+    
+  end
+  kT_M = k_M * TC_tL_scoAa; %%%km corrected
+  rT_j = rho_j * kT_M; %%%rhoj corrected
+  rT_B = rho_B * kT_M; %%%%rhoB corrected
+  tT_j = (tau_j - tau_b)/ kT_M;   
+  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+  L_bj = L_b * exp(tL_scoAa(tL_scoAa(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+  L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_scoAa(tL_scoAa(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+  ELw_scoAa = [L_bj; L_ji]/ del_M; % cm, total length
+% 
+
+%   
+%   % length-weight   %%%%
+%   EWw_AqG = (LWw_AqG(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
+%   EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
+
   % pack to output
   
-  %manque calcul Tah
-%   prdData.Tah_dennis = Tah_dennis;
-%   prdData.Tah_Mirachimi = Tah_Mirachimi;
-%   prdData.Tah_nor = Tah_nor;
-%   prdData.Tah_norF = Tah_norF;
-%   prdData.Tah_norV = Tah_norV;
-%   prdData.Tah_norA = Tah_norA;
-%   prdData.Tah_normix = Tah_normix;
-%   prdData.Tah_sco = Tah_sco;
-prdData.TabC = EabC;
-prdData.Tab_sco = Eab_sco;
+
 % prdData.TLb = TLb;
 %   prdData.tWwe_norT12 = EWw_eT12;
 %   prdData.tWwe_T10 = EWw_eT10;
 %   prdData.tWwe_T8 = EWw_eT8;
  prdData.tL_usa = ELw_usa;
  prdData.tL_norI = ELw_norI;
- prdData.tL_norSu4 = ELw_norI;
-prdData.tL_norSu5 = ELw_norI;
-prdData.tL_norSu7 = ELw_norI;
+ prdData.tL_norSu4 = ELw_norSu4;
+prdData.tL_norSu5 = ELw_norSu5;
+prdData.tL_norSu7 = ELw_norSu7;
+prdData.tL_norSu = ELw_norSu;
+prdData.tL_norA4 = ELw_norA4;
+prdData.tL_norA5 = ELw_norA5;
+prdData.tL_norA7 = ELw_norA7;
+prdData.tL_norA57 = ELw_norA57;
+prdData.tL_norSt4 = ELw_norSt4;
+prdData.tL_norSt5 = ELw_norSt5;
+prdData.tL_norSt57 = ELw_norSt57;
+prdData.tL_scoA = ELw_scoA;
+prdData.tL_scoS = ELw_scoS;
+prdData.tL_spa = ELw_spa;
+prdData.tL_scoAa = ELw_scoAa;
+%Manque t-Ww
+%Manque t-E
+%Manque LW
+%Manque L-R
+%Manque Ww-R
+
 %   %lack of Tww juvenile and seawater
 %   prdData.LWw_AqG = EWw_AqG;
 %   prdData.LWw_norM = EWw_norM;

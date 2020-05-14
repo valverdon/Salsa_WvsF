@@ -7,7 +7,7 @@ close all
 global pets
 
 pets = {'Salmo_salar_farm'};
-% check_my_pet(pets); 
+check_my_pet(pets); 
 
 % Read about how to set estimation and output options (estim_options) on the online
 % manual: http://www.debtheory.org/wiki/index.php?title=Run_file

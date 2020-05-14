@@ -12,9 +12,9 @@ function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
   vars_pull(data);  %%%unpacking of structures
   vars_pull(auxData);%%%unpacking of structures
   
-%   if E_Hh > E_Hb
-%       info = 0; prdData = []; return
-%   end
+  if E_Hh > E_Hb
+      info = 0; prdData = []; return
+  end
   
 TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A); 
   TC_Tah_Wallace1988 = tempcorr(data.Tah_Wallace1988(:,1), T_ref, T_A); 
@@ -189,7 +189,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.Lp_norSf = Lw_p;
   prdData.Lp_norSm = Lw_p;
 %   prdData.Lp_norN = Lw_p;
-%   prdData.Li = Lw_i_nat;
+prdData.Li = Lw_i_nat;
 %  prdData.Wwh_norM = Ww_h;
 %  prdData.Wwb = Ww_b;
 %   prdData.Wwj_nor = Ww_j;
@@ -199,6 +199,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
  prdData.Ri = RT_i;
  prdData.V0_norM2011  = V_0;
  prdData.V0_norM2012  = V_0;
+  prdData.V0_norM2013  = V_0;
 %  prdData.E0 = E_0; 
  
  
