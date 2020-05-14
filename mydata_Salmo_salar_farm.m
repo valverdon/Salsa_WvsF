@@ -106,7 +106,8 @@ data.tb_norB = 280/13;    units.tb_norB = 'd';    label.tb_norB = 'time between 
 data.ap_norNBP = (1.07+1-1)*365.25;   %=391
 units.ap_norNBP = 'd';    label.ap_norNBP = 'age at maturity';             bibkey.ap_norNBP = 'Hindar2006';     
 comment.ap_norNBP = 'National breeding program (time since birth)) n=1 ; table3';
-  temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
+  temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; 
+  label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 
  data.ap_norire = (2+1.93-1)*365.25;   %=1070
  units.ap_norire = 'd';    label.ap_norire = 'age at maturity';             bibkey.ap_norire = 'Hindar2006';     
@@ -540,7 +541,7 @@ data.tWw_T4_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) a
 63 76.7
 90 83.3];
 units.tWw_T4_Mow   = {'d', 'g'};  label.tWw_T4_Mow = {'time since metamorphosis', 'wet weight'};  
-temp.tWw_T4_Mow    = C2K(4);  units.temp.tWw_T4_Mow = 'K'; label.temp.tWw_T4 = 'temperature';
+temp.tWw_T4_Mow    = C2K(4);  units.temp.tWw_T4_Mow = 'K'; label.temp.tWw_T4_Mow = 'temperature';
 bibkey.tWw_T4_Mow = 'Handeland1998'; comment.tWw_T4_Mow = 'Mowi strain, mean of S=28 and S= 34, f=1';%
 
 data.tWw_T8_Mow = [ ...  % time since transfer in seawater (d), wet weight (g) at 8Â°C
@@ -561,7 +562,7 @@ data.tWw_T6_AqG = [ ... % time since transfer to seawater (d), wet weight (g) at
 70	142.9
 84	153.8];
 units.tWw_T6_AqG   = {'d', 'g'};  label.tWw_T6_AqG = {'time since metamorphosis', 'wet weight'};  
-temp.tWw_T6_AqG   = C2K(6);  units.temp.tWw_T6_AqG = 'K'; label.temp.tWw_T6 = 'temperature';
+temp.tWw_T6_AqG   = C2K(6);  units.temp.tWw_T6_AqG = 'K'; label.temp.tWw_T6_AqG = 'temperature';
 bibkey.tWw_T6_AqG = 'Handeland2008'; comment.tWw_T6_AqG = 'AquaGen domestic strain, f=1';%
 
 data.tWw_T10_AqG = [ ... % time since tranfer to seawater (d), wet weight (g) at 10Â°C
@@ -727,7 +728,7 @@ units.LWw_norM   = {'d', 'g'};  label.LWw_norM = {'fork length', 'wet weight'};
 temp.LWw_norM    = C2K(12);  units.temp.LWw_norM = 'K'; label.temp.LWw_norM = 'temperature';
 bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (Norway), 2 experiments started in 2003 and 2004, T° 12°C for freshwater, natural (mean=11.5) for seawater, table 1';%f=1
 
-data.LWw=[data.LWw_AqG;data.LWw_norM];
+% data.LWw=[data.LWw_AqG;data.LWw_norM];
 
 %%%%%%%%%%%%
 %%L-R data %
@@ -737,25 +738,25 @@ data.LWw=[data.LWw_AqG;data.LWw_norM];
 %%%%%%%%%%%%%
 %%Ww-R data %
 %%%%%%%%%%%%%
-data.WwR = [ ... % wet weight (g), number of live embryos (#)
-2590	343
-3177	482
-3087	282
-3078	157
-3465	222
-3813	337
-4091	135
-4757	332
-3535	497
-3803	947
-4111	1063
-4201	954];
-units.WwR   = {'g', 'le'};  label.WwR = {'wet weight', 'number of live embryos'};  
-temp.WwR    = C2K(6);  units.temp.WwR = 'K'; label.temp.WwR = 'temperature';
-bibkey.WwR= 'Fleming1996b'; comment.LWw_norM = 'Sunndalsora strain ; T= rough guess';
+% data.WwR = [ ... % wet weight (g), number of live embryos (#)
+% 2590	343
+% 3177	482
+% 3087	282
+% 3078	157
+% 3465	222
+% 3813	337
+% 4091	135
+% 4757	332
+% 3535	497
+% 3803	947
+% 4111	1063
+% 4201	954];
+% units.WwR   = {'g', 'le'};  label.WwR = {'wet weight', 'number of live embryos'};  
+% temp.WwR    = C2K(6);  units.temp.WwR = 'K'; label.temp.WwR = 'temperature';
+% bibkey.WwR= 'Fleming1996b'; comment.LWw_norM = 'Sunndalsora strain ; T= rough guess';
 
 
-data.Ri=max(data.WwR(:,2))/365.25; units.Ri = '-/d';    label.Ri = 'maximum number of live embryos';             bibkey.Ri = 'Fleming1996b';
+data.Ri=1063/365.25; units.Ri = '-/d';    label.Ri = 'maximum number of live embryos';             bibkey.Ri = 'Fleming1996b';
   comment.Ri = 'Sunndalsora strain';
   temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';
   
@@ -980,17 +981,17 @@ bibkey = 'Hosfeld2009'; type = 'Article'; bib = [ ...
 'doi = {10.1016/j.aquaculture.2009.06.003}' ...
 'author = "Camilla Diesen Hosfeld and Jannicke Hammer and Sigurd O. Handeland and Sveinung Fivelstad and Sigurd O. Stefansson",'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
-%
-bibkey='Jokikokko2006'; type='Article'; bib=[...
-'author = {Jokikokko, E. and Kallio-Nyberg, I. and Saloniemi, I. and Jutila, E.},' ...
-'title = {The survival of semi-wild, wild and hatchery-reared Atlantic salmon smolts of the Simojoki River in the Baltic Sea},' ...
-'journal = {Journal of Fish Biology},' ...
-'volume = {68},' ...
-'pages = {430-442},' ...
-'doi = {10.1111/j.0022-1112.2006.00892.x},' ...
-'year = {2006}'];
-metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
-%
+% %
+% bibkey='Jokikokko2006'; type='Article'; bib=[...
+% 'author = {Jokikokko, E. and Kallio-Nyberg, I. and Saloniemi, I. and Jutila, E.},' ...
+% 'title = {The survival of semi-wild, wild and hatchery-reared Atlantic salmon smolts of the Simojoki River in the Baltic Sea},' ...
+% 'journal = {Journal of Fish Biology},' ...
+% 'volume = {68},' ...
+% 'pages = {430-442},' ...
+% 'doi = {10.1111/j.0022-1112.2006.00892.x},' ...
+% 'year = {2006}'];
+% metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+% %
 bibkey='Jonsson1991'; type='Article'; bib=[...
 'title = "Differences in life history and migratory behaviour between wild and hatchery-reared Atlantic salmon in nature",' ...
 'journal = "Aquaculture",' ...
@@ -1046,6 +1047,18 @@ bibkey = 'Berg1999'; type = 'Article'; bib = [ ...
 'year = {1999}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
+bibkey = 'Solberg2014'; type = 'Article'; bib = [ ... 
+'author = {Solberg, M. F. and Fjelldal, P. G. and Nilsen F. and Glover, K. A.},' ...
+'title = {Hatching Time and Alevin Growth Prior to the Onset of Exogenous Feeding in Farmed, Wild and Hybrid Norwegian Atlantic Salmon},' ...
+'journal = {PLOS ONE},' ...
+'volume = {12},' ...
+'number = {9},' ...
+'pages = {e113697},' ...
+'doi = {10.1371/journal.pone.0113697},' ...
+'year = {2014}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+%
+
 bibkey = 'fishbase'; type = 'Misc'; bib = ...
 'howpublished = {\url{https://www.fishbase.in/summary/236}}';
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
