@@ -750,7 +750,7 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
   ELw_norSt7 = [L_bj; L_ji]/ del_M; % cm, total length
 % 
 
-%   % time-length %%% _norASt57 f= ad lib
+%   % time-length %%% _norSt57 f= ad lib
   TC_tL_norSt57 = tempcorr(temp.tL_norSt57, T_ref, T_A);
   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
 if info ~= 1 || info_nat ~= 1 % numerical procedure failed
@@ -871,6 +871,7 @@ prdData.tL_norA7 = ELw_norA7;
 prdData.tL_norA57 = ELw_norA57;
 prdData.tL_norSt4 = ELw_norSt4;
 prdData.tL_norSt5 = ELw_norSt5;
+prdData.tL_norSt7 = ELw_norSt7;
 prdData.tL_norSt57 = ELw_norSt57;
 prdData.tL_scoA = ELw_scoA;
 prdData.tL_scoS = ELw_scoS;
