@@ -263,83 +263,6 @@ prdData.Li = Lw_i_nat;
   EWw_eT8 =EWw_e8+EV_e8;
  
   
-  % time-length 
-  
-   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0 = L0_Bjornsson1989*del_M; % cm, structural length at t initial
-  % T11 
-  rT_B = TC_tL_iceT11 * rho_B * k_M; rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
-  t = tL_iceT11(:,1) - tL_iceT11(1,1); % correction so that t initial = 0
-  if L_0 < L_j
-    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
-    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
-    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
-    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
-    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
-    L = [L_bj; L_ji]; % catenate lengths
-  else 
-    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
-  end
-  EL_iceT11 = L / del_M;
-
-  % T6 
-  rT_B = TC_tL_iceT611 * rho_B * k_M; rT_j = TC_tL_iceT611 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
-  t = tL_iceT611(:,1) - tL_iceT611(1,1); % correction so that t initial = 0
-  if L_0 < L_j
-    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
-    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
-    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
-    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
-    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
-    L = [L_bj; L_ji]; % catenate lengths
-  else 
-    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
-  end
-  EL_iceT611 = L / del_M;
-
-  
-  % time-length data from Glover 2009
-%   kT_M = k_M * TC_tL_norM; %%%km corrected
-%   rT_j = rho_j * kT_M; %%%rhoj corrected
-%   rT_B = rho_B * kT_M; %%%%rhoB corrected
-%   tT_j = (tau_j - tau_b)/ kT_M;   
-%   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-%   L_bj = L_b * exp(tL_norM(tL_norM(:,1) < tT_j,1) * rT_j/3); % cm, struc length
-%   L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norM(tL_norM(:,1) >= tT_j,1) - tT_j)); % cm, struc length
-%   EL_norM = [L_bj; L_ji]/ del_M; % cm, total length
-  % 2003 experiment 
-  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0 = L0_norM2003*del_M; % cm, structural length at t initial
-  rT_B = TC_tL_norM2003 * rho_B * k_M; rT_j = TC_tL_norM2003 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
-  t = tL_norM2003(:,1) - tL_norM2003(1,1); % correction so that t initial = 0
-  if L_0 < L_j
-    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
-    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
-    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
-    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
-    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
-    L = [L_bj; L_ji]; % catenate lengths
-  else 
-    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
-  end
-  EL_norM2003 = L / del_M;
-  % 2004 experiment 
-  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0 = L0_norM2004*del_M; % cm, structural length at t initial
-  rT_B = TC_tL_norM2004 * rho_B * k_M; rT_j = TC_tL_norM2004 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
-  t = tL_norM2004(:,1) - tL_norM2004(1,1); % correction so that t initial = 0
-  if L_0 < L_j
-    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
-    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
-    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
-    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
-    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
-    L = [L_bj; L_ji]; % catenate lengths
-  else 
-    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
-  end
-  EL_norM2004 = L / del_M;
-
   % time-weight data from Hosfeld 2009
   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
   L_0 = (W0_Hosfeld2009./ (1 + f * ome))^(1/3); % cm, structural length at t initial
@@ -451,6 +374,83 @@ prdData.Li = Lw_i_nat;
   EWw_T18 = L.^3 * (1 + f * w);
   
   
+  % time-length 
+  
+   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = L0_Bjornsson1989*del_M; % cm, structural length at t initial
+  % T11 
+  rT_B = TC_tL_iceT11 * rho_B * k_M; rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_iceT11(:,1) - tL_iceT11(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_iceT11 = L / del_M;
+
+  % T6 
+  rT_B = TC_tL_iceT611 * rho_B * k_M; rT_j = TC_tL_iceT611 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_iceT611(:,1) - tL_iceT611(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_iceT611 = L / del_M;
+
+  
+  % time-length data from Glover 2009
+%   kT_M = k_M * TC_tL_norM; %%%km corrected
+%   rT_j = rho_j * kT_M; %%%rhoj corrected
+%   rT_B = rho_B * kT_M; %%%%rhoB corrected
+%   tT_j = (tau_j - tau_b)/ kT_M;   
+%   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+%   L_bj = L_b * exp(tL_norM(tL_norM(:,1) < tT_j,1) * rT_j/3); % cm, struc length
+%   L_ji = L_i - (L_i - L_j) * exp( - rT_B * (tL_norM(tL_norM(:,1) >= tT_j,1) - tT_j)); % cm, struc length
+%   EL_norM = [L_bj; L_ji]/ del_M; % cm, total length
+  % 2003 experiment 
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = L0_norM2003*del_M; % cm, structural length at t initial
+  rT_B = TC_tL_norM2003 * rho_B * k_M; rT_j = TC_tL_norM2003 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_norM2003(:,1) - tL_norM2003(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_norM2003 = L / del_M;
+  % 2004 experiment 
+  L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0 = L0_norM2004*del_M; % cm, structural length at t initial
+  rT_B = TC_tL_norM2004 * rho_B * k_M; rT_j = TC_tL_norM2004 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = tL_norM2004(:,1) - tL_norM2004(1,1); % correction so that t initial = 0
+  if L_0 < L_j
+    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj; L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+  end
+  EL_norM2004 = L / del_M;
+
   % length-weight   %%%%
   EWw_AqG = (LWw_AqG(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
   EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight

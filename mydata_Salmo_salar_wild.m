@@ -5,7 +5,7 @@ metaData.phylum     = 'Chordata';
 metaData.class      = 'Actinopterygii'; 
 metaData.order      = 'Salmoniformes'; 
 metaData.family     = 'Salmonidae';
-metaData.species    = 'Salmo_salar'; 
+metaData.species    = 'Salmo_salar_wild'; 
 metaData.species_en = 'Atlantic salmon'; 
 metaData.ecoCode.climate = {'MC'};
 metaData.ecoCode.ecozone = {'MAN'};
@@ -146,7 +146,7 @@ data.tp_ice = (5.54-1-1)*365.25; %1658
 data.tp_nor = (5.71-1-1)*365.25; %1721;  
   units.tp_nor = 'd';    label.tp_nor = 'time since birth at puberty';  bibkey.tp_nor = 'Hutchings1998'; 
   temp.tp_nor = C2K(10);  units.temp.tp_nor = 'K'; label.temp.tp_nor = 'temperature'; 
-  comment.tp_nor = ' 'Mean of Norwegian populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
+  comment.tp_nor = 'Mean of Norwegian populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
 data.tp_fraspa = (4.08-1-1)*365.25; %1045;  
   units.tp_fraspa = 'd';    label.tp_fraspa = 'time since birth at puberty';  bibkey.tp_fraspa = 'Hutchings1998'; 
   temp.tp_fraspa = C2K(10);  units.temp.tp_fraspa = 'K'; label.temp.tp_fraspa = 'temperature'; 
@@ -171,7 +171,7 @@ data.tp_rus = (4.74-1)*365.25; %1366;
   units.tp_rus = 'd';    label.tp_rus = 'time since birth at maturity';  bibkey.tp_rus = 'Kazakov1981'; 
   temp.tp_rus = C2K(10);  units.temp.tp_rus = 'K'; label.temp.tp_rus = 'temperature'; 
   comment.tp_rus = 'Mean of Neva river (Russia); temperature: rough guess - highly variable temperature throughout life, table1';
-data.tp_norI =(1,68+1.22-1)*365.25; % 694;  
+data.tp_norI =(1.68+1.22-1)*365.25; % 694;  
   units.tp_norI = 'd';    label.tp_norI = 'time since birth at maturity';  bibkey.tp_norI = 'Hindar2006'; 
   temp.tp_norI = C2K(10);  units.temp.tp_norI = 'K'; label.temp.tp_norI = 'temperature'; 
   comment.tp_norI = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life, Table3';
@@ -233,14 +233,14 @@ data.Lh_CanM6  = 1.87;   units.Lh_CanM6  = 'cm';  label.Lh_CanM6  = 'total lengt
   temp.Lh_CanM6 = C2K(6);  units.temp.Lh_CanM6 = 'K'; label.temp.Lh_CanM6 = 'temperature';
 data.Lh_CanM8  = 1.84;   units.Lh_CanM8  = 'cm';  label.Lh_CanM8  = 'total length at hatching';   bibkey.Lh_CanM8  = 'Peterson1977';  comment.Lh_CanM8 = 'parents from Miramichi River (New Brunswick - Canada), Table 6';
   temp.Lh_CanM8 = C2K(8);  units.temp.Lh_CanM8 = 'K'; label.temp.Lh_CanM8 = 'temperature';
-data.Lh_CanM10  = 1.73;   units.Lh_CanM10  = 'cm';  label.Lh_CanM10  = 'total length at hatching';   bibkey.Lh_CanM10  = '1977';  comment.Lh_CanM10 = 'parents from Miramichi River (New Brunswick - Canada), Table 6';
+data.Lh_CanM10  = 1.73;   units.Lh_CanM10  = 'cm';  label.Lh_CanM10  = 'total length at hatching';   bibkey.Lh_CanM10  = 'Peterson1977';  comment.Lh_CanM10 = 'parents from Miramichi River (New Brunswick - Canada), Table 6';
   temp.Lh_CanM10 = C2K(10);  units.temp.Lh_CanM10 = 'K'; label.temp.Lh_CanM10 = 'temperature';
 data.Lh_CanM12  = 1.62;   units.Lh_CanM12  = 'cm';  label.Lh_CanM12  = 'total length at hatching';   bibkey.Lh_CanM12  = 'Peterson1977';  comment.Lh_CanM12 = 'parents from Miramichi River (New Brunswick - Canada), Table 6';
   temp.Lh_CanM12 = C2K(12);  units.temp.Lh_CanM12 = 'K'; label.temp.Lh_CanM12 = 'temperature';
 data.Lh_CanP  = 1.8;   units.Lh_CanP  = 'cm';  label.Lh_CanP  = 'total length at hatching';   bibkey.Lh_CanP  = 'Srivastava1991';  comment.Lh_CanP = 'parents from Northeast Placentia River (Newfoundland, Canada), Table 6';
   temp.Lh_CanP = C2K(7);  units.temp.Lh_CanP = 'K'; label.temp.Lh_CanP = 'temperature';
 data.Lh_Rus  = 1.83;   units.Lh_Rus  = 'cm';  label.Lh_Rus  = 'total length at hatching';   bibkey.Lh_Rus  = 'Kazakov1981';  comment.Lh_Rus = 'parents from Neva river (Russia), Table 7';
-  temp.Lh_Rus = C2K(5);  units.temp.Lh_Rus = 'K'; label.temp.Lh_CanP = 'temperature';  comment.temp.Lh_Rus = 'rough estimate of Temperature';
+  temp.Lh_Rus = C2K(5);  units.temp.Lh_Rus = 'K'; label.temp.Lh_Rus = 'temperature';  comment.temp.Lh_Rus = 'rough estimate of Temperature';
 data.Lh_scocanmix  = 1.74;   units.Lh_scocanmix  = 'cm';  label.Lh_scocanmix  = 'total length at hatching';   bibkey.Lh_scocanmix  = 'Gilbey2009';  comment.Lh_scocanmix = 'mean of offsprings from parents from Bristol cove river (Scotland) & Don river (Canada), fig1d';
   temp.Lh_scocanmix = C2K(5.8);  units.temp.Lh_scocanmix = 'K'; label.temp.Lh_scocanmix = 'temperature';  comment.temp.Lh_scocanmix = 'rough estimate of Temperature';
 
@@ -257,7 +257,7 @@ data.Lb_NorF2013  = 2.78;   units.Lb_NorF2013  = 'cm';  label.Lb_NorF2013  = 'to
 data.Lb_NorV2013  = 2.83;   units.Lb_NorV2013  = 'cm';  label.Lb_NorV2013  = 'total length at birth';   bibkey.Lb_NorV2013  = 'Solberg2014';  comment.Lb_NorF2013 = 'parents from river Vosso (Norway in 2011), Table 2';
 
  data.Lb_Can2D  = 2.81;   units.Lb_Can2D  = 'cm';  label.Lb_Can2D  = 'total length at birth';   bibkey.Lb_Can2D  = 'Peterson1977';  comment.Lb_Can2D = 'parents from Dennis Stream, Fig. 6 (New Brunswick - Canada)';
-  temp.Lb_Can2D = C2K(2);  units.temp.Lb_Can2D = 'K'; label.temp.Lb = 'temperature';
+  temp.Lb_Can2D = C2K(2);  units.temp.Lb_Can2D = 'K'; label.temp.Lb_Can2D = 'temperature';
  data.Lb_Can6D  = 3.00;   units.Lb_Can6D  = 'cm';  label.Lb_Can6D  = 'total length at birth';   bibkey.Lb_Can6D  = 'Peterson1977';  comment.Lb_Can6D = 'parents from Dennis Stream, Fig. 6 (New Brunswick - Canada)';
   temp.Lb_Can6D = C2K(6);  units.temp.Lb_Can6D = 'K'; label.temp.Lb_Can6D = 'temperature';
  data.Lb_Can12D  = 2.70;   units.Lb_Can12D  = 'cm';  label.Lb_Can12D  = 'total length at birth';   bibkey.Lb_Can12D  = 'Peterson1977';  comment.Lb_Can12D = 'parents from Dennis Stream, Fig. 6 (New Brunswick - Canada)';
@@ -275,7 +275,7 @@ data.Lb_NorV2013  = 2.83;   units.Lb_NorV2013  = 'cm';  label.Lb_NorV2013  = 'to
 data.Lb_CanP  = 2.5;   units.Lb_CanP  = 'cm';  label.Lb_CanP  = 'total length at birth';   bibkey.Lb_CanP  = 'Srivastava1991';  comment.Lb_CanP = 'parents from Northeast Placentia River (Newfoundland, Canada), Fig 2A';
   temp.Lb_CanP = C2K(7);  units.temp.Lb_CanP = 'K'; label.temp.Lb_CanP = 'temperature';
 data.Lb_Rus  = 2.55;   units.Lb_Rus  = 'cm';  label.Lb_Rus  = 'total length at birth';   bibkey.Lb_Rus  = 'Kazakov1981';  comment.Lb_Rus = 'parents from Neva river (Russia), Table 8';
-  temp.Lb_Rus = C2K(5);  units.temp.Lb_Rus = 'K'; label.temp.Lh_CanP = 'temperature';  comment.temp.Lb_Rus = 'rough estimate of Temperature';
+  temp.Lb_Rus = C2K(5);  units.temp.Lb_Rus = 'K'; label.temp.Lb_Rus = 'temperature';  comment.temp.Lb_Rus = 'rough estimate of Temperature';
 data.Lb_Usa  = 2.82;   units.Lb_Usa  = 'cm';  label.Lb_Usa  = 'total length at birth';   bibkey.Lb_Usa  = 'Coughlin1991';  comment.Lb_Usa = 'parents from Conecticut river (USA), t= birth+8days, Table 2';
   temp.Lb_Usa = C2K(5);  units.temp.Lb_Usa = 'K'; label.temp.Lb_Usa = 'temperature';  comment.temp.Lb_Usa = 'rough estimate of Temperature';
 data.Lb_ScoA  = 2.74;   units.Lb_ScoA  = 'cm';  label.Lb_ScoA  = 'total length at birth';   bibkey.Lb_ScoA  = 'Metcalfe1992';  comment.Lb_ScoA = 'parents from River Almond (Scotland), Table 2';
@@ -375,8 +375,8 @@ data.Lp_norI2  = 62.7 ;   units.Lp_norI2  = 'cm';  label.Lp_norI2  = 'total leng
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Maximal length  (max length at spawning)   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Li_ScoMax  = 95;   units.Li_Sco  = 'cm';  label.Li_Sco  = 'ultimate total length';   bibkey.Li_Sco  = 'Fleming1996'; 
-  comment.Li_Sco = 'maximum of Scottish populations maxima - females, Table 2';
+data.Li_ScoMax  = 95;   units.Li_ScoMax  = 'cm';  label.Li_ScoMax  = 'ultimate total length';   bibkey.Li_ScoMax  = 'Fleming1996'; 
+  comment.Li_ScoMax = 'maximum of Scottish populations maxima - females, Table 2';
 data.Li_NorFM = 86;   units.Li_NorFM = 'cm';   label.Li_NorFM = 'ultimate total length';     bibkey.Li_NorFM = 'Solberg2014'; comment.Li_NorFM = 'maximum of Figgjo river -males (n<10),Table1';
 data.Li_NorFF = 80;   units.Li_NorFF = 'cm';   label.Li_NorFF = 'ultimate total length';     bibkey.Li_NorFF = 'Solberg2014'; comment.Li_NorFF = 'maximum of Figgjo river - females (n<10),Table1';
 data.Li_NorVM = 109;   units.Li_NorVM = 'cm';   label.Li_NorVM = 'ultimate total length';     bibkey.Li_NorVM = 'Solberg2014'; comment.Li_NorVM = 'maximum of Vosso river -males (n<10),Table1';
@@ -403,10 +403,10 @@ data.V0_can = 0.123;  units.V0_can = 'cm^3'; label.V0_can = 'egg volume'; bibkey
 data.V0_norF2011 = 0.104;  units.V0_norF2011 = 'cm^3'; label.V0_norF2011 = 'egg volume'; bibkey.V0_norF2011 = 'Solberg2014';  comment.V0_norF2011 = 'parents from river Figgjo (Norway),mean(4/3*pi*(diameter/2)^3), Table2';
 data.V0_norF2012 = 0.129;  units.V0_norF2012 = 'cm^3'; label.V0_norF2012 = 'egg volume'; bibkey.V0_norF2012 = 'Solberg2014';  comment.V0_norF2012 = 'parents from river Figgjo (Norway),mean(4/3*pi*(diameter/2)^3), Table2';
 data.V0_rus = 0.144;  units.V0_rus = 'cm^3'; label.V0_rus = 'egg volume'; bibkey.V0_rus = 'Kazakov1981';  comment.V0_rus = 'parents from river Neva (Russia),mean(4/3*pi*(diameter/2)^3), Table3';
-data.V0_sco = 0.098;  units.V0_sco = 'cm^3'; label.V0_sco = 'egg volume'; bibkey.V0_sco = 'Thorpes1984';  comment.V0_sco = 'parents from river Almond (Scotland),mean(4/3*pi*(diameter/2)^3), Table 3';
+data.V0_sco = 0.098;  units.V0_sco = 'cm^3'; label.V0_sco = 'egg volume'; bibkey.V0_sco = 'Thorpe1984';  comment.V0_sco = 'parents from river Almond (Scotland),mean(4/3*pi*(diameter/2)^3), Table 3';
 data.V0_usa = 0.091;  units.V0_usa = 'cm^3'; label.V0_usa = 'egg volume'; bibkey.V0_usa = 'Baum1971';  comment.V0_usa = 'parents from rivers Machias & Narraguagus (USA),mean(4/3*pi*(diameter(inch)*2.54/2)^3), Table1';
 data.V0_scoBC = 0.141;  units.V0_scoBC = 'cm^3'; label.V0_scoBC = 'egg volume'; bibkey.V0_scoBC = 'Gilbey2009';  comment.V0_scoBC = 'parents from Bristol Cove river(Scotland), calculated from 2 diameters and ovoid model. Table1';
-data.V0_canD = 0.092;  units.V0_usa = 'cm^3'; label.V0_usa = 'egg volume'; bibkey.V0_usa = 'Gilbey2009';  comment.V0_usa = 'parents from Don river (Canada), calculated from 2 diameters and ovoid model, Table1.';
+data.V0_canD = 0.092;  units.V0_canD = 'cm^3'; label.V0_canD = 'egg volume'; bibkey.V0_canD = 'Gilbey2009';  comment.V0_canD = 'parents from Don river (Canada), calculated from 2 diameters and ovoid model, Table1.';
 data.V0_fnor = 0.078;  units.V0_fnor = 'cm^3'; label.V0_fnor = 'egg volume'; bibkey.V0_fnor = 'Heinimaa2004';  comment.V0_usa = 'parents from Teno river (Finland/Norway), mean(4/3*pi*(diameter(inch)*2.54/2)^3). Figure3';
 
 
@@ -439,7 +439,7 @@ data.V0_fnor = 0.078;  units.V0_fnor = 'cm^3'; label.V0_fnor = 'egg volume'; bib
 data.Wwh_Eng = 0.0552*100/(100-62.9);   units.Wwh_Eng = 'g';   label.Wwh_Eng = 'wet weight at hatching';     bibkey.Wwh_Eng = 'Carrick1979';  comment.Wwh_Eng = 'at 4째C - parents from River Kent (Cumbria, northern England), Table 3';
 data.Wwh_Can = 0.117;   units.Wwh_Can = 'g';   label.Wwh_Can = 'wet weight at hatching';     bibkey.Wwh_Can = 'Srivastava1991';  comment.Wwh_Can = 'parents from Northeast Placentia River (Newfoundland, Canada), Fig 1';
 data.Wwh_Rus = 0.160;   units.Wwh_Rus = 'g';   label.Wwh_Rus = 'wet weight at hatching';     bibkey.Wwh_Rus = 'Kazakov1981';  comment.Wwh_Rus = 'parents from Neva river (Russia), Table7';
-data.Wwh_Sco = 0.273;   units.Wwh_Sco = 'g';   label.Wwh_Sco = 'wet weight at hatching';     bibkey.Wwh_Sco = 'Thorpes1984';  comment.Wwh_Sco = 'parents from Almond river (Scotland), Table 7';
+data.Wwh_Sco = 0.273;   units.Wwh_Sco = 'g';   label.Wwh_Sco = 'wet weight at hatching';     bibkey.Wwh_Sco = 'Thorpe1984';  comment.Wwh_Sco = 'parents from Almond river (Scotland), Table 7';
 data.Wwh_FNor = 0.139;   units.Wwh_FNor = 'g';   label.Wwh_FNor = 'wet weight at hatching';     bibkey.Wwh_FNor = 'Heinimaa2004';  comment.Wwh_FNor = 'parents from Teno river (Finland/Norway), Fig 4';
 
 
@@ -488,7 +488,7 @@ data.Wwp_usa = 4246;   units.Wwp_usa = 'g';   label.Wwp_usa = 'wet weight at pub
 data.Wwi = 5200  ;   units.Wwi = 'g';   label.Wwi = 'Wet weight at spawning';     bibkey.Wwi = 'Berg2001'; comment.Wwi = 'mean wet weight of 6 spawning females,parents from river Stj첩rdalselva (Norway), table 1';
 data.Wwi_NorFM = 5380;   units.Wwi_NorFM = 'g';   label.Wwi_NorFM = 'ultimate wet weight';     bibkey.Wwi_NorFM = 'Solberg2014'; comment.Wwi_NorFM = 'maximum of Figgjo river -males (n<10), table 1';
 data.Wwi_NorFF = 4980;   units.Wwi_NorFF = 'g';   label.Wwi_NorFF = 'ultimate wet weight';     bibkey.Wwi_NorFF = 'Solberg2014'; comment.Wwi_NorFF = 'maximum of Figgjo river - females (n<10),table 1';
-data.Wwi_NorVM = 12700;   units.Wwi_NorVM = 'g';   label.Wwi_NorVM = 'ultimate wet weight';     bibkey.Wwi_NorVM = 'Solberg2014'; comment.Wwi_NorVM = 'maximum of Vosso river -males , table 1
+data.Wwi_NorVM = 12700;   units.Wwi_NorVM = 'g';   label.Wwi_NorVM = 'ultimate wet weight';     bibkey.Wwi_NorVM = 'Solberg2014'; comment.Wwi_NorVM = 'maximum of Vosso river -males , table 1';
 data.Wwi_NorVF = 6800;   units.Wwi_NorVF = 'g';   label.Wwi_NorVF = 'ultimate wet weight';     bibkey.Wwi_NorVF = 'Solberg2014'; comment.Wwi_NorVF = 'maximum of Vosso river - females (n<10), table 1';
 data.Wwi_NorAM = 8300;   units.Wwi_NorAM = 'g';   label.Wwi_NorAM = 'ultimate wet weight';     bibkey.Wwi_NorAM = 'Solberg2014'; comment.Wwi_NorAM = 'maximum of Arna river -males (n<10),table 1';
 data.Wwi_NorAF = 9100;   units.Wwi_NorAF = 'g';   label.Wwi_NorAF = 'ultimate wet weight';     bibkey.Wwi_NorAF = 'Solberg2014'; comment.Wwi_NorAF = 'maximum of Arna river - females (n<10), table 1';
@@ -496,7 +496,7 @@ data.Wwi_RusN = 8200;   units.Wwi_RusN = 'g';   label.Wwi_RusN = 'ultimate wet w
 data.Wwi_RusO = 5000;   units.Wwi_RusO = 'g';   label.Wwi_RusO = 'ultimate wet weight';     bibkey.Wwi_RusO = 'Kazakov1981'; comment.Wwi_RusO = 'maximum of Oyat river (Russia) - females (n<10), table 3';
 data.Wwi_RusS = 3900;   units.Wwi_RusS = 'g';   label.Wwi_RusS = 'ultimate wet weight';     bibkey.Wwi_RusS = 'Kazakov1981'; comment.Wwi_RusS = 'maximum of Svir river (Russia) - females (n<10); table 3';
 data.Wwi_usa = 9866;   units.Wwi_usa = 'g';   label.Wwi_usa = 'ultimate wet weight';     bibkey.Wwi_usa = 'Baum1971'; comment.Wwi_usa = 'Machias & NArraguagus rivers (USA), max of females at spawning, converted from pounds, table 1';
-data.Wwi_FNor = 16350;   units.Wwi_FNor = 'g';   label.Wwi_FNor = 'ultimate wet weight';     bibkey.Wwi_FNor = 'Heinimaa'; comment.Wwi_usa = 'Teno river (Finland/Norway), max of females at spawning, converted from pounds, Fig1';
+data.Wwi_FNor = 16350;   units.Wwi_FNor = 'g';   label.Wwi_FNor = 'ultimate wet weight';     bibkey.Wwi_FNor = 'Heinimaa2004'; comment.Wwi_usa = 'Teno river (Finland/Norway), max of females at spawning, converted from pounds, Fig1';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -625,18 +625,18 @@ units.Tah_Berg1999  = {'K', 'd'};  label.Tah_Berg1999 = {'temperature', 'age at 
 bibkey.Tah_Berg1999 = 'Berg1999'; comment.Tah_Berg1999 = 'mean of norwegian rivers, mean of offsprings time at 50% hatching, fig 1';
 %f=natural (parents)
 
-data.Tah_Jonhston1997 =[...% age at hatching (d)
+data.Tah_Johnston1997 =[...% age at hatching (d)
 8.1 62
 4.8 109];
-data.Tah_Jonhston1997(:,1)=C2K(data.Tah_Jonhston1997(:,1));
-units.Tah_Jonhston1997  = {'K', 'd'};  label.Tah_Jonhston1997 = {'temperature', 'age at hatching'}; 
-bibkey.Tah_Jonhston1997 = 'Jonhson1997'; comment.Tah_Jonhston1997 = 'parents from river Shin (Scotland), mean of all eggs';
+data.Tah_Johnston1997(:,1)=C2K(data.Tah_Johnston1997(:,1));
+units.Tah_Johnston1997  = {'K', 'd'};  label.Tah_Johnston1997 = {'temperature', 'age at hatching'}; 
+bibkey.Tah_Johnston1997 = 'Johnston1997'; comment.Tah_Johnston1997 = 'parents from river Shin (Scotland), mean of all eggs, text M&M';
 %f=natural (parents)
 
 %%%%%%%%%%%%%%
 %% T-ab data %
 %%%%%%%%%%%%%%
-data.TabC = [ ... % temperature (째C), age at yolk exhaustion (d)
+data.TabC = [ ... % temperature (캜), age at yolk exhaustion (d)
 2 238
 6 177
 12  64];
@@ -649,7 +649,7 @@ data.Tab_sco = [ ... % temperature (째C), age at yolk exhaustion (d)
 4.8 173];
 data.Tab_sco(:,1)=C2K(data.Tab_sco(:,1));
 units.Tab_sco   = {'K', 'd'};  label.Tab_sco = {'temperature', 'age at birth'}; 
-bibkey.Tab_sco = 'Jonhston1997'; comment.Tab_sco = 'parents from river Shin (Scotland), age at first feeding, fig 1';
+bibkey.Tab_sco = 'Johnston1997'; comment.Tab_sco = 'parents from river Shin (Scotland), age at first feeding, fig 1';
 
 %%%%%%%%%%%%%
 %% T-Lh data %
@@ -706,8 +706,8 @@ data.tL_usa = [ ... % time since first feeding (d), fork length (cm)
 540  23.8
 568  27.6];
 units.tL_usa   = {'d', 'cm'};  label.tL_usa = {'time since birth', 'total length'};  
-temp.tL_usa    = C2K(10);  units.temp.tL_usa = 'K'; label.temp.tL_usa = 'temperature'; comment.temp.tL_usa = 'temperature between 8 and 12째C';
-bibkey.tL_usa = 'Rottiers1993'; comment.tL_usa = 'Penobscot River (USA)';
+temp.tL_usa    = C2K(10);  units.temp.tL_usa = 'K'; label.temp.tL_usa = 'temperature'; comment.temp.tL_usa = 'temperature between 8 and 12캜';
+bibkey.tL_usa = 'Rottiers1993'; comment.tL_usa = 'Penobscot River (USA), table 1, f=ad lib';
 
 
 data.tL_norI = [ ... % time since emergence (d), fork length (cm)
@@ -744,8 +744,8 @@ data.tL_norI = [ ... % time since emergence (d), fork length (cm)
 49  4.3
 49  4.6];
 units.tL_norI   = {'d', 'cm'};  label.tL_norI = {'time since birth', 'total length'};  
-temp.tL_norI    = C2K(12);  units.temp.tL_norI = 'K'; label.temp.tL_nor = 'temperature'; comment.temp.tL_norI = 'temperature increasing from 10.4째C to 14.1째C throughout the experiment';
-bibkey.tL_norI = 'Einum2000'; comment.tL_norI = 'Imsa River (Norway)';
+temp.tL_norI    = C2K(12);  units.temp.tL_norI = 'K'; label.temp.tL_norI = 'temperature'; comment.temp.tL_norI = 'temperature increasing from 10.4캜 to 14.1캜 throughout the experiment, ';
+bibkey.tL_norI = 'Einum2000'; comment.tL_norI = 'Imsa River (Norway), fig 6';
 
 data.tL_norSu4 = [ ... % time since emergence (d), fork length (cm)
 56	5
@@ -753,7 +753,7 @@ data.tL_norSu4 = [ ... % time since emergence (d), fork length (cm)
 360	6.4];
 units.tL_norSu4   = {'d', 'cm'};  label.tL_norSu4 = {'time since birth', 'total length'};  
 temp.tL_norSu4    = C2K(4);  units.temp.tL_norSu4 = 'K'; label.temp.tL_norSu4 = 'temperature'; comment.temp.tL_norSu4 = 'T=7.9 for t=0-56';
-bibkey.tL_norSu4 = 'Imsland2016'; comment.tL_norSu4 = 'Suldsalagen River (Norway)';
+bibkey.tL_norSu4 = 'Imsland2016'; comment.tL_norSu4 = 'Suldsalagen River (Norway), fig 1';
 
 data.tL_norSu5 = [ ... % time since emergence (d), fork length (cm)
 56	5
@@ -761,7 +761,7 @@ data.tL_norSu5 = [ ... % time since emergence (d), fork length (cm)
 360	7.6];
 units.tL_norSu5   = {'d', 'cm'};  label.tL_norSu5 = {'time since birth', 'total length'};  
 temp.tL_norSu5    = C2K(5.5);  units.temp.tL_norSu5 = 'K'; label.temp.tL_norSu5 = 'temperature'; comment.temp.tL_norSu5 = 'T=7.9 for t=0-56';
-bibkey.tL_norSu5 = 'Imsland2016'; comment.tL_norSu5 = 'Suldsalagen River (Norway)';
+bibkey.tL_norSu5 = 'Imsland2016'; comment.tL_norSu5 = 'Suldsalagen River (Norway), fig 1';
 
 data.tL_norSu7 = [ ... % time since emergence (d), fork length (cm)
 56	5
@@ -769,7 +769,7 @@ data.tL_norSu7 = [ ... % time since emergence (d), fork length (cm)
 360	9.4];
 units.tL_norSu7   = {'d', 'cm'};  label.tL_norSu7 = {'time since birth', 'total length'};  
 temp.tL_norSu7    = C2K(7);  units.temp.tL_norSu7 = 'K'; label.temp.tL_norSu7 = 'temperature'; comment.temp.tL_norSu7 = 'T=7.9 for t=0-56';
-bibkey.tL_norSu7 = 'Imsland2016'; comment.tL_norSu7 = 'Suldsalagen River (Norway)';
+bibkey.tL_norSu7 = 'Imsland2016'; comment.tL_norSu7 = 'Suldsalagen River (Norway), fig 1';
 
 data.tL_norSu = [ ... % time since emergence (d), fork length (cm)
 56	5
@@ -777,7 +777,7 @@ data.tL_norSu = [ ... % time since emergence (d), fork length (cm)
 360	9.1];
 units.tL_norSu   = {'d', 'cm'};  label.tL_norSu = {'time since birth', 'total length'};  
 temp.tL_norSu    = C2K(5.7);  units.temp.tL_norSu = 'K'; label.temp.tL_norSu = 'temperature'; comment.temp.tL_norSu = 'Simulated natural temperature, mean = 5.7, min = 2.4, max=11.5; start at 11.5, then 2.5캜 at t=232, then rises';
-bibkey.tL_norSu = 'Imsland2016'; comment.tL_norSu = 'Suldsalagen River (Norway)';
+bibkey.tL_norSu = 'Imsland2016'; comment.tL_norSu = 'Suldsalagen River (Norway), fig 1';
 
 
 data.tL_norA4 = [ ... % time since emergence (d), fork length (cm)
@@ -786,7 +786,7 @@ data.tL_norA4 = [ ... % time since emergence (d), fork length (cm)
 360	6.4];
 units.tL_norA4   = {'d', 'cm'};  label.tL_norA4 = {'time since birth', 'total length'};  
 temp.tL_norA4    = C2K(4);  units.temp.tL_norA4 = 'K'; label.temp.tL_norA4 = 'temperature'; comment.temp.tL_norA4 = 'T=7.9 for t=0-56';
-bibkey.tL_norA4 = 'Imsland2016'; comment.tL_norA4 = 'Ardal River (Norway)';
+bibkey.tL_norA4 = 'Imsland2016'; comment.tL_norA4 = 'Ardal River (Norway), fig 1';
 
 data.tL_norA5 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
@@ -794,15 +794,15 @@ data.tL_norA5 = [ ... % time since emergence (d), fork length (cm)
 360	7.1];
 units.tL_norA5   = {'d', 'cm'};  label.tL_norA5 = {'time since birth', 'total length'};  
 temp.tL_norA5    = C2K(5.5);  units.temp.tL_norA5 = 'K'; label.temp.tL_norA5 = 'temperature'; comment.temp.tL_norA5 = 'T=7.9 for t=0-56';
-bibkey.tL_norA5 = 'Imsland2016'; comment.tL_norA5 = 'Ardal River (Norway)';
+bibkey.tL_norA5 = 'Imsland2016'; comment.tL_norA5 = 'Ardal River (Norway), fig 1';
 
 data.tL_norA7 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
 232	6.4
 360	9];
 units.tL_norA7   = {'d', 'cm'};  label.tL_norA7 = {'time since birth', 'total length'};  
-temp.tL_norA7    = C2K(7);  units.temp.tL_norA7 = 'K'; label.temp.tL_norA = 'temperature'; comment.temp.tL_norA7 = 'T=7.9 for t=0-56';
-bibkey.tL_norA7 = 'Imsland2016'; comment.tL_norA7 = 'Ardal River (Norway)';
+temp.tL_norA7    = C2K(7);  units.temp.tL_norA7 = 'K'; label.temp.tL_norA7 = 'temperature'; comment.temp.tL_norA7 = 'T=7.9 for t=0-56';
+bibkey.tL_norA7 = 'Imsland2016'; comment.tL_norA7 = 'Ardal River (Norway), fig 1';
 
 data.tL_norA57 = [ ... % time since emergence (d), fork length (cm)
 56	4.7
@@ -810,7 +810,7 @@ data.tL_norA57 = [ ... % time since emergence (d), fork length (cm)
 360	8.1];
 units.tL_norA57   = {'d', 'cm'};  label.tL_norA57 = {'time since birth', 'total length'};  
 temp.tL_norA57    = C2K(5.7);  units.temp.tL_norA57 = 'K'; label.temp.tL_norA57 = 'temperature'; comment.temp.tL_norA57 = 'Simulated natural temperature, mean = 5.7, min = 2.4, max=11.5; start at 11.5, then 2.5캜 at t=232, then rises';
-bibkey.tL_norA57 = 'Imsland2016'; comment.tL_norA57 = 'Ardal River (Norway)';
+bibkey.tL_norA57 = 'Imsland2016'; comment.tL_norA57 = 'Ardal River (Norway), fig 1';
 
 data.tL_norSt4 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
@@ -818,7 +818,7 @@ data.tL_norSt4 = [ ... % time since emergence (d), fork length (cm)
 349	6.4];
 units.tL_norSt4   = {'d', 'cm'};  label.tL_norSt4 = {'time since birth', 'total length'};  
 temp.tL_norSt4    = C2K(4);  units.temp.tL_norSt4 = 'K'; label.temp.tL_norSt4 = 'temperature'; comment.temp.tL_norSt4 = 'T=7.9 for t=0-56';
-bibkey.tL_norSt4 = 'Imsland2016'; comment.tL_norSt4 = 'Stryn River (Norway)';
+bibkey.tL_norSt4 = 'Imsland2016'; comment.tL_norSt4 = 'Stryn River (Norway), fig 1';
 
 data.tL_norSt5 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
@@ -826,7 +826,7 @@ data.tL_norSt5 = [ ... % time since emergence (d), fork length (cm)
 349	8.4];
 units.tL_norSt5   = {'d', 'cm'};  label.tL_norSt5 = {'time since birth', 'total length'};  
 temp.tL_norSt5    = C2K(5.5);  units.temp.tL_norSt5 = 'K'; label.temp.tL_norSt5 = 'temperature'; comment.temp.tL_norSt5 = 'T=7.9 for t=0-56';
-bibkey.tL_norSt5 = 'Imsland2016'; comment.tL_norSt5 = 'Stryn River (Norway)';
+bibkey.tL_norSt5 = 'Imsland2016'; comment.tL_norSt5 = 'Stryn River (Norway), fig 1';
 
 data.tL_norSt7 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
@@ -834,7 +834,7 @@ data.tL_norSt7 = [ ... % time since emergence (d), fork length (cm)
 349	10.3];
 units.tL_norSt7   = {'d', 'cm'};  label.tL_norSt7 = {'time since birth', 'total length'};  
 temp.tL_norSt7    = C2K(7);  units.temp.tL_norSt7 = 'K'; label.temp.tL_norSt7 = 'temperature'; comment.temp.tL_norSt7 = 'T=7.9 for t=0-56';
-bibkey.tL_norSt7 = 'Imsland2016'; comment.tL_norSt7 = 'Stryn River (Norway)';
+bibkey.tL_norSt7 = 'Imsland2016'; comment.tL_norSt7 = 'Stryn River (Norway), fig 1';
 
 data.tL_norSt57 = [ ... % time since emergence (d), fork length (cm)
 45	4.8
@@ -842,7 +842,7 @@ data.tL_norSt57 = [ ... % time since emergence (d), fork length (cm)
 349	8.8];
 units.tL_norSt57   = {'d', 'cm'};  label.tL_norSt57 = {'time since birth', 'total length'};  
 temp.tL_norSt57    = C2K(5.7);  units.temp.tL_norSt57 = 'K'; label.temp.tL_norSt57 = 'temperature'; comment.temp.tL_norSt57 = 'Simulated natural temperature, mean = 5.7, min = 2.4, max=11.5; start at 11.5, then 2.5캜 at t=232, then rises';
-bibkey.tL_norSt57 = 'Imsland2016'; comment.tL_norSt57 = 'Stryn River (Norway)';
+bibkey.tL_norSt57 = 'Imsland2016'; comment.tL_norSt57 = 'Stryn River (Norway), fig 1';
 
 data.tL_scoA = [ ... % time since first feeding (d), fork length (cm)
 0	2.74
@@ -868,29 +868,29 @@ data.tL_scoA = [ ... % time since first feeding (d), fork length (cm)
 95	5.03];
 units.tL_scoA   = {'d', 'cm'};  label.tL_scoA = {'time since birth', 'total length'};  
 temp.tL_scoA    = C2K(10);  units.temp.tL_scoA = 'K'; label.temp.tL_scoA = 'temperature'; comment.temp.tL_scoA = 'rough guess, T� in Almond river from May to August, see Rowe1990';
-bibkey.tL_scoA = 'Metcalfe1992'; comment.tL_scoA = 'Almond River (Scotland), early 1st feeding group vs late 1st feeding group';
+bibkey.tL_scoA = 'Metcalfe1992'; comment.tL_scoA = 'Almond River (Scotland), early 1st feeding group vs late 1st feeding group, table2';
 
 data.tL_scoS = [ ... % time since fertilization (d), fork length (cm)
-199	37.5
-313	86.5
-352	88.9
-400	91.2
-424	96.7
-466	99.3];
+199	3.75
+313	8.65
+352	8.89
+400	9.12
+424	9.67
+466	9.93];
 units.tL_scoS   = {'d', 'cm'};  label.tL_scoS = {'time since birth', 'total length'};  
 temp.tL_scoS    = C2K(9);  units.temp.tL_scoS = 'K'; label.temp.tL_scoS = 'temperature'; comment.temp.tL_scoS = 'T� in Shin river from 0 to 20, mean=9';
-bibkey.tL_scoS = 'Nicieza1994'; comment.tL_scoS = 'Shin River (Scotland)';
+bibkey.tL_scoS = 'Nicieza1994'; comment.tL_scoS = 'Shin River (Scotland), fig 1';
 
 data.tL_spa = [ ... % time since fertilization (d), fork length (cm)
-199	37.7
-313	76.8
-352	85.6
-400	88.7
-424	89.5
-466	92.8];
-units.tL_spa   = {'d', 'cm'};  label.tL_spa = {'time since fertilization', 'total length'};  
+199	3.77
+313	7.68
+352	8.56
+400	8.87
+424	8.95
+466	9.28];
+units.tL_spa   = {'d', 'cm'};  label.tL_spa = {'time since birth', 'total length'};  
 temp.tL_spa    = C2K(14);  units.temp.tL_spa = 'K'; label.temp.tL_spa = 'temperature'; comment.temp.tL_spa = 'T� in Narcea river river from 6 to 22';
-bibkey.tL_spa = 'Nicieza1994'; comment.tL_spa = 'Narcea River (Spain)';
+bibkey.tL_spa = 'Nicieza1994'; comment.tL_spa = 'Narcea River (Spain), fig 1';
 
 data.tL_scoAa = [ ... % time since fertilization (d), fork length (cm)
 422	6.50
@@ -899,14 +899,14 @@ data.tL_scoAa = [ ... % time since fertilization (d), fork length (cm)
 512	7.11
 540	7.78
 569	8.71
-601	9.63
+601	9.6
 629	10.47
 659	10.83
 688	11.46
 718	11.70];
 units.tL_scoAa   = {'d', 'cm'};  label.tL_scoAa = {'time since birth', 'total length'};  
-temp.tL_scoAa    = C2K(10);  units.temp.tL_scoAa = 'K'; label.temp.tL_sco = 'temperature'; comment.temp.tL_scoAa = 'rough guess, T� in Almond river from May to August, see Rowe1990';
-bibkey.tL_scoAa = 'Rowe1990'; comment.tL_scoAa = 'Shin River (Scotland)';
+temp.tL_scoAa    = C2K(10);  units.temp.tL_scoAa = 'K'; label.temp.tL_scoAa = 'temperature'; comment.temp.tL_scoAa = 'rough guess, T� in Almond river from May to August, see Rowe1990';
+bibkey.tL_scoAa = 'Rowe1990'; comment.tL_scoAa = 'Shin River (Scotland), fig 3';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -917,52 +917,54 @@ bibkey.tL_scoAa = 'Rowe1990'; comment.tL_scoAa = 'Shin River (Scotland)';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% t-W data in juveniles %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% data.tWw_usa = [ ... % time since first feeding (d), wet weight (g)
-% 434 67.7
-% 448 81.6
-% 463 100.7
-% 477 83.5
-% 491 120.6
-% 506 121.5
-% 526 114.1
-% 540 110.6
-% 568 188.3];
-% units.tWw_usa   = {'d', 'g'};  label.tWw_usa = {'time since birth', 'wet weight'};  
-% temp.tWw_usa    = C2K(10);  units.temp.tWw_usa = 'K'; label.temp.tWw_usa = 'temperature'; comment.temp.tWw_usa = 'temperature between 8 and 12째C';
-% bibkey.tWw_usa = 'Rottiers1993'; comment.tWw_usa = 'Penobscot River(USA)';
-% 
-% data.tWw_nor = [ ... % time since yolk absorption (d), wet weight (g)
-% 434  67.7
-% 448  81.6
-% 463  100.7]';
-% units.tWw_nor   = {'d', 'g'};  label.tWw_nor = {'time since birth', 'wet weight'};  
-% temp.tWw_nor    = C2K(12);  units.temp.tWw_nor = 'K'; label.temp.tWw_nor = 'temperature'; comment.temp.tWw_nor = 'temperature increasing from 10.4째C to 14.1째C throughout the experiment';
-% bibkey.tWw_nor = 'Einum2000'; comment.tWw_nor = 'Imsa River (Norway)';
-% 
-% data.tWw_sco = [ ... % time since first feeding (d), wet weight (g)
-% 22	0.3
-% 48	1.14
-% 98	5.6
-% 147	16
-% 191	27.9
-% 243	35.5];
-% units.tWw_sco   = {'d', 'g'};  label.tWw_sco = {'time since birth', 'wet weight'};  
-% bibkey.tWw_sco = 'McCarthy2003'; comment.tWw_sco = 'Shin River(Scotland)';
-% 
-% data.tWw_scoA = [ ... % time since fertilization (d), wet weight (g)
-% 422	2.8
-% 452	2.7
-% 482	2.7
-% 512	3.5
-% 540	4.9
-% 569	7.3
-% 601	10.9
-% 629	14.6
-% 659	17.2
-% 688	18.2
-% 718	19.1];
-% units.tWw_scoA   = {'d', 'g'};  label.tWw_scoA = {'time since fertilization', 'wet weight'};  
-% bibkey.tWw_scoA = 'Rowe1990'; comment.tWw_scoA = 'Almond river(Scotland)';
+data.tWw_usa = [ ... % time since first feeding (d), wet weight (g)
+434 67.7
+448 81.6
+463 100.7
+477 83.5
+491 120.6
+506 121.5
+526 114.1
+540 110.6
+568 188.3];
+units.tWw_usa   = {'d', 'g'};  label.tWw_usa = {'time since birth', 'wet weight'};  
+temp.tWw_usa    = C2K(10);  units.temp.tWw_usa = 'K'; label.temp.tWw_usa = 'temperature'; comment.temp.tWw_usa = 'temperature between 8 and 12째C';
+bibkey.tWw_usa = 'Rottiers1993'; comment.tWw_usa = 'Penobscot River(USA),f= ad lib, table1';
+
+data.tWw_nor = [ ... % time since yolk absorption (d), wet weight (g)
+434  67.7
+448  81.6
+463  100.7];
+units.tWw_nor   = {'d', 'g'};  label.tWw_nor = {'time since birth', 'wet weight'};  
+temp.tWw_nor    = C2K(12);  units.temp.tWw_nor = 'K'; label.temp.tWw_nor = 'temperature'; comment.temp.tWw_nor = 'temperature increasing from 10.4째C to 14.1째C throughout the experiment';
+bibkey.tWw_nor = 'Einum2000'; comment.tWw_nor = 'Imsa River (Norway), f= natural';
+
+data.tWw_sco = [ ... % time since first feeding (d), wet weight (g)
+22	0.3
+48	1.14
+98	5.6
+147	16
+191	27.9
+243	35.5];
+units.tWw_sco   = {'d', 'g'};  label.tWw_sco = {'time since birth', 'wet weight'};  
+temp.tWw_sco = C2K(10.4); units.temp.tWw_sco = 'K'; label.temp.tWw_sco = 'temperature'; comment.temp.tWw_sco = 'temperature =4 (egg) ; T�=10.4 fry+';
+bibkey.tWw_sco = 'McCarthy2003'; comment.tWw_sco = 'Shin River(Scotland)';
+
+data.tWw_scoA = [ ... % time since fertilization (d), wet weight (g)
+422	2.8
+452	2.7
+482	2.7
+512	3.5
+540	4.9
+569	7.3
+601	10.9
+629	14.6
+659	17.2
+688	18.2
+718	19.1];
+units.tWw_scoA   = {'d', 'g'};  label.tWw_scoA = {'time since fertilization', 'wet weight'};  
+temp.tWw_scoA = C2K(10); units.temp.tWw_scoA = 'K'; label.temp.tWw_scoA = 'temperature'; comment.temp.tWw_scoA = 'roguh guess';
+bibkey.tWw_scoA = 'Rowe1990'; comment.tWw_scoA = 'Almond river(Scotland), fig 3';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1861,7 +1863,7 @@ weights.tp_ire2 = weights.tp_ire2/10;
 weights.am = weights.am/3;
 weights.am_sco = weights.am_sco/3;
 weights.am_rus = weights.am_rus/3;
-weights.Lh_Can2 = weights.Lh_Can2/4/11;
+weights.Lh_Can2 = weights.Lh_Can2/4/11;% 4 papers 11 codnitions in the paper
 weights.Lh_Can4 = weights.Lh_Can4/4/11;
 weights.Lh_Can6 = weights.Lh_Can6/4/11;
 weights.Lh_Can8 = weights.Lh_Can8/4/11;
@@ -1959,33 +1961,37 @@ weights.Ri_sco = weights.Ri_sco/4;
 weights.Ri_spa = weights.Ri_spa/4;
 weights.Ri_can = weights.Ri_can/4;
 weights.Ri_nor = weights.Ri_nor/4;
-weights.Tah_Dennis_Peterson1977 = weights.Tah_Dennis_Peterson1977/6;
+weights.Tah_Dennis_Peterson1977 = weights.Tah_Dennis_Peterson1977/5;
 weights.Tah_Mirachimi_Peterson1977 = weights.Tah_Mirachimi_Peterson1977/5;
-weights.Tah_norF = weights.Tah_norF/3/3;
-weights.Tah_norV = weights.Tah_norV/2/3;
-weights.Tah_norA = weights.Tah_norA/2/3;
-weights.Tah_Berg1999 = weights.Tah_Berg1999/2;
-weights.Tah_Jonhston1997 = weights.Tah_Jonhston1997/2;
-weights.TabC = weights.TabC/3;
+weights.Tah_norF = weights.Tah_norF/5/3;
+weights.Tah_norV = weights.Tah_norV/5/3;
+weights.Tah_norA = weights.Tah_norA/5/3;
+weights.Tah_Berg1999 = weights.Tah_Berg1999/5;
+weights.Tah_Johnston1997 = weights.Tah_Johnston1997/5;
+weights.TabC = weights.TabC/2;
 weights.Tab_sco = weights.Tab_sco/2;
-weights.tL_usa = weights.tL_usa/9;
-weights.tL_norI = weights.tL_norI/35;
-weights.tL_norSu4 = weights.tL_norSu4/3/4;
-weights.tL_norSu5 = weights.tL_norSu5/3/4;
-weights.tL_norSu7 = weights.tL_norSu7/3/4;
-weights.tL_norSu = weights.tL_norSu/3/4;
-weights.tL_norA4 = weights.tL_norA4/3/4;
-weights.tL_norA5 = weights.tL_norA5/3/4;
-weights.tL_norA7 = weights.tL_norA7/3/4;
-weights.tL_norA57 = weights.tL_norA57/3/4;
-weights.tL_norSt4 = weights.tL_norSt4/3/4;
-weights.tL_norSt5 = weights.tL_norSt5/3/4;
-weights.tL_norSt7 = weights.tL_norSt7/3/4;
-weights.tL_norSt57 = weights.tL_norSt57/3/4;
-weights.tL_scoA = weights.tL_scoA/21;
-weights.tL_scoS = weights.tL_scoS/6;
+weights.tL_usa = weights.tL_usa/6;
+weights.tL_norI = weights.tL_norI/6;
+weights.tL_norSu4 = weights.tL_norSu4/6/3/4;
+weights.tL_norSu5 = weights.tL_norSu5/6/3/4;
+weights.tL_norSu7 = weights.tL_norSu7/6/3/4;
+weights.tL_norSu = weights.tL_norSu/6/3/4;
+weights.tL_norA4 = weights.tL_norA4/6/3/4;
+weights.tL_norA5 = weights.tL_norA5/6/3/4;
+weights.tL_norA7 = weights.tL_norA7/6/3/4;
+weights.tL_norA57 = weights.tL_norA57/6/3/4;
+weights.tL_norSt4 = weights.tL_norSt4/6/3/4;
+weights.tL_norSt5 = weights.tL_norSt5/6/3/4;
+weights.tL_norSt7 = weights.tL_norSt7/6/3/4;
+weights.tL_norSt57 = weights.tL_norSt57/6/3/4;
+weights.tL_scoA = weights.tL_scoA/6/2;
+weights.tL_scoS = weights.tL_scoS/6/2;
 weights.tL_spa = weights.tL_spa/6;
-weights.tL_scoAa = weights.tL_scoAa/11;
+weights.tL_scoAa = weights.tL_scoAa/6;
+weights.tWw_usa = weights.tWw_usa/4;
+weights.tWw_nor = weights.tWw_nor/4;
+weights.tWw_sco = weights.tWw_sco/4;
+weights.tWw_scoA = weights.tWw_scoA/4;
 
 
 
@@ -2000,7 +2006,7 @@ txtData.bibkey = bibkey;
 txtData.comment = comment;
 
 %% Group plots
-set1 = {'Tah_Dennis_Peterson1977','Tah_Mirachimi_Peterson1977','Tah_norF','Tah_norV','Tah_norA','Tah_Berg1999','Tah_Jonhston1997'}; comment1 = {'Age at hatching for different studies'};
+set1 = {'Tah_Dennis_Peterson1977','Tah_Wallace1988','Tah_Mirachimi_Peterson1977','Tah_norF','Tah_norV','Tah_norA','Tah_Berg1999','Tah_Johnston1997'}; comment1 = {'Age at hatching for different studies'};
 set2 = {'TabC','Tab_sco'}; comment2 = {'Age at birth for different studies'};
 set3 = {'tL_norSt4','tL_norSt5','tL_norSu4','tL_norSu5','tL_norSu7','tL_norA57','tL_norSt7','tL_norSu','tL_norSt57','tL_norA4','tL_norA5','tL_norA7'}; comment3 = {'Growth at different temperatures - Imsland 2016'};
 set4 = {'tL_scoA','tL_scoS','tL_scoAa'}; comment4 = {'Growth in scotland - different studies'};
@@ -2106,14 +2112,14 @@ bibkey = 'Thorpe1984'; type = 'Article'; bib = [ ...
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Sutton2000'; type = 'Article'; bib = [ ... 
-'author = {Thorpe, J.E. and Miles, M.S. and Keay, D.S.}, ' ... 
-'year = {1984}, ' ...
-'title = {Developmental rate, fecundity and egg size in {A}tlantic salmon, \emph{Salmo salar} {L}.}, ' ...
-'journal = {Aquaculture}, ' ...
-'volume = {43}, ' ...
-'number = {1-3}, ' ...
-'doi = {10.1016/0044-8486(84)90030-9}, ' ...
-'pages = {Figure 1, page 294, extracted using WebPlotDigitizer}'];
+'author = {Sutton, S.G. and Bult, T.P. and Haedrich, R.L.}, ' ... 
+'year = {2000}, ' ...
+'title = {Relationship among fat weight, body weight, water weight, and condition factor in wild {A}tlantic salmon parr}, ' ...
+'journal = {Transactions of the American Fisheries Society}, ' ...
+'volume = {129}, ' ...
+'number = {2}, ' ...
+'doi = {10.1577/1548-8659(2000)129<0527:RAFWBW>2.0.C0;2}, ' ...
+'pages = {527-538}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'Jonsson1998'; type = 'Article'; bib = [ ... 
@@ -2283,7 +2289,7 @@ bibkey='Heinimaa2004'; type='Article'; bib=[...
 'year = {2004}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
-bibkey='Heinimaa2004'; type='Article'; bib=[...
+bibkey='Imsland2016'; type='Article'; bib=[...
 'author = {Imsland, A. K. and Pettersen, K. and Stefansson, S. O.},' ...
 'title = {Growth and Smoltification of Three Norwegian Strains of Atlantic Salmon Salmo salar Reared under Different Thermal Regimes},' ...
 'journal = {River Research and Applications},' ...
@@ -2302,17 +2308,17 @@ bibkey='Johnston1997'; type='Article'; bib=[...
 'year = {1997},' ...
 'doi = {10.1139/z97-008},'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
-%
-bibkey='Jokikokko2006'; type='Article'; bib=[...
-'author = {Jokikokko, E. and Kallio-Nyberg, I. and Saloniemi, I. and Jutila, E.},' ...
-'title = {The survival of semi-wild, wild and hatchery-reared Atlantic salmon smolts of the Simojoki River in the Baltic Sea},' ...
-'journal = {Journal of Fish Biology},' ...
-'volume = {68},' ...
-'pages = {430-442},' ...
-'doi = {10.1111/j.0022-1112.2006.00892.x},' ...
-'year = {2006}'];
-metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
-%
+% %
+% bibkey='Jokikokko2006'; type='Article'; bib=[...
+% 'author = {Jokikokko, E. and Kallio-Nyberg, I. and Saloniemi, I. and Jutila, E.},' ...
+% 'title = {The survival of semi-wild, wild and hatchery-reared Atlantic salmon smolts of the Simojoki River in the Baltic Sea},' ...
+% 'journal = {Journal of Fish Biology},' ...
+% 'volume = {68},' ...
+% 'pages = {430-442},' ...
+% 'doi = {10.1111/j.0022-1112.2006.00892.x},' ...
+% 'year = {2006}'];
+% metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+% %
 bibkey='Jonsson1991'; type='Article'; bib=[...
 'title = "Differences in life history and migratory behaviour between wild and hatchery-reared Atlantic salmon in nature",' ...
 'journal = "Aquaculture",' ...
@@ -2320,7 +2326,7 @@ bibkey='Jonsson1991'; type='Article'; bib=[...
 'number = "1",' ...
 'pages = "69 - 78",' ...
 'year = "1991",' ...
-'doi = "https://doi.org/10.1016/0044-8486(91)90372-E",' ...
+'doi = {10.1016/0044-8486(91)90372-E},' ...
 'author = "Bror Jonsson and Nina Jonsson and Lars P. Hansen",'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
