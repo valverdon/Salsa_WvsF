@@ -467,7 +467,7 @@ prdData.Ri_nor = RT_i_nor ;
   
 %   % time-length %%% _usa f=ad lib
   TC_tL_usa = tempcorr(temp.tL_usa, T_ref, T_A);
-%   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
+  [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
   if info ~= 1 || info_nat ~= 1 % numerical procedure failed
     info = 0; prdData = [];
     info_nat = 0; prdData= [];
@@ -479,7 +479,7 @@ prdData.Ri_nor = RT_i_nor ;
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M; 
    L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_0= L0_usa;
+  L_0= L0_usa*del_M; % initial structural length
   t = tL_usa(:,1) - tL_usa(1,1); % correction so that t initial = 0
  
 if L_0 < L_j
@@ -492,7 +492,7 @@ if L_0 < L_j
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-ELw_usa = L/ del_M; % cm, total length
+ELw_usa = L/ del_M; % cm, predicted physical length
 
 %   % time-length %%% _spa f= ad lib
   TC_tL_spa = tempcorr(temp.tL_spa, T_ref, T_A);
@@ -508,7 +508,7 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M;   
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_0= L0_spa;
+  L_0= L0_spa*del_M;
   t = tL_spa(:,1) - tL_spa(1,1); % correction so that t initial = 0
  if L_0 < L_j
     tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater

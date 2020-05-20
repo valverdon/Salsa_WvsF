@@ -29,8 +29,8 @@ par.s_G = 10;         free.s_G   = 0;   units.s_G = '-';          label.s_G = 'G
 par.del_M = 0.17853;  free.del_M = 1;   units.del_M = '-';        label.del_M = 'shape coefficient'; 
 par.f = 1;          free.f     = 0;   units.f = '-';            label.f = 'scaled functional response for 0-var data'; 
 par.f_nat = 0.7;          free.f_nat     = 0;   units.f_nat = '-';            label.f_nat = 'scaled functional response for 0-var data, when reared in natural condition (not ad lib)'; 
-par.f_LWw = 1;  free.f_LWw = 1;   units.f_LWw = '-';        label.f_LWw = 'scaled functional response for 1-var data'; 
-par.f_tL = 1;  free.f_tL  = 1;   units.f_tL = '-';         label.f_tL = 'scaled functional response for 1-var data'; 
+par.f_LWw = 1;  free.f_LWw = 0;   units.f_LWw = '-';        label.f_LWw = 'scaled functional response for 1-var data'; 
+par.f_tL = 1;  free.f_tL  = 0;   units.f_tL = '-';         label.f_tL = 'scaled functional response for 1-var data'; 
 par.f_tL_nat = 0.7;  free.f_tL_nat  = 0;   units.f_tL_nat = '-';         label.f_tL_nat = 'scaled functional response for 1-var data, natural f'; 
 par.f_tWeVe_tWeYe = 1;  free.f_tWeVe_tWeYe = 0; units.f_tWeVe_tWeYe = '-';  label.f_tWeVe_tWeYe = 'scaled functional response for embryo growth';
 par.W0_Rottiers1993 = 67.7; free.W0_Rottiers1993 = 0;units.W0_Rottiers1993 = 'g' ; label.W0_Rottiers1993 = 'Initial Wet weight in Rottiers1993';
