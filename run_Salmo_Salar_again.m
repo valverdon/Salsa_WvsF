@@ -7,7 +7,7 @@ close all
 global pets
 
 pets = {'Salmo_salar_farm'};
-%pets = {'Salmo_salar_wild'};
+% pets = {'Salmo_salar_wild'};
 % check_my_pet(pets); 
 
 % Read about how to set estimation and output options (estim_options) on the online
@@ -25,9 +25,9 @@ estim_options('results_output', 0);
 estim_options('method', 'nm');
 %estim_options('method', 'no');
 
-n=100; % number of repetition
+n=500; % number of repetition
 for i=1:n-1
-fprintf('N= ',n,'\n')
+fprintf('N= ',i,'\n')
     estim_pars; 
 
 end

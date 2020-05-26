@@ -17,7 +17,7 @@ estim_options('default');
 estim_options('max_step_number',500);
 estim_options('max_fun_evals',5e3);  
 
-estim_options('pars_init_method', 1); % 1 = from from .mat file, 2 = from pars_init file
+estim_options('pars_init_method', 2); % 1 = from from .mat file, 2 = from pars_init file
 estim_options('loss_function', 'sb');
 estim_options('report', 1);
 estim_options('results_output', 3); % 0 = .mat only, 2 = .mat file and print to html, 3 = .mat file and print to html and png, 4 = .mat file and print to html incl. implied traits and png  

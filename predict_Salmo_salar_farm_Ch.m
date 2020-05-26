@@ -18,6 +18,36 @@ function [prdData, info] = predict_Salmo_salar_farm_Ch(par, data, auxData)
   
   % compute temperature correction factors for each stage
  
+TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A); 
+  TC_Tah_Wallace1988 = tempcorr(data.Tah_Wallace1988(:,1), T_ref, T_A); 
+  TC_Tah_Solberg2014 = tempcorr(data.Tah_Solberg2014(:,1), T_ref, T_A); 
+  TC_Tah_Berg1999 = tempcorr(data.Tah_Berg1999(:,1), T_ref, T_A); 
+  TC_abM_egg =  tempcorr(temp.ab_norM, T_ref, T_A);
+  TC_abM_feed =  tempcorr(temp.ab_norM2, T_ref, T_A);
+  TC_tbAqG = tempcorr(temp.tb_12_AqG, T_ref, T_A);
+  TC_tbB = tempcorr(temp.tb_norB, T_ref, T_A);
+% TC_ts = tempcorr(temp.ts, T_ref, T_A);
+% TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
+% TC_tp = tempcorr(temp.tp, T_ref, T_A);
+  TC_tp_norire = tempcorr(temp.ap_norire, T_ref, T_A);
+  TC_tp_norNBP = tempcorr(temp.ap_norNBP, T_ref, T_A);
+%   TC_am = tempcorr(temp.am, T_ref, T_A);
+  TC_am = tempcorr(temp.am, T_ref, T_A);
+  TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
+  TC_tL_iceT11 = tempcorr(temp.tL_iceT11, T_ref, T_A);
+  TC_tL_iceT611 = tempcorr(temp.tL_iceT611, T_ref, T_A);
+%   TC_tL_norM = tempcorr(temp.tL_norM, T_ref, T_A);
+  TC_tL_norM2003 = tempcorr(temp.tL_norM2003, T_ref, T_A);   
+  TC_tL_norM2004 = tempcorr(temp.tL_norM2004, T_ref, T_A);
+  TC_tWw_norB = tempcorr(temp.tWw_norB, T_ref, T_A);
+  TC_tWw_T4 = tempcorr(temp.tWw_T4_Mow, T_ref, T_A);
+  TC_tWw_T8 = tempcorr(temp.tWw_T8_Mow, T_ref, T_A);
+  TC_tWw_T6 = tempcorr(temp.tWw_T6_AqG, T_ref, T_A);
+  TC_tWw_T10 = tempcorr(temp.tWw_T10_AqG, T_ref, T_A);
+  TC_tWw_T14 = tempcorr(temp.tWw_T14_AqG, T_ref, T_A);
+  TC_tWw_T18 = tempcorr(temp.tWw_T18_AqG, T_ref, T_A);
+%   TC_tL = tempcorr(temp.tL, T_ref, T_A);
+  
   % life cycle
   pars_tj = [g; k; l_T; v_Hb; v_Hj; v_Hp];  %%%%%values computed l 4 %we keep j because it's real metam., not smoltif.
   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B, info] = get_tj(pars_tj, f); %%%%%%%%%% Obtains scaled ages at metamorphosis, puberty, birth and the scaled lengths at these ages 
