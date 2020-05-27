@@ -1,4 +1,4 @@
-﻿function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
+function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
   
 
 %par=parPets.(pets{1})
@@ -131,10 +131,10 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   Ww_p = L_p^3 *(1 + f * ome);        % g, wet weight at puberty 
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f and T
   %same for natural f
-  L_p_nat = L_m * l_p_nat;                  % cm, structural length at puberty at f_nat
-  Lw_p_nat = L_p_nat/ del_M;                % cm, physical length at puberty at f_nat
+  L_p_nat = L_m * l_p_nat;                  % cm, structural length at puberty at f
+  Lw_p_nat = L_p_nat/ del_M;                % cm, physical length at puberty at f
   Ww_p_nat = L_p_nat^3 *(1 + f_nat * ome);        % g, wet weight at puberty 
-  % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f_nat and T
+  % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f and T
   tT_p_norire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norire;   % d, time since birth at puberty at f and T
   tT_p_norNBP = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norNBP;   % d, time since birth at puberty at f and T
 
@@ -186,10 +186,10 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.Lb_NorM2013 = Lw_b;
   prdData.Lb_NorS2013 = Lw_b;
 %   prdData.Ls = Lw_s;
-  prdData.Lp_norSf = Lw_p / POHtoTOT;
-  prdData.Lp_norSm = Lw_p / POHtoTOT;
+  prdData.Lp_norSf = Lw_p;
+  prdData.Lp_norSm = Lw_p;
 %   prdData.Lp_norN = Lw_p;
-prdData.Li = Lw_i_nat / SNFtoTOT;
+prdData.Li = Lw_i_nat;
 %  prdData.Wwh_norM = Ww_h;
 %  prdData.Wwb = Ww_b;
 %   prdData.Wwj_nor = Ww_j;
@@ -377,7 +377,7 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
   % time-length 
   
    L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0 = L0_Bjornsson1989*SNFtoTOT*del_M; % cm, structural length at t initial
+  L_0 = L0_Bjornsson1989*del_M; % cm, structural length at t initial
   % T11 
   rT_B = TC_tL_iceT11 * rho_B * k_M; rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tL_iceT11(:,1) - tL_iceT11(1,1); % correction so that t initial = 0
@@ -420,7 +420,7 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
 %   EL_norM = [L_bj; L_ji]/ del_M; % cm, total length
   % 2003 experiment 
   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0 = L0_norM2003*SNFtoTOT*del_M; % cm, structural length at t initial
+  L_0 = L0_norM2003*del_M; % cm, structural length at t initial
   rT_B = TC_tL_norM2003 * rho_B * k_M; rT_j = TC_tL_norM2003 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tL_norM2003(:,1) - tL_norM2003(1,1); % correction so that t initial = 0
   if L_0 < L_j
@@ -436,7 +436,7 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
   EL_norM2003 = L / del_M;
   % 2004 experiment 
   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0 = L0_norM2004*SNFtoTOT*del_M; % cm, structural length at t initial
+  L_0 = L0_norM2004*del_M; % cm, structural length at t initial
   rT_B = TC_tL_norM2004 * rho_B * k_M; rT_j = TC_tL_norM2004 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tL_norM2004(:,1) - tL_norM2004(1,1); % correction so that t initial = 0
   if L_0 < L_j
@@ -452,8 +452,8 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
   EL_norM2004 = L / del_M;
 
   % length-weight   %%%%
-  EWw_AqG = (LWw_AqG(:,1) * SNFtoTOT * del_M).^3 * (1 + f * ome); % g, wet weight
-  EWw_norM = (LWw_norM(:,1) * SNFtoTOT * del_M).^3 * (1 + f * ome); % g, wet weight
+  EWw_AqG = (LWw_AqG(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
+  EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
 
   % temperature-age at birth
 %   TC_Tab = tempcorr(Tab(:,1), T_ref, T_A); 
@@ -466,10 +466,10 @@ prdData.tWwVe_T8 = EWw_e8;
   prdData.tWwYe_T10 = EV_e10;
   prdData.tWwVe_T12 = EWw_e12;
   prdData.tWwYe_T12 = EV_e12;
-  prdData.tL_iceT11 = EL_iceT11 / SNFtoTOT;
-  prdData.tL_iceT611 = EL_iceT611 / SNFtoTOT;
-  prdData.tL_norM2003 = EL_norM2003 / SNFtoTOT;
-  prdData.tL_norM2004 = EL_norM2004 / SNFtoTOT;
+  prdData.tL_iceT11 = EL_iceT11;
+  prdData.tL_iceT611 = EL_iceT611;
+  prdData.tL_norM2003 = EL_norM2003;
+  prdData.tL_norM2004 = EL_norM2004;
   prdData.tWw_norB = EWw_norB;
   prdData.tWw_T4_Mow = EWw_T4;
   prdData.tWw_T8_Mow = EWw_T8;

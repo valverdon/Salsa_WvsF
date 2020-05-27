@@ -1,4 +1,4 @@
-﻿function [prdData, info] = predict_Salmo_salar_wild(par, data, auxData)
+function [prdData, info] = predict_Salmo_salar_wild(par, data, auxData)
   
 
 %par=parPets.(pets{1})
@@ -264,8 +264,8 @@ prdData.Lh_scocanmix = Lw_h;
   prdData.Lp_spaNM = Lw_p_nat;
   prdData.Lp_canM = Lw_p_nat;
   prdData.Lp_canR = Lw_p_nat;
-  prdData.Lp_norSf = Lw_p_nat / POHtoTOT;
-  prdData.Lp_norSm = Lw_p_nat / POHtoTOT;
+  prdData.Lp_norSf = Lw_p_nat;
+  prdData.Lp_norSm = Lw_p_nat;
   prdData.Lp_rus = Lw_p_nat;
   prdData.Lp_usa = Lw_p_nat;
   prdData.Lp_norI2 = Lw_p_nat;

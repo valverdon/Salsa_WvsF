@@ -288,25 +288,25 @@ data.Lb_ScoA  = 2.74;   units.Lb_ScoA  = 'cm';  label.Lb_ScoA  = 'total length a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at smoltification %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% data.Ls_gbr  = 12.4;   units.Ls_gbr  = 'cm';  label.Ls_gbr  = 'total length at smoltification'; bibkey.Ls_gbr  = 'Hutchings1998'; 
+% data.Ls_gbr  = 12.4;   units.Ls_gbr  = 'cm';  label.Ls_gbr  = 'total length at metamorphosis'; bibkey.Ls_gbr  = 'Hutchings1998'; 
 %  comment.Ls_gbr = 'mean of Brittish populations';
-% data.Ls_rus  = 14;   units.Ls_rus  = 'cm';  label.Ls_rus  = 'total length at smoltification'; bibkey.Ls_rus  = 'Hutchings1998'; 
+% data.Ls_rus  = 14;   units.Ls_rus  = 'cm';  label.Ls_rus  = 'total length at metamorphosis'; bibkey.Ls_rus  = 'Hutchings1998'; 
 %   comment.Ls_rus = 'River Pizhma (Russia)';
-% data.Ls_ice  = 12.5;   units.Ls_ice  = 'cm';  label.Ls_ice  = 'total length at smoltification'; bibkey.Ls_ice  = 'Hutchings1998'; 
+% data.Ls_ice  = 12.5;   units.Ls_ice  = 'cm';  label.Ls_ice  = 'total length at metamorphosis'; bibkey.Ls_ice  = 'Hutchings1998'; 
 %   comment.Ls_ice = 'mean of Icelandic populations';
-% data.Ls_nor  = 13.1;   units.Ls_nor  = 'cm';  label.Ls_nor  = 'total length at smoltification'; bibkey.Ls_nor  = 'Hutchings1998'; 
+% data.Ls_nor  = 13.1;   units.Ls_nor  = 'cm';  label.Ls_nor  = 'total length at metamorphosis'; bibkey.Ls_nor  = 'Hutchings1998'; 
 %   comment.Ls_nor = 'mean of Norwegian populations';
-% data.Ls_ire  = 13.6;   units.Ls_ire  = 'cm';  label.Ls_ire  = 'total length at smoltification'; bibkey.Ls_ire  = 'Hutchings1998'; 
+% data.Ls_ire  = 13.6;   units.Ls_ire  = 'cm';  label.Ls_ire  = 'total length at metamorphosis'; bibkey.Ls_ire  = 'Hutchings1998'; 
 %   comment.Ls_ire = 'mean of Irish populations';
-% data.Ls_fra  = 18.1;   units.Ls_fra  = 'cm';  label.Ls_fra  = 'total length at smoltification'; bibkey.Ls_fra  = 'Hutchings1998'; 
+% data.Ls_fra  = 18.1;   units.Ls_fra  = 'cm';  label.Ls_fra  = 'total length at metamorphosis'; bibkey.Ls_fra  = 'Hutchings1998'; 
 %   comment.Ls_fra = 'mean of French populations';
-% data.Ls_spa  = 17.2;   units.Ls_spa  = 'cm';  label.Ls_spa  = 'total length at smoltification'; bibkey.Ls_spa  = 'Hutchings1998'; 
+% data.Ls_spa  = 17.2;   units.Ls_spa  = 'cm';  label.Ls_spa  = 'total length at metamorphosis'; bibkey.Ls_spa  = 'Hutchings1998'; 
 %   comment.Ls_spa = 'mean of Spannish populations';
-% data.Ls_finS1980  = 15.2;   units.Lj  = 'cm';  label.Lj  = 'total length at smoltification'; bibkey.Lj  = 'Jutila2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 1991';
-% data.Ls_finS1990  = 15.5;   units.Lj  = 'cm';  label.Lj  = 'total length at smoltification'; bibkey.Lj  = 'Jokikkoko2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1986 to 1992';
-% data.Ls_norI  = 16.3;   units.Lj  = 'cm';  label.Lj  = 'total length at smoltification'; bibkey.Lj  = 'Jonsson1991'; comment.Lj = 'Imsa (Norway)';
+% data.Ls_finS1980  = 15.2;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jutila2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1972 to 1991';
+% data.Ls_finS1990  = 15.5;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jokikkoko2006'; comment.Lj = 'Simojoki (Baltic Sea, Finland) - mean from 1986 to 1992';
+% data.Ls_norI  = 16.3;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Jonsson1991'; comment.Lj = 'Imsa (Norway)';
 
-% data.Lj  = 18.7;   units.Lj  = 'cm';  label.Lj  = 'total length at smoltification'; bibkey.Lj  = 'Hutchings1998'; comment.Lj = 'Nivelle';
+% data.Lj  = 18.7;   units.Lj  = 'cm';  label.Lj  = 'total length at metamorphosis'; bibkey.Lj  = 'Hutchings1998'; comment.Lj = 'Nivelle';
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Length at maturity %            (or 1 year before first spawning)
@@ -1919,14 +1919,14 @@ weights.Ri_sco = weights.Ri_sco/4;
 weights.Ri_spa = weights.Ri_spa/4;
 weights.Ri_can = weights.Ri_can/4;
 weights.Ri_nor = weights.Ri_nor/4;
-weights.Tah_Dennis_Peterson1977 = 4*weights.Tah_Dennis_Peterson1977/6;
-weights.Tah_Mirachimi_Peterson1977 = 4*weights.Tah_Mirachimi_Peterson1977/6;
-weights.Tah_Wallace1988 = 4*weights.Tah_Wallace1988/6;
-weights.Tah_norF = 4*weights.Tah_norF/6/3;
-weights.Tah_norV = 4*weights.Tah_norV/6/3;
-weights.Tah_norA = 4*weights.Tah_norA/6/3;
-weights.Tah_Berg1999 = 4*weights.Tah_Berg1999/6;
-weights.Tah_Johnston1997 = 4*weights.Tah_Johnston1997/6;
+weights.Tah_Dennis_Peterson1977 = weights.Tah_Dennis_Peterson1977/6;
+weights.Tah_Mirachimi_Peterson1977 = weights.Tah_Mirachimi_Peterson1977/6;
+weights.Tah_Wallace1988 = weights.Tah_Wallace1988/6;
+weights.Tah_norF = weights.Tah_norF/6/3;
+weights.Tah_norV = weights.Tah_norV/6/3;
+weights.Tah_norA = weights.Tah_norA/6/3;
+weights.Tah_Berg1999 = weights.Tah_Berg1999/6;
+weights.Tah_Johnston1997 = weights.Tah_Johnston1997/6;
 weights.TabC = weights.TabC/2;
 weights.Tab_sco = weights.Tab_sco/2;
 weights.tL_usa = weights.tL_usa/12;
