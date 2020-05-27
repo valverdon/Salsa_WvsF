@@ -94,7 +94,7 @@ comment.ap_norNBP = 'National breeding program (time since birth)) n=1 ; table3'
 temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; 
 label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 data.ap_norire = (2+1.93-1)*365.25;   %=1070
-units.ap_norire = 'd';    label.ap_norire = 'age at maturity';             bibkey.ap_norire = 'Hindar2006';     
+units.ap_norire = 'd';    label.ap_norire = 'age at puberty';             bibkey.ap_norire = 'Hindar2006';     
 comment.ap_norire = 'farmed strain (time since birth) ; table3';
 temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';%natural T°, natural f.
 
@@ -113,7 +113,7 @@ temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 't
 %% Lifespan %(maximum)
 %%%%%%%%%%%%%
 data.am = (2+2)*365.25;   %=1461
-units.am = 'd';    label.am = 'age at maturity';             bibkey.am = 'Hindar2006';     
+units.am = 'd';    label.am = 'max age at spawning';             bibkey.am = 'Hindar2006';     
 comment.am = 'National breeding program (time since birth) ; table 3';
   temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T° : rough guess - highly variable temperature throughout life(2+2)*365.25';%natural T°, natural f.
 
@@ -524,7 +524,7 @@ data.tWw_T4_Mow = [ ...  % time since transfer to seawater (d), wet weight (g) a
 22 62.1
 63 76.7
 90 83.3];
-units.tWw_T4_Mow   = {'d', 'g'};  label.tWw_T4_Mow = {'time since metamorphosis', 'wet weight'};  
+units.tWw_T4_Mow   = {'d', 'g'};  label.tWw_T4_Mow = {'time since transfer to seawater', 'wet weight'};  
 temp.tWw_T4_Mow    = C2K(4);  units.temp.tWw_T4_Mow = 'K'; label.temp.tWw_T4_Mow = 'temperature';
 bibkey.tWw_T4_Mow = 'Handeland1998'; comment.tWw_T4_Mow = 'Mowi strain, mean of S=28 and S= 34, f=1';%
 
@@ -533,7 +533,7 @@ data.tWw_T8_Mow = [ ...  % time since transfer to seawater (d), wet weight (g) a
 22 68.3
 63 110.5
 90 135.2];
-units.tWw_T8_Mow   = {'d', 'g'};  label.tWw_T8_Mow = {'time since metamorphosis', 'wet weight'};  
+units.tWw_T8_Mow   = {'d', 'g'};  label.tWw_T8_Mow = {'time since transfer to seawater', 'wet weight'};  
 temp.tWw_T8_Mow   = C2K(8);  units.temp.tWw_T8_Mow = 'K'; label.temp.tWw_T8_Mow = 'temperature';
 bibkey.tWw_T8_Mow = 'Handeland1998'; comment.tWw_T8_Mow = 'Mowi strain,mean of S=28 and S=34 f=1';%
 

@@ -219,10 +219,10 @@ prdData.Li = Lw_i_nat;
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
   L3 = L .^3; 
-  EWw_e12 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus
+  EWw_e12 = L .^ 3 * (1 + f_tWeVe_tWeYe * ome); % g, wet weight embryo minus vitellus
    % tWV-data yolk
   M_E = LUH(:,2) * JT12_E_Am;
-  EV_e12 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * w); % g, wet weight vitellus
+  EV_e12 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * ome); % g, wet weight vitellus
   EWw_eT12 =EWw_e12+EV_e12;
   
   
@@ -238,10 +238,10 @@ prdData.Li = Lw_i_nat;
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
   L3 = L .^3; 
-  EWw_e10 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus
+  EWw_e10 = L .^ 3 * (1 + f_tWeVe_tWeYe * ome); % g, wet weight embryo minus vitellus
    % tWV-data yolk
   M_E = LUH(:,2) * JT12_E_Am;
-  EV_e10 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * w); % g, wet weight vitellus
+  EV_e10 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * ome); % g, wet weight vitellus
   EWw_eT10 =EWw_e10+EV_e10;
   
  %idem 8°C
@@ -256,10 +256,10 @@ prdData.Li = Lw_i_nat;
   LUH(1,:) = []; %suppr 1ere valeur??
   L = LUH(:,1); % cm, structural length
   L3 = L .^3; 
-  EWw_e8 = L .^ 3 * (1 + f_tWeVe_tWeYe * w); % g, wet weight embryo minus vitellus
+  EWw_e8 = L .^ 3 * (1 + f_tWeVe_tWeYe * ome); % g, wet weight embryo minus vitellus
   % tWV-data yolk
   M_E = LUH(:,2) * JT12_E_Am;
-  EV_e8 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * w); % g, wet weight vitellus
+  EV_e8 = max(0, M_E * w_E/ d_E - L3 * f_tWeVe_tWeYe * ome); % g, wet weight vitellus
   EWw_eT8 =EWw_e8+EV_e8;
  
   
@@ -279,7 +279,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_norB = L.^3 * (1 + f * w);
+  EWw_norB = L.^3 * (1 + f * ome);
 
   % time-weight data from Handeland 1998
   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
@@ -297,7 +297,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_T4 = L.^3 * (1 + f * w);
+  EWw_T4 = L.^3 * (1 + f * ome);
   % T8 
   rT_B = TC_tWw_T8 * rho_B * k_M; rT_j = TC_tWw_T8 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tWw_T8_Mow(:,1) - tWw_T8_Mow(1,1); % correction so that t initial = 0
@@ -311,7 +311,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_T8 = L.^3 * (1 + f * w);
+  EWw_T8 = L.^3 * (1 + f * ome);
 
   % time-weight data from Handeland 2008
   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
@@ -329,7 +329,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_T6 = L.^3 * (1 + f * w);
+  EWw_T6 = L.^3 * (1 + f * ome);
   % T10
   rT_B = TC_tWw_T10 * rho_B * k_M; rT_j = TC_tWw_T10 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tWw_T10_AqG(:,1) - tWw_T10_AqG(1,1); % correction so that t initial = 0
@@ -343,7 +343,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_T10 = L.^3 * (1 + f * w);
+  EWw_T10 = L.^3 * (1 + f * ome);
   % T14 
   rT_B = TC_tWw_T14 * rho_B * k_M; rT_j = TC_tWw_T14 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tWw_T14_AqG(:,1) - tWw_T14_AqG(1,1); % correction so that t initial = 0
@@ -357,7 +357,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_T14 = L.^3 * (1 + f * w);
+  EWw_T14 = L.^3 * (1 + f * ome);
   % T18
   rT_B = TC_tWw_T18 * rho_B * k_M; rT_j = TC_tWw_T18 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tWw_T18_AqG(:,1) - tWw_T18_AqG(1,1); % correction so that t initial = 0
@@ -371,7 +371,7 @@ prdData.Li = Lw_i_nat;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_T18 = L.^3 * (1 + f * w);
+  EWw_T18 = L.^3 * (1 + f * ome);
   
   
   % time-length 

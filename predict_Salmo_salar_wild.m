@@ -403,7 +403,7 @@ prdData.Ri_nor = RT_i_nor ;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_usa = L.^3 * (1 + f * w);
+  EWw_usa = L.^3 * (1 + f * ome);
 
   % time-weight data from Einum2000;
   L_b = l_b_nat * L_m; L_j = l_j_nat * L_m; L_i = l_i_nat * L_m;
@@ -422,7 +422,7 @@ prdData.Ri_nor = RT_i_nor ;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_nor = L.^3 * (1 + f_nat * w);
+  EWw_nor = L.^3 * (1 + f_nat * ome);
 
 
   % time-weight data from McCarthy2003;
@@ -442,7 +442,7 @@ prdData.Ri_nor = RT_i_nor ;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_sco = L.^3 * (1 + f * w);
+  EWw_sco = L.^3 * (1 + f * ome);
 
   % time-weight data from Rowe1990;
   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
@@ -461,7 +461,7 @@ prdData.Ri_nor = RT_i_nor ;
   else 
     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
   end
-  EWw_scoA = L.^3 * (1 + f * w);
+  EWw_scoA = L.^3 * (1 + f * ome);
 
   
   

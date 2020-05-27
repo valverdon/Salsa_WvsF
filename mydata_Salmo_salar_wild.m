@@ -168,15 +168,15 @@ data.tp_canf = (2.23+1.87-1)*365.25; % 1134;
     %f= natural
   
 data.tp_rus = (4.74-1)*365.25; %1366;  
-  units.tp_rus = 'd';    label.tp_rus = 'time since birth at maturity';  bibkey.tp_rus = 'Kazakov1981'; 
+  units.tp_rus = 'd';    label.tp_rus = 'time since birth at puberty';  bibkey.tp_rus = 'Kazakov1981'; 
   temp.tp_rus = C2K(10);  units.temp.tp_rus = 'K'; label.temp.tp_rus = 'temperature'; 
   comment.tp_rus = 'Mean of Neva river (Russia); temperature: rough guess - highly variable temperature throughout life, table1';
 data.tp_norI =(1.68+1.22-1)*365.25; % 694;  
-  units.tp_norI = 'd';    label.tp_norI = 'time since birth at maturity';  bibkey.tp_norI = 'Hindar2006'; 
+  units.tp_norI = 'd';    label.tp_norI = 'time since birth at puberty';  bibkey.tp_norI = 'Hindar2006'; 
   temp.tp_norI = C2K(10);  units.temp.tp_norI = 'K'; label.temp.tp_norI = 'temperature'; 
   comment.tp_norI = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life, Table3';
 data.tp_ire2 = (2+1.04-1)*365.25; % 745;  
-  units.tp_ire2 = 'd';    label.tp_ire2 = 'time since birth at spawning';  bibkey.tp_ire2 = 'Hindar2006'; 
+  units.tp_ire2 = 'd';    label.tp_ire2 = 'time since birth at puberty';  bibkey.tp_ire2 = 'Hindar2006'; 
   temp.tp_ire2 = C2K(10);  units.temp.tp_ire2 = 'K'; label.temp.tp_ire2 = 'temperature'; 
   comment.tp_ire2 = 'Mean of Burrishoole river (Norway); temperature: rough guess - highly variable temperature throughout life, Table 3';
   %f= natural
