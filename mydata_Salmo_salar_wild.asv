@@ -949,7 +949,7 @@ data.LWw_nor = [ ... % fork length (d), wet weight (g)
 2.9  0.16 % 132-132
 3.6  0.35 % 151-132
 3.9 0.47]; % 160-132
-units.LWw_nor   = {'cm', 'g'};  label.LWw_nor = {'total length', 'wet weight'};  
+units.LWw_nor   = {'cm', 'g'};  label.LWw_nor = {'fork length', 'wet weight'};  
 temp.LWw_nor    = C2K(12);  units.temp.LWw_nor = 'K'; label.temp.LWw_nor = 'temperature'; comment.temp.LWw_nor = 'temperature increasing from 10.4°C to 14.1°C throughout the experiment';
 bibkey.LWw_nor = 'Einum2000'; comment.LWw_nor = 'Imsa River (Norway), f= natural, fig 4';
 
@@ -965,7 +965,7 @@ data.LWw_scoA = [ ... fork length (cm), wet weight (g)
 10.83	17.2 %1 Oct
 11.46	18.2 %1 Nov
 11.70	19.1];%1Dec
-units.LWw_scoA   = {'cm', 'g'};  label.LWw_scoA = {'total length', 'wet weight'};  
+units.LWw_scoA   = {'cm', 'g'};  label.LWw_scoA = {'fork length', 'wet weight'};  
 temp.LWw_scoA = C2K(10); units.temp.LWw_scoA = 'K'; label.temp.LWw_scoA = 'temperature'; comment.temp.LWw_scoA = 'rough guess';
 bibkey.LWw_scoA = 'Rowe1990'; comment.LWw_scoA = 'Almond river(Scotland), fig 3';
 
@@ -974,7 +974,7 @@ data.LWw_sco = [ ... % fork length (cm), wet weight (g)
 10   12.5
 10.9 17.6
 12.2 24.1];
-units.LWw_sco   = {'cm', 'g'};  label.LWw_sco = {'total length', 'wet weight'};  
+units.LWw_sco   = {'cm', 'g'};  label.LWw_sco = {'fork length', 'wet weight'};  
 bibkey.LWw_sco = 'McCarthy2003'; comment.LWw_sco = 'Shin River(Scotland)';
 
 data.LWw_Can = [ ... % fork length (cm), wet weight (g) (parrs)
@@ -1205,7 +1205,7 @@ data.LWw_Can = [ ... % fork length (cm), wet weight (g) (parrs)
 12.9	18.9
 13.5	25.3
 14.4	27.2];   
-units.LWw_Can = {'cm', 'g'};     label.LWw_Can = {'total length', 'wet weight'}; 
+units.LWw_Can = {'cm', 'g'};     label.LWw_Can = {'fork length', 'wet weight'}; 
 bibkey.LWw_Can = 'Sutton2000'; comment.LWw_Can = 'Northeast Brook, Newfoundland, Canada - cross-sectional';
 
 data.LWw_usa = [ ... % fork length (cm), wet weight (g)
@@ -1942,7 +1942,7 @@ weights.tL_scoAa = weights.tL_scoAa/12;
 weights.tWw_sco = weights.tWw_sco/12/2;
 weights.LWw_nor = weights.LWw_nor/12;
 weights.LWw_scoA = weights.LWw_scoA/12;
-weights.LWw_sco = weights.LWw_sco/12/2;
+weights.LWw_sco = weights.tWw_sco/12/2;
 weights.LWw_Can = weights.LWw_Can/12;
 weights.LWw_usa = weights.LWw_usa/12;
 weights.LWw_Nor = weights.LWw_Nor/12;

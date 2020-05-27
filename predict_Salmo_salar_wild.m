@@ -514,7 +514,7 @@ ELw_nor5 = L/ del_M; % cm, total length
 
 %   % time-length %%% _nor7 f= ad lib
   TC_tL_nor7 = tempcorr(temp.tL_nor7, T_ref, T_A);
-  kT_M = k_M * TC_tL_norSu7; %%%km corrected
+  kT_M = k_M * TC_tL_nor7; %%%km corrected
   rT_j = rho_j * kT_M; %%%rhoj corrected
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M;   
@@ -667,9 +667,9 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
 %   % length-weight   %%%%
 %   EWw_AqG = (LWw_AqG(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
 %   EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
-EWw_nor = (LWw_nor(:,1) * del_M).^3 * (1 + f_nat * ome); g, wet weight
-EWw_scoA = (LWw_scoA(:,1) * del_M).^3 * (1 + f_nat * ome); g, wet weight
-ELWw_sco = (LWw_sco(:,1) * del_M).^3 * (1 + f_nat * ome); g, wet weight
+EWw_nor = (LWw_nor(:,1) * del_M).^3 * (1 + f_nat * ome);% g, wet weight
+EWw_scoA = (LWw_scoA(:,1) * del_M).^3 * (1 + f_nat * ome);% g, wet weight
+ELWw_sco = (LWw_sco(:,1) * del_M).^3 * (1 + f_nat * ome);% g, wet weight
 EWw_Can = (LWw_Can(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
 ELWw_usa = (LWw_usa(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
 EWw_Nor = (LWw_Nor(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight

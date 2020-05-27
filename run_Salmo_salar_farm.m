@@ -22,7 +22,7 @@ estim_options('pars_init_method', 2);% 1 = from from .mat file, 2 = from pars_in
 estim_options('loss_function', 'sb');
 estim_options('report', 1);
 estim_options('results_output', 3);% 0 = .mat only, 2 = .mat file and print to html, 3 = .mat file and print to html and png, 4 = .mat file and print to html incl. implied traits and png  
-% estim_options('method', 'nm');
-estim_options('method', 'no');
+estim_options('method', 'nm');
+% estim_options('method', 'no');
 
 estim_pars; 
