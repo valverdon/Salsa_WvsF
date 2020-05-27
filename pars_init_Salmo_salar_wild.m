@@ -6,7 +6,7 @@ metaPar.model = 'abj';
 par.T_ref = 293.15;   free.T_ref = 0;   units.T_ref = 'K';        label.T_ref = 'Reference temperature'; 
 
 %% core primary parameters 
-par.T_A = 7500;       free.T_A   = 1;   units.T_A = 'K';          label.T_A = 'Arrhenius temperature'; %on va l'avoir
+par.T_A = 6000;       free.T_A   = 1;   units.T_A = 'K';          label.T_A = 'Arrhenius temperature'; %on va l'avoir
 par.z = 4.841;        free.z     = 1;   units.z = '-';            label.z = 'zoom factor'; 
 par.F_m = 6.5;        free.F_m   = 0;   units.F_m = 'l/d.cm^2';   label.F_m = '{F_m}, max spec searching rate'; %need data bouffz
 par.kap_X = 0.8;      free.kap_X = 0;   units.kap_X = '-';        label.kap_X = 'digestion efficiency of food to reserve'; 
@@ -20,7 +20,7 @@ par.k_J = 0.002;      free.k_J   = 0;   units.k_J = '1/d';        label.k_J = 'm
 par.E_G = 5025;       free.E_G   = 0;   units.E_G = 'J/cm^3';     label.E_G = '[E_G], spec cost for structure';  %pe estimable
 par.E_Hb = 6.169e+02; free.E_Hb  = 1;   units.E_Hb = 'J';         label.E_Hb = 'maturity at birth'; 
 par.E_Hh = par.E_Hb*3/4; free.E_Hh  = 1;   units.E_Hh = 'J';         label.E_Hh = 'maturity at hatching'; 
-par.E_Hj = par.E_Hb*5/4; free.E_Hj  = 1;   units.E_Hj = 'J';         label.E_Hj = 'maturity at metam'; 
+par.E_Hj = 1.014e+05; free.E_Hj  = 1;   units.E_Hj = 'J';         label.E_Hj = 'maturity at metam'; 
 par.E_Hp = 1.112e+06; free.E_Hp  = 1;   units.E_Hp = 'J';         label.E_Hp = 'maturity at puberty'; 
 par.h_a = 6.398e-25;  free.h_a   = 1;   units.h_a = '1/d^2';      label.h_a = 'Weibull aging acceleration'; 
 par.s_G = 10;         free.s_G   = 0;   units.s_G = '-';          label.s_G = 'Gompertz stress coefficient'; 
@@ -37,11 +37,8 @@ par.W0_Rottiers1993 = 67.7; free.W0_Rottiers1993 = 0;units.W0_Rottiers1993 = 'g'
 par.W0_Einum2000 = 67.7; free.W0_Einum2000 = 0; units.W0_Einum2000 = 'g'; label.W0_Einum2000 = 'Initial Wet weight in Einum2000';
 par.W0_McCarthy2003 = 0.3; free.W0_McCarthy2003 = 0; units.W0_McCarthy2003 = 'g'; label.W0_McCarthy2003 = 'Initial Wet weight in McCarthy2003';
 par.W0_Rowe1990 = 2.8; free.W0_Rowe1990 = 0; units.W0_Rowe1990 = 'g'; label.W0_Rowe1990 = 'Initial Wet weight in Rowe1990';
-par.L0_usa = 19.7; free.L0_usa = 0; units.L0_usa = 'cm'; label.L0_usa = 'initial length in Rottiers1993';
-par.L0_nor = 4.8; free.L0_nor = 0; units.L0_nor = 'cm'; label.L0_nor = 'initial length in Rowe1990';
-par.L0_scoS = 3.75; free.L0_scoS = 0; units.L0_scoS = 'cm'; label.L0_scoS = 'initial length in Nicieza1994 scotland data';
 par.L0_spa = 3.77; free.L0_spa = 0; units.L0_spa = 'cm'; label.L0_spa = 'initial length in Nicieza1994';
-par.L0_scoAa = 6.5; free.L0_scoAa = 0; units.L0_scoAa = 'cm'; label.L0_scoAa = 'initial length in Rowe1990';
+par.L0_usa = 19.7; free.L0_usa = 0; units.L0_usa = 'cm'; label.L0_usa = 'initial length in Rottiers1993';
 
 %% set chemical parameters from Kooy2010 
 [par, units, label, free] = addchem(par, units, label, free, metaData.phylum, metaData.class); 
