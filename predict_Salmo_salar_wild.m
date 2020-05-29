@@ -694,18 +694,13 @@ prdData.tL_spa = ELw_spa;
 prdData.tL_scoAa = ELw_scoAa / SNFtoTOT;
 prdData.tWw_sco = EWw_sco;
 prdData.LWw_nor = EWw_nor;
-prdData.LWw_scoA = EWw_scoA / SNFtoTOT;
-prdData.LWw_sco = ELWw_sco / SNFtoTOT;
-prdData.LWw_Can = EWw_Can / SNFtoTOT;
+prdData.LWw_scoA = EWw_scoA;
+prdData.LWw_sco = ELWw_sco;
+prdData.LWw_Can = EWw_Can;
 prdData.LWw_usa = ELWw_usa;
 prdData.LWw_Nor = EWw_Nor;
 
 %Manque t-E
 %Manque L-R
 %Manque Ww-R
-
-%   %lack of Tww juvenile and seawater
-%   prdData.LWw_AqG = EWw_AqG;
-%   prdData.LWw_norM = EWw_norM;
-%   %lack of T-JX
 

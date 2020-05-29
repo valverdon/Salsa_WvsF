@@ -1,4 +1,4 @@
-﻿function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
+function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
   
 
 %par=parPets.(pets{1})
@@ -181,10 +181,10 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.ap_norire = tT_p_norNBP;
   prdData.am = aT_m_nat;
 % prdData.Lh = Lw_h;
-  prdData.Lb_NorM2011 = Lw_b;
-  prdData.Lb_NorM2012 = Lw_b;
-  prdData.Lb_NorM2013 = Lw_b;
-  prdData.Lb_NorS2013 = Lw_b;
+  prdData.Lb_NorM2011 = Lw_b / SNFtoTOT;
+  prdData.Lb_NorM2012 = Lw_b / SNFtoTOT;
+  prdData.Lb_NorM2013 = Lw_b / SNFtoTOT;
+  prdData.Lb_NorS2013 = Lw_b / SNFtoTOT;
 %   prdData.Ls = Lw_s;
   prdData.Lp_norSf = Lw_p / POHtoTOT;
   prdData.Lp_norSm = Lw_p / POHtoTOT;
