@@ -1,4 +1,4 @@
-﻿function [prdData, info] = predict_Salmo_salar_wild(par, data, auxData)
+function [prdData, info] = predict_Salmo_salar_wild(par, data, auxData)
   
 
 %par=parPets.(pets{1})
@@ -223,67 +223,67 @@ prdData.Tah_Johnston1997 = aT_h_Johnston1997;
   prdData.am_sco = aT_am_sco;
   prdData.am_rus = aT_am_rus;
 % prdData.Lh = Lw_h; %manque calcul Lh
-prdData.Lh_Can2 = Lw_h;
-prdData.Lh_Can4 = Lw_h;
-prdData.Lh_Can6 = Lw_h;
-prdData.Lh_Can8 = Lw_h;
-prdData.Lh_Can10 = Lw_h;
-prdData.Lh_Can12 = Lw_h;
-prdData.Lh_CanM4 = Lw_h;
-prdData.Lh_CanM6 = Lw_h;
-prdData.Lh_CanM8 = Lw_h;
-prdData.Lh_CanM10 = Lw_h;
-prdData.Lh_CanM12 = Lw_h;
-prdData.Lh_CanP = Lw_h;
+prdData.Lh_Can2 = Lw_h/SNFtoTOT;
+prdData.Lh_Can4 = Lw_h/SNFtoTOT;
+prdData.Lh_Can6 = Lw_h/SNFtoTOT;
+prdData.Lh_Can8 = Lw_h/SNFtoTOT;
+prdData.Lh_Can10 = Lw_h/SNFtoTOT;
+prdData.Lh_Can12 = Lw_h/SNFtoTOT;
+prdData.Lh_CanM4 = Lw_h/SNFtoTOT;
+prdData.Lh_CanM6 = Lw_h/SNFtoTOT;
+prdData.Lh_CanM8 = Lw_h/SNFtoTOT;
+prdData.Lh_CanM10 = Lw_h/SNFtoTOT;
+prdData.Lh_CanM12 = Lw_h/SNFtoTOT;
+prdData.Lh_CanP = Lw_h/SNFtoTOT;
 prdData.Lh_Rus = Lw_h;
-prdData.Lh_scocanmix = Lw_h;
+prdData.Lh_scocanmix = Lw_h/SNFtoTOT;
 
-  prdData.Lb_Sco1SWM = Lw_b;
-  prdData.Lb_Sco2SWM = Lw_b;
-  prdData.Lb_NorF2011 = Lw_b;
-  prdData.Lb_NorF2012 = Lw_b;
-  prdData.Lb_NorF2013 = Lw_b;
-  prdData.Lb_NorV2013 = Lw_b;
-  prdData.Lb_Can2D = Lw_b;
-  prdData.Lb_Can6D = Lw_b;
-  prdData.Lb_Can12D = Lw_b;
-  prdData.Lb_Can4M = Lw_b;
-  prdData.Lb_Can6M = Lw_b;
-  prdData.Lb_Can8M = Lw_b;
-   prdData.Lb_Can10M = Lw_b;
-  prdData.Lb_Can12M = Lw_b;
-  prdData.Lb_CanP = Lw_b;
+  prdData.Lb_Sco1SWM = Lw_b/SNFtoTOT;
+  prdData.Lb_Sco2SWM = Lw_b/SNFtoTOT;
+  prdData.Lb_NorF2011 = Lw_b/SNFtoTOT;
+  prdData.Lb_NorF2012 = Lw_b/SNFtoTOT;
+  prdData.Lb_NorF2013 = Lw_b/SNFtoTOT;
+  prdData.Lb_NorV2013 = Lw_b/SNFtoTOT;
+  prdData.Lb_Can2D = Lw_b/SNFtoTOT;
+  prdData.Lb_Can6D = Lw_b/SNFtoTOT;
+  prdData.Lb_Can12D = Lw_b/SNFtoTOT;
+  prdData.Lb_Can4M = Lw_b/SNFtoTOT;
+  prdData.Lb_Can6M = Lw_b/SNFtoTOT;
+  prdData.Lb_Can8M = Lw_b/SNFtoTOT;
+   prdData.Lb_Can10M = Lw_b/SNFtoTOT;
+  prdData.Lb_Can12M = Lw_b/SNFtoTOT;
+  prdData.Lb_CanP = Lw_b/SNFtoTOT;
   prdData.Lb_Rus = Lw_b;
-  prdData.Lb_Usa = Lw_b;
-  prdData.Lb_ScoA = Lw_b;
+  prdData.Lb_Usa = Lw_b/SNFtoTOT;
+  prdData.Lb_ScoA = Lw_b/SNFtoTOT;
 
 %   prdData.Ls = Lw_s;
   prdData.Lp_norS = Lw_p_nat;
-  prdData.Lp_sco = Lw_p_nat;
-  prdData.Lp_norI  = Lw_p_nat;
-  prdData.Lp_spaNM = Lw_p_nat;
-  prdData.Lp_canM = Lw_p_nat;
-  prdData.Lp_canR = Lw_p_nat;
+  prdData.Lp_sco = Lw_p_nat /SNFtoTOT;
+  prdData.Lp_norI  = Lw_p_nat /SNFtoTOT;
+  prdData.Lp_spaNM = Lw_p_nat /SNFtoTOT;
+  prdData.Lp_canM = Lw_p_nat /SNFtoTOT;
+  prdData.Lp_canR = Lw_p_nat /SNFtoTOT;
   prdData.Lp_norSf = Lw_p_nat / POHtoTOT;
   prdData.Lp_norSm = Lw_p_nat / POHtoTOT;
-  prdData.Lp_rus = Lw_p_nat;
-  prdData.Lp_usa = Lw_p_nat;
-  prdData.Lp_norI2 = Lw_p_nat;
+  prdData.Lp_rus = Lw_p_nat /SNFtoTOT;
+  prdData.Lp_usa = Lw_p_nat /SNFtoTOT;
+  prdData.Lp_norI2 = Lw_p_nat /SNFtoTOT;% pas bon, fertilisation-smolt en ad lib
 
-  prdData.Li_ScoMax = Lw_i_nat;
-  prdData.Li_NorFM = Lw_i_nat;
-  prdData.Li_NorFF = Lw_i_nat;
+  prdData.Li_ScoMax = Lw_i_nat /SNFtoTOT;
+  prdData.Li_NorFM = Lw_i_nat /SNFtoTOT;
+  prdData.Li_NorFF = Lw_i_nat /SNFtoTOT;
   prdData.Li_NorVM = Lw_i_nat;
-  prdData.Li_NorVF = Lw_i_nat;
-  prdData.Li_NorAM = Lw_i_nat;
-  prdData.Li_NorAF = Lw_i_nat;
-  prdData.Li_norI = Lw_i_nat;
-  prdData.Li_spaNM = Lw_i_nat;
-  prdData.Li_canBS = Lw_i_nat;
-  prdData.Li_rusN = Lw_i_nat;
-  prdData.Li_rusO = Lw_i_nat;
-  prdData.Li_rusS = Lw_i_nat;
-  prdData.Li_usa = Lw_i_nat;
+  prdData.Li_NorVF = Lw_i_nat /SNFtoTOT;
+  prdData.Li_NorAM = Lw_i_nat /SNFtoTOT;
+  prdData.Li_NorAF = Lw_i_nat /SNFtoTOT;
+  prdData.Li_norI = Lw_i_nat /SNFtoTOT;
+  prdData.Li_spaNM = Lw_i_nat /SNFtoTOT;
+  prdData.Li_canBS = Lw_i_nat /SNFtoTOT;
+  prdData.Li_rusN = Lw_i_nat /SNFtoTOT;
+  prdData.Li_rusO = Lw_i_nat /SNFtoTOT;
+  prdData.Li_rusS = Lw_i_nat /SNFtoTOT;
+  prdData.Li_usa = Lw_i_nat /SNFtoTOT;
 
  prdData.V0_nor  = V_0_nat;
  prdData.V0_can  = V_0_nat;
@@ -470,7 +470,7 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M;   
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_0= L0_nor*del_M;
+  L_0= L0_nor*del_M*SNFtoTOT;
   t = tL_nor4(:,1) - tL_nor4(1,1);
   if L_0 < L_j
     tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
@@ -647,7 +647,7 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
   rT_B = rho_B * kT_M; %%%%rhoB corrected
   tT_j = (tau_j - tau_b)/ kT_M;   
   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  L_0= L0_scoAa*del_M;
+  L_0= L0_scoAa * del_M * SNFtoTOT;
   t = tL_scoAa(:,1) - tL_scoAa(1,1); % correction so that t initial = 0
    if L_0 < L_j
     tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
@@ -668,12 +668,11 @@ if info ~= 1 || info_nat ~= 1 % numerical procedure failed
 %   EWw_AqG = (LWw_AqG(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
 %   EWw_norM = (LWw_norM(:,1) * del_M).^3 * (1 + f * ome); % g, wet weight
 EWw_nor = (LWw_nor(:,1) * del_M).^3 * (1 + f_nat * ome);% g, wet weight
-EWw_scoA = (LWw_scoA(:,1) * del_M).^3 * (1 + f_nat * ome);% g, wet weight
-ELWw_sco = (LWw_sco(:,1) * del_M).^3 * (1 + f_nat * ome);% g, wet weight
-EWw_Can = (LWw_Can(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
+EWw_scoA = (LWw_scoA(:,1) * del_M * SNFtoTOT).^3 * (1 + f_nat * ome);% g, wet weight
+ELWw_sco = (LWw_sco(:,1) * del_M * SNFtoTOT).^3 * (1 + f_nat * ome);% g, wet weight
+EWw_Can = (LWw_Can(:,1) * del_M * SNFtoTOT).^3 * (1 + f_nat * ome); % g, wet weight
 ELWw_usa = (LWw_usa(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
 EWw_Nor = (LWw_Nor(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
-EWw_Norway = (LWw_Norway(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
 
 
   % pack to output
@@ -685,22 +684,21 @@ EWw_Norway = (LWw_Norway(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
 %   prdData.tWwe_T8 = EWw_eT8;
  prdData.tL_usa = ELw_usa;
  prdData.tL_norI = ELw_norI;
-prdData.tL_nor4 = ELw_nor4;
-prdData.tL_nor5 = ELw_nor5;
-prdData.tL_nor7 = ELw_nor7;
-prdData.tL_nor57 = ELw_nor57;
-prdData.tL_scoA = ELw_scoA;
+prdData.tL_nor4 = ELw_nor4 / SNFtoTOT;
+prdData.tL_nor5 = ELw_nor5 / SNFtoTOT;
+prdData.tL_nor7 = ELw_nor7 / SNFtoTOT;
+prdData.tL_nor57 = ELw_nor57 / SNFtoTOT;
+prdData.tL_scoA = ELw_scoA / SNFtoTOT;
 prdData.tL_scoS = ELw_scoS;
 prdData.tL_spa = ELw_spa;
-prdData.tL_scoAa = ELw_scoAa;
+prdData.tL_scoAa = ELw_scoAa / SNFtoTOT;
 prdData.tWw_sco = EWw_sco;
 prdData.LWw_nor = EWw_nor;
-prdData.LWw_scoA = EWw_scoA;
-prdData.LWw_sco = ELWw_sco;
-prdData.LWw_Can = EWw_Can;
+prdData.LWw_scoA = EWw_scoA / SNFtoTOT;
+prdData.LWw_sco = ELWw_sco / SNFtoTOT;
+prdData.LWw_Can = EWw_Can / SNFtoTOT;
 prdData.LWw_usa = ELWw_usa;
 prdData.LWw_Nor = EWw_Nor;
-prdData.LWw_Norway = EWw_Norway;
 
 %Manque t-E
 %Manque L-R
