@@ -113,7 +113,7 @@ temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 't
 %% Lifespan %(maximum)
 %%%%%%%%%%%%%
 data.am = (2+2)*365.25;   %=1461
-units.am = 'd';    label.am = 'max age at spawning';             bibkey.am = 'Hindar2006';     
+units.am = 'd';    label.am = 'life span';             bibkey.am = 'Hindar2006';     
 comment.am = 'National breeding program (time since birth) ; table 3';
   temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T° : rough guess - highly variable temperature throughout life(2+2)*365.25';%natural T°, natural f.
 
@@ -211,8 +211,8 @@ units.V0_norM2013 = 'cm^3'; label.V0_norM2013 = 'egg volume'; bibkey.V0_norM2013
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at spawning %
 %%%%%%%%%%%%%%%%%%%%%%%
-data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at puberty';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_norf = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
-data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_norm = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
+data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at 1st spawning';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_norf = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
+data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at 1st spawning';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_norm = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
 
 
 %%%%%%%%%%%%%%
@@ -740,8 +740,8 @@ bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (
 % bibkey.WwR= 'Fleming1996b'; comment.LWw_norM = 'Sunndalsora strain ; T= rough guess';
 
 
-data.Ri=1063/365.25; units.Ri = '-/d';    label.Ri = 'maximum number of live embryos';             bibkey.Ri = 'Fleming1996b';
-  comment.Ri = 'Sunndalsora strain';
+data.Ri=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs';             bibkey.Ri = 'Fleming1996b';
+  comment.Ri = 'Sunndalsora strain, number of live embryos/survival';
   temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';
   
 

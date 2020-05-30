@@ -35,10 +35,7 @@ par.f_LWw = 1;  free.f_LWw = 0;   units.f_LWw = '-';        label.f_LWw = 'scale
 par.f_tL = 1;  free.f_tL  = 0;   units.f_tL = '-';         label.f_tL = 'scaled functional response for 1-var data'; 
 par.f_tL_nat = 0.7;  free.f_tL_nat  = 0;   units.f_tL_nat = '-';         label.f_tL_nat = 'scaled functional response for 1-var data, natural f'; 
 par.f_tWeVe_tWeYe = 1;  free.f_tWeVe_tWeYe = 0; units.f_tWeVe_tWeYe = '-';  label.f_tWeVe_tWeYe = 'scaled functional response for embryo growth';
-par.W0_Rottiers1993 = 67.7; free.W0_Rottiers1993 = 0; units.W0_Rottiers1993 = 'g' ; label.W0_Rottiers1993 = 'Initial Wet weight in Rottiers1993';
-par.W0_Einum2000 = 67.7; free.W0_Einum2000 = 0; units.W0_Einum2000 = 'g'; label.W0_Einum2000 = 'Initial Wet weight in Einum2000';
-par.W0_McCarthy2003 = 0.3; free.W0_McCarthy2003 = 0; units.W0_McCarthy2003 = 'g'; label.W0_McCarthy2003 = 'Initial Wet weight in McCarthy2003';
-par.W0_Rowe1990 = 2.8; free.W0_Rowe1990 = 0; units.W0_Rowe1990 = 'g'; label.W0_Rowe1990 = 'Initial Wet weight in Rowe1990';
+par.W0_McCarthy2003 = 0.28; free.W0_McCarthy2003 = 0; units.W0_McCarthy2003 = 'g'; label.W0_McCarthy2003 = 'Initial Wet weight in McCarthy2003';
 par.L0_spa = 3.77; free.L0_spa = 0; units.L0_spa = 'cm'; label.L0_spa = 'initial length in Nicieza1994';
 par.L0_usa = 19.7; free.L0_usa = 0; units.L0_usa = 'cm'; label.L0_usa = 'initial length in Rottiers1993';
 par.L0_scoS = 3.75; free.L0_scoS = 0; units.L0_scoS = 'cm'; label.L0_scoS = 'initial length in Nicieza1994 scotland data';
