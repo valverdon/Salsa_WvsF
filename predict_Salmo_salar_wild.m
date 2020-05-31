@@ -15,6 +15,9 @@ function [prdData, info] = predict_Salmo_salar_wild(par, data, auxData)
   if E_Hh > E_Hb
       info = 0; prdData = []; return
   end
+    if E_Hh < 0
+      info = 0; prdData = []; return
+    end
   
 % compute temperature correction factors for each stage
 TC_Tah_Dennis_Peterson1977 = tempcorr(data.Tah_Dennis_Peterson1977(:,1), T_ref, T_A); 
