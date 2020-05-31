@@ -15,6 +15,9 @@ function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
   if E_Hh > E_Hb
       info = 0; prdData = []; return
   end
+  if E_Hh < 0
+      info = 0; prdData = []; return
+  end
   
 TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A); 
   TC_Tah_Wallace1988 = tempcorr(data.Tah_Wallace1988(:,1), T_ref, T_A); 
