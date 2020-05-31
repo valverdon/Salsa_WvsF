@@ -15,9 +15,6 @@ function [prdData, info] = predict_Salmo_salar_farm(par, data, auxData)
   if E_Hh > E_Hb
       info = 0; prdData = []; return
   end
-  if E_Hh < 0
-      info = 0; prdData = []; return
-  end
   
 TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A); 
   TC_Tah_Wallace1988 = tempcorr(data.Tah_Wallace1988(:,1), T_ref, T_A); 
@@ -34,7 +31,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   TC_tp_norNBP = tempcorr(temp.ap_norNBP, T_ref, T_A);
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
   TC_am = tempcorr(temp.am, T_ref, T_A);
-  TC_Lsp_norS = tempcorr(temp.Lsp_norSf, T_ref, T_A);
+  TC_Lp_norSf = tempcorr(temp.Lp_norSf, T_ref, T_A);
+  TC_Lp_norSm = tempcorr(temp.Lp_norSm, T_ref, T_A);
   TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
   TC_tL_iceT11 = tempcorr(temp.tL_iceT11, T_ref, T_A);
   TC_tL_iceT611 = tempcorr(temp.tL_iceT611, T_ref, T_A);
@@ -142,6 +140,13 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   tT_p_norire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norire;   % d, time since birth at puberty at f and T
   tT_p_norNBP = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norNBP;   % d, time since birth at puberty at f and T
 
+  % first spawning
+  rT_B = TC_Lp_norSf * rho_B * k_M;
+  L_norSf = L_i - (L_i - L_p) * exp( - rT_B * 365); % cm, expected length one year after puberty at f
+  rT_B = TC_Lp_norSf * rho_B * k_M;
+  L_norSf = L_i - (L_i - L_p) * exp( - rT_B * 365); % cm, expected length one year after puberty at f
+  
+  
   % ultimate
   L_i = L_m * l_i;                  % cm, ultimate structural length at f
   Lw_i = L_i/ del_M;                % cm, ultimate physical length at f
@@ -151,11 +156,6 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   Lw_i_nat = L_i_nat/ del_M;                % cm, ultimate physical length at f
   Ww_i_nat = L_i_nat^3 * (1 + f_nat * ome);       % g, ultimate wet weight
   
-  % first spawning
-  rT_B = TC_Lsp_norS * rho_B * k_M;
-  L_norS = L_i - (L_i - L_p) * exp( - rT_B * 365); % cm, expected structural length one year after puberty at f and T
-  Ww_norS = L_norS^3 * (1 + f * ome);       % g, wet weight one year after puberty at f and T
-  Lw_norS = L_norS / del_M; % cm, expected physical length one year after puberty at f and T
  
   % reproduction
   pars_R = [kap, kap_R, g, k_J, k_M, L_T, v, U_Hb, U_Hj, U_Hp];
@@ -193,15 +193,15 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.Lb_NorM2013 = Lw_b / SNFtoTOT;
   prdData.Lb_NorS2013 = Lw_b / SNFtoTOT;
 %   prdData.Ls = Lw_s;
-  prdData.Lsp_norSf = Lw_norS / POHtoTOT;
-  prdData.Lsp_norSm = Lw_norS / POHtoTOT;
+  prdData.Lp_norSf = Lw_p / POHtoTOT;
+  prdData.Lp_norSm = Lw_p / POHtoTOT;
 %   prdData.Lp_norN = Lw_p;
 prdData.Li = Lw_i_nat / SNFtoTOT;
 %  prdData.Wwh_norM = Ww_h;
 %  prdData.Wwb = Ww_b;
 %   prdData.Wwj_nor = Ww_j;
- prdData.Wwsp_norf = Ww_norS;
- prdData.Wwsp_norm = Ww_norS;
+ prdData.Wwp_norf = Ww_p;
+ prdData.Wwp_norm = Ww_p;
  prdData.Wwi_norM = Ww_i_nat;
  prdData.Ri = RT_i;
  prdData.V0_norM2011  = V_0;
