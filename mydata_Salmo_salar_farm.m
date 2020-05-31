@@ -147,18 +147,14 @@ data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'to
 %%%%%%%%%%%%%%%%%%%%%%%
 %direct
 
-%need calculation
-% data.Lp_norSf  = 55.4 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSf  = 'Fleming1996b';   comment.Lp_norSf = 'mean females at spawning, Sunndalsøra strain (Canada)';
-% data.Lp_norSm  = 57.5 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at puberty'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, Sunndalsøra strain (Canada)';
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at 1st spawning %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-data.Lp_norSf  = 55.4 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbital-hypural length at first spawning'; bibkey.Lp_norSf  = 'Fleming1996b';   comment.Lp_norSf = 'mean females at spawning, Sunndalsøra strain (Canada) ; table1'; %T? f?
-data.Lp_norSm  = 57.5 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at first spawning'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, Sunndalsøra strain (Canada); table1';%T? f?
+data.Lsp_norSf  = 55.4 ;   units.Lsp_norSf  = 'cm';  label.Lsp_norSf  = 'postorbital-hypural length at first spawning'; bibkey.Lsp_norSf  = 'Fleming1996b';   comment.Lsp_norSf = 'mean females at spawning, Sunndalsøra strain (Canada) ; table1 ; f = 1';
+data.Lsp_norSm  = 57.5 ;   units.Lsp_norSm  = 'cm';  label.Lsp_norSm  = 'postorbital-hypural length at first spawning'; bibkey.Lsp_norSm  = 'Fleming1996b';   comment.Lsp_norSm = 'mean males at spawning, Sunndalsøra strain (Canada); table1';%T? f?
+temp.Lsp_norSf = C2K(10);  units.temp.Lsp_norSf = 'K'; label.temp.Lsp_norSf = 'temperature'; 
+label.temp.comment.Lsp_norSf = 'T° : rough guess';
 
-
-% data.Lp=(data.Lp_norSf+data.Lp_norSm+data.Lp_norN)/3;
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Max length %
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -208,11 +204,11 @@ units.V0_norM2013 = 'cm^3'; label.V0_norM2013 = 'egg volume'; bibkey.V0_norM2013
 % data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at puberty';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_nor_norf = 'Sunndalsøra strain (Norway), mean of females at spawning';
 % data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_nor_norm = 'Sunndalsøra strain (Norway), mean of males at spawning';
 
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Weight at spawning %
-%%%%%%%%%%%%%%%%%%%%%%%
-data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at 1st spawning';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_norf = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
-data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at 1st spawning';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_norm = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Weight at first spawning %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+data.Wwsp_norf = 3696;   units.Wwsp_norf = 'g';   label.Wwsp_norf = 'wet weight at 1st spawning';   bibkey.Wwsp_norf = 'Fleming1996b';   comment.Wwsp_norf = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
+data.Wwsp_norm = 4008;   units.Wwsp_norm = 'g';   label.Wwsp_norm = 'wet weight at 1st spawning';   bibkey.Wwsp_norm = 'Fleming1996b';   comment.Wwsp_norm = 'Sunndalsøra strain (Norway), mean of females at spawning ; table1';%T? f?
 
 
 %%%%%%%%%%%%%%
@@ -759,15 +755,15 @@ weights.Lb_NorM2013 = weights.Lb_NorM2013/4;
 weights.Lb_NorS2013 = weights.Lb_NorS2013/4;
 % weights.Ls_finS = weights.Ls_finS/2;
 % weights.Ls_norN = weights.Ls_norN/2;
-weights.Lp_norSf = weights.Lp_norSf/2;% 2 Length at birth 0-V data
-weights.Lp_norSm = weights.Lp_norSm/2;
+weights.Lsp_norSf = weights.Lsp_norSf/2;% 2 Length at birth 0-V data
+weights.Lsp_norSm = weights.Lsp_norSm/2;
 % weights.Lp_norN = weights.Lp_norN/3;
 weights.V0_norM2011 = weights.V0_norM2011/2;% 2 Egg volume 0-V data
 weights.V0_norM2012 = weights.V0_norM2012/2;
 % weights.Ww0_norM = weights.Ww0_norM/2;
 % weights.Ww0_norM2 = weights.Ww0_norM2/2;
-weights.Wwp_norf = weights.Wwp_norf/2; % 2 weight at puberty 0-V data
-weights.Wwp_norm = weights.Wwp_norm/2;
+weights.Wwsp_norf = weights.Wwsp_norf/2; % 2 weight at puberty 0-V data
+weights.Wwsp_norm = weights.Wwsp_norm/2;
 weights.Tah_Gunnes1979 = 4*weights.Tah_Gunnes1979/4;%high weigth for Temperature data
 weights.Tah_Wallace1988 = 4*weights.Tah_Wallace1988/4;
 weights.Tah_Solberg2014 = 4*weights.Tah_Solberg2014/4;

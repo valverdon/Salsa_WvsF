@@ -460,7 +460,7 @@ data.Wwb_Rus = 0.195;   units.Wwb_Rus = 'g';   label.Wwb_Rus = 'wet weight at bi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-  %% Weight at maturity %(or 1 year before first spawning)
+  %% Weight at puberty  %(or 1 year before first spawning)
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %direct measurement
 
