@@ -46,6 +46,8 @@ TC_tp_norI = tempcorr(temp.tp_norI, T_ref, T_A);
 TC_am = tempcorr(temp.am, T_ref, T_A);
 % TC_am_sco = tempcorr(temp.am_sco, T_ref, T_A);
 % TC_am_rus = tempcorr(temp.am_rus, T_ref, T_A);
+  TC_Lsp_Berg2001 = tempcorr(temp.Lsp_norS, T_ref, T_A);
+  TC_Lsp_Fleming1996 = tempcorr(temp.Lsp_norSf, T_ref, T_A);
 %   TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
 % TC_Ri_sco = tempcorr(temp.Ri_sco, T_ref, T_A); 
 % TC_Ri_spa  = tempcorr(temp.Ri_spa, T_ref, T_A); 
@@ -168,6 +170,18 @@ TC_Ri_nor = tempcorr(temp.Ri_nor, T_ref, T_A);
   Lw_i_nat = L_i_nat/ del_M;                % cm, ultimate physical length at f
   Ww_i_nat = L_i_nat^3 * (1 + f_nat * ome);       % g, ultimate wet weight
   
+  % first spawning
+  % Berg2001
+  rT_B = TC_Lsp_Berg2001 * rho_B_nat * k_M;
+  L_Berg2001 = L_i_nat - (L_i_nat - L_p_nat) * exp( - rT_B * 365); % cm, expected structural length one year after puberty at f and T
+  Ww_Berg2001 = L_Berg2001^3 * (1 + f_nat * ome);       % g, wet weight one year after puberty at f and T
+  Lw_Berg2001 = L_Berg2001 / del_M; % cm, expected physical length one year after puberty at f and T
+  % Fleming1996 and Fleming1996b
+  rT_B = TC_Lsp_Fleming1996 * rho_B_nat * k_M;
+  L_Fleming1996 = L_i_nat - (L_i_nat - L_p_nat) * exp( - rT_B * 365); % cm, expected structural length one year after puberty at f and T
+  Ww_Fleming1996 = L_Fleming1996^3 * (1 + f_nat * ome);       % g, wet weight one year after puberty at f and T
+  Lw_Fleming1996 = L_Fleming1996 / del_M; % cm, expected physical length one year after puberty at f and T
+
  
   % reproduction
   pars_R = [kap, kap_R, g, k_J, k_M, L_T, v, U_Hb, U_Hj, U_Hp];
@@ -258,14 +272,14 @@ prdData.Lh_scocanmix = Lw_h/SNFtoTOT;
 %   prdData.Lb_ScoA = Lw_b/SNFtoTOT;
 
 %   prdData.Ls = Lw_s;
-  prdData.Lp_norS = Lw_p_nat;
+  prdData.Lsp_norS = Lw_Berg2001;
 %   prdData.Lp_sco = Lw_p_nat /SNFtoTOT;
-  prdData.Lp_norI  = Lw_p_nat /SNFtoTOT;
+  prdData.Lsp_norI  = Lw_Fleming1996 /SNFtoTOT;
 %   prdData.Lp_spaNM = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_canM = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_canR = Lw_p_nat /SNFtoTOT;
-  prdData.Lp_norSf = Lw_p_nat / POHtoTOT;
-  prdData.Lp_norSm = Lw_p_nat / POHtoTOT;
+  prdData.Lsp_norSf = Lw_Fleming1996 / POHtoTOT;
+  prdData.Lsp_norSm = Lw_Fleming1996 / POHtoTOT;
 %   prdData.Lp_rus = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_usa = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_norI2 = Lw_p_nat /SNFtoTOT;% pas bon, fertilisation-smolt en ad lib
@@ -323,8 +337,8 @@ prdData.Wwh_FNor = Ww_h;
  prdData.Wwb_Rus = Ww_b; 
 %   prdData.WwsI = Ww_s;
 %   prdData.WwsS = Ww_s;
- prdData.Wwp_norf = Ww_p_nat;
- prdData.Wwp_norm = Ww_p_nat;
+ prdData.Wwsp_norf = Ww_Fleming1996;
+ prdData.Wwsp_norm = Ww_Fleming1996;
 %  prdData.Wwp_rus = Ww_p_nat;
 %  prdData.Wwp_usa = Ww_p_nat;
  

@@ -356,18 +356,21 @@ data.Lb_NorV2013  = 2.83;   units.Lb_NorV2013  = 'cm';  label.Lb_NorV2013  = 'fo
 %   comment.Lp_gbr = 'mean of Brittish population';
 % data.Lp_nor  = 59.5 ;   units.Lp_nor  = 'cm';  label.Lp_nor  = 'total length at puberty (grilse)'; bibkey.Lp_nor  = 'Hutchings1998';   
 %   comment.Lp_nor = 'mean of Norwegian population';
-data.Lp_norS  = 78 ;   units.Lp_norS  = 'cm';  label.Lp_norS  = 'total length at 1st spawning?'; bibkey.Lp_norS  = 'Berg2001';   comment.Lp_norS = 'mean of 6 females length at spawning, river Stjørdalselva, "length" no further precision, Table 1';
-% data.Lp_sco  = 70 ;   units.Lp_sco  = 'cm';  label.Lp_sco  = 'fork length at 1st spawning'; bibkey.Lp_sco  = 'Fleming1996';   comment.Lp_sco = 'mean of scottish river spawning females, fork length,  Table 2';
-data.Lp_norI  = 67.5 ;   units.Lp_norI  = 'cm';  label.Lp_norI  = 'fork length at 1st spawning'; bibkey.Lp_norI  = 'Fleming1996';   comment.Lp_norI = 'mean females at spawning, river Imsa (Norway), fork length, Table 2';
-% data.Lp_spaNM  = 74.8 ;   units.Lp_spaNM  = 'cm';  label.Lp_spaNM  = 'fork length at 1st spawning'; bibkey.Lp_spaNM  = 'Fleming1996';   comment.Lp_spaNM = 'mean females at spawning, rivers Narraguagus & Machias (Spain), fork length, Table 2';
-% data.Lp_canM  = 66.4 ;   units.Lp_canM  = 'cm';  label.Lp_canM  = 'fork length at 1st spawning'; bibkey.Lp_canM  = 'Fleming1996';   comment.Lp_canM = 'mean females at spawning, river Mirachimi (Canada), fork length, Table 2';
-% data.Lp_canR  = 84.8 ;   units.Lp_canR  = 'cm';  label.Lp_canR  = 'fork length at 1st spawning'; bibkey.Lp_canR  = 'Fleming1996';   comment.Lp_canR = 'mean females at spawning, river Restigouche (Canada), fork length, Table 2';
-data.Lp_norSf  = 52.7 ;   units.Lp_norSf  = 'cm';  label.Lp_norSf  = 'postorbital-hypural length at 1st spawning'; bibkey.Lp_norSf  = 'Fleming1996b';   comment.Lp_norSf = 'mean females at spawning, river Imsa (Canada) table 1';
-data.Lp_norSm  = 47.7 ;   units.Lp_norSm  = 'cm';  label.Lp_norSm  = 'postorbital-hypural length at 1st spawning'; bibkey.Lp_norSm  = 'Fleming1996b';   comment.Lp_norSm = 'mean males at spawning, river Imsa (Canada) table 1';
-% data.Lp_rus  = 81.9 ;   units.Lp_rus  = 'cm';  label.Lp_rus  = 'fork length at 1st spawning?'; bibkey.Lp_rus  = 'Kazakov1981';   comment.Lp_rus = 'mean females at 1st spawning, river Neva (Russia), total length? "generally accepted biometric method", Table5';
-% data.Lp_usa  = 79.0 ;   units.Lp_usa  = 'cm';  label.Lp_usa  = 'fork length at 1st spawning'; bibkey.Lp_usa  = 'Baum1971';   comment.Lp_usa = 'mean females at spawning, rivers Machias & Narraguagus (Usa), converted from inches, table 1';
+data.Lsp_norS  = 78 ;   units.Lsp_norS  = 'cm';  label.Lsp_norS  = 'total length at 1st spawning?'; bibkey.Lsp_norS  = 'Berg2001';   comment.Lsp_norS = 'mean of 6 females length at spawning, river Stjørdalselva, "length" no further precision, Table 1';
+    temp.Lsp_norI = C2K(8.59);  units.temp.Lsp_norI = 'K'; label.temp.Lsp_norI = 'temperature'; label.temp.comment.Lsp_norI = 'data from 1976 to 1980 from Jonsson et al. 2001';
+% data.Lsp_sco  = 70 ;   units.Lsp_sco  = 'cm';  label.Lsp_sco  = 'fork length at 1st spawning'; bibkey.Lsp_sco  = 'Fleming1996';   comment.Lsp_sco = 'mean of scottish river spawning females, fork length,  Table 2';
+data.Lsp_norI  = 67.5 ;   units.Lsp_norI  = 'cm';  label.Lsp_norI  = 'fork length at 1st spawning'; bibkey.Lsp_norI  = 'Fleming1996';   comment.Lsp_norI = 'mean females at spawning, river Imsa (Norway), fork length, Table 2';
+    temp.Lsp_norI = C2K(9.4);  units.temp.Lsp_norI = 'K'; label.temp.Lsp_norI = 'temperature'; label.temp.comment.Lsp_norI = 'estimation fr';
+% data.Lsp_spaNM  = 74.8 ;   units.Lsp_spaNM  = 'cm';  label.Lsp_spaNM  = 'fork length at 1st spawning'; bibkey.Lsp_spaNM  = 'Fleming1996';   comment.Lsp_spaNM = 'mean females at spawning, rivers Narraguagus & Machias (Spain), fork length, Table 2';
+% data.Lsp_canM  = 66.4 ;   units.Lsp_canM  = 'cm';  label.Lsp_canM  = 'fork length at 1st spawning'; bibkey.Lsp_canM  = 'Fleming1996';   comment.Lsp_canM = 'mean females at spawning, river Mirachimi (Canada), fork length, Table 2';
+% data.Lsp_canR  = 84.8 ;   units.Lsp_canR  = 'cm';  label.Lsp_canR  = 'fork length at 1st spawning'; bibkey.Lsp_canR  = 'Fleming1996';   comment.Lsp_canR = 'mean females at spawning, river Restigouche (Canada), fork length, Table 2';
+data.Lsp_norSf  = 52.7 ;   units.Lsp_norSf  = 'cm';  label.Lsp_norSf  = 'postorbital-hypural length at 1st spawning'; bibkey.Lsp_norSf  = 'Fleming1996b';   comment.Lsp_norSf = 'mean females at spawning, river Imsa (Norway) table 1';
+data.Lsp_norSm  = 47.7 ;   units.Lsp_norSm  = 'cm';  label.Lsp_norSm  = 'postorbital-hypural length at 1st spawning'; bibkey.Lsp_norSm  = 'Fleming1996b';   comment.Lsp_norSm = 'mean males at spawning, river Imsa (Norway) table 1';
+    temp.Lsp_norSf = C2K(9.4);  units.temp.Lsp_norSf = 'K'; label.temp.Lsp_norSf = 'temperature'; label.temp.comment.Lsp_norSf = 'T° : rough guess';
+% data.Lsp_rus  = 81.9 ;   units.Lsp_rus  = 'cm';  label.Lsp_rus  = 'fork length at 1st spawning?'; bibkey.Lsp_rus  = 'Kazakov1981';   comment.Lsp_rus = 'mean females at 1st spawning, river Neva (Russia), total length? "generally accepted biometric method", Table5';
+% data.Lsp_usa  = 79.0 ;   units.Lsp_usa  = 'cm';  label.Lsp_usa  = 'fork length at 1st spawning'; bibkey.Lsp_usa  = 'Baum1971';   comment.Lsp_usa = 'mean females at spawning, rivers Machias & Narraguagus (Usa), converted from inches, table 1';
 %reared to smolt
-data.Lp_norI2  = 62.7 ;   units.Lp_norI2  = 'cm';  label.Lp_norI2  = 'total length at 1st spawning'; bibkey.Lp_norI2  = 'Jonsson1991';   comment.Lp_norI2 = 'River Imsa, Smolt length + 1 year increment at sea (grilse), Table3'; 
+% data.Lsp_norI2  = 62.7 ;   units.Lsp_norI2  = 'cm';  label.Lsp_norI2  = 'total length at 1st spawning'; bibkey.Lsp_norI2  = 'Jonsson1991';   comment.Lsp_norI2 = 'River Imsa, Smolt length + 1 year increment at sea (grilse), Table3'; 
 
 
 
@@ -460,7 +463,7 @@ data.Wwb_Rus = 0.195;   units.Wwb_Rus = 'g';   label.Wwb_Rus = 'wet weight at bi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-  %% Weight at maturity %(or 1 year before first spawning)
+  %% Weight at puberty  %(or 1 year before first spawning)
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %direct measurement
 
@@ -880,16 +883,16 @@ bibkey.tL_scoAa = 'Rowe1990'; comment.tL_scoAa = 'Shin River (Scotland), only lo
 %% t-W data in juveniles %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-data.tWw_sco = [ ... %time since birth (mean) (d), wet weight (g)
-17	0.28
-43.2	1.03
-93.3	4.7
-142.4	12.5
-186.4	17.6
-238.4	24.1];
-units.tWw_sco   = {'d', 'g'};  label.tWw_sco = {'time since birth', 'wet weight'};  
-temp.tWw_sco = C2K(10.4); units.temp.tWw_sco = 'K'; label.temp.tWw_sco = 'temperature'; comment.temp.tWw_sco = 'temperature =4 (egg) ; T°=10.4 fry+';
-bibkey.tWw_sco = 'McCarthy2003'; comment.tWw_sco = 'Shin River(Scotland)';
+% data.tWw_sco = [ ... %time since birth (mean) (d), wet weight (g)
+% 17	0.28
+% 43.2	1.03
+% 93.3	4.7
+% 142.4	12.5
+% 186.4	17.6
+% 238.4	24.1];
+% units.tWw_sco   = {'d', 'g'};  label.tWw_sco = {'time since birth', 'wet weight'};  
+% temp.tWw_sco = C2K(10.4); units.temp.tWw_sco = 'K'; label.temp.tWw_sco = 'temperature'; comment.temp.tWw_sco = 'temperature =4 (egg) ; T°=10.4 fry+';
+% bibkey.tWw_sco = 'McCarthy2003'; comment.tWw_sco = 'Shin River(Scotland)';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1913,14 +1916,14 @@ weights.E0_Nor = weights.E0_Nor/2;
 % weights.Ri_spa = weights.Ri_spa/4;
 % weights.Ri_can = weights.Ri_can/4;
 weights.Ri_nor = weights.Ri_nor;
-weights.Tah_Dennis_Peterson1977 = 4*weights.Tah_Dennis_Peterson1977/6;
-weights.Tah_Mirachimi_Peterson1977 = 4*weights.Tah_Mirachimi_Peterson1977/6;
-weights.Tah_Wallace1988 = 4*weights.Tah_Wallace1988/6;
-weights.Tah_norF = 4*weights.Tah_norF/6/3;
-weights.Tah_norV = 4*weights.Tah_norV/6/3;
-weights.Tah_norA = 4*weights.Tah_norA/6/3;
-weights.Tah_Berg1999 = 4*weights.Tah_Berg1999/6;
-weights.Tah_Johnston1997 = 4*weights.Tah_Johnston1997/6;
+weights.Tah_Dennis_Peterson1977 = weights.Tah_Dennis_Peterson1977/6;
+weights.Tah_Mirachimi_Peterson1977 = weights.Tah_Mirachimi_Peterson1977/6;
+weights.Tah_Wallace1988 = weights.Tah_Wallace1988/6;
+weights.Tah_norF = weights.Tah_norF/6/3;
+weights.Tah_norV = weights.Tah_norV/6/3;
+weights.Tah_norA = weights.Tah_norA/6/3;
+weights.Tah_Berg1999 = weights.Tah_Berg1999/6;
+weights.Tah_Johnston1997 = weights.Tah_Johnston1997/6;
 weights.TabC = weights.TabC;
 % weights.Tab_sco = weights.Tab_sco/2;
 % weights.tL_usa = weights.tL_usa/12;
@@ -1955,16 +1958,17 @@ txtData.comment = comment;
 
 %% Group plots
 set1 = {'Tah_Dennis_Peterson1977','Tah_Wallace1988','Tah_Mirachimi_Peterson1977','Tah_norF','Tah_norV','Tah_norA','Tah_Berg1999','Tah_Johnston1997'}; comment1 = {'Age at hatching for different studies'};
-set2 = {'LWw_usa','LWw_Nor','LWw_nor'}; comment2 = {'length weigth - different studies/countries'};
-set3 = {'tL_nor4','tL_nor5','tL_nor7','tL_nor57'}; comment3 = {'Growth at different temperatures - Imsland 2016'};
-set4 = {'tL_usa','tL_scoAa'}; comment4 = {'Growth - different studies weight =1'};
-set5 = {'tL_norI','tL_scoA'}; comment5 = {'early growth scotland - different studies'};
-set6 = {'tL_scoS','tL_spa'}; comment6 = {'Growth - different studies/countries, weight =0'};
-set7 = {'LWw_scoA','LWw_sco','LWw_Can'}; comment7 = {'length weigth - different studies/countries'};
+% set2 = {'LWw_Nor','LWw_nor'}; comment2 = {'length weigth - different studies'};
+set2 = {'tL_nor4','tL_nor5','tL_nor7','tL_nor57'}; comment2 = {'Growth at different temperatures - Imsland 2016'};
+% set4 = {'tL_usa','tL_scoAa'}; comment4 = {'Growth - different studies weight =1'};
+% set5 = {'tL_norI','tL_scoA'}; comment5 = {'early growth scotland - different studies'};
+% set6 = {'tL_scoS','tL_spa'}; comment6 = {'Growth - different studies/countries, weight =0'};
+% set7 = {'LWw_scoA','LWw_sco','LWw_Can'}; comment7 = {'length weigth - different studies/countries'};
 
+% set2 = {'TabC','Tab_sco'}; comment2 = {'Age at birth for different studies'};
 
-metaData.grp.sets = {set1, set2, set3, set4, set5, set6, set7};
-metaData.grp.comment = {comment1, comment2, comment3, comment4, comment5, comment6, comment7};
+metaData.grp.sets = {set1, set2};
+metaData.grp.comment = {comment1, comment2};
 
 %% Facts
 % F1 = '';
