@@ -30,7 +30,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
 % TC_ts = tempcorr(temp.ts, T_ref, T_A);
 % TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
 % TC_tp = tempcorr(temp.tp, T_ref, T_A);
-  TC_tp_norire = tempcorr(temp.ap_norire, T_ref, T_A);
+%   TC_tp_norire = tempcorr(temp.ap_norire, T_ref, T_A);
   TC_tp_norNBP = tempcorr(temp.ap_norNBP, T_ref, T_A);
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
   TC_am = tempcorr(temp.am, T_ref, T_A);
@@ -139,7 +139,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   Lw_p_nat = L_p_nat/ del_M;                % cm, physical length at puberty at f_nat
   Ww_p_nat = L_p_nat^3 *(1 + f_nat * ome);        % g, wet weight at puberty 
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f_nat and T
-  tT_p_norire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norire;   % d, time since birth at puberty at f and T
+%   tT_p_norire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norire;   % d, time since birth at puberty at f and T
   tT_p_norNBP = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norNBP;   % d, time since birth at puberty at f and T
 
   % ultimate
@@ -185,7 +185,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.tb_12_AqG = tT_hb_AqG;
   prdData.tb_norB = tT_hb_norB;
   prdData.ap_norNBP = tT_p_norNBP;
-  prdData.ap_norire = tT_p_norNBP;
+%   prdData.ap_norire = tT_p_norNBP;
   prdData.am = aT_m_nat;
 % prdData.Lh = Lw_h;
   prdData.Lb_NorM2011 = Lw_b / SNFtoTOT;

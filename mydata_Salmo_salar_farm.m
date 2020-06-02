@@ -93,10 +93,10 @@ units.ap_norNBP = 'd';    label.ap_norNBP = 'age at puberty';             bibkey
 comment.ap_norNBP = 'National breeding program (time since birth)) n=1 ; table3';
 temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; 
 label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
-data.ap_norire = (2+1.93-1)*365.25;   %=1070
-units.ap_norire = 'd';    label.ap_norire = 'age at puberty';             bibkey.ap_norire = 'Hindar2006';     
-comment.ap_norire = 'farmed strain (time since birth) ; table3';
-temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';%natural T°, natural f.
+% data.ap_norire = (2+1.93-1)*365.25;   %=1070
+% units.ap_norire = 'd';    label.ap_norire = 'age at puberty';             bibkey.ap_norire = 'Hindar2006';     
+% comment.ap_norire = 'farmed strain (time since birth) ; table3';
+% temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';%natural T°, natural f.
 
   %median? list
 % data.ap=(data.ap_norNBP+data.ap_norire)/2;
@@ -747,8 +747,8 @@ weights.ab_norM = 0*weights.ab_norM;%better fit for 12°C than 5°C
 weights.ab_norM2 = weights.ab_norM2/2;
 weights.tb_12_AqG = 0*weights.tb_12_AqG/3;%bad fit
 weights.tb_norB = weights.tb_norB/2; % we have 2 time at birth zero-V data.
-weights.ap_norNBP=weights.ap_norNBP/2;
-weights.ap_norire=weights.ap_norire/2; % 2 age at puberty zero-V data
+weights.ap_norNBP=weights.ap_norNBP;
+% weights.ap_norire=weights.ap_norire/2; % 2 age at puberty zero-V data
 weights.Lb_NorM2011 = weights.Lb_NorM2011/4; % 4 Length at birth 0-V data.
 weights.Lb_NorM2012 = weights.Lb_NorM2012/4;
 weights.Lb_NorM2013 = weights.Lb_NorM2013/4;
