@@ -15,7 +15,7 @@ pets = {'Salmo_salar_farm'};
 
 estim_options('default'); 
 %estim_options('max_step_number',5e3); 
-estim_options('max_step_number',1000);
+estim_options('max_step_number',700);
 estim_options('max_fun_evals',5e3);  
 
 estim_options('pars_init_method', 1);
@@ -25,7 +25,7 @@ estim_options('results_output', 0);
 estim_options('method', 'nm');
 %estim_options('method', 'no');
 
-n=3; % number of repetition
+n=5; % number of repetition
 for i=1:n-1
 fprintf('N= ',i,'\n')
     estim_pars; 

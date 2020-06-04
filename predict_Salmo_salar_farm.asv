@@ -23,9 +23,9 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   TC_Tah_Wallace1988 = tempcorr(data.Tah_Wallace1988(:,1), T_ref, T_A); 
   TC_Tah_Solberg2014 = tempcorr(data.Tah_Solberg2014(:,1), T_ref, T_A); 
   TC_Tah_Berg1999 = tempcorr(data.Tah_Berg1999(:,1), T_ref, T_A); 
-  TC_abM_egg =  tempcorr(temp.ab_norM, T_ref, T_A);
-  TC_abM_feed =  tempcorr(C2K(12), T_ref, T_A);
-%   TC_tbAqG = tempcorr(temp.tb_12_AqG, T_ref, T_A);
+%   TC_abM_egg =  tempcorr(temp.ab_norM, T_ref, T_A);
+  TC_abM_feed =  tempcorr(temp.ab_norM2, T_ref, T_A);
+  TC_tbAqG = tempcorr(temp.tb_12_AqG, T_ref, T_A);
   TC_tbB = tempcorr(temp.tb_norB, T_ref, T_A);
 % TC_ts = tempcorr(temp.ts, T_ref, T_A);
 % TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
@@ -99,8 +99,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
       disp('Inconsistent values of age at birth');
   end
   aT_b_norM = aT_h_norM + (t_hb / TC_abM_feed); % if change of temperature at hatching
-%   aT_b_norM2 = a_b/ TC_abM_feed; % if change of temperature at first feeding
-%   tT_hb_AqG = t_hb/ TC_tbAqG;
+  aT_b_norM2 = a_b/ TC_abM_egg; % if change of temperature at first feeding
+  tT_hb_AqG = t_hb/ TC_tbAqG;
   tT_hb_norB = t_hb/ TC_tbB;
   
   L_b = L_m * l_b;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
@@ -181,8 +181,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.Tah_Solberg2014 = aT_h_Solberg2014;
   prdData.Tah_Berg1999 = aT_h_Berg1999;
   prdData.ab_norM = aT_b_norM;
-%   prdData.ab_norM2 = aT_b_norM2;
-%   prdData.tb_12_AqG = tT_hb_AqG;
+  prdData.ab_norM2 = aT_b_norM2;
+  prdData.tb_12_AqG = tT_hb_AqG;
   prdData.tb_norB = tT_hb_norB;
   prdData.ap_norNBP = tT_p_norNBP;
 %   prdData.ap_norire = tT_p_norNBP;

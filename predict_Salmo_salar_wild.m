@@ -551,24 +551,24 @@ ELw_nor5 = L/ del_M; % cm, total length
 % 
 
 %   % time-length %%% _nor57 f= ad lib
-  TC_tL_nor57 = tempcorr(temp.tL_nor57, T_ref, T_A);
-  kT_M = k_M * TC_tL_nor57; %%%km corrected
-  rT_j = rho_j * kT_M; %%%rhoj corrected
-  rT_B = rho_B * kT_M; %%%%rhoB corrected
-  tT_j = (tau_j - tau_b)/ kT_M;   
-  L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
-  t = tL_nor57(:,1) - tL_nor57(1,1); % 
-  if L_0 < L_j
-    tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
-    t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
-    L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
-    t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
-    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
-    L = [L_bj; L_ji]; % catenate lengths
-  else 
-    L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
-  end
-  ELw_nor57 = L/ del_M; % cm, total length
+%   TC_tL_nor57 = tempcorr(temp.tL_nor57, T_ref, T_A);
+%   kT_M = k_M * TC_tL_nor57; %%%km corrected
+%   rT_j = rho_j * kT_M; %%%rhoj corrected
+%   rT_B = rho_B * kT_M; %%%%rhoB corrected
+%   tT_j = (tau_j - tau_b)/ kT_M;   
+%   L_b = L_m * l_b; L_j = L_m * l_j; L_i = L_m * l_i;
+%   t = tL_nor57(:,1) - tL_nor57(1,1); % 
+%   if L_0 < L_j
+%     tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+%     t_bj = t(t(:,1) < tj,1); % select times between birth & metamorphosis
+%     L_bj = L_0 * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+%     t_ji = t(t(:,1) >= tj,1); % selects times after metamorphosis
+%     L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+%     L = [L_bj; L_ji]; % catenate lengths
+%   else 
+%     L = L_i - (L_i - L_0) * exp( - rT_B * t(:,1)); % cm, expected length at time
+%   end
+%   ELw_nor57 = L/ del_M; % cm, total length
 % 
 % 
 % %   % time-length %%% _scoA f= ad lib
@@ -651,18 +651,18 @@ ELw_nor5 = L/ del_M; % cm, total length
 
   
 %   % time-length %%% _scoAa f= ad lib
-  L_0 = L0_scoAa * del_M * SNFtoTOT;
-  E_0 = f * E_m * L_0^3;
-  InitCond = [L_0; E_0; E_Hb; 0; 0]; % concatenate initial conditions
-  t0 = t0_scoAa;
-%   t0 = tL_scoAa(1,1); % time since birth at start of experiment
-  s_M  = L_j/ L_b; % -, acceleration factor for f
-  [t, LEHR] = ode45(@ode_LEHR, [0 t0], InitCond,[], par, cPar, f, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2));
-  
-  LEHR_scoAa = deval(ode45(@ode_LEHR, tL_scoAa(:,1), LEHR(end,:),[], par, cPar, f_scoAa, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2)), tL_scoAa(:,1));
-  L  = LEHR_scoAa(1,:)';
-  % output
-  ELw_scoAa = L / del_M; % cm, physical length
+%   L_0 = L0_scoAa * del_M * SNFtoTOT;
+%   E_0 = f * E_m * L_0^3;
+%   InitCond = [L_0; E_0; E_Hb; 0; 0]; % concatenate initial conditions
+%   t0 = t0_scoAa;
+% %   t0 = tL_scoAa(1,1); % time since birth at start of experiment
+%   s_M  = L_j/ L_b; % -, acceleration factor for f
+%   [t, LEHR] = ode45(@ode_LEHR, [0 t0], InitCond,[], par, cPar, f, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2));
+%   
+%   LEHR_scoAa = deval(ode45(@ode_LEHR, tL_scoAa(:,1), LEHR(end,:),[], par, cPar, f_scoAa, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2)), tL_scoAa(:,1));
+%   L  = LEHR_scoAa(1,:)';
+%   % output
+%   ELw_scoAa = L / del_M; % cm, physical length
 
 %   TC_tL_scoAa = tempcorr(temp.tL_scoAa, T_ref, T_A);
 %   [tau_j, tau_p, tau_b, l_j, l_p, l_b, l_i, rho_j, rho_B,info] = get_tj(pars_tj, f_tL);
@@ -717,11 +717,11 @@ EWw_Nor = (LWw_Nor(:,1) * del_M).^3 * (1 + f_nat * ome); % g, wet weight
 prdData.tL_nor4 = ELw_nor4 / SNFtoTOT;
 prdData.tL_nor5 = ELw_nor5 / SNFtoTOT;
 prdData.tL_nor7 = ELw_nor7 / SNFtoTOT;
-prdData.tL_nor57 = ELw_nor57 / SNFtoTOT;
+% prdData.tL_nor57 = ELw_nor57 / SNFtoTOT;
 % prdData.tL_scoA = ELw_scoA / SNFtoTOT;
 % prdData.tL_scoS = ELw_scoS;
 % prdData.tL_spa = ELw_spa;
-prdData.tL_scoAa = ELw_scoAa / SNFtoTOT;
+% prdData.tL_scoAa = ELw_scoAa / SNFtoTOT;
 % prdData.tWw_sco = EWw_sco;
 prdData.LWw_nor = EWw_nor;
 % prdData.LWw_scoA = EWw_scoA;
