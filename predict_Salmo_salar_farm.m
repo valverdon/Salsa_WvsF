@@ -386,7 +386,8 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
    L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
   L_0 = L0_Bjornsson1989*SNFtoTOT*del_M; % cm, structural length at t initial
   % T11 
-  rT_B = TC_tL_iceT11 * rho_B * k_M; rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  rT_B = TC_tL_iceT11 * rho_B * k_M; 
+  rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tL_iceT11(:,1) - tL_iceT11(1,1); % correction so that t initial = 0
   if L_0 < L_j
     tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
