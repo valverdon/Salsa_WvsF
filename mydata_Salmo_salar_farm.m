@@ -50,10 +50,10 @@ bibkey.ab_norM = 'Glover2009';     comment.ab_norM = 'Mowi strain, f=1 ; fertili
 temp.ab_norM = C2K(5);  units.temp.ab_norM = 'K'; label.temp.ab_norM = 'temperature'; 
 label.temp.comment.ab_norM = '5°C from fertilization to hatching then 12°C, f=1';
 
-% data.ab_norM2 = 183;     units.ab_norM2 = 'd';    label.ab_norM2 = 'age at first feeding';             bibkey.ab_norM2 = 'Glover2009';
-% comment.ab_norM2 = 'Mowi strain, f=1 ; fertilization 26 Nov, first fed 26 May';
-% temp.ab_norM2 = C2K(12);  units.temp.ab_norM2 = 'K'; label.temp.ab_norM2 = 'temperature'; label.temp.comment.ab_norM2 = '5°C from fertilization to hatching then 12°C';
-%   
+data.ab_norM2 = data.ab_norM;     units.ab_norM2 = 'd';    label.ab_norM2 = 'age at first feeding';             bibkey.ab_norM2 = 'Glover2009';
+comment.ab_norM2 = 'Mowi strain, f=1 ; fertilization 26 Nov, first fed 26 May';
+temp.ab_norM2 = C2K(12);  units.temp.ab_norM2 = 'K'; label.temp.ab_norM2 = 'temperature'; label.temp.comment.ab_norM2 = '5°C from fertilization to hatching then 12°C';
+  
 % data.ah_norB = 52;    units.ah_norB = 'd';    label.ah_norB = 'age at birth';             bibkey.ah_norB = 'Hosfeld2009';     
 %   comment.ah_norB = 'Bolak strain, calculated from time at birth since hatching (given in the publication = 22) and time to hatch calculated at 12°C from data above (!!! extrapolation)';
 %   temp.ah_norB = C2K(13);  units.temp.ah_norB = 'K'; label.temp.ah_norB = 'temperature'; label.temp.comment.ah_norB = '12-14°C';
@@ -61,9 +61,9 @@ label.temp.comment.ab_norM = '5°C from fertilization to hatching then 12°C, f=1'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Time between hatching and first feeding %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% data.tb_12_AqG = 700/12;    units.tb_12_AqG = 'd';    label.tb_12_AqG = 'time between hatching and first feeding';             bibkey.tb_12_AqG = 'Handeland2008';     
-%   comment.tb_12_AqG = 'AquaGen strain (Norway), calculated from age at birth since hatching in degree-days, f=1';
-%   temp.tb_12_AqG = C2K(12);  units.temp.tb_12_AqG = 'K'; label.temp.tb_12_AqG = 'temperature';
+data.tb_12_AqG = 700/12;    units.tb_12_AqG = 'd';    label.tb_12_AqG = 'time between hatching and first feeding';             bibkey.tb_12_AqG = 'Handeland2008';     
+  comment.tb_12_AqG = 'AquaGen strain (Norway), calculated from age at birth since hatching in degree-days, f=1';
+  temp.tb_12_AqG = C2K(12);  units.temp.tb_12_AqG = 'K'; label.temp.tb_12_AqG = 'temperature';
 
 data.tb_norB = 280/13;    units.tb_norB = 'd';    label.tb_norB = 'time between hatching and first feeding';             bibkey.tb_norB = 'Hosfeld2009';     
   comment.tb_norB = 'Bolak strain, calculated from age at birth since hatching in degree-days, f=1';
@@ -743,9 +743,9 @@ data.Ri=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs
 
 %% set weights for all real data
 weights = setweights(data, []);%weight=1 for zero-variatedata, weight=1/n for uni-variate data.
-weights.ab_norM = weights.ab_norM/2;%better fit for 5°C than 12°C
-% weights.ab_norM2 = weights.ab_norM2/2;
-% weights.tb_12_AqG = 0*weights.tb_12_AqG/3;%bad fit
+weights.ab_norM = 0*weights.ab_norM;%better fit for 12°C than 5°C
+weights.ab_norM2 = weights.ab_norM2/2;
+weights.tb_12_AqG = 0*weights.tb_12_AqG/3;%bad fit
 weights.tb_norB = weights.tb_norB/2; % we have 2 time at birth zero-V data.
 weights.ap_norNBP=weights.ap_norNBP;
 % weights.ap_norire=weights.ap_norire/2; % 2 age at puberty zero-V data

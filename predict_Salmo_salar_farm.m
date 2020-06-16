@@ -24,8 +24,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   TC_Tah_Solberg2014 = tempcorr(data.Tah_Solberg2014(:,1), T_ref, T_A); 
   TC_Tah_Berg1999 = tempcorr(data.Tah_Berg1999(:,1), T_ref, T_A); 
   TC_abM_egg =  tempcorr(temp.ab_norM, T_ref, T_A);
-  TC_abM_feed =  tempcorr(C2K(12), T_ref, T_A);
-%   TC_tbAqG = tempcorr(temp.tb_12_AqG, T_ref, T_A);
+  TC_abM_feed =  tempcorr(temp.ab_norM2, T_ref, T_A);
+  TC_tbAqG = tempcorr(temp.tb_12_AqG, T_ref, T_A);
   TC_tbB = tempcorr(temp.tb_norB, T_ref, T_A);
 % TC_ts = tempcorr(temp.ts, T_ref, T_A);
 % TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
@@ -78,15 +78,18 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   
   % hatch 
   [U_H aUL] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0 1e-10], [], kap, v, k_J, g, L_m);
+  %[U_H aUL] = ode45(@dget_aul, [0; U_Hh; U_Hb], [0 U_E0 1e-10], [], kap, v, k_J, g, L_m);
   a_h = aUL(2,1); % time between fertilization and hatching at f and T_ref
   t_hb = aUL(3,1) - aUL(2,1); % time between hatching and birth at f and T_ref
   aT_h_norM = a_h / TC_abM_egg;
+  ah10_1 = a_h / tempcorr(C2K(7), T_ref, T_A);
   aT_h_Gunnes1979 = a_h ./ TC_Tah_Gunnes1979;
   aT_h_Wallace1988 = a_h ./ TC_Tah_Wallace1988;
   aT_h_Solberg2014 = a_h ./ TC_Tah_Solberg2014;
   aT_h_Berg1999 = a_h ./ TC_Tah_Berg1999;
   L_h = aUL(2,3); % cm, structural length at hatching at f
   Lw_h = L_h/ del_M; % cm, physical length at hatching at f
+  
 %  Ww_f = L_h^3 * (1 + f * ome); % g, wet weight at hatching at f
 
 
@@ -99,10 +102,11 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
       disp('Inconsistent values of age at birth');
   end
   aT_b_norM = aT_h_norM + (t_hb / TC_abM_feed); % if change of temperature at hatching
-%   aT_b_norM2 = a_b/ TC_abM_feed; % if change of temperature at first feeding
-%   tT_hb_AqG = t_hb/ TC_tbAqG;
+  aT_b_norM2 = a_b/ TC_abM_egg; % if change of temperature at first feeding
+  tT_hb_AqG = t_hb/ TC_tbAqG;
   tT_hb_norB = t_hb/ TC_tbB;
-  
+  ab_10_1 = a_b/tempcorr(C2K(7), T_ref, T_A);
+ 
   L_b = L_m * l_b;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
   % Check that lengths at birth are consistent between get_tj and dget_aul
   if (((L_b-aUL(3,3))/L_b)^2 > 0.0001)
@@ -112,7 +116,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   end
   Lw_b = L_b/ del_M;                % cm, physical length at birth at f    %%%%%%% del_M : shape coefficient
   Ww_b = L_b^3 * (1 + f * ome);       % g, wet weight at birth at f  %%%%%%%%%% structural volume volume at birth* (scaled length + scaled reserve density*contrib of dry mass reserve to toal dry biomass).
-
+  
+  
   %same for natural f
   L_b_nat = L_m * l_b_nat;                  % cm, structural length at birth at f    %%%%%%Max length * scaled length at birth
   Lw_b_nat = L_b_nat/ del_M;                % cm, physical length at birth at f    %%%%%%% del_M : shape coefficient
@@ -133,6 +138,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   L_p = L_m * l_p;                  % cm, structural length at puberty at f
   Lw_p = L_p/ del_M;                % cm, physical length at puberty at f
   Ww_p = L_p^3 *(1 + f * ome);        % g, wet weight at puberty 
+ 
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f and T
   %same for natural f
   L_p_nat = L_m * l_p_nat;                  % cm, structural length at puberty at f_nat
@@ -141,7 +147,10 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f_nat and T
 %   tT_p_norire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norire;   % d, time since birth at puberty at f and T
   tT_p_norNBP = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norNBP;   % d, time since birth at puberty at f and T
-
+  ap10_1= tau_p_nat/k_M/tempcorr(C2K(7), T_ref, T_A);
+ monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_h," ; ab10_1 = ", ab_10_1, " ; Lb10_1 = ",Lw_b, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
+ disp(monvecteurdetrucs)
+ 
   % ultimate
   L_i = L_m * l_i;                  % cm, ultimate structural length at f
   Lw_i = L_i/ del_M;                % cm, ultimate physical length at f
@@ -181,8 +190,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.Tah_Solberg2014 = aT_h_Solberg2014;
   prdData.Tah_Berg1999 = aT_h_Berg1999;
   prdData.ab_norM = aT_b_norM;
-%   prdData.ab_norM2 = aT_b_norM2;
-%   prdData.tb_12_AqG = tT_hb_AqG;
+  prdData.ab_norM2 = aT_b_norM2;
+  prdData.tb_12_AqG = tT_hb_AqG;
   prdData.tb_norB = tT_hb_norB;
   prdData.ap_norNBP = tT_p_norNBP;
 %   prdData.ap_norire = tT_p_norNBP;
@@ -383,11 +392,36 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
   
   % time-length 
   
+  %test croissance
+   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+  L_0test = L_b; % cm, structural length at t initial
+  % T7
+  rT_B = tempcorr(C2K(7), T_ref, T_A) * rho_B * k_M; 
+  rT_j = tempcorr(C2K(7), T_ref, T_A) * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  t = 0:1:3000 ; % correction so that t initial = 0
+  if L_0test < L_j
+    tj = log(L_j/ L_0test) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+    t_bj = t(t < tj); % select times between birth & metamorphosis
+    L_bj = L_0test * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+    t_ji = t(t >= tj); % selects times after metamorphosis
+    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+    L = [L_bj, L_ji]; % catenate lengths
+  else 
+    L = L_i - (L_i - L_0test) * exp( - rT_B * t); % cm, expected length at time
+  end
+plot(t,L/del_M)
+title('croissance en longueur')
+xlabel('age')
+ylabel('longueur')
+Tableau=[t;L/del_M];
+writematrix(Tableau,'tableaufarm.txt')
+ 
+ 
+  
    L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
   L_0 = L0_Bjornsson1989*SNFtoTOT*del_M; % cm, structural length at t initial
   % T11 
-  rT_B = TC_tL_iceT11 * rho_B * k_M; 
-  rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+  rT_B = TC_tL_iceT11 * rho_B * k_M; rT_j = TC_tL_iceT11 * rho_j * k_M; % 1/d, von Bert, exponential growth rate
   t = tL_iceT11(:,1) - tL_iceT11(1,1); % correction so that t initial = 0
   if L_0 < L_j
     tj = log(L_j/ L_0) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
