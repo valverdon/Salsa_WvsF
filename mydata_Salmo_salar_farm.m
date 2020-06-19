@@ -402,78 +402,78 @@ temp.tL_norM2004    = C2K(12);  units.temp.tL_norM2004 = 'K'; label.temp.tL_norM
 bibkey.tL_norM2004 = 'Glover2009'; comment.tL_norM2004 = 'T° 5°C during egg incubation, 12°C in freshwater, natural (mean=11.5) for seawater; f=1, fertilization 1st dec, 1st measurement 10 nov, fig 2';
 
 %% t-W data in eggs
-
-data.tWwVe_T12 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 12°C
-38 0.0128
-42 0.0301
-46 0.0405
-50 0.0465
-54 0.0533
-59 0.0624
-63 0.0674];
-units.tWwVe_T12   = {'d', 'g'};  label.tWwVe_T12 = {'time since fertilization', 'wet weight excluding yolk'};  
-temp.tWwVe_T12    = C2K(12);  units.temp.tWwVe_T12 = 'K'; label.temp.tWwVe_T12 = 'temperature';
-bibkey.tWwVe_T12 = 'Gunnes1979'; comment.tWwVe_T12 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
-
-data.tWwVe_T10 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 10°C
-38 0.0138
-42 0.0311
-46 0.0366
-50 0.0465
-54 0.0594
-59 0.0698
-63 0.0687];
-units.tWwVe_T10   = {'d', 'g'};  label.tWwVe_T10 = {'time since fertilization', 'wet weight excluding yolk'};  
-temp.tWwVe_T10    = C2K(10);  units.temp.tWwVe_T10 = 'K'; label.temp.tWwVe_T10 = 'temperature';
-bibkey.tWwVe_T10 = 'Gunnes1979'; comment.tWwVe_T10 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
-
-data.tWwVe_T8 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 8°C
-38 0.0128
-42 0.0270
-46 0.0331
-50 0.0432
-54 0.0457
-59 0.0634
-63 0.0623];
-units.tWwVe_T8   = {'d', 'g'};  label.tWwVe_T8 = {'time since fertilization', 'wet weight excluding yolk'};  
-temp.tWwVe_T8    = C2K(8);  units.temp.tWwVe_T8 = 'K'; label.temp.tWwVe_T8 = 'temperature';
-bibkey.tWwVe_T8 = 'Gunnes1979'; comment.tWwVe_T8 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
-
-data.tWwYe_T12 = [ ... % time since fertilization (d), yolk wet weight (g) at 12°C
-38 0.0809
-42 0.0735
-46 0.0784
-50 0.0519
-54 0.0484
-59 0.0479
-63 0.0495];
-units.tWwYe_T12   = {'d', 'g'};  label.tWwYe_T12 = {'time since fertilization', 'yolk wet weight'};  
-temp.tWwYe_T12    = C2K(12);  units.temp.tWwYe_T12 = 'K'; label.temp.tWwYe_T12 = 'temperature';
-bibkey.tWwYe_T12 = 'Gunnes1979'; comment.tWwYe_T12 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
-
-data.tWwYe_T10 = [ ... % time since fertilization (d), yolk wet weight (g) at 10°C
-38 0.0786
-42 0.0767
-46 0.0660
-50 0.0721
-54 0.0558
-59 0.0458
-63 0.0521];
-units.tWwYe_T10   = {'d', 'g'};  label.tWwYe_T10 = {'time since fertilization', 'yolk wet weight'};  
-temp.tWwYe_T10    = C2K(10);  units.temp.tWwYe_T10 = 'K'; label.temp.tWwYe_T10 = 'temperature';
-bibkey.tWwYe_T10 = 'Gunnes1979'; comment.tWwYe_T10 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
-
-data.tWwYe_T8 = [ ... % time since fertilization (d), yolk wet weight (g) at 8°C
-38 0.0786
-42 0.0765
-46 0.0723
-50 0.0647
-54 0.0619
-59 0.0449
-63 0.0451];
-units.tWwYe_T8   = {'d', 'g'};  label.tWwYe_T8 = {'time since fertilization', 'yolk wet weight'};  
-temp.tWwYe_T8    = C2K(8);  units.temp.tWwYe_T8 = 'K'; label.temp.tWwYe_T8 = 'temperature';
-bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
+% 
+% data.tWwVe_T12 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 12°C
+% 38 0.0128
+% 42 0.0301
+% 46 0.0405
+% 50 0.0465
+% 54 0.0533
+% 59 0.0624
+% 63 0.0674];
+% units.tWwVe_T12   = {'d', 'g'};  label.tWwVe_T12 = {'time since fertilization', 'wet weight excluding yolk'};  
+% temp.tWwVe_T12    = C2K(12);  units.temp.tWwVe_T12 = 'K'; label.temp.tWwVe_T12 = 'temperature';
+% bibkey.tWwVe_T12 = 'Gunnes1979'; comment.tWwVe_T12 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
+% 
+% data.tWwVe_T10 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 10°C
+% 38 0.0138
+% 42 0.0311
+% 46 0.0366
+% 50 0.0465
+% 54 0.0594
+% 59 0.0698
+% 63 0.0687];
+% units.tWwVe_T10   = {'d', 'g'};  label.tWwVe_T10 = {'time since fertilization', 'wet weight excluding yolk'};  
+% temp.tWwVe_T10    = C2K(10);  units.temp.tWwVe_T10 = 'K'; label.temp.tWwVe_T10 = 'temperature';
+% bibkey.tWwVe_T10 = 'Gunnes1979'; comment.tWwVe_T10 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
+% 
+% data.tWwVe_T8 = [ ... % time since fertilization (d), wet weight excluding yolk (g) at 8°C
+% 38 0.0128
+% 42 0.0270
+% 46 0.0331
+% 50 0.0432
+% 54 0.0457
+% 59 0.0634
+% 63 0.0623];
+% units.tWwVe_T8   = {'d', 'g'};  label.tWwVe_T8 = {'time since fertilization', 'wet weight excluding yolk'};  
+% temp.tWwVe_T8    = C2K(8);  units.temp.tWwVe_T8 = 'K'; label.temp.tWwVe_T8 = 'temperature';
+% bibkey.tWwVe_T8 = 'Gunnes1979'; comment.tWwVe_T8 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
+% 
+% data.tWwYe_T12 = [ ... % time since fertilization (d), yolk wet weight (g) at 12°C
+% 38 0.0809
+% 42 0.0735
+% 46 0.0784
+% 50 0.0519
+% 54 0.0484
+% 59 0.0479
+% 63 0.0495];
+% units.tWwYe_T12   = {'d', 'g'};  label.tWwYe_T12 = {'time since fertilization', 'yolk wet weight'};  
+% temp.tWwYe_T12    = C2K(12);  units.temp.tWwYe_T12 = 'K'; label.temp.tWwYe_T12 = 'temperature';
+% bibkey.tWwYe_T12 = 'Gunnes1979'; comment.tWwYe_T12 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
+% 
+% data.tWwYe_T10 = [ ... % time since fertilization (d), yolk wet weight (g) at 10°C
+% 38 0.0786
+% 42 0.0767
+% 46 0.0660
+% 50 0.0721
+% 54 0.0558
+% 59 0.0458
+% 63 0.0521];
+% units.tWwYe_T10   = {'d', 'g'};  label.tWwYe_T10 = {'time since fertilization', 'yolk wet weight'};  
+% temp.tWwYe_T10    = C2K(10);  units.temp.tWwYe_T10 = 'K'; label.temp.tWwYe_T10 = 'temperature';
+% bibkey.tWwYe_T10 = 'Gunnes1979'; comment.tWwYe_T10 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
+% 
+% data.tWwYe_T8 = [ ... % time since fertilization (d), yolk wet weight (g) at 8°C
+% 38 0.0786
+% 42 0.0765
+% 46 0.0723
+% 50 0.0647
+% 54 0.0619
+% 59 0.0449
+% 63 0.0451];
+% units.tWwYe_T8   = {'d', 'g'};  label.tWwYe_T8 = {'time since fertilization', 'yolk wet weight'};  
+% temp.tWwYe_T8    = C2K(8);  units.temp.tWwYe_T8 = 'K'; label.temp.tWwYe_T8 = 'temperature';
+% bibkey.tWwYe_T8 = 'Gunnes1979'; comment.tWwYe_T8 = 'Norwegian domestic strain, incubation at T°=12°C (t=0-38), fig 5';
 
 
 %% t-W data in juveniles
@@ -775,12 +775,12 @@ weights.tL_iceT611 = weights.tL_iceT611/4;
 % weights.tL_ice5mw = weights.tL_ice5mw/6;
 weights.tL_norM2003 = weights.tL_norM2003/4;
 weights.tL_norM2004 = weights.tL_norM2004/4;
-weights.tWwVe_T12 = 0.1*weights.tWwVe_T12/3; %the publication is not reliable =>*0.1
-weights.tWwVe_T10 = 0.1*weights.tWwVe_T10/3;
-weights.tWwVe_T8 = 0.1*weights.tWwVe_T8/3;
-weights.tWwYe_T12 = 0.1*weights.tWwYe_T12/3;
-weights.tWwYe_T10 = 0.1*weights.tWwYe_T10/3;
-weights.tWwYe_T8 = 0.1*weights.tWwYe_T8/3;
+% weights.tWwVe_T12 = 0.1*weights.tWwVe_T12/3; %the publication is not reliable =>*0.1
+% weights.tWwVe_T10 = 0.1*weights.tWwVe_T10/3;
+% weights.tWwVe_T8 = 0.1*weights.tWwVe_T8/3;
+% weights.tWwYe_T12 = 0.1*weights.tWwYe_T12/3;
+% weights.tWwYe_T10 = 0.1*weights.tWwYe_T10/3;
+% weights.tWwYe_T8 = 0.1*weights.tWwYe_T8/3;
 % weights.tWw_norM = weights.tWw_norM/16;
 weights.tWw_norB = weights.tWw_norB/6; % 6 datasets for t-Ww datas
 % weights.tWw_OF = weights.tWw_OF/16;
@@ -810,15 +810,15 @@ txtData.comment = comment;
 
 %% Group plots
 set1 = {'Tah_Gunnes1979','Tah_Wallace1988','Tah_Solberg2014','Tah_Berg1999'}; comment1 = {'Age at hatching for different studies'};
-set2 = {'tWwVe_T12','tWwVe_T10','tWwVe_T8'}; comment2 = {'Gunnes1979'};
-set3 = {'tWwYe_T12','tWwYe_T10','tWwYe_T8'}; comment3 = {'Gunnes1979'};
-set4 = {'tL_iceT11','tL_iceT611'}; comment4 = {'Parr growth at different temperatures - Bjornsson 1989'};
-set5 = {'tL_norM2003','tL_norM2004'}; comment5 = {'Glover2009'};
-set6 = {'tWw_T4_Mow','tWw_T8_Mow'}; comment6 = {'Handeland1998'};
-set7 = {'tWw_T6_AqG','tWw_T10_AqG','tWw_T14_AqG','tWw_T18_AqG'}; comment7 = {'Handeland2008'};
+% set2 = {'tWwVe_T12','tWwVe_T10','tWwVe_T8'}; comment2 = {'Gunnes1979'};
+% set3 = {'tWwYe_T12','tWwYe_T10','tWwYe_T8'}; comment3 = {'Gunnes1979'};
+set2 = {'tL_iceT11','tL_iceT611'}; comment2 = {'Parr growth at different temperatures - Bjornsson 1989'};
+set3 = {'tL_norM2003','tL_norM2004'}; comment3 = {'Glover2009'};
+set4 = {'tWw_T4_Mow','tWw_T8_Mow'}; comment4 = {'Handeland1998'};
+set5 = {'tWw_T6_AqG','tWw_T10_AqG','tWw_T14_AqG','tWw_T18_AqG'}; comment5 = {'Handeland2008'};
 
-metaData.grp.sets = {set1, set2, set3, set4, set5, set6, set7};
-metaData.grp.comment = {comment1, comment2, comment3, comment4, comment5, comment6, comment7};
+metaData.grp.sets = {set1, set2, set3, set4, set5};
+metaData.grp.comment = {comment1, comment2, comment3, comment4, comment5};
 
 %% Facts
 % F1 = '';

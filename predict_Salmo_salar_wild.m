@@ -169,8 +169,8 @@ ab10_1 = tau_b / k_M / tempcorr(C2K(7), T_ref, T_A);
   tT_tp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norI;   % d, time since birth at puberty at f and T
 %   tT_tp_ire2 = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire2;   % d, time since birth at puberty at f and T
  ap10_1= tau_p / k_M / tempcorr(C2K(7), T_ref, T_A);
-  monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_hadlib," ; ab10_1 = ", ab10_1, " ; Lb10_1 = ",Lw_badlib, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
-  disp(monvecteurdetrucs)
+%   monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_hadlib," ; ab10_1 = ", ab10_1, " ; Lb10_1 = ",Lw_badlib, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
+%   disp(monvecteurdetrucs)
   % ultimate
   L_i = L_m * l_i;                  % cm, ultimate structural length at f
   Lw_i = L_i/ del_M;                % cm, ultimate physical length at f
@@ -406,28 +406,28 @@ prdData.Ri_nor = RT_i_nor ;
 
 
   %test croissance
-   L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
-  L_0test = L_b; % cm, structural length at t initial
-  % T7
-  rT_B = tempcorr(C2K(7), T_ref, T_A) * rho_B * k_M; 
-  rT_j = tempcorr(C2K(7), T_ref, T_A) * rho_j * k_M; % 1/d, von Bert, exponential growth rate
-  t = 0:1:3500 ; % correction so that t initial = 0
-  if L_0test < L_j
-    tj = log(L_j/ L_0test) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
-    t_bj = t(t < tj); % select times between birth & metamorphosis
-    L_bj = L_0test * exp(t_bj * rT_j/3); % exponential growth as V1-morph
-    t_ji = t(t >= tj); % selects times after metamorphosis
-    L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
-    L = [L_bj, L_ji]; % catenate lengths
-  else 
-    L = L_i - (L_i - L_0test) * exp( - rT_B * t); % cm, expected length at time
-  end
-plot(t,L/del_M)
-title('croissance en longueur')
-xlabel('age')
-ylabel('longueur')
-Tableau=[t;L/del_M];
-writematrix(Tableau,'tableauwild.txt')
+%    L_b = l_b * L_m; L_j = l_j * L_m; L_i = l_i * L_m;
+%   L_0test = L_b; % cm, structural length at t initial
+%   % T7
+%   rT_B = tempcorr(C2K(7), T_ref, T_A) * rho_B * k_M; 
+%   rT_j = tempcorr(C2K(7), T_ref, T_A) * rho_j * k_M; % 1/d, von Bert, exponential growth rate
+%   t = 0:1:3500 ; % correction so that t initial = 0
+%   if L_0test < L_j
+%     tj = log(L_j/ L_0test) * 3/ rT_j ; % time at metamorphosis relative to transfer to seawater
+%     t_bj = t(t < tj); % select times between birth & metamorphosis
+%     L_bj = L_0test * exp(t_bj * rT_j/3); % exponential growth as V1-morph
+%     t_ji = t(t >= tj); % selects times after metamorphosis
+%     L_ji = L_i - (L_i - L_j) * exp( - rT_B * (t_ji - tj)); % cm, expected length at time
+%     L = [L_bj, L_ji]; % catenate lengths
+%   else 
+%     L = L_i - (L_i - L_0test) * exp( - rT_B * t); % cm, expected length at time
+%   end
+% plot(t,L/del_M)
+% title('croissance en longueur')
+% xlabel('age')
+% ylabel('longueur')
+% Tableau=[t;L/del_M];
+% writematrix(Tableau,'tableauwild.txt')
 
   
     % t-Ww

@@ -24,9 +24,10 @@
 % Bass (Dicentrarchus Labrax): Parameterisation and Application in
 % Aquaculture.” J  Sea Research, doi.org/10.1016/j.seares.2018.05.008
 %
-
+clear
 close all
-global pet
+cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
+global pet pets
 
 % The user must specify:
 % species name (line 37);
@@ -35,17 +36,19 @@ global pet
 % Specify the confidence level (line 50).
 % Choose the step(s) you want to simulate (line58).
 pet = 'Salmo_salar_farm';  % replace my_pet, with your species name
+pets = {'Salmo_salar_farm'};
+mat2pars_init(pet)
 
 % parameter for the profile step
 pProfile ='p_M';    % name of the parameter for which the profile will be calculated
-lowVal = 4;   % lower value of the profile interval, depends on the parameter
-upperVal = 20;  % upper value of the profile interval, depends on the parameter
-dim = 10;         % increase for a smooth profile (optional)
+lowVal = 2;   % lower value of the profile interval, depends on the parameter
+upperVal = 5000;  % upper value of the profile interval, depends on the parameter
+dim = 20;         % increase for a smooth profile (optional)
 
 % input for the calibration step
 % nbTrials = 500;   % number of data sets (can be changed)
-nbTrials = 5;   % number of data sets (can be changed)
-nCont  = 4;       % increase number of continuations, if necessary
+nTrials = 10;   % number of data sets (can be changed)
+nCont  = 10;       % increase number of continuations, if necessary
 
 % Specify the confidence level for the confidence interval
 clevel =0.95; % e.g. 0.9 for a 90% confidence interval
@@ -57,18 +60,20 @@ clevel =0.95; % e.g. 0.9 for a 90% confidence interval
 %          3: computes the CI and graphs the profile
 
 stepCI = 0; 
-
+tic
 % -------------------------------------------------------------------------
 if stepCI == 0 || stepCI == 1
     fprintf('\n Step 1. Calibration\n\n');
-    [lf_calibrate, pars_calibrate, name_par] = get_lf_distribution(nbTrials, nCont);
+    [lf_calibrate, pars_calibrate, name_par] = get_lf_distribution(nTrials, nCont);
     % lf_calibrate: vector with the values of the loss function
     % pars_calibrate: matrix with the parameter values 
     %                 rows: free parameters; columns: number of datasets
     % name_par: names of free parameters
     save('calibrate', 'lf_calibrate', 'pars_calibrate', 'name_par')
 end
+toc
 %
+tic
 if stepCI == 0 || stepCI == 2
     fprintf('\n Step 2. Profile for parameter %s \n\n', pProfile);
     [lf_profile, pars_profile] = get_profile(pProfile,lowVal,upperVal,dim,nCont);
@@ -77,6 +82,7 @@ if stepCI == 0 || stepCI == 2
 
     save(['profile_',pProfile], 'lf_profile', 'pars_profile')
 end
+toc
 %
 if  stepCI == 0 || stepCI == 3
     fprintf('\n Step 3. Show plots and CI\n\n');
@@ -86,6 +92,8 @@ if  stepCI == 0 || stepCI == 3
         load(['profile_',pProfile])
         load('calibrate.mat')
     	[lf_thres, ci_low, ci_upper] = plot_profile_CI(pars_profile, lf_profile, lf_calibrate, clevel);
+         xlabel(sprintf('%s',pProfile));
+       
         % confidence interval
         fprintf('The CI for %s is from %1.4f to %1.4f \n', pProfile, ci_low, ci_upper)
         fprintf('The threshold value for the loss function is %1.3f \n', lf_thres)      

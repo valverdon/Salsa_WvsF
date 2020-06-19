@@ -24,9 +24,9 @@
 % Bass (Dicentrarchus Labrax): Parameterisation and Application in
 % Aquaculture.” J  Sea Research, doi.org/10.1016/j.seares.2018.05.008
 %
-
+clear
 close all
-cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_wild/'
+cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
 global pet pets
 
 % The user must specify:
@@ -37,19 +37,18 @@ global pet pets
 % Choose the step(s) you want to simulate (line58).
 pet = 'Salmo_salar_farm';  % replace my_pet, with your species name
 pets = {'Salmo_salar_farm'};
-% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
 mat2pars_init(pet)
 
 % parameter for the profile step
 pProfile ='p_M';    % name of the parameter for which the profile will be calculated
-lowVal = 4;   % lower value of the profile interval, depends on the parameter
-upperVal = 20;  % upper value of the profile interval, depends on the parameter
-dim = 5;         % increase for a smooth profile (optional)
+lowVal = 2;   % lower value of the profile interval, depends on the parameter
+upperVal = 600;  % upper value of the profile interval, depends on the parameter
+dim = 10;         % increase for a smooth profile (optional)
 
 % input for the calibration step
 % nbTrials = 500;   % number of data sets (can be changed)
-nbTrials = 2;   % number of data sets (can be changed)
-nCont  = 4;       % increase number of continuations, if necessary
+nTrials = 5;   % number of data sets (can be changed)
+nCont  = 10;       % increase number of continuations, if necessary
 
 % Specify the confidence level for the confidence interval
 clevel =0.95; % e.g. 0.9 for a 90% confidence interval
@@ -60,12 +59,12 @@ clevel =0.95; % e.g. 0.9 for a 90% confidence interval
 %          2: runs only the profile for a parameter step
 %          3: computes the CI and graphs the profile
 
-stepCI = 0; 
+stepCI = 3; 
 tic
 % -------------------------------------------------------------------------
 if stepCI == 0 || stepCI == 1
     fprintf('\n Step 1. Calibration\n\n');
-    [lf_calibrate, pars_calibrate, name_par] = get_lf_distribution(nbTrials, nCont);
+    [lf_calibrate, pars_calibrate, name_par] = get_lf_distribution(nTrials, nCont);
     % lf_calibrate: vector with the values of the loss function
     % pars_calibrate: matrix with the parameter values 
     %                 rows: free parameters; columns: number of datasets
@@ -83,8 +82,8 @@ if stepCI == 0 || stepCI == 2
 
     save(['profile_',pProfile], 'lf_profile', 'pars_profile')
 end
-%
 toc
+%
 if  stepCI == 0 || stepCI == 3
     fprintf('\n Step 3. Show plots and CI\n\n');
     if exist(['profile_',pProfile], 'file') == 0 && exist('calibrate.mat', 'file')== 0
@@ -93,6 +92,9 @@ if  stepCI == 0 || stepCI == 3
         load(['profile_',pProfile])
         load('calibrate.mat')
     	[lf_thres, ci_low, ci_upper] = plot_profile_CI(pars_profile, lf_profile, lf_calibrate, clevel);
+        str = 
+         xlabel(sprintf('%d', pProfile));
+       
         % confidence interval
         fprintf('The CI for %s is from %1.4f to %1.4f \n', pProfile, ci_low, ci_upper)
         fprintf('The threshold value for the loss function is %1.3f \n', lf_thres)      
