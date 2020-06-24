@@ -151,6 +151,11 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
 %  monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_h," ; ab10_1 = ", ab_10_1, " ; Lb10_1 = ",Lw_b, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
 %  disp(monvecteurdetrucs)
  
+
+
+
+
+
   % ultimate
   L_i = L_m * l_i;                  % cm, ultimate structural length at f
   Lw_i = L_i/ del_M;                % cm, ultimate physical length at f
@@ -175,6 +180,16 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   [R_i_nat, UE0_nat, Lb_nat, Lj_nat, Lp_nat, info_nat]  =  reprod_rate_j(L_i_nat, f_nat, pars_R, L_b_nat);
    RT_i_nat = TC_Ri * R_i_nat;% #/d, max reprod rate  
    
+%p_Ri=(tau_p_nat - tau_b_nat) / k_M/TC_Ri % prediction of puberty for Ri data envir. condtions
+%p_jul=mod(,365) % julian days of puberty (considering fecondation at 1st of January)
+%if norNBP_jul_p<100 % early april
+%	reprod='yes'
+%	n_eggs=(365-p_jul)*RT_i
+%else
+%	reprod='next'
+%	n_eggs=(365-p_jul+365)*RT_i
+
+
   % life span
   pars_tm = [g; l_T; h_a/ k_M^2; s_G];  % compose parameter vector at T_ref
   t_m = get_tm_s(pars_tm, f, l_b);      % -, scaled mean life span at T_ref
