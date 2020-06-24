@@ -24,8 +24,15 @@
 % Bass (Dicentrarchus Labrax): Parameterisation and Application in
 % Aquaculture.” J  Sea Research, doi.org/10.1016/j.seares.2018.05.008
 %
+<<<<<<< HEAD
 % clear
 % close all
+=======
+clear
+close all
+% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
+% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/Salsa_WvsF'))
+>>>>>>> e558a7499b16772712f60b350b978b1079b29334
 cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
 global pet pets
 
