@@ -183,7 +183,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
 %p_Ri= tau_p_nat / k_M / TC_Ri % prediction of age at puberty for Ri data envir. condtions
 %p_jul=mod(p_Ri,365) % julian days of puberty (considering fecondation at 1st of January)
 %if norNBP_jul_p<100 % early april
-%	n_eggs=(365-p_jul)*RT_i %treprod a faire
+%	n_eggs=(365-p_jul)*RT_i
 %else
 %	n_eggs=(365-p_jul+365)*RT_i
 %end
@@ -225,8 +225,7 @@ prdData.Li = Lw_i_nat / SNFtoTOT;
  prdData.Wwsp_norf = Ww_norS;
  prdData.Wwsp_norm = Ww_norS;
  prdData.Wwi_norM = Ww_i_nat;
-%  prdData.Ri = RT_i;
-prdData.Rnbo=n_eggs;
+ prdData.Ri = RT_i;
  prdData.V0_norM2011  = V_0;
  prdData.V0_norM2012  = V_0;
   prdData.V0_norM2013  = V_0;

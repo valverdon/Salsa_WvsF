@@ -24,15 +24,11 @@
 % Bass (Dicentrarchus Labrax): Parameterisation and Application in
 % Aquaculture.” J  Sea Research, doi.org/10.1016/j.seares.2018.05.008
 %
-<<<<<<< HEAD
 % clear
 % close all
-=======
-clear
-close all
 % addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
 % addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/Salsa_WvsF'))
->>>>>>> e558a7499b16772712f60b350b978b1079b29334
+
 cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
 global pet pets
 
@@ -52,11 +48,11 @@ mat2pars_init(pet)
 %          2: runs only the profile for a parameter step
 %          3: computes the CI and graphs the profile
 %          4: runs only the profile and graphs it (no calibration step)
-stepCI =4; 
+stepCI =3; 
 
 % parameter for the profile step
-% pProfile ='p_M';    % name of the parameter for which the profile will be calculated
-pProfile={'z','v','kap','p_M','E_Hp'};
+pProfile ='z';    % name of the parameter for which the profile will be calculated
+% pProfile={'z','v','kap','p_M','E_Hp'};
 % lowVal = 5;   % lower value of the profile interval, depends on the parameter
 %borders taken from addmypet all organisms
 lowVal=[0.5,0.01,0.01,5,1000];
@@ -101,7 +97,7 @@ for nparametre = 1:size(pProfile,2)
         save(['profile_',parametre], 'lf_profile', 'pars_profile')
     end
     toc
-   
+ end
 %
     if  stepCI == 0 || stepCI == 3 || stepCI == 4
         fprintf('\n Step 3. Show plots and CI\n\n');
@@ -118,7 +114,7 @@ for nparametre = 1:size(pProfile,2)
             fprintf('The threshold value for the loss function is %1.3f \n', lf_thres)      
         end
     end
-end
+
 %     if stepCI == 0 || stepCI == 2
 %         fprintf('\n Step 2. Profile for parameter %s \n\n', pProfile);
 %         [lf_profile, pars_profile] = get_profile(pProfile,lowVal,upperVal,dim,nCont);

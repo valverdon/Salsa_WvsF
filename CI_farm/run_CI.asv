@@ -26,6 +26,9 @@
 %
 % clear
 % close all
+% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
+% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/Salsa_WvsF'))
+
 cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
 global pet pets
 
@@ -52,7 +55,7 @@ stepCI =4;
 pProfile={'z','v','kap','p_M','E_Hp'};
 % lowVal = 5;   % lower value of the profile interval, depends on the parameter
 %borders taken from addmypet all organisms
-lowVal=[0.01,0.01,0.01,5,1000];
+lowVal=[0.5,0.01,0.01,5,1000];
 % upperVal = 7000;  % upper value of the profile interval, depends on the parameter
 upperVal=[100,0.99,0.99,7000,10000000];
 dim = 10;         % increase for a smooth profile (optional)
@@ -94,7 +97,7 @@ for nparametre = 1:size(pProfile,2)
         save(['profile_',parametre], 'lf_profile', 'pars_profile')
     end
     toc
-   
+ end
 %
     if  stepCI == 0 || stepCI == 3 || stepCI == 4
         fprintf('\n Step 3. Show plots and CI\n\n');
@@ -104,14 +107,14 @@ for nparametre = 1:size(pProfile,2)
             load(['profile_',parametre])
             load('calibrate.mat')
             [lf_thres, ci_low, ci_upper] = plot_profile_CI(pars_profile, lf_profile, lf_calibrate, clevel);
-            xlabel(sprintf('%s',pProfile));
+            xlabel(sprintf('%s',parametre));
        
             % confidence interval
             fprintf('The CI for %s is from %1.4f to %1.4f \n', parametre, ci_low, ci_upper)
             fprintf('The threshold value for the loss function is %1.3f \n', lf_thres)      
         end
     end
-end
+
 %     if stepCI == 0 || stepCI == 2
 %         fprintf('\n Step 2. Profile for parameter %s \n\n', pProfile);
 %         [lf_profile, pars_profile] = get_profile(pProfile,lowVal,upperVal,dim,nCont);
