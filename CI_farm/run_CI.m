@@ -26,6 +26,8 @@
 %
 clear
 close all
+% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
+% addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/Salsa_WvsF'))
 cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
 global pet pets
 
