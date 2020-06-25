@@ -748,9 +748,9 @@ bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (
 data.Ri=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs';             bibkey.Ri = 'Fleming1996b';
   comment.Ri = 'Sunndalsora strain, number of live embryos/survival';
   temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';%f adlib
-data.Rnbe=479/0.3; units.Rnbe = '-/d';    label.Rnbe = 'maximum number of eggs';             bibkey.Rnbe = 'Fleming1996b';
-  comment.Rnbe = 'Sunndalsora strain, number of live embryos/survival';
-  temp.Rnbe = C2K(6);  units.temp.Rnbe = 'K'; label.temp.Rnbe = 'temperature'; label.temp.comment.Rnbe = 'T = rough guess';%f adlib
+data.Rnbo=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs';             bibkey.Ri = 'Fleming1996b';
+  comment.Ri = 'Sunndalsora strain, number of live embryos/survival';
+  temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';%f adlib
     
   
 

@@ -202,10 +202,6 @@ data.asp_nor = (5.71-1)*365.25; %1355;  Artificially added +1 year.
   units.asp_nor = 'd';    label.asp_nor = 'time since birth at puberty';  bibkey.asp_nor = 'Hutchings1998'; 
   temp.asp_nor = C2K(10);  units.temp.asp_nor = 'K'; label.temp.asp_nor = 'temperature'; 
   comment.asp_nor = 'Mean of Norwegian populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
-data.asp_norI =(1.68+1.22-1)*365.25; % 694;  
-  units.asp_norI = 'd';    label.asp_norI = 'time since birth at puberty';  bibkey.asp_norI = 'Hindar2006'; 
-  temp.asp_norI = C2K(10);  units.temp.asp_norI = 'K'; label.temp.asp_norI = 'temperature'; 
-  comment.asp_norI = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life, Table3';
 
 
 
@@ -563,9 +559,6 @@ data.Ri_nor  = 9576/365.25;   units.Ri_nor  = '#/d'; label.Ri_nor  = 'maximum re
   temp.Ri_nor = C2K(10);    units.temp.Ri_nor = 'K'; label.temp.Ri_nor = 'temperature';
   comment.Ri_nor = 'maximum female length at spawning at River Imsa (Norway); temperature: rough approximation, highly variable temperature throughout life, table 3';
 
-data.Rnbe_nor  = 9576;   units.Rnbe_nor  = '#/d'; label.Rnbe_nor  = 'maximum reprod rate';     bibkey.Rnbe_nor  = 'Fleming1996';   
-  temp.Rnbe_nor = C2K(10);    units.temp.Rnbe_nor = 'K'; label.temp.Rnbe_nor = 'temperature';
-  comment.Rnbe_nor = 'maximum female length at spawning at River Imsa (Norway); temperature: rough approximation, highly variable temperature throughout life, table 3';
 
 
 

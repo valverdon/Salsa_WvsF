@@ -180,13 +180,28 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   [R_i_nat, UE0_nat, Lb_nat, Lj_nat, Lp_nat, info_nat]  =  reprod_rate_j(L_i_nat, f_nat, pars_R, L_b_nat);
    RT_i_nat = TC_Ri * R_i_nat;% #/d, max reprod rate  
    
-%p_Ri= tau_p_nat / k_M / TC_Ri % prediction of age at puberty for Ri data envir. condtions
-%p_jul=mod(p_Ri,365) % julian days of puberty (considering fecondation at 1st of January)
-%if norNBP_jul_p<100 % early april
-%	n_eggs=(365-p_jul)*RT_i %treprod a faire
-%else
-%	n_eggs=(365-p_jul+365)*RT_i
-%end
+   
+%tests seasonality
+ap_Ri= tau_p / k_M / TC_Ri; % prediction of age at puberty for Ri data envir. condtions
+p_jul=mod(ap_Ri,365); % julian days of puberty (considering fecondation at 1st of January)
+if p_jul<100 % early april
+  treprod=365-p_jul;
+else
+  treprod=365-p_jul+365;
+end
+
+% Age at 1st reprod
+asp= tau_p / k_M/ TC_tp_norNBP + treprod;
+
+%Length-Weight at 1st reprod
+rT_B = TC_Lsp_norS * rho_B * k_M;
+Lsp_struct_pred = L_i - (L_i - L_p) * exp( - rT_B * treprod);
+Wwsp_pred = Lsp_struct_pred^3 * (1 + f * ome);       % g, wet weight at 1st reprod at f and T
+Lsp_pred = L_norS / del_M; % cm, expected physical length at 1st reprod at f and T
+ 
+%neggs at first reprod
+n_eggs=treprod*RT_i;
+
 
   % life span
   pars_tm = [g; l_T; h_a/ k_M^2; s_G];  % compose parameter vector at T_ref
@@ -206,7 +221,8 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.ab_norM2 = aT_b_norM2;
   prdData.tb_12_AqG = tT_hb_AqG;
   prdData.tb_norB = tT_hb_norB;
-  prdData.ap_norNBP = tT_p_norNBP;
+%   prdData.ap_norNBP = tT_p_norNBP;
+   prdData.asp_norNBP =asp;
 %   prdData.ap_norire = tT_p_norNBP;
   prdData.am = aT_m_nat;
 % prdData.Lh = Lw_h;
@@ -215,18 +231,18 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   prdData.Lb_NorM2013 = Lw_b / SNFtoTOT;
   prdData.Lb_NorS2013 = Lw_b / SNFtoTOT;
 %   prdData.Ls = Lw_s;
-  prdData.Lsp_norSf = Lw_norS / POHtoTOT;
-  prdData.Lsp_norSm = Lw_norS / POHtoTOT;
+  prdData.Lsp_norSf = Lsp_pred / POHtoTOT;
+  prdData.Lsp_norSm = Lsp_pred / POHtoTOT;
 %   prdData.Lp_norN = Lw_p;
 prdData.Li = Lw_i_nat / SNFtoTOT;
 %  prdData.Wwh_norM = Ww_h;
 %  prdData.Wwb = Ww_b;
 %   prdData.Wwj_nor = Ww_j;
- prdData.Wwsp_norf = Ww_norS;
- prdData.Wwsp_norm = Ww_norS;
+ prdData.Wwsp_norf = Wwsp_pred;
+ prdData.Wwsp_norm = Wwsp_pred;
  prdData.Wwi_norM = Ww_i_nat;
 %  prdData.Ri = RT_i;
-prdData.Rnbo=n_eggs;
+prdData.Rnbe=n_eggs;
  prdData.V0_norM2011  = V_0;
  prdData.V0_norM2012  = V_0;
   prdData.V0_norM2013  = V_0;
