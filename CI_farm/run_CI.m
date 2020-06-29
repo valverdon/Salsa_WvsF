@@ -48,20 +48,21 @@ mat2pars_init(pet)
 %          2: runs only the profile for a parameter step
 %          3: computes the CI and graphs the profile
 %          4: runs only the profile and graphs it (no calibration step)
-stepCI =1; 
+stepCI =2; 
 
 % parameter for the profile step
-% pProfile ='kap';    % name of the parameter for which the profile will be calculated
-pProfile={'z','v','kap','p_M','E_Hp'};
-% lowVal = 5;   % lower value of the profile interval, depends on the parameter
+pProfile ='v';    % name of the parameter for which the profile will be calculated
+% pProfile={'z','v','kap','p_M','E_Hp'};
+
 %borders taken from addmypet all organisms
-lowVal=[0.25,0.001,0.8,10,1000];
-% upperVal = 7000;  % upper value of the profile interval, depends on the parameter
-upperVal=[10,0.1,0.9999,15000,1000000];
-dim = 10;         % increase for a smooth profile (optional)
+lowVal = 0.002;   % lower value of the profile interval, depends on the parameter
+% lowVal=[0.4,0.001,0.8,10,1000];
+upperVal = 0.1;  % upper value of the profile interval, depends on the parameter
+% upperVal=[10,0.1,0.9999,15000,1000000];
+dim = 15;         % increase for a smooth profile (optional)
 
 % input for the calibration step
-nTrials = 50;   % number of data sets (can be changed)
+nTrials = 100;   % number of data sets (can be changed)
 % nTrials = 10;   % number of data sets (can be changed)
 nCont  = 10;       % increase number of continuations, if necessary
 
