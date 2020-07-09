@@ -88,11 +88,11 @@ data.tb_norB = 280/13;    units.tb_norB = 'd';    label.tb_norB = 'time between 
 %%%%%%%%%%%%%%%%%%%%
 %% Age at puberty % (or age at first spawning minus 1 year) in time since birth
 %%%%%%%%%%%%%%%%%%%%data.aj_norNBP = 391;    units.aj_norNBP = 'd';    label.aj_norNBP = 'age at smoltification';             bibkey.aj_norNBP = 'Hindar2006';     comment.aj_norNBP = 'National breeding program (time since birth)';
-data.ap_norNBP = (1.07+1-1)*365.25;   %=391
-units.ap_norNBP = 'd';    label.ap_norNBP = 'time since birth at puberty';             bibkey.ap_norNBP = 'Hindar2006';     
-comment.ap_norNBP = 'National breeding program (time since birth)) n=1 ; table3';
-temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; 
-label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
+% data.ap_norNBP = (1.07+1-1)*365.25;   %=391
+% units.ap_norNBP = 'd';    label.ap_norNBP = 'time since birth at puberty';             bibkey.ap_norNBP = 'Hindar2006';     
+% comment.ap_norNBP = 'National breeding program (time since birth)) n=1 ; table3';
+% temp.ap_norNBP = C2K(10);  units.temp.ap_norNBP = 'K'; label.temp.ap_norNBP = 'temperature'; 
+% label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 %
 
 %mb need for adjustments to get real age at 1st spawning.
@@ -745,12 +745,12 @@ bibkey.LWw_norM = 'Glover2009'; comment.LWw_norM = 'Mowi strain+ Laerdal river (
 % bibkey.WwR= 'Fleming1996b'; comment.LWw_norM = 'Sunndalsora strain ; T= rough guess';
 
 
-data.Ri=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs';             bibkey.Ri = 'Fleming1996b';
-  comment.Ri = 'Sunndalsora strain, number of live embryos/survival';
-  temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';%f adlib
-data.Rnbo=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs';             bibkey.Ri = 'Fleming1996b';
-  comment.Ri = 'Sunndalsora strain, number of live embryos/survival';
-  temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';%f adlib
+% data.Ri=1063/365.25/0.3; units.Ri = '-/d';    label.Ri = 'maximum number of eggs';             bibkey.Ri = 'Fleming1996b';
+%   comment.Ri = 'Sunndalsora strain, number of live embryos/survival';
+%   temp.Ri = C2K(6);  units.temp.Ri = 'K'; label.temp.Ri = 'temperature'; label.temp.comment.Ri = 'T = rough guess';%f adlib
+data.Rnbe=479/0.3; units.Rnbe = '-/d';    label.Rnbe = 'maximum number of eggs';             bibkey.Rnbe = 'Fleming1996b';
+  comment.Rnbe = 'Sunndalsora strain, number of live embryos/survival';
+  temp.Rnbe = C2K(6);  units.temp.Rnbe = 'K'; label.temp.Rnbe = 'temperature'; label.temp.comment.Rnbe = 'T = rough guess';%f adlib
     
   
 
@@ -760,7 +760,8 @@ weights.ab_norM = 0*weights.ab_norM;%better fit for 12°C than 5°C
 weights.ab_norM2 = weights.ab_norM2/2;
 weights.tb_12_AqG = 0*weights.tb_12_AqG/3;%bad fit
 weights.tb_norB = weights.tb_norB/2; % we have 2 time at birth zero-V data.
-weights.ap_norNBP=weights.ap_norNBP;
+% weights.ap_norNBP=weights.ap_norNBP;
+weights.asp_norNBP=weights.asp_norNBP;
 % weights.ap_norire=weights.ap_norire/2; % 2 age at puberty zero-V data
 weights.Lb_NorM2011 = weights.Lb_NorM2011/4; % 4 Length at birth 0-V data.
 weights.Lb_NorM2012 = weights.Lb_NorM2012/4;
@@ -809,7 +810,8 @@ weights.tWw_T18_AqG = 0*weights.tWw_T18_AqG;
 % weights.tWw_norS50 = weights.tWw_norS50/16;
 weights.LWw_AqG = 0*weights.LWw_AqG; % not reliable
 weights.LWw_norM = weights.LWw_norM;
-
+weights.Rnbe=weights.Rnbe;
+weights.Ri=0;
 
 %% set pseudodata and respective weights
 [data, units, label, weights] = addpseudodata(data, units, label, weights);

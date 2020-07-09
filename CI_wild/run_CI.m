@@ -48,17 +48,19 @@ pets = {'Salmo_salar_wild'};
 %          2: runs only the profile for a parameter step
 %          3: computes the CI and graphs the profile
 %          4: runs only the profile and graphs it (no calibration step)
-stepCI =1; 
+stepCI =3; 
 
 % parameter for the profile step
-pProfile ={'z'};    % name of the parameter for which the profile will be calculated
-% pProfile={'z','v','kap','p_M','E_Hp'};
-
+pProfile ={'p_M'};    % name of the parameter for which the profile will be calculated
+% pProfile={'v','kap','p_M','E_Hp','E_Hh'};
+% pProfile={'z','p_M','E_Hp','E_Hh'};
 %borders taken from addmypet all organisms
-lowVal = 1000;   % lower value of the profile interval, depends on the parameter
-% lowVal=[0.4,0.025,0.8,10,1000];
-% upperVal = 1000000;  % upper value of the profile interval, depends on the parameter
-upperVal=[10,0.1,0.9999,15000,1000000];
+lowVal = 10;   % lower value of the profile interval, depends on the parameter
+% lowVal=[0.005,0.5,10,150000,2];
+% lowVal=[0.4,10,1000,2];
+upperVal = 5000;  % upper value of the profile interval, depends on the parameter
+% upperVal=[0.1,0.99,100,10000000,100];
+% upperVal=[15,1000,10000000,250];
 dim = 20;         % increase for a smooth profile (optional)
 
 % input for the calibration step

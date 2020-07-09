@@ -29,7 +29,7 @@ close all
 % addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
 % addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/Salsa_WvsF'))
 
-cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_farm/'
+cd 'C:/Users/vverdon/Documents/MATLAB/Salsa_WvsF/CI_wild/'
 global pet pets
 
 % The user must specify:
@@ -38,8 +38,8 @@ global pet pets
 % and the lower and upper limits of the range of simulations (lines 40-41);
 % Specify the confidence level (line 50).
 % Choose the step(s) you want to simulate (line58).
-pet = 'Salmo_salar_farm';  % replace my_pet, with your species name
-pets = {'Salmo_salar_farm'};
+pet = 'Salmo_salar_wild';  % replace my_pet, with your species name
+pets = {'Salmo_salar_wild'};
 % mat2pars_init(pet)
 
 % stepCI - Choose the step(s) you want to simulate
@@ -52,14 +52,16 @@ stepCI =3;
 
 % parameter for the profile step
 pProfile ={'p_M'};    % name of the parameter for which the profile will be calculated
-% pProfile={'z','v','kap','p_M','E_Hp'};
-
+% pProfile={'z','v','kap','p_M','E_Hp','E_Hh'};
+% pProfile={'z','p_M','E_Hp','E_Hh'};
 %borders taken from addmypet all organisms
-lowVal = 0.1;   % lower value of the profile interval, depends on the parameter
+lowVal = 10;   % lower value of the profile interval, depends on the parameter
 % lowVal=[0.4,0.025,0.8,10,1000];
-upperVal = 50;  % upper value of the profile interval, depends on the parameter
+% lowVal=[0.4,10,1000,2];
+upperVal = 15000;  % upper value of the profile interval, depends on the parameter
 % upperVal=[10,0.1,0.9999,15000,1000000];
-dim = 5;         % increase for a smooth profile (optional)
+% upperVal=[15,1000,10000000,1000];
+dim = 20;         % increase for a smooth profile (optional)
 
 % input for the calibration step
 nTrials = 100;   % number of data sets (can be changed)

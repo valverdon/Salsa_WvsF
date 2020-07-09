@@ -31,11 +31,12 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
 % TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
 % TC_tp = tempcorr(temp.tp, T_ref, T_A);
 %   TC_tp_norire = tempcorr(temp.ap_norire, T_ref, T_A);
-  TC_tp_norNBP = tempcorr(temp.ap_norNBP, T_ref, T_A);
+  TC_asp_norNBP = tempcorr(temp.asp_norNBP, T_ref, T_A);
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
   TC_am = tempcorr(temp.am, T_ref, T_A);
   TC_Lsp_norS = tempcorr(temp.Lsp_norSf, T_ref, T_A);
-  TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
+%   TC_Ri = tempcorr(temp.Ri, T_ref, T_A);
+  TC_Rnbe = tempcorr(temp.Rnbe, T_ref, T_A);
   TC_tL_iceT11 = tempcorr(temp.tL_iceT11, T_ref, T_A);
   TC_tL_iceT611 = tempcorr(temp.tL_iceT611, T_ref, T_A);
 %   TC_tL_norM = tempcorr(temp.tL_norM, T_ref, T_A);
@@ -146,7 +147,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   Ww_p_nat = L_p_nat^3 *(1 + f_nat * ome);        % g, wet weight at puberty 
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f_nat and T
 %   tT_p_norire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norire;   % d, time since birth at puberty at f and T
-  tT_p_norNBP = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norNBP;   % d, time since birth at puberty at f and T
+  tT_sp_norNBP = (tau_p_nat - tau_b_nat) / k_M/ TC_asp_norNBP;   % d, time since birth at puberty at f and T
   ap10_1= tau_p_nat/k_M/tempcorr(C2K(7), T_ref, T_A);
 %  monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_h," ; ab10_1 = ", ab_10_1, " ; Lb10_1 = ",Lw_b, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
 %  disp(monvecteurdetrucs)
@@ -174,15 +175,15 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   % reproduction
   pars_R = [kap, kap_R, g, k_J, k_M, L_T, v, U_Hb, U_Hj, U_Hp];
   [R_i, UE0, Lb, Lj, Lp, info]  =  reprod_rate_j(L_i, f, pars_R, L_b);
-   RT_i = TC_Ri * R_i;% #/d, max reprod rate  
+   RT_i = TC_Rnbe * R_i;% #/d, max reprod rate  
 %same for natural f
    pars_R = [kap, kap_R, g, k_J, k_M, L_T, v, U_Hb, U_Hj, U_Hp];
   [R_i_nat, UE0_nat, Lb_nat, Lj_nat, Lp_nat, info_nat]  =  reprod_rate_j(L_i_nat, f_nat, pars_R, L_b_nat);
-   RT_i_nat = TC_Ri * R_i_nat;% #/d, max reprod rate  
+   RT_i_nat = TC_Rnbe * R_i_nat;% #/d, max reprod rate  
    
    
 %tests seasonality
-ap_Ri= tau_p / k_M / TC_Ri; % prediction of age at puberty for Ri data envir. condtions
+ap_Ri= tau_p / k_M / TC_Rnbe; % prediction of age at puberty for Ri data envir. condtions
 p_jul=mod(ap_Ri,365); % julian days of puberty (considering fecondation at 1st of January)
 if p_jul<100 % early april
   treprod=365-p_jul;
@@ -190,8 +191,16 @@ else
   treprod=365-p_jul+365;
 end
 
+asp_Ri= tau_p / k_M / TC_asp_norNBP;
+p_jul=mod(asp_Ri,365); % julian days of puberty (considering fecondation at 1st of January)
+if p_jul<100 % early april
+  treprodsp=365-p_jul;
+else
+  treprodsp=365-p_jul+365;
+end
+
 % Age at 1st reprod
-asp= tau_p / k_M/ TC_tp_norNBP + treprod;
+asp= tau_p / k_M/ TC_asp_norNBP + treprodsp;
 
 %Length-Weight at 1st reprod
 rT_B = TC_Lsp_norS * rho_B * k_M;

@@ -6,7 +6,7 @@ close all
 %addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/DEB/DEB school 2019/Salmo_salar/AmP_Salmo_salar/std model'))
 global pets
 
-pets = {'Salmo_salar_farm'};
+pets = {'Salmo_salar_wild'};
 % pets = {'Salmo_salar_wild'};
 % check_my_pet(pets); 
 

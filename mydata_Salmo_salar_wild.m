@@ -143,10 +143,10 @@ metaData.date_acc    = [2019 04 17];
 %   units.tp_ice = 'd';    label.tp_ice = 'time since birth at puberty';  bibkey.tp_ice = 'Hutchings1998'; 
 %   temp.tp_ice = C2K(10);  units.temp.tp_ice = 'K'; label.temp.tp_ice = 'temperature'; 
 %   comment.tp_ice = 'Mean of Icelandic populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
-data.tp_nor = (5.71-1-1)*365.25; %1355;  Artificially added +1 year.
-  units.tp_nor = 'd';    label.tp_nor = 'time since birth at puberty';  bibkey.tp_nor = 'Hutchings1998'; 
-  temp.tp_nor = C2K(10);  units.temp.tp_nor = 'K'; label.temp.tp_nor = 'temperature'; 
-  comment.tp_nor = 'Mean of Norwegian populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
+% data.tp_nor = (5.71-1-1)*365.25; %1355;  Artificially added +1 year.
+%   units.tp_nor = 'd';    label.tp_nor = 'time since birth at puberty';  bibkey.tp_nor = 'Hutchings1998'; 
+%   temp.tp_nor = C2K(10);  units.temp.tp_nor = 'K'; label.temp.tp_nor = 'temperature'; 
+%   comment.tp_nor = 'Mean of Norwegian populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
 % data.tp_fraspa = (4.08-1-1)*365.25; %1045;  
 %   units.tp_fraspa = 'd';    label.tp_fraspa = 'time since birth at puberty';  bibkey.tp_fraspa = 'Hutchings1998'; 
 %   temp.tp_fraspa = C2K(10);  units.temp.tp_fraspa = 'K'; label.temp.tp_fraspa = 'temperature'; 
@@ -171,10 +171,10 @@ data.tp_nor = (5.71-1-1)*365.25; %1355;  Artificially added +1 year.
 %   units.tp_rus = 'd';    label.tp_rus = 'time since birth at puberty';  bibkey.tp_rus = 'Kazakov1981'; 
 %   temp.tp_rus = C2K(10);  units.temp.tp_rus = 'K'; label.temp.tp_rus = 'temperature'; 
 %   comment.tp_rus = 'Mean of Neva river (Russia); temperature: rough guess - highly variable temperature throughout life, table1';
-data.tp_norI =(1.68+1.22-1)*365.25; % 694;  
-  units.tp_norI = 'd';    label.tp_norI = 'time since birth at puberty';  bibkey.tp_norI = 'Hindar2006'; 
-  temp.tp_norI = C2K(10);  units.temp.tp_norI = 'K'; label.temp.tp_norI = 'temperature'; 
-  comment.tp_norI = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life, Table3';
+% data.tp_norI =(1.68+1.22-1)*365.25; % 694;  
+%   units.tp_norI = 'd';    label.tp_norI = 'time since birth at puberty';  bibkey.tp_norI = 'Hindar2006'; 
+%   temp.tp_norI = C2K(10);  units.temp.tp_norI = 'K'; label.temp.tp_norI = 'temperature'; 
+%   comment.tp_norI = 'Mean of Imsa river (Norway); temperature: rough guess - highly variable temperature throughout life, Table3';
 % data.tp_ire2 = (2+1.04-1)*365.25; % 745;  
 %   units.tp_ire2 = 'd';    label.tp_ire2 = 'time since birth at puberty';  bibkey.tp_ire2 = 'Hindar2006'; 
 %   temp.tp_ire2 = C2K(10);  units.temp.tp_ire2 = 'K'; label.temp.tp_ire2 = 'temperature'; 
@@ -198,7 +198,7 @@ data.tp_norI =(1.68+1.22-1)*365.25; % 694;
 %   temp.ap = C2K();  units.temp.ap = 'K'; label.temp.ap = 'temperature';
 
 
-data.asp_nor = (5.71-1)*365.25; %1355;  Artificially added +1 year.
+data.asp_nor = (5.71-1)*365.25; 
   units.asp_nor = 'd';    label.asp_nor = 'time since birth at puberty';  bibkey.asp_nor = 'Hutchings1998'; 
   temp.asp_nor = C2K(10);  units.temp.asp_nor = 'K'; label.temp.asp_nor = 'temperature'; 
   comment.asp_nor = 'Mean of Norwegian populations; temperature: rough guess - highly variable temperature throughout life ((river age+sea age+1(fertilization to birth as in Hutchings 1998))-1(we remove it)-1(puberty occurs~1year before spawning)) , Table2';
@@ -1997,12 +1997,14 @@ bibkey.LWw_Nor = 'Berg2001'; comment.LWw_Nor = 'females from river Stjørdalselv
 weights = setweights(data, []);
 % weights.tp_gbr = weights.tp_gbr/10;%/number of papers/number of measurement in the paper. (review excluded)
 % weights.tp_ice = weights.tp_ice/10;
-weights.tp_nor = weights.tp_nor/2;
+% weights.tp_nor = weights.tp_nor/2;
+weights.asp_nor = weights.asp_nor/2;
 % weights.tp_fraspa = weights.tp_fraspa/10;
 % weights.tp_canm = weights.tp_canm/10;
 % weights.tp_canf = weights.tp_canf/10;
 % weights.tp_rus = weights.tp_rus/10;
-weights.tp_norI = weights.tp_norI/2;
+% weights.tp_norI = weights.tp_norI/2;
+weights.asp_norI = weights.asp_norI/2;
 % weights.tp_ire2 = weights.tp_ire2/10;
 weights.am = weights.am/3;
 % weights.am_sco = weights.am_sco/3;

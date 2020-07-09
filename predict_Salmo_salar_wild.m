@@ -37,13 +37,15 @@ TC_TabC = tempcorr(data.TabC(:,1), T_ref, T_A);
 %   TC_tp = tempcorr(temp.tp, T_ref, T_A);
 % TC_tp_gbr = tempcorr(temp.tp_gbr, T_ref, T_A);
 % TC_tp_ice = tempcorr(temp.tp_ice, T_ref, T_A);
-TC_tp_nor = tempcorr(temp.tp_nor, T_ref, T_A);
+% TC_tp_nor = tempcorr(temp.tp_nor, T_ref, T_A);
+TC_asp_nor = tempcorr(temp.asp_nor, T_ref, T_A);
 % TC_tp_fraspa = tempcorr(temp.tp_fraspa, T_ref, T_A);
 % TC_tp_ire = tempcorr(temp.tp_ire, T_ref, T_A);
 % TC_tp_canm = tempcorr(temp.tp_canm, T_ref, T_A);
 % TC_tp_canf = tempcorr(temp.tp_canf, T_ref, T_A);
 % TC_tp_rus = tempcorr(temp.tp_rus, T_ref, T_A);
-TC_tp_norI = tempcorr(temp.tp_norI, T_ref, T_A);
+% TC_tp_norI = tempcorr(temp.tp_norI, T_ref, T_A);
+TC_asp_norI = tempcorr(temp.asp_norI, T_ref, T_A);
 % TC_tp_ire2 = tempcorr(temp.tp_ire2, T_ref, T_A);
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
 TC_am = tempcorr(temp.am, T_ref, T_A);
@@ -160,14 +162,17 @@ ab10_1 = tau_b / k_M / tempcorr(C2K(7), T_ref, T_A);
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f and T
 %   tT_p_gbr = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_gbr;   % d, time since birth at puberty at f and T
 %   tT_p_ice = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ice;   % d, time since birth at puberty at f and T
-  tT_tp_nor = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_nor;   % d, time since birth at puberty at f and T
+%   tT_tp_nor = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_nor;   % d, time since birth at puberty at f and T
+tT_asp_nor = (tau_p_nat - tau_b_nat) / k_M/ TC_asp_nor;
 %   tT_tp_fraspa = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_fraspa;   % d, time since birth at puberty at f and T
 %   tT_tp_ire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire;   % d, time since birth at puberty at f and T
 %   tT_tp_canm = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_canm;   % d, time since birth at puberty at f and T
 %   tT_tp_canf = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_canf;   % d, time since birth at puberty at f and T
 %   tT_tp_rus = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_rus;   % d, time since birth at puberty at f and T
-  tT_tp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norI;   % d, time since birth at puberty at f and T
-%   tT_tp_ire2 = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire2;   % d, time since birth at puberty at f and T
+%   tT_tp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norI;   % d, time since birth at puberty at f and T
+  tT_asp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_asp_norI;   % d, time since birth at puberty at f and T
+
+  %   tT_tp_ire2 = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire2;   % d, time since birth at puberty at f and T
  ap10_1= tau_p / k_M / tempcorr(C2K(7), T_ref, T_A);
 %   monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_hadlib," ; ab10_1 = ", ab10_1, " ; Lb10_1 = ",Lw_badlib, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
 %   disp(monvecteurdetrucs)
@@ -227,9 +232,9 @@ if p_jul<100 % early april
 else
   treprod=365-p_jul+365;
 end
-% Age at 1st reprod
-asp_nor= tau_p_nat / k_M/ TC_tp_nor + treprod;
-asp_norI=tau_p_nat / k_M/ TC_tp_norI + treprod;
+%Time at 1st reprod since birth
+asp_nor= (tau_p_nat - tau_b_nat) / k_M/ TC_asp_nor + treprod;
+asp_norI= (tau_p_nat - tau_b_nat) / k_M/ TC_asp_norI + treprod;
 
 %Length-Weight at first reprod
 rT_B_Berg2001 = TC_Lsp_Berg2001 * rho_B * k_M;
@@ -243,7 +248,7 @@ Lsp_pred_Fleming1996 = Lsp_struct_pred_Fleming1996 / del_M; % cm, expected physi
  
 
 %neggs at first reprod
-n_eggs=(treprod)*RT_i;
+n_eggs=(treprod)*RT_i_nor;
 
   % pack to output
 prdData.Tah_Dennis_Peterson1977 = aT_h_Dennis_Peterson1977;
@@ -414,8 +419,7 @@ prdData.Wwh_FNor = Ww_h;
 % prdData.Ri_spa = RT_i_spa ;
 % prdData.Ri_can = RT_i_can ;
 prdData.Ri_nor = RT_i_nor ;
-prdData.Rnbe_nor
-n_eggs
+prdData.Rnbe_nor=n_eggs;
 
  
   % uni-variate data
