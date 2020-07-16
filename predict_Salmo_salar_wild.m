@@ -799,6 +799,10 @@ prdData.LWw_Nor = EWw_Nor;
 
 end
 
+%   [t, LEHR] = ode45(@ode_LEHR, [0 t0], InitCond,[], par, cPar, f, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2));
+%   
+%   LEHR_scoAa = deval(ode45(@ode_LEHR, tL_scoAa(:,1), LEHR(end,:),[], par, cPar, f_scoAa, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2)), tL_scoAa(:,1));
+%  
 function dLEHR = ode_LEHR(t, LEHR, p, c, f, s_M, Tt, T)
 
 %

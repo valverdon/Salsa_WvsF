@@ -37,13 +37,15 @@ TC_TabC = tempcorr(data.TabC(:,1), T_ref, T_A);
 %   TC_tp = tempcorr(temp.tp, T_ref, T_A);
 % TC_tp_gbr = tempcorr(temp.tp_gbr, T_ref, T_A);
 % TC_tp_ice = tempcorr(temp.tp_ice, T_ref, T_A);
-TC_tp_nor = tempcorr(temp.tp_nor, T_ref, T_A);
+% TC_tp_nor = tempcorr(temp.tp_nor, T_ref, T_A);
+TC_asp_nor = tempcorr(temp.asp_nor, T_ref, T_A);
 % TC_tp_fraspa = tempcorr(temp.tp_fraspa, T_ref, T_A);
 % TC_tp_ire = tempcorr(temp.tp_ire, T_ref, T_A);
 % TC_tp_canm = tempcorr(temp.tp_canm, T_ref, T_A);
 % TC_tp_canf = tempcorr(temp.tp_canf, T_ref, T_A);
 % TC_tp_rus = tempcorr(temp.tp_rus, T_ref, T_A);
-TC_tp_norI = tempcorr(temp.tp_norI, T_ref, T_A);
+% TC_tp_norI = tempcorr(temp.tp_norI, T_ref, T_A);
+TC_asp_norI = tempcorr(temp.asp_norI, T_ref, T_A);
 % TC_tp_ire2 = tempcorr(temp.tp_ire2, T_ref, T_A);
 %   TC_am = tempcorr(temp.am, T_ref, T_A);
 TC_am = tempcorr(temp.am, T_ref, T_A);
@@ -160,14 +162,17 @@ ab10_1 = tau_b / k_M / tempcorr(C2K(7), T_ref, T_A);
   % tT_p = (tau_p - tau_b)/ k_M/ TC_tp;   % d, time since birth at puberty at f and T
 %   tT_p_gbr = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_gbr;   % d, time since birth at puberty at f and T
 %   tT_p_ice = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ice;   % d, time since birth at puberty at f and T
-  tT_tp_nor = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_nor;   % d, time since birth at puberty at f and T
+%   tT_tp_nor = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_nor;   % d, time since birth at puberty at f and T
+tT_asp_nor = (tau_p_nat - tau_b_nat) / k_M/ TC_asp_nor;
 %   tT_tp_fraspa = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_fraspa;   % d, time since birth at puberty at f and T
 %   tT_tp_ire = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire;   % d, time since birth at puberty at f and T
 %   tT_tp_canm = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_canm;   % d, time since birth at puberty at f and T
 %   tT_tp_canf = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_canf;   % d, time since birth at puberty at f and T
 %   tT_tp_rus = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_rus;   % d, time since birth at puberty at f and T
-  tT_tp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norI;   % d, time since birth at puberty at f and T
-%   tT_tp_ire2 = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire2;   % d, time since birth at puberty at f and T
+%   tT_tp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_norI;   % d, time since birth at puberty at f and T
+  tT_asp_norI = (tau_p_nat - tau_b_nat) / k_M/ TC_asp_norI;   % d, time since birth at puberty at f and T
+
+  %   tT_tp_ire2 = (tau_p_nat - tau_b_nat) / k_M/ TC_tp_ire2;   % d, time since birth at puberty at f and T
  ap10_1= tau_p / k_M / tempcorr(C2K(7), T_ref, T_A);
 %   monvecteurdetrucs = ["ah10_1 = ",ah10_1," ; Lh_10_1 = ",Lw_hadlib," ; ab10_1 = ", ab10_1, " ; Lb10_1 = ",Lw_badlib, " ; ap10_1 = ",ap10_1, " ; Lp10_1 = ",Lw_p   ];
 %   disp(monvecteurdetrucs)
@@ -219,26 +224,31 @@ ab10_1 = tau_b / k_M / tempcorr(C2K(7), T_ref, T_A);
   
 
 
-%%tests seasonality
-%ap_Ri= tau_p_nat / k_M / TC_Ri_nor; % prediction of age at puberty for Ri data envir. condtions
-%p_jul=mod(ap_Ri,365); % julian days of puberty (considering fecondation at 1st of January)
-%if p_jul<100 % early april
-%   treprod=365-p_jul;
-%else
-%   treprod=365-p_jul+365;
-%end
-%% Age at 1st reprod
-%asp_nor= tau_p_nat / k_M/ TC_tp_nor + treprod
-%asp_norI=tau_p_nat / k_M/ TC_tp_norI + treprod
+%tests seasonality
+ap_Ri= tau_p_nat / k_M / TC_Ri_nor; % prediction of age at puberty for Ri data envir. condtions
+p_jul=mod(ap_Ri,365); % julian days of puberty (considering fecondation at 1st of January)
+if p_jul<100 % early april
+  treprod=365-p_jul;
+else
+  treprod=365-p_jul+365;
+end
+%Time at 1st reprod since birth
+asp_nor= (tau_p_nat - tau_b_nat) / k_M/ TC_asp_nor + treprod;
+asp_norI= (tau_p_nat - tau_b_nat) / k_M/ TC_asp_norI + treprod;
 
-%%Length-Weight at first reprod
-% rT_B_Berg2001 = TC_Lsp_Berg2001 * rho_B * k_M;
-% Lsp_struct_pred = L_i - (L_i - L_p) * exp( - rT_B * treprod);
-% Wwsp_pred = Lsp_struct_pred^3 * (1 + f * ome);       % g, wet weight at 1st reprod at f and T
-% Lsp_pred = L_norS / del_M; % cm, expected physical length at 1st reprod at f and T
+%Length-Weight at first reprod
+rT_B_Berg2001 = TC_Lsp_Berg2001 * rho_B * k_M;
+rT_B_Fleming1996 = TC_Lsp_Fleming1996 * rho_B * k_M;
+Lsp_struct_pred_Berg2001 = L_i - (L_i - L_p) * exp( - rT_B_Berg2001 * treprod);
+Wwsp_pred_Berg2001 = Lsp_struct_pred_Berg2001^3 * (1 + f * ome);       % g, wet weight at 1st reprod at f and T
+Lsp_pred_Berg2001 = Lsp_struct_pred_Berg2001 / del_M; % cm, expected physical length at 1st reprod at f and T
+Lsp_struct_pred_Fleming1996 = L_i - (L_i - L_p) * exp( - rT_B_Fleming1996 * treprod);
+Wwsp_pred_Fleming1996 = Lsp_struct_pred_Fleming1996^3 * (1 + f * ome);       % g, wet weight at 1st reprod at f and T
+Lsp_pred_Fleming1996 = Lsp_struct_pred_Fleming1996 / del_M; % cm, expected physical length at 1st reprod at f and T
  
-%%neggs at first reprod
-%n_eggs=(treprod)*RT_i;
+
+%neggs at first reprod
+n_eggs=(treprod)*RT_i_nor;
 
   % pack to output
 prdData.Tah_Dennis_Peterson1977 = aT_h_Dennis_Peterson1977;
@@ -257,14 +267,16 @@ prdData.Tah_Johnston1997 = aT_h_Johnston1997;
 % prdData.tp = tT_p;
 %   prdData.tp_gbr = tT_p_gbr;
 %   prdData.tp_ice = tT_p_ice;
-  prdData.tp_nor = tT_tp_nor;
+%   prdData.tp_nor = tT_tp_nor;
 %   prdData.tp_fraspa = tT_tp_fraspa;
 %   prdData.tp_ire = tT_tp_ire;
 %   prdData.tp_canm = tT_tp_canm;
 %   prdData.tp_canf = tT_tp_canf;
 %   prdData.tp_rus = tT_tp_rus;
-  prdData.tp_norI = tT_tp_norI;
+%   prdData.tp_norI = tT_tp_norI;
 %   prdData.tp_ire2 = tT_tp_ire2;
+prdData.asp_nor = asp_nor;
+prdData.asp_norI = asp_norI;
   prdData.am = aT_m_nat;
 %   prdData.am_sco = aT_am_sco;
 %   prdData.am_rus = aT_am_rus;
@@ -304,14 +316,14 @@ prdData.Lh_scocanmix = Lw_h/SNFtoTOT;
 %   prdData.Lb_ScoA = Lw_b/SNFtoTOT;
 
 %   prdData.Ls = Lw_s;
-  prdData.Lsp_norS = Lw_Berg2001;
+  prdData.Lsp_norS = Lsp_pred_Berg2001;
 %   prdData.Lp_sco = Lw_p_nat /SNFtoTOT;
-  prdData.Lsp_norI  = Lw_Fleming1996 /SNFtoTOT;
+  prdData.Lsp_norI  = Lsp_pred_Fleming1996 /SNFtoTOT;
 %   prdData.Lp_spaNM = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_canM = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_canR = Lw_p_nat /SNFtoTOT;
-  prdData.Lsp_norSf = Lw_Fleming1996 / POHtoTOT;
-  prdData.Lsp_norSm = Lw_Fleming1996 / POHtoTOT;
+  prdData.Lsp_norSf = Lsp_pred_Fleming1996 / POHtoTOT;
+  prdData.Lsp_norSm = Lsp_pred_Fleming1996 / POHtoTOT;
 %   prdData.Lp_rus = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_usa = Lw_p_nat /SNFtoTOT;
 %   prdData.Lp_norI2 = Lw_p_nat /SNFtoTOT;% pas bon, fertilisation-smolt en ad lib
@@ -369,8 +381,8 @@ prdData.Wwh_FNor = Ww_h;
  prdData.Wwb_Rus = Ww_b; 
 %   prdData.WwsI = Ww_s;
 %   prdData.WwsS = Ww_s;
- prdData.Wwsp_norf = Ww_Fleming1996;
- prdData.Wwsp_norm = Ww_Fleming1996;
+ prdData.Wwsp_norf = Wwsp_pred_Fleming1996;
+ prdData.Wwsp_norm = Wwsp_pred_Fleming1996;
 %  prdData.Wwp_rus = Ww_p_nat;
 %  prdData.Wwp_usa = Ww_p_nat;
  
@@ -407,7 +419,7 @@ prdData.Wwh_FNor = Ww_h;
 % prdData.Ri_spa = RT_i_spa ;
 % prdData.Ri_can = RT_i_can ;
 prdData.Ri_nor = RT_i_nor ;
-
+prdData.Rnbe_nor=n_eggs;
 
  
   % uni-variate data
@@ -787,6 +799,10 @@ prdData.LWw_Nor = EWw_Nor;
 
 end
 
+%   [t, LEHR] = ode45(@ode_LEHR, [0 t0], InitCond,[], par, cPar, f, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2));
+%   
+%   LEHR_scoAa = deval(ode45(@ode_LEHR, tL_scoAa(:,1), LEHR(end,:),[], par, cPar, f_scoAa, s_M, temp.tL_scoAa(:,1), temp.tL_scoAa(:,2)), tL_scoAa(:,1));
+%  
 function dLEHR = ode_LEHR(t, LEHR, p, c, f, s_M, Tt, T)
 
 %
