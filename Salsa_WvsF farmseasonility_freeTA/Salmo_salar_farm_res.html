@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Salmo_salar_farm</TITLE>
+  <style>
+    div.prd {
+      width: 50%;
+      float: left;
+    }
+
+    div.par {
+      width: 50%;
+      float: right;
+    }
+
+    p.clear {
+      clear: both;
+    }
+
+    .head {
+      background-color: #FFE7C6
+    }
+
+    .psd {
+      color: blue
+    }
+
+    #prd {
+      border-style: solid hidden solid hidden;
+    }
+
+    #par {
+      border-style: solid hidden solid hidden;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+  </style>
+</HEAD>
+
+<BODY>
+
+  <div class="prd">
+  <h1>Salmo salar farm</h1>
+  </div>
+
+  <div class="par">
+  <h4>COMPLETE = 2.5; MRE =    0.173; SMSE =    0.180 </h4>
+  </div>
+
+  <p class="clear"></p>
+
+  <div class="prd">
+  <h2>Data & predictions</h2>
+  <TABLE id="prd">
+    <TR  class="head"><TH>data</TH> <TH>prd</TH> <TH>RE</TH>  <TH>symbol</TH> <TH>units</TH> <TH>description</TH> </TR>
+    <TR><TD>183</TD> <TD>132.6</TD> <TD>0.2757</TD> <TD>ab_norM</TD> <TD>d</TD> <TD>age at first feeding</TD></TR>
+    <TR><TD>183</TD> <TD>172.4</TD> <TD>0.05816</TD> <TD>ab_norM2</TD> <TD>d</TD> <TD>age at first feeding</TD></TR>
+    <TR><TD>58.33</TD> <TD>24.54</TD> <TD>0.5792</TD> <TD>tb_12_AqG</TD> <TD>d</TD> <TD>time between hatching and first feeding</TD></TR>
+    <TR><TD>21.54</TD> <TD>21.47</TD> <TD>0.003098</TD> <TD>tb_norB</TD> <TD>d</TD> <TD>time between hatching and first feeding</TD></TR>
+    <TR><TD>756.1</TD> <TD>1095</TD> <TD>0.4483</TD> <TD>asp_norNBP</TD> <TD>d</TD> <TD>age at 1st spawning</TD></TR>
+    <TR><TD>1461</TD> <TD>1461</TD> <TD>2.449e-07</TD> <TD>am</TD> <TD>d</TD> <TD>life span</TD></TR>
+    <TR><TD>2.89</TD> <TD>2.085</TD> <TD>0.2787</TD> <TD>Lb_NorM2011</TD> <TD>cm</TD> <TD>total length at birth</TD></TR>
+    <TR><TD>2.81</TD> <TD>2.085</TD> <TD>0.2582</TD> <TD>Lb_NorM2012</TD> <TD>cm</TD> <TD>total length at birth</TD></TR>
+    <TR><TD>2.84</TD> <TD>2.085</TD> <TD>0.266</TD> <TD>Lb_NorM2013</TD> <TD>cm</TD> <TD>total length at birth</TD></TR>
+    <TR><TD>2.83</TD> <TD>2.085</TD> <TD>0.2634</TD> <TD>Lb_NorS2013</TD> <TD>cm</TD> <TD>total length at birth</TD></TR>
+    <TR><TD>55.4</TD> <TD>52.45</TD> <TD>0.05321</TD> <TD>Lsp_norSf</TD> <TD>cm</TD> <TD>postorbital-hypural length at first spawning</TD></TR>
+    <TR><TD>57.5</TD> <TD>52.45</TD> <TD>0.08779</TD> <TD>Lsp_norSm</TD> <TD>cm</TD> <TD>postorbital-hypural length at first spawning</TD></TR>
+    <TR><TD>111</TD> <TD>113.4</TD> <TD>0.02145</TD> <TD>Li</TD> <TD>cm</TD> <TD>maximum length</TD></TR>
+    <TR><TD>0.1114</TD> <TD>0.1253</TD> <TD>0.1251</TD> <TD>V0_norM2011</TD> <TD>cm^3</TD> <TD>egg volume</TD></TR>
+    <TR><TD>0.1212</TD> <TD>0.1253</TD> <TD>0.03421</TD> <TD>V0_norM2012</TD> <TD>cm^3</TD> <TD>egg volume</TD></TR>
+    <TR><TD>0.1194</TD> <TD>0.1253</TD> <TD>0.04952</TD> <TD>V0_norM2013</TD> <TD>cm^3</TD> <TD>egg volume</TD></TR>
+    <TR><TD>3696</TD> <TD>3520</TD> <TD>0.04772</TD> <TD>Wwsp_norf</TD> <TD>g</TD> <TD>wet weight at 1st spawning</TD></TR>
+    <TR><TD>4008</TD> <TD>3520</TD> <TD>0.1219</TD> <TD>Wwsp_norm</TD> <TD>g</TD> <TD>wet weight at 1st spawning</TD></TR>
+    <TR><TD>1.4e+04</TD> <TD>1.418e+04</TD> <TD>0.01264</TD> <TD>Wwi_norM</TD> <TD>g</TD> <TD>maximum wet weight</TD></TR>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1092</TD> <TD>Tah_Gunnes1979</TD> <TD colspan="2">temperature, <font color="blue"><i>vs.</i></font> age at hatching</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1423</TD> <TD>Tah_Wallace1988</TD> <TD colspan="2">temperature, <font color="blue"><i>vs.</i></font> age at hatching</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.03243</TD> <TD>Tah_Solberg2014</TD> <TD colspan="2">temperature, <font color="blue"><i>vs.</i></font> age at hatching</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.05308</TD> <TD>Tah_Berg1999</TD> <TD colspan="2">temperature, <font color="blue"><i>vs.</i></font> age at hatching</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.3732</TD> <TD>tL_iceT11</TD> <TD colspan="2">time, <font color="blue"><i>vs.</i></font> fork length</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1839</TD> <TD>tL_iceT611</TD> <TD colspan="2">time, <font color="blue"><i>vs.</i></font> fork length</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.08849</TD> <TD>tL_norM2003</TD> <TD colspan="2">time, <font color="blue"><i>vs.</i></font> fork length</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.111</TD> <TD>tL_norM2004</TD> <TD colspan="2">time, <font color="blue"><i>vs.</i></font> fork length</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>1.726</TD> <TD>tWw_norB</TD> <TD colspan="2">time, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1444</TD> <TD>tWw_T4_Mow</TD> <TD colspan="2">time since transfer to seawater, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1223</TD> <TD>tWw_T8_Mow</TD> <TD colspan="2">time since transfer to seawater, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.1001</TD> <TD>tWw_T6_AqG</TD> <TD colspan="2">time since transfer to seawater, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.2175</TD> <TD>tWw_T10_AqG</TD> <TD colspan="2">time since transfer to seawater, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.06211</TD> <TD>tWw_T14_AqG</TD> <TD colspan="2">time since transfer to seawater, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>5.128</TD> <TD>tWw_T18_AqG</TD> <TD colspan="2">time since transfer to seawater, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.226</TD> <TD>LWw_AqG</TD> <TD colspan="2">fork length, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD colspan="2">see figure</TD> <TD>0.08665</TD> <TD>LWw_norM</TD> <TD colspan="2">fork length, <font color="blue"><i>vs.</i></font> wet weight</TD>
+    <TR><TD>1597</TD> <TD>1634</TD> <TD>0.02359</TD> <TD>Rnbe</TD> <TD>-/d</TD> <TD>maximum number of eggs</TD></TR>
+    <TR class="psd"><TD>0.02</TD> <TD>0.03989</TD> <TD>0.9946</TD> <TD>psd.v</TD> <TD>cm/d</TD> <TD>energy conductance</TD></TR>
+    <TR class="psd"><TD>0.8</TD> <TD>0.9784</TD> <TD>0.223</TD> <TD>psd.kap</TD> <TD>-</TD> <TD>allocation fraction to soma</TD></TR>
+    <TR class="psd"><TD>0.95</TD> <TD>0.95</TD> <TD>  0</TD> <TD>psd.kap_R</TD> <TD>-</TD> <TD>reproduction efficiency</TD></TR>
+    <TR class="psd"><TD> 18</TD> <TD>204.7</TD> <TD>10.37</TD> <TD>psd.p_M</TD> <TD>J/d.cm^3</TD> <TD>vol-spec som maint</TD></TR>
+    <TR class="psd"><TD>0.002</TD> <TD>0.002</TD> <TD>  0</TD> <TD>psd.k_J</TD> <TD>1/d</TD> <TD>maturity maint rate coefficient</TD></TR>
+    <TR class="psd"><TD>0.8</TD> <TD>0.8327</TD> <TD>0.04082</TD> <TD>psd.kap_G</TD> <TD>-</TD> <TD>growth efficiency</TD></TR>
+  </TABLE>
+  </div>
+
+  <div class="par">
+  <h2>abj parameters at 20.0&deg;C</h2>
+  <TABLE id="par">
+    <TR class="head"><TH>symbol</TH> <TH>units</TH> <TH>value</TH>  <TH>free</TH> <TH>description</TH> </TR>
+    <TR><TD>T_ref</TD> <TD>K</TD> <TD>293.1</TD> <TD>0</TD> <TD>Reference temperature</TD></TR>
+    <TR><TD>T_A</TD> <TD>K</TD> <TD>1.091e+04</TD> <TD>1</TD> <TD>Arrhenius temperature</TD></TR>
+    <TR><TD>z</TD> <TD>-</TD> <TD>3.493</TD> <TD>1</TD> <TD>zoom factor</TD></TR>
+    <TR><TD>F_m</TD> <TD>l/d.cm^2</TD> <TD>6.5</TD> <TD>0</TD> <TD>{F_m}, max spec searching rate</TD></TR>
+    <TR><TD>kap_X</TD> <TD>-</TD> <TD>0.8</TD> <TD>0</TD> <TD>digestion efficiency of food to reserve</TD></TR>
+    <TR><TD>kap_P</TD> <TD>-</TD> <TD>0.1</TD> <TD>0</TD> <TD>faecation efficiency of food to faeces</TD></TR>
+    <TR><TD>v</TD> <TD>cm/d</TD> <TD>0.03989</TD> <TD>1</TD> <TD>energy conductance</TD></TR>
+    <TR><TD>kap</TD> <TD>-</TD> <TD>0.9784</TD> <TD>1</TD> <TD>allocation fraction to soma</TD></TR>
+    <TR><TD>kap_R</TD> <TD>-</TD> <TD>0.95</TD> <TD>0</TD> <TD>reproduction efficiency</TD></TR>
+    <TR><TD>p_M</TD> <TD>J/d.cm^3</TD> <TD>204.7</TD> <TD>1</TD> <TD>[p_M], vol-spec somatic maint</TD></TR>
+    <TR><TD>p_T</TD> <TD>J/d.cm^2</TD> <TD>  0</TD> <TD>0</TD> <TD>{p_T}, surf-spec somatic maint</TD></TR>
+    <TR><TD>k_J</TD> <TD>1/d</TD> <TD>0.002</TD> <TD>0</TD> <TD>maturity maint rate coefficient</TD></TR>
+    <TR><TD>E_G</TD> <TD>J/cm^3</TD> <TD>5025</TD> <TD>0</TD> <TD>[E_G], spec cost for structure</TD></TR>
+    <TR><TD>E_Hb</TD> <TD>J</TD> <TD>3.216</TD> <TD>1</TD> <TD>maturity at birth</TD></TR>
+    <TR><TD>E_Hj</TD> <TD>J</TD> <TD>312.6</TD> <TD>1</TD> <TD>maturity at metam</TD></TR>
+    <TR><TD>E_Hp</TD> <TD>J</TD> <TD>9.084e+04</TD> <TD>1</TD> <TD>maturity at puberty</TD></TR>
+    <TR><TD>h_a</TD> <TD>1/d^2</TD> <TD>6.247e-10</TD> <TD>1</TD> <TD>Weibull aging acceleration</TD></TR>
+    <TR><TD>s_G</TD> <TD>-</TD> <TD> 10</TD> <TD>0</TD> <TD>Gompertz stress coefficient</TD></TR>
+    <TR><TD>E_Hh</TD> <TD>J</TD> <TD>0.8656</TD> <TD>1</TD> <TD>maturity at hatching</TD></TR>
+    <TR><TD>del_M</TD> <TD>-</TD> <TD>0.1292</TD> <TD>1</TD> <TD>shape coefficient</TD></TR>
+    <TR><TD>SNFtoTOT</TD> <TD>-</TD> <TD>1.06</TD> <TD>0</TD> <TD>conversion from fork length to total length</TD></TR>
+    <TR><TD>POHtoTOT</TD> <TD>-</TD> <TD>1.3</TD> <TD>0</TD> <TD>conversion from postorbital-hypural length to total length</TD></TR>
+    <TR><TD>f</TD> <TD>-</TD> <TD>  1</TD> <TD>0</TD> <TD>scaled functional response for 0-var data</TD></TR>
+    <TR><TD>f_nat</TD> <TD>-</TD> <TD>0.7</TD> <TD>0</TD> <TD>scaled functional response for 0-var data, when reared in natural condition (not ad lib)</TD></TR>
+    <TR><TD>f_LWw</TD> <TD>-</TD> <TD>  1</TD> <TD>0</TD> <TD>scaled functional response for 1-var data</TD></TR>
+    <TR><TD>f_tL</TD> <TD>-</TD> <TD>  1</TD> <TD>0</TD> <TD>scaled functional response for 1-var data</TD></TR>
+    <TR><TD>f_tWeVe_tWeYe</TD> <TD>-</TD> <TD>  1</TD> <TD>0</TD> <TD>scaled functional response for embryo growth</TD></TR>
+    <TR><TD>L0_Bjornsson1989</TD> <TD>cm</TD> <TD> 13</TD> <TD>0</TD> <TD>initial length in Bjornsson 1989</TD></TR>
+    <TR><TD>L0_norM2003</TD> <TD>cm</TD> <TD>17.87</TD> <TD>0</TD> <TD>initial length in Glover 2009 - 2003 experiment</TD></TR>
+    <TR><TD>L0_norM2004</TD> <TD>cm</TD> <TD>13.96</TD> <TD>0</TD> <TD>initial length in Glover 2009 - 2004 experiment</TD></TR>
+    <TR><TD>W0_Hosfeld2009</TD> <TD>g</TD> <TD>71.94</TD> <TD>0</TD> <TD>initial wet weight in Hosfeld 2009</TD></TR>
+    <TR><TD>W0_Handeland1998</TD> <TD>g</TD> <TD>53.25</TD> <TD>0</TD> <TD>initial wet weight in Handeland 1998</TD></TR>
+    <TR><TD>W0_Handeland2008</TD> <TD>g</TD> <TD>75.2</TD> <TD>0</TD> <TD>initial wet weight in Handeland 2008</TD></TR>
+  </TABLE>
+  </div>
+
+</BODY>
+</HTML>
