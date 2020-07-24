@@ -1,0 +1,80 @@
+function dLEHR = ode_LEHR(t, LEHR, p, c, f, s_M, Tt, T)
+%t=[0 t0]
+%LEHR=InitCond
+
+% Input: 
+% p: structure 'par'                                                                    p=par
+% c: structure 'Cpar' obtained by cPar = parscomp_st(par)                               c=cPar
+% f: scaled, scaled functional response                                                 f=
+% s_M: scalar, -, acceleration factor post metamorphosis                                Tt=temp.tL(:,2)
+% T, scalar or function, -, temperature in K, constant or as a function of time         T=temp.tL(:,1)       
+
+% --------------- unpack LEHR ------------------------------------------
+L   =  max(0,LEHR(1)); % cm, volumetric structural length
+E   =  max(0,LEHR(2)); % J,   energy in reserve 
+EH  =  min(p.E_Hp,LEHR(3)); % J, E_H maturity
+ER  =  max(0,LEHR(4)); % J, E_R reproduction buffer
+ER1  =  max(0,LEHR(5)); % J, E_R reproduction buffer
+
+% Temperature correct the relevant paramters
+TC = tempcorr(interp1(Tt, T, t), p.T_ref, p.T_A);
+
+vT = p.v * TC; pT_M = p.p_M * TC; kT_J = p.k_J * TC; pT_Am = c.p_Am * TC;
+pA   = f * pT_Am * L^2 * s_M * (EH >= p.E_Hb);           % J/d, assimilation
+
+if EH < p.E_Hp % juveniles cannot cover somatic maintenance with the buffer   
+    r  = (E * vT * s_M/ L - pT_M * L^3/ p.kap)/ (E + p.E_G * L^3/ p.kap) * ...
+        (E >= pT_M * L^4/ (p.kap * vT * s_M)) + ...
+         (E * vT * s_M/ L - pT_M * L^3/ p.kap)/ (E + c.kap_G * p.E_G * L^3/ p.kap) ...
+         * (E < pT_M * L^4/ (p.kap * vT * s_M));
+
+pC   = E * (vT * s_M/ L - r); % J/d, mobilisation
+dE   = pA - pC;                                          % J/d, change in energy in reserve
+dL   = r/ 3 * L;                                         % cm/d, change in structural length
+dEH  = max(0, (1 - p.kap) * pC - kT_J * EH) * (EH < p.E_Hp);    % J/d, change in cum energy invested in maturation (it is implied here that no rejuvenation occurs).
+dER  = 0; 
+dER1 = 0;
+    
+else % EH = EHp: adults  
+    
+ pC = E * (p.E_G * vT * s_M * L^2 + pT_M * L^3)/ (p.kap * E + p.E_G * L^3);    
+ pCm  = c.E_m * (p.E_G * vT * L^2 + pT_M * L^3)/ (p.kap * c.E_m + p.E_G);
+   
+ 
+    if p.kap * pC >= pT_M * L^3   % enough energy in reserve to cover somatic maintenance and enough to make a batch   
+        r    = (E * vT * s_M/ L^4 - pT_M/ p.kap)/ (E/ L^3 + p.E_G/ p.kap); % d^-1, specific growth rate  
+        dE   = pA - pC;                                          % J/d, change in energy in reserve
+        dL   = r/ 3 * L;                                         % cm/d, change in structural length
+        dEH  = 0;    % J/d, change in cum energy invested in maturation (it is implied here that no rejuvenation occurs).
+        
+        % Buffer handling rules:
+        dER1 = p.kap_R *((1 - p.kap) * pCm - kT_J * p.E_Hp); % J/d, change in energy in ripe buffer
+        dER1 = max(0, dER1);
+        dER  = ((1 - p.kap) * pC - kT_J * p.E_Hp)  - dER1;       % J, change in cumulated energy invested in the unripe reproduction buffer
+%         dER  = dER * (ER > 0);
+   
+    else  % not enough energy in reserve to cover somatic maintenance
+
+        if ER > 0
+            r = 0;
+        else
+             r    =  (E * vT * s_M/ L - pT_M * L^3/ p.kap)/ ...
+            (E + c.kap_G * p.E_G  * L^3/ p.kap); % d^-1, specific growth rate
+   
+        end
+        dE   = pA - pC;                                         % J/d, change in energy in reserve
+        dL   = r/ 3 * L;                                        % cm/d, change in structural length
+        dEH  = 0;                                               % J/d, change in cum energy invested in maturation (it is implied here that no rejuvenation occurs).
+        dER  = (1 - p.kap) * pC - kT_J * p.E_Hp;
+        dER  = (dER  - (pT_M * L^3 - p.kap * pC)) * (ER > 0) ;
+        dER1 = 0;
+    
+    end
+     
+end
+ 
+
+% pack dLEHR
+dLEHR = [dL; dE; dEH; dER; dER1];    
+
+end
