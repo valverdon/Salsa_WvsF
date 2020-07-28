@@ -38,7 +38,7 @@ pet = {'Salmo_salar_wild','Salmo_salar_farm'};  % replace my_pet, with your spec
 
 % addpath(genpath('C:/Users/crecapet/Documents/Recherche/Modelisation/Dynamic Energy Budget Theory/DEBtool_M'))
 
-mat2pars_init(pet)
+mat2pars_init
 
 % parameter for the profile step
 pProfile ='kap';    % name of the parameter for which the profile will be calculated
