@@ -31,7 +31,7 @@ TC_Tah_Johnston1997 = tempcorr(data.Tah_Johnston1997(:,1), T_ref, T_A);
 
 % TC_TabC = tempcorr(data.TabC(:,1), T_ref, T_A);
 % TC_Tab_sco =  tempcorr(data.Tab_sco(:,1), T_ref, T_A);
-% TC_ab =  tempcorr(temp.ab, T_ref, T_A);
+TC_abW =  tempcorr(mean(temp.abWtest(:,2)), T_ref, T_A);
 %   TC_ts = tempcorr(temp.ts, T_ref, T_A);
 %   TC_ts = tempcorr(temp.as_norM, T_ref, T_A);
 %   TC_tp = tempcorr(temp.tp, T_ref, T_A);
@@ -154,7 +154,7 @@ s_M  = L_j/ L_b; % -, acceleration factor for f
   aT_b=t(naissance);%Temps de ce passage
  
   
- aT_btest=aUL(3,1);
+ aT_btest=aUL(3,1)/TC_abW;
   
 %   % smoltification 
 %  all calculation are wrong because they are meant for  metamorphosis

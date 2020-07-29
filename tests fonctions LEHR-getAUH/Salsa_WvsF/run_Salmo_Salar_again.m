@@ -26,7 +26,7 @@ estim_options('results_output', 0);
 estim_options('method', 'nm');
 % estim_options('method', 'no');
 
-n=1; % number of repetition
+n=3; % number of repetition
 for i=1:n-1
 fprintf('N= ',i,'\n')
     estim_pars; 

@@ -26,7 +26,7 @@ TC_Tah_Gunnes1979 = tempcorr(data.Tah_Gunnes1979(:,1), T_ref, T_A);
   TC_Tah_Berg1999 = tempcorr(data.Tah_Berg1999(:,1), T_ref, T_A); 
 %   TC_abM_egg =  tempcorr(temp.ab_norM, T_ref, T_A);
 %   TC_abM_feed =  tempcorr(temp.ab_norM2, T_ref, T_A);
-% TC_abF =  tempcorr(temp.abF, T_ref, T_A);
+TC_abF =  tempcorr(mean(temp.abF(:,2)), T_ref, T_A);
 %   TC_tbAqG = tempcorr(temp.tb_12_AqG, T_ref, T_A);
 %   TC_tbB = tempcorr(temp.tb_norB, T_ref, T_A);
 % TC_ts = tempcorr(temp.ts, T_ref, T_A);
@@ -146,7 +146,7 @@ s_M  = L_j/ L_b; % -, acceleration factor for f
   
   %test
   
- aT_btest=aUL(3,1);
+ aT_btest=aUL(3,1)/ TC_abF;
  
  
  
