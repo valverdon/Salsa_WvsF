@@ -95,27 +95,16 @@ data.tb_norB = 280/13;    units.tb_norB = 'd';    label.tb_norB = 'time between 
 % label.temp.comment.ap_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 %
 
-%mb need for adjustments to get real age at 1st spawning.
 data.asp_norNBP = (1.07+1)*365.25;   %
 units.asp_norNBP = 'd';    label.asp_norNBP = 'age at 1st spawning';             bibkey.asp_norNBP = 'Hindar2006';     
 comment.asp_norNBP = 'National breeding program (time since birth)) n=1 ; table3';
 temp.asp_norNBP = C2K(10);  units.temp.asp_norNBP = 'K'; label.temp.asp_norNBP = 'temperature'; 
 label.temp.comment.asp_norNBP = 'T° : rough guess - highly variable temperature throughout life(1.07+1-1)*365.25';%natural T°, natural f.
 %
-% data.ap_norire = (2+1.93-1)*365.25;   %=1070
-% units.ap_norire = 'd';    label.ap_norire = 'age at puberty';             bibkey.ap_norire = 'Hindar2006';     
+% data.ap_norire = (2+1.93)*365.25;   %=1070
+% units.ap_norire = 'd';    label.ap_norire = 'age at 1st spawning';             bibkey.ap_norire = 'Hindar2006';     
 % comment.ap_norire = 'farmed strain (time since birth) ; table3';
 % temp.ap_norire = C2K(10);  units.temp.ap_norire = 'K'; label.temp.ap_norire = 'temperature'; label.temp.comment.ap_norire = 'T° : rough guess - highly variable temperature throughout life(2+1.93-1)*365.25';%natural T°, natural f.
-
-  %median? list
-% data.ap=(data.ap_norNBP+data.ap_norire)/2;
-%   data.ap=[data.ap_norNBP;data.ap_norire];
-  %arbitrary choice
- %% age at spawning
-% data.ap_norNBPb = 756;    units.ap_norNBPb = 'd';    label.ap_norNBPb = 'age at maturity';             bibkey.ap_norNBPb = 'Hindar2006';     comment.ap_norNBPb = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
-%   temp.ap_norNBPb = C2K(10);  units.temp.ap_norNBPb = 'K'; label.temp.ap_norNBPb = 'temperature'; label.temp.comment.ap_norNBPb = 'T° : rough guess - highly variable temperature throughout life(1.07+1)*365.25';
-% data.ap_ireb = 1435;    units.ap_ireb = 'd';    label.ap_ireb = 'age at maturity';             bibkey.ap_ireb = 'Hindar2006';     comment.ap_ireb = 'National breeding program (time since birth)1.07+1-1*365.25) n=1';
-%   temp.ap_ireb = C2K(10);  units.temp.ap_ireb = 'K'; label.temp.ap_ireb = 'temperature'; label.temp.comment.ap_ireb = 'T° : rough guess - highly variable temperature throughout life(2+1.93)*365.25';
 
   
 %%%%%%%%%%%%%
@@ -126,10 +115,6 @@ units.am = 'd';    label.am = 'life span';             bibkey.am = 'Hindar2006';
 comment.am = 'National breeding program (time since birth) ; table 3';
   temp.am = C2K(10);  units.temp.am = 'K'; label.temp.am = 'temperature'; label.temp.comment.am = 'T° : rough guess - highly variable temperature throughout life(2+2)*365.25';%natural T°, natural f.
 
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Length at hatching %
-%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at first feeding %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -138,23 +123,6 @@ data.Lb_NorM2011  = 2.89;   units.Lb_NorM2011  = 'cm';  label.Lb_NorM2011  = 'to
 data.Lb_NorM2012  = 2.81;   units.Lb_NorM2012  = 'cm';  label.Lb_NorM2012  = 'total length at birth';   bibkey.Lb_NorM2012  = 'Solberg2014';  comment.Lb_NorM2012 = 'parents from Mowi strain (Norway); table2';%T° 3.0-6.9 mean 4.8 ; f?
 data.Lb_NorM2013  = 2.84;   units.Lb_NorM2013  = 'cm';  label.Lb_NorM2013  = 'total length at birth';   bibkey.Lb_NorM2013  = 'Solberg2014';  comment.Lb_NorM2013 = 'parents from Mowi strain (Norway); table2';%T° 3.0-6.9 mean 4.8 ; f?
 data.Lb_NorS2013  = 2.83;   units.Lb_NorS2013  = 'cm';  label.Lb_NorS2013  = 'total length at birth';   bibkey.Lb_NorS2013  = 'Solberg2014';  comment.Lb_NorS2013 = 'parents from Salmobreed strain (Norway); table2';%T° 3.0-6.9 mean 4.8 ; f?
-
-%test mean
-% data.Lb=(data.Lb_NorM2011+data.Lb_NorM2012+data.Lb_NorM2013+data.Lb_NorS2013)/4;
-
-%% Length at precocious maturation % (males only)
-% data.Lpp  = ;   units.Lpp  = 'cm';  label.Lpp  = 'total length at precocious puberty'; bibkey.Lpp  = ''; comment.Lpp = 'males only';
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Length at smoltification %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% data.Ls_finS  = 17.2;   units.Ls_finS  = 'cm';  label.Ls_finS  = 'total length at metamorphosis'; bibkey.Ls_finS  = 'Jokikkoko2006'; comment.Ls_finS = 'Simojoki broodstock (Baltic Sea, Finland) - mean from 1986 to 1992';%T°? hatcheries ; f=1
-% data.Ls_norN  = 16.4;   units.Ls_norN  = 'cm';  label.Ls_norN  = 'total length at metamorphosis'; bibkey.Ls_norN  = 'Jonsson1991'; comment.Ls_norN = 'Nina research station (Norway)';%T°? hatcheries ; f=1
-
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Length at maturity % (or 1 year before first spawning)
-%%%%%%%%%%%%%%%%%%%%%%%
-%direct
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Length at 1st spawning %
@@ -179,8 +147,6 @@ units.V0_norM2012 = 'cm^3'; label.V0_norM2012 = 'egg volume'; bibkey.V0_norM2012
 data.V0_norM2013 = 4/3*pi*((0.611/2)^3); %=0.121
 units.V0_norM2013 = 'cm^3'; label.V0_norM2013 = 'egg volume'; bibkey.V0_norM2013 = 'Solberg2014';  comment.V0_norM2013 = 'Mowi strain (Norway),mean(4/3*pi*(diameter/2)^3); table2';%T=natural f=1
 
-% data.V0=(data.V0_norM2011+data.V0_norM2012)/2;
-
 %%%%%%%%%%%%%%%
 %% Egg weight %
 %%%%%%%%%%%%%%%
@@ -192,26 +158,6 @@ units.V0_norM2013 = 'cm^3'; label.V0_norM2013 = 'egg volume'; bibkey.V0_norM2013
 %%%%%%%%%%%%%%%%%%%%%%%
 % data.Wwh_norM = 0.144; units.Wwh_norM = 'g'; label.Wwh_norM = 'egg weight'; bibkey.Wwh_norM = 'Glover2009'; comment.Wwh_norM= 'Mowi strain';
 %considering weight doesnt change between 0 and h
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Weight at first feeding %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Weight at smoltification %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% data.Wws_nor = 22;   units.Wws_nor = 'g';   label.Wws_nor = 'wet weight at smoltification';   bibkey.Wws_nor = 'Skaala2012';   comment.Wws_nor = 'Mowi strain (Norway)';%T=natural f=natural
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Weight at maturity % (or 1 year before first spawning)
-%%%%%%%%%%%%%%%%%%%%%%%
-
-% need calculation
-% data.Wwp_norf = 3696;   units.Wwp_norf = 'g';   label.Wwp_norf = 'wet weight at puberty';   bibkey.Wwp_norf = 'Fleming1996b';   comment.Wwp_nor_norf = 'Sunndalsøra strain (Norway), mean of females at spawning';
-% data.Wwp_norm = 4008;   units.Wwp_norm = 'g';   label.Wwp_norm = 'wet weight at puberty';   bibkey.Wwp_norm = 'Fleming1996b';   comment.Wwp_nor_norm = 'Sunndalsøra strain (Norway), mean of males at spawning';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Weight at first spawning %
@@ -225,16 +171,6 @@ data.Wwsp_norm = 4008;   units.Wwsp_norm = 'g';   label.Wwsp_norm = 'wet weight 
 %%%%%%%%%%%%%%
 
 data.Wwi_norM = 14000;   units.Wwi_norM = 'g';   label.Wwi_norM = 'maximum wet weight';   bibkey.Wwi_norM = 'Skaala2012';   comment.Wwi_norM = 'Mowi strain (Norway), max of female spawners ; text : experimental strains';%T=natural f=natural
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Reserve energy in egg % (egg = reserve only)
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%
-%% Total energy %
-%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Maximum reproductive rate %
