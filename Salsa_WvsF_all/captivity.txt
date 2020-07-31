@@ -1,0 +1,87 @@
+
+function [data, auxData, metaData, txtData, weights] = mydata_Salmo_salar 
+
+%% set metaData
+metaData.phylum     = 'Chordata'; 
+metaData.class      = 'Actinopterygii'; 
+metaData.order      = 'Salmoniformes'; 
+metaData.family     = 'Salmonidae';
+metaData.species    = 'Salmo_salar'; 
+metaData.species_en = 'Atlantic salmon'; 
+metaData.ecoCode.climate = {'MC'};
+metaData.ecoCode.ecozone = {'MAN'};
+metaData.ecoCode.habitat = {'0jFr', 'jiMpe'};
+metaData.ecoCode.embryo  = {'Fg'};
+metaData.ecoCode.migrate = {'Mda'};
+metaData.ecoCode.food    = {'bjCi', 'jiCic', 'jiCvf'};
+metaData.ecoCode.gender  = {'D'};
+metaData.ecoCode.reprod  = {'O'};
+metaData.T_typical  = C2K(10); % K, body temp
+metaData.data_0     = {'ah';'ab';'aj';'ap';'am';'Lb';'Lj';'Li';'Wwb';'Wwj';'Ri'}; 
+metaData.data_1     = {'L-Ww';'t-L'}; 
+
+metaData.COMPLETE = 2.5; % using criteria of LikaKear2011 http://www.debtheory.org/wiki/index.php?title=Completeness
+
+metaData.author   = {'Charlotte Recapet'};    
+metaData.date_subm = [2019 03 13];              
+metaData.email    = {'charlotte.recapet@univ-pau.fr'};            
+metaData.address  = {'ECOBIOP, National Institute for Agronomic Research - University Pau Pays de l''ADour, France'};   
+
+metaData.curator     = {'Bas Kooijman'};
+metaData.email_cur   = {'bas.kooijman@vu.nl'}; 
+metaData.date_acc    = [2019 04 17]; 
+
+%% set data
+% zero-variate data
+
+%% Age at hatching
+
+data.ah_nor = 88;    units.ah_nor = 'd';    label.ah_nor = 'age at hatching';             bibkey.ah_nor = 'Solberg2014';     comment.ah_nor = 'parents from river Skibotn (protection plan), mean of offsprings time at 50% hatching in 2013';
+  temp.ah_nor = C2K(6.3);  units.temp.ah_nor = 'K'; label.temp.ah_nor = 'temperature';
+
+
+%% Length at hatching
+
+data.Lh  = 1.7;   units.Lh  = 'cm';  label.Lh  = 'total length at hatching';   bibkey.Lh  = 'Srivastava1991';  comment.Wwh = 'parents from Broodstock from Exploits River (Canada)';
+  temp.Lh = C2K(7);  units.temp.Lh = 'K'; label.temp.Lh = 'temperature';
+
+%% Length at first feeding
+
+data.Lb_CanP  = 2.5;   units.Lb_CanP  = 'cm';  label.Lb_CanP  = 'total length at birth';   bibkey.Lb_CanP  = 'Srivastava1991';  comment.Lb_CanP = 'parents from Broodstock from Exploits River (Canada)';
+  temp.Lb_CanP = C2K(7);  units.temp.Lb_CanP = 'K'; label.temp.Lb_CanP = 'temperature';
+
+%% Length at spawning
+data.Li_NorSM = 85;   units.Li_NorSM = 'g';   label.Li_NorSM = 'ultimate wet weight';     bibkey.Li_NorSM = 'Solberg2014'; ; comment.Li_NorSM = 'maximum of parents from Skibotn river -males (n=2)';
+data.Li_NorSF = 95;   units.Li_NorSF = 'g';   label.Li_NorSF = 'ultimate wet weight';     bibkey.Li_NorSF = 'Solberg2014'; ; comment.Li_NorSF = 'maximum of parents from Skibotn river - females (n =2)';
+
+
+%% Egg volume
+data.V0_can = 0.113;  units.V0_can = 'cm^3'; label.V0_can = 'egg volume'; bibkey.V0_can = 'Srivastava1991';  comment.V0_can = 'parents rom Broodstock from Exploits River (Canada),mean(4/3*pi*(diameter/2)^3) (4 females eggs)';
+
+%% Egg weight
+data.Ww0_Canbf = 0.095;  units.Ww0_Canbf = 'g'; label.Ww0_Canbf = 'wet egg weight'; bibkey.Ww0_Canbf = 'Srivastava1991';  comment.Ww0_Canbf = 'before fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
+data.Ww0_Canaf = 0.106;  units.Ww0_Canaf = 'g'; label.Ww0_Canaf = 'wet egg weight'; bibkey.Ww_Canaf0 = 'Srivastava1991';  comment.Ww0_Canaf = 'after fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
+
+
+%% Weight at hatching
+data.Wwh_Can = 0.098;   units.Wwh_Can = 'g';   label.Wwh_Can = 'wet weight at hatching';     bibkey.Wwh_Can = 'Srivastava1991';  comment.Wwh_Can = 'parents from Northeast Placentia River (Newfoundland, Canada)';
+
+
+%% Weight at first feeding
+data.Wwb_Can = 0.109;   units.Wwb_Can = 'g';   label.Wwb_Can = 'wet weight at birth';     bibkey.Wwb_Can = 'Srivastava1991';  comment.Wwb_Can = 'parents from Northeast Placentia River (Newfoundland, Canada)';
+
+%% Weigth at spawning
+data.Wwi_NorSM = 6670;   units.Wwi_NorSM = 'g';   label.Wwi_NorSM = 'ultimate wet weight';     bibkey.Wwi_NorSM = 'Solberg2014'; ; comment.Wwi_NorSM = 'maximum of parents from Skibotn river -males (n=2)';
+data.Wwi_NorSF = 13130;   units.Wwi_NorSF = 'g';   label.Wwi_NorSF = 'ultimate wet weight';     bibkey.Wwi_NorSF = 'Solberg2014'; ; comment.Wwi_NorSF = 'maximum of parents from Skibotn river - females (n =2)';
+
+
+%% Reserve energy in egg (egg = reserve only)
+
+data.E0_Canbf = 821; units.E0_Canbf = 'J'; label.E0_Canbf = 'egg reserve energy'; bibkey.E0_Canbf = 'Srivastava1991';   comment.E0_Canbf = 'before fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
+data.E0_Canaf = 816; units.E0_Canaf = 'J'; label.E0_Canaf = 'egg reserve energy'; bibkey.E0_Canaf = 'Srivastava1991';   comment.E0_Canaf = 'after fertilization - parents from Northeast Placentia River (Newfoundland, Canada)';
+
+
+
+
+
+
